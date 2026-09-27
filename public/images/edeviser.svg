@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" fill="none" role="img" aria-labelledby="title desc">
+<title id="title">E Deviser — a landscape of learning</title><desc id="desc">Original architectural illustration of connected isometric learning tiles in pale mint, rich teal and warm paper. An open book, stepped pathways and a raised knowledge pavilion form a dimensional learning landscape.</desc>
+<defs>
+<linearGradient id="mint" x1="0" y1="0" x2="160" y2="120" gradientUnits="userSpaceOnUse"><stop stop-color="#C9E8D8"/><stop offset="1" stop-color="#88D6C4"/></linearGradient>
+<linearGradient id="teal" x1="0" y1="-50" x2="0" y2="200" gradientUnits="userSpaceOnUse"><stop stop-color="#447B73"/><stop offset="1" stop-color="#203D3E"/></linearGradient>
+<pattern id="grid" width="80" height="40" patternUnits="userSpaceOnUse"><path d="M0 0L80 40M80 0L0 40" stroke="#567268" stroke-opacity=".075"/></pattern>
+<filter id="shadow" x="-50%" y="-50%" width="200%" height="230%"><feGaussianBlur stdDeviation="17"/></filter>
+<g id="tile"><path d="M-130 0L0-65L130 0V27L0 92L-130 27Z" fill="#689F90"/><path d="M0 65L130 0V27L0 92Z" fill="#4C8177"/><path d="M-130 0L0-65L130 0L0 65Z" fill="url(#mint)" stroke="#E0F3E4"/><path d="M-115 0L0-57L115 0L0 57Z" stroke="#5E9E8B" stroke-opacity=".3"/></g>
+<g id="pale"><path d="M-130 0L0-65L130 0V22L0 87L-130 22Z" fill="#C3C9B7"/><path d="M0 65L130 0V22L0 87Z" fill="#ADB9A5"/><path d="M-130 0L0-65L130 0L0 65Z" fill="#E7E8D9" stroke="#FCFBF2"/></g>
+</defs>
+<path fill="#F2F0E9" d="M0 0H1200V800H0Z"/><path fill="url(#grid)" d="M0 70H1200V800H0Z"/>
+<ellipse cx="603" cy="543" rx="410" ry="131" fill="#5B7665" opacity=".14" filter="url(#shadow)"/>
+<g stroke="#94B5A2" stroke-width="2"><path d="M270 434L597 270L945 444L611 611Z"/><path d="M410 504L733 343M447 345L793 518"/><path d="M270 434L191 474L191 551M945 444L1024 483V531M611 611V668" stroke-dasharray="4 7"/></g>
+<use href="#pale" x="600" y="255"/><use href="#tile" x="766" y="338"/><use href="#pale" x="433" y="338"/><use href="#tile" x="269" y="421"/><use href="#pale" x="931" y="421"/>
+<use href="#tile" x="600" y="423"/><use href="#pale" x="434" y="506"/><use href="#tile" x="766" y="506"/><use href="#pale" x="600" y="589"/>
+<!-- Central, elevated knowledge pavilion. -->
+<path d="M502 377L600 328L698 377V426L600 475L502 426Z" fill="#315D57"/><path d="M600 426L698 377V426L600 475Z" fill="#234642"/><path d="M502 377L600 328L698 377L600 426Z" fill="#609F8E" stroke="#C5E9D5"/>
+<path d="M515 377L600 335L685 377L600 419Z" fill="#427E70"/>
+<path d="M527 377V282M674 377V282M600 414V319M600 341V246" stroke="#D0EBDD" stroke-width="7"/>
+<path d="M485 273L600 215L714 272L600 330Z" fill="#345A55" stroke="#8EAFA1"/><path d="M485 273V285L600 342L714 284V272L600 330Z" fill="#31564E"/>
+<path d="M506 272L600 225L694 272L600 320Z" fill="#567F70" stroke="#C8DACC"/><path d="M550 271L600 246L650 271L600 297Z" fill="#88D6C4" stroke="#B9EED6"/>
+<path d="M527 377L600 414L674 377" stroke="#D5EFE0" stroke-width="2"/>
+<!-- A folded open book, intentionally sculptural rather than a product interface. -->
+<path d="M201 400L265 368L275 383L331 369V406L270 437L201 412Z" fill="#53897A"/>
+<path d="M201 389L262 358L270 374L330 359V395L270 426L201 401Z" fill="#FCFCED" stroke="#B9CEB8"/>
+<path d="M270 374V426L330 395V359Z" fill="#DBE8D4"/>
+<path d="M213 386L252 367M213 393L254 374M281 381L318 363M281 389L318 371M281 397L318 379M270 374V426" stroke="#8CAE98" stroke-width="1.3"/>
+<!-- Stair-step forms evoke incremental progress. -->
+<g stroke="#BEDFC9" stroke-width=".8"><path d="M691 485L745 458L823 497V514L769 541L691 502Z" fill="#397366"/><path d="M706 469L746 449L823 487V501L783 521L706 483Z" fill="#549781"/><path d="M722 451L748 438L823 476V489L797 502L722 464Z" fill="#83BBA0"/><path d="M737 434L750 427L823 463V477L810 484L737 448Z" fill="#BADBC0"/></g>
+<!-- Peripheral study objects. -->
+<path d="M709 326L765 298L820 326L765 353Z" fill="#2D6057"/><path d="M723 311L765 290L807 311V326L765 347L723 326Z" fill="#437F6D"/><path d="M723 311L765 290L807 311L765 332Z" fill="#D1E7CB" stroke="#F5F9E9"/><path d="M735 311L765 296L795 311" stroke="#82AB8E"/>
+<path d="M389 330L434 307L478 330L434 352Z" fill="#B5C9B1"/><path d="M409 312L434 299L458 312V330L434 342L409 330Z" fill="#D9DFCB" stroke="#FCFCF1"/>
+<g stroke="#7D9E84"><path d="M572 573L600 559L628 573L600 587Z"/><path d="M561 580L600 600L640 580M550 587L600 612L651 587"/></g>
+<path d="M907 416L931 404L955 416L931 428Z" fill="#E6B875" stroke="#CFA466"/><path d="M907 416V424L931 436L955 424V416L931 428Z" fill="#C09A60"/>
+<g fill="#527F6C"><circle cx="191" cy="551" r="4"/><circle cx="1024" cy="531" r="4"/><circle cx="611" cy="668" r="4"/></g>
+<g stroke="#90AA94" stroke-width="1"><path d="M121 168H157M139 150V186M1032 625H1068M1050 607V643"/><circle cx="968" cy="174" r="24"/><path d="M954 174H982M968 160V188"/></g>
+</svg>

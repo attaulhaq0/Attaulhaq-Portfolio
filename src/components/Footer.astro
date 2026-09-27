@@ -1,0 +1,9 @@
+---
+import { site } from '../data/site';
+import Arrow from './Arrow.astro';
+---
+<section class="contact-section" id="contact" aria-labelledby="contact-title"><div class="shell">
+  <div class="eyebrow"><span class="status-dot"></span> A CONVERSATION IS A GOOD START</div>
+  <div class="contact-grid"><h2 id="contact-title">Something in mind?<br />Let’s <em>make it real.</em></h2><div><p>{site.contactMessage}</p><a class="contact-email" href={`mailto:${site.email}`}>{site.email}<Arrow /></a></div></div>
+</div></section>
+<footer class="footer shell"><a class="footer-name" href="/">Sheikh Atta-ul-Haq<span>Thoughtfully built, from the inside out.</span></a><div class="footer-links"><a href={site.github} target="_blank" rel="noopener noreferrer">GitHub <Arrow /></a><a href={site.repository} target="_blank" rel="noopener noreferrer">This site’s source <Arrow /></a><a href="/#top">Back to top ↑</a></div><div class="footer-bottom"><span>© {new Date().getFullYear()} Sheikh Atta-ul-Haq</span><span>Based in Doha, Qatar <span aria-hidden="true">↗</span></span></div></footer>

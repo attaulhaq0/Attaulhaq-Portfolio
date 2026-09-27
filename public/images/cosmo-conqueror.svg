@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" fill="none" role="img" aria-labelledby="title desc">
+<title id="title">Cosmo Conqueror — beyond the last horizon</title><desc id="desc">Original cinematic science-fiction landscape in amber and charcoal. A colossal tilted orbital ring eclipses a distant planet above angular alien ridges, while a small faceted exploratory craft crosses the light.</desc>
+<defs>
+<linearGradient id="sky" x1="600" y1="0" x2="600" y2="800" gradientUnits="userSpaceOnUse"><stop stop-color="#10191E"/><stop offset=".6" stop-color="#2F3432"/><stop offset="1" stop-color="#A78958"/></linearGradient>
+<radialGradient id="planet" cx=".26" cy=".26" r=".8"><stop stop-color="#DCC494"/><stop offset=".34" stop-color="#A48F6D"/><stop offset=".7" stop-color="#51544A"/><stop offset="1" stop-color="#222D2C"/></radialGradient>
+<linearGradient id="metal" x1="400" y1="100" x2="900" y2="650" gradientUnits="userSpaceOnUse"><stop stop-color="#F2D69B"/><stop offset=".2" stop-color="#B9945A"/><stop offset=".47" stop-color="#404B49"/><stop offset=".7" stop-color="#263439"/><stop offset="1" stop-color="#BE995B"/></linearGradient>
+<linearGradient id="haze" x1="0" y1="400" x2="0" y2="740" gradientUnits="userSpaceOnUse"><stop stop-color="#D1AC72" stop-opacity="0"/><stop offset="1" stop-color="#D1AC72" stop-opacity=".44"/></linearGradient>
+<linearGradient id="trail" x1="316" y1="0" x2="589" y2="0" gradientUnits="userSpaceOnUse"><stop stop-color="#88D6C4" stop-opacity="0"/><stop offset="1" stop-color="#C5F4D7"/></linearGradient>
+<clipPath id="disc"><circle cx="692" cy="326" r="185"/></clipPath>
+<filter id="glow" x="-70%" y="-70%" width="240%" height="240%"><feGaussianBlur stdDeviation="10"/></filter>
+</defs>
+<path fill="url(#sky)" d="M0 0H1200V800H0Z"/>
+<g fill="#C7D2C8"><circle cx="98" cy="100" r="1.4"/><circle cx="226" cy="207" r="1"/><circle cx="171" cy="320" r=".8"/><circle cx="327" cy="113" r="1.2"/><circle cx="449" cy="67" r=".7"/><circle cx="537" cy="143" r="1.2"/><circle cx="704" cy="72" r="1"/><circle cx="879" cy="95" r="1.5"/><circle cx="988" cy="163" r=".7"/><circle cx="1105" cy="87" r="1.1"/><circle cx="1046" cy="312" r="1.3"/><circle cx="1147" cy="383" r=".8"/><circle cx="378" cy="292" r=".7"/><circle cx="265" cy="407" r="1.1"/><circle cx="78" cy="425" r=".6"/><circle cx="976" cy="403" r=".7"/></g>
+<path d="M303 178H313M308 173V183M1005 247H1017M1011 241V253" stroke="#C3D0C5" stroke-opacity=".65"/>
+<!-- The orbital ribbon passes behind the planet and returns in the foreground. -->
+<g transform="rotate(-33 692 327)"><ellipse cx="692" cy="333" rx="332" ry="152" stroke="#172529" stroke-width="28"/><ellipse cx="692" cy="327" rx="332" ry="152" stroke="url(#metal)" stroke-width="19"/><ellipse cx="692" cy="321" rx="332" ry="152" stroke="#E6B875" stroke-opacity=".5" stroke-width="1.5"/></g>
+<circle cx="692" cy="326" r="188" fill="#D3BE8B" opacity=".11" filter="url(#glow)"/><circle cx="692" cy="326" r="185" fill="url(#planet)"/>
+<g clip-path="url(#disc)" stroke="#E1D2A6" stroke-opacity=".1"><path d="M448 244C559 186 712 311 895 200M469 267C580 209 733 334 916 223M451 290C562 232 715 357 898 246M455 321C566 263 719 388 902 277M466 350C577 292 730 417 913 306M483 379C594 321 747 446 930 335M472 407C583 349 736 474 919 363M467 434C578 376 731 501 914 390M477 462C588 404 741 529 924 418" stroke-width="3"/>
+<path d="M509 322L566 270L620 278L657 334L729 355L755 415L709 472L650 448L601 376Z" fill="#364741" fill-opacity=".18" stroke="none"/>
+</g>
+<path d="M533 230A185 185 0 0 1 769 158" stroke="#F2D7A0" stroke-opacity=".6" stroke-width="1.5"/>
+<g transform="rotate(-33 692 327)"><path d="M360 327A332 152 0 0 0 1024 327" stroke="#152329" stroke-width="28"/><path d="M360 320A332 152 0 0 0 1024 320" stroke="url(#metal)" stroke-width="19"/><path d="M360 313A332 152 0 0 0 1024 313" stroke="#EBD19C" stroke-width="1.6"/>
+<g stroke="#101D22" stroke-width="3"><path d="M384 373L390 357M421 402L429 386M473 427L480 410M532 443L536 426M593 457L596 438M658 467V448M723 468V449M788 462L786 443M848 449L844 431M906 432L899 415M957 410L948 394M998 381L985 369"/></g></g>
+<!-- Vast fractured terrain, articulated through separate atmospheric planes. -->
+<path d="M0 513L100 458L199 511L306 464L408 553L516 514L625 573L736 518L866 540L1014 464L1200 527V800H0Z" fill="#687067"/>
+<path d="M0 561L130 484L264 587L384 539L496 595L640 567L748 607L929 517L1080 559L1200 514V800H0Z" fill="#444F4C"/>
+<path d="M130 484L181 595L264 587ZM929 517L901 605L1080 559ZM384 539L421 610L496 595Z" fill="#7C806B" opacity=".6"/>
+<path fill="url(#haze)" d="M0 403H1200V800H0Z"/>
+<path d="M0 665L150 620L280 648L387 596L514 682L648 638L807 691L965 584L1087 638L1200 606V800H0Z" fill="#283734"/>
+<path d="M965 584L934 694L1000 677L1087 638Z" fill="#69705A"/><path d="M387 596L409 671L514 682Z" fill="#52604F"/>
+<path d="M0 725L127 686L259 733L360 700L547 770L711 704L832 744L1014 680L1200 737V800H0Z" fill="#142326"/>
+<path d="M127 686L146 733L259 733M711 704L735 747L832 744M1014 680L1055 741L1164 748" fill="#32453D"/>
+<!-- A small, original faceted explorer gives the landscape scale. -->
+<path d="M312 560L588 513" stroke="url(#trail)" stroke-width="2"/><path d="M398 558L585 521" stroke="url(#trail)" stroke-opacity=".4"/>
+<path d="M568 510L630 481L683 480L642 501L628 524L598 518L578 531Z" fill="#CAD0B2"/>
+<path d="M568 510L626 508L683 480L642 501L628 524L598 518Z" fill="#4C6C64"/>
+<path d="M598 518L626 508L628 524Z" fill="#233C3D"/><path d="M630 481L626 508L642 501L683 480Z" fill="#E5D9B2"/>
+<path d="M578 513L594 516" stroke="#BDFFE0" stroke-width="3"/><path d="M578 513L594 516" stroke="#88D6C4" stroke-width="10" opacity=".35" filter="url(#glow)"/>
+<circle cx="239" cy="159" r="26" fill="#9CA88E" opacity=".65"/><path d="M222 139A26 26 0 0 1 258 177A26 26 0 0 0 222 139Z" fill="#D9C79A"/>
+</svg>

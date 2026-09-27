@@ -1,0 +1,16 @@
+---
+import { site } from '../data/site';
+import Arrow from './Arrow.astro';
+---
+<header class="header shell">
+  <a class="wordmark" href="/" aria-label={`${site.name} — home`}><span class="monogram" aria-hidden="true">a<span>.</span></span><span>{site.shortName}<small>DEVELOPER & PRODUCT BUILDER</small></span></a>
+  <nav aria-label="Main navigation" class="desktop-nav"><a href="/#work">Work</a><a href="/#approach">Approach</a><a href="/#about">About</a></nav>
+  <a class="header-contact" href="/#contact">Let’s talk <Arrow /></a>
+  <details class="mobile-nav"><summary aria-label="Toggle navigation"><span></span><span></span></summary><nav aria-label="Mobile navigation"><a href="/#work">Selected work</a><a href="/#approach">My approach</a><a href="/#about">About me</a><a href="/#contact">Get in touch</a></nav></details>
+</header>
+<script>
+  const menu = document.querySelector<HTMLDetailsElement>('.mobile-nav');
+  menu?.querySelectorAll('a').forEach(link => link.addEventListener('click', () => { menu.open = false; }));
+  document.addEventListener('keydown', event => { if (event.key === 'Escape' && menu?.open) { menu.open = false; menu.querySelector('summary')?.focus(); } });
+  document.addEventListener('click', event => { if (menu?.open && event.target instanceof Node && !menu.contains(event.target)) menu.open = false; });
+</script>

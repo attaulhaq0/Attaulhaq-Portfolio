@@ -1,0 +1,22 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import Arrow from '../components/Arrow.astro';
+import { projects } from '../data/projects';
+import { capabilities, experience } from '../data/site';
+---
+<BaseLayout>
+  <Hero />
+  <section class="work-section paper-section" id="work" aria-labelledby="work-title"><div class="shell">
+    <div class="section-topline"><span class="eyebrow">01 / SELECTED WORK</span><span class="section-side-note">A few ideas, made tangible.</span></div>
+    <div class="section-heading"><h2 id="work-title">Different worlds.<br /><span class="muted-heading">The same curiosity.</span></h2><p>From the logic behind a game to the structure of an AI product. A closer look at what I work on—and how I think through it.</p></div>
+    <div class="projects-grid">{projects.filter(project => project.featured).map(project => <ProjectCard project={project} />)}</div>
+    <a class="archive-link" href="/work/survival-game/"><span><small>WHERE IT STARTED / UNREAL ENGINE 5</small>Digital Dynasty <span class="archive-subtitle">An open-world survival game.</span></span><Arrow /></a>
+  </div></section>
+  <section class="approach-section shell" id="approach" aria-labelledby="approach-title"><div class="section-topline"><span class="eyebrow">02 / THE APPROACH</span><span class="section-side-note">Behind the interface.</span></div>
+    <div class="section-heading"><h2 id="approach-title">Good experiences<br />have <em>good foundations.</em></h2><p>I’m interested in both sides of a product: the part you interact with and the thinking underneath.</p></div>
+    <div class="approach-grid">{capabilities.map(item => <article class="approach-card"><div class="approach-symbol" aria-hidden="true">{item.number === '01' ? <svg viewBox="0 0 100 80"><rect x="16" y="12" width="64" height="48" rx="3"/><path d="M16 25h64M29 37h18M29 46h34M40 69h18M49 60v9"/><circle cx="70" cy="18" r="1"/></svg> : item.number === '02' ? <svg viewBox="0 0 100 80"><path d="M24 24h52v32H24zM24 24l26 32 26-32M50 8v16M50 56v16"/><circle cx="24" cy="24" r="5"/><circle cx="76" cy="24" r="5"/><circle cx="50" cy="56" r="5"/></svg> : <svg viewBox="0 0 100 80"><path d="M72 30a25 25 0 1 0 0 23M72 30V13M72 30H55M36 42l10 10 18-24"/></svg>}</div><span class="approach-index">/{item.number}</span><h3>{item.title}</h3><p>{item.body}</p><ul>{item.tags.map(tag => <li>{tag}</li>)}</ul></article>)}</div>
+  </section>
+  <section class="about-section" id="about" aria-labelledby="about-title"><div class="shell about-grid"><div class="about-intro"><span class="eyebrow">03 / A LITTLE CONTEXT</span><h2 id="about-title">A builder.<br />Always <em>becoming.</em></h2><p class="about-lead">I started by building worlds.<br />Now I’m connecting systems.</p><p>Unreal Engine taught me to think in interactions, behaviors and feedback. That curiosity now shapes my work with AI-native products—where the experience matters just as much as the architecture.</p><p>Based in Doha, I’m the Co-Founder & Chief Product Officer at E Deviser. I work across product direction, system design and development, connecting a big-picture idea to the details that make it useful.</p><a class="text-link" href="mailto:atta@edeviser.com">Say hello <Arrow /></a></div><div class="experience-list">{experience.map(item => <article class="experience-item"><div class="experience-dates">{item.dates}<span>{item.location}</span></div><h3>{item.role}</h3><h4>{item.company}</h4><p>{item.description}</p></article>)}<div class="summit-note"><span class="small-cross" aria-hidden="true">+</span><p><strong>Beyond the build.</strong> Strategic planning and ecosystem engagement for the AI × Future Summit, Bahria University Islamabad · December 2025.</p></div></div></div></section>
+</BaseLayout>

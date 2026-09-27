@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" fill="none" role="img" aria-labelledby="title desc">
+<title id="title">Family OS — a shared center of gravity</title><desc id="desc">Original pale olive architectural illustration. A sculptural household sits at the heart of orbital pathways linking a garden, a resource cylinder, folded paper and stacked objects, expressing connected everyday life.</desc>
+<defs>
+<radialGradient id="paper"><stop stop-color="#F5F3E6"/><stop offset="1" stop-color="#E5E5D5"/></radialGradient>
+<linearGradient id="roof" x1="471" y1="250" x2="707" y2="395" gradientUnits="userSpaceOnUse"><stop stop-color="#638675"/><stop offset="1" stop-color="#34584E"/></linearGradient>
+<linearGradient id="wall" x1="481" y1="350" x2="602" y2="535" gradientUnits="userSpaceOnUse"><stop stop-color="#E8E9D4"/><stop offset="1" stop-color="#B4C4A8"/></linearGradient>
+<linearGradient id="cylinder"><stop stop-color="#547765"/><stop offset=".5" stop-color="#8DAB8A"/><stop offset="1" stop-color="#436354"/></linearGradient>
+<filter id="shadow" x="-50%" y="-100%" width="200%" height="300%"><feGaussianBlur stdDeviation="15"/></filter>
+<pattern id="dots" width="32" height="32" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r=".8" fill="#7C927D" opacity=".17"/></pattern>
+<g id="platform"><ellipse cy="13" rx="90" ry="45" fill="#9FAF94"/><path d="M-90 0V13M90 0V13" stroke="#9FAF94" stroke-width="2"/><ellipse rx="90" ry="45" fill="#E8EAD7" stroke="#FDFCF0"/><ellipse rx="77" ry="38" stroke="#B4C2A7"/></g>
+</defs>
+<path fill="url(#paper)" d="M0 0H1200V800H0Z"/><path fill="url(#dots)" d="M0 0H1200V800H0Z"/>
+<ellipse cx="601" cy="466" rx="221" ry="107" fill="#70866B" opacity=".2" filter="url(#shadow)"/>
+<g transform="rotate(-12 600 416)" stroke="#9DAD93"><ellipse cx="600" cy="416" rx="436" ry="234"/><ellipse cx="600" cy="416" rx="374" ry="188" stroke-dasharray="2 8"/><ellipse cx="600" cy="416" rx="306" ry="143" stroke-width="1.5"/></g>
+<g stroke="#94A88E" stroke-width="1.2"><path d="M290 293L585 441L910 279M297 565L597 416L912 575"/><path d="M600 145V233M600 598V680" stroke-dasharray="3 6"/></g>
+<!-- Common ground. -->
+<path d="M405 442L594 347L790 445V466L601 561L405 463Z" fill="#80997E"/><path d="M601 540L790 445V466L601 561Z" fill="#657F67"/><path d="M405 442L594 347L790 445L601 540Z" fill="#C5D3B6" stroke="#F7F8E5"/>
+<path d="M427 442L594 359L768 445L601 529Z" stroke="#95AE8D"/>
+<!-- A compact sculptural home; the roof is split into lit and shaded planes. -->
+<path d="M477 354L586 300L706 361V473L598 527L477 467Z" fill="url(#wall)" stroke="#9FB397"/>
+<path d="M598 415L706 361V473L598 527Z" fill="#8BA489"/>
+<path d="M477 354L522 264L643 324L598 415Z" fill="url(#roof)" stroke="#A8C4A8"/>
+<path d="M522 264L629 210L749 270L643 324Z" fill="#83A18B" stroke="#C8D7BC"/>
+<path d="M643 324L749 270L706 361L598 415Z" fill="#365A4E" stroke="#819F88"/>
+<path d="M465 355L598 422L719 362V374L598 434L465 367Z" fill="#33594B"/>
+<path d="M522 264L643 324L598 415M643 324L749 270" stroke="#B7CFB4" stroke-width="1.5"/>
+<path d="M663 284V226L686 214L710 226V284L687 296Z" fill="#4A715E"/><path d="M663 226L686 214L710 226L687 238Z" fill="#AFCAAD"/><path d="M669 226L686 218L703 226L687 234Z" fill="#2D5045"/>
+<path d="M507 393L547 413V451L507 431Z" fill="#365E51" stroke="#F3F1D9" stroke-width="3"/><path d="M527 403V441M507 412L547 432" stroke="#BFD1B1" stroke-width="2"/>
+<path d="M623 445L660 426V496L623 514Z" fill="#456B57"/><path d="M630 448L653 436V490L630 502Z" fill="#E6B875" opacity=".72"/><path d="M647 463V477" stroke="#53735B" stroke-width="2"/>
+<path d="M607 527L659 501L684 514L633 540Z" fill="#EDF0D9" stroke="#99AE8D"/>
+<!-- Garden satellite. -->
+<use href="#platform" x="291" y="290"/>
+<path d="M241 283L289 259L341 285V307L293 331L241 305Z" fill="#78936F"/><path d="M241 283L289 259L341 285L293 309Z" fill="#3C6551"/>
+<path d="M276 287V228M311 295V248" stroke="#5C7B57" stroke-width="3"/>
+<path d="M275 264C236 256 239 219 244 212C269 216 283 237 275 264Z" fill="#7AA47B"/><path d="M277 252C311 240 311 210 307 201C283 207 272 228 277 252Z" fill="#486F50"/><path d="M311 279C287 274 285 255 286 243C308 245 319 260 311 279Z" fill="#98B88B"/><path d="M312 268C338 259 341 242 336 230C317 234 310 249 312 268Z" fill="#6D966C"/>
+<!-- Resources satellite. -->
+<use href="#platform" x="909" y="278"/>
+<path d="M866 246V291C866 321 952 321 952 291V246Z" fill="url(#cylinder)"/><ellipse cx="909" cy="246" rx="43" ry="21" fill="#ABC2A0" stroke="#DCE6CB"/>
+<ellipse cx="909" cy="246" rx="31" ry="15" stroke="#6D8F6D"/><path d="M866 263C866 291 952 291 952 263M866 280C866 308 952 308 952 280" stroke="#B7CCAA" stroke-opacity=".55"/>
+<!-- Shared plans as folded paper, no screen imitation. -->
+<use href="#platform" x="297" y="553"/>
+<path d="M243 540L296 513L349 540L297 567Z" fill="#B1BE9E"/><path d="M243 527L296 500L349 527L297 554Z" fill="#FCFAE9" stroke="#C5CDB4"/><path d="M296 500V526L323 513Z" fill="#D6DCC2"/><path d="M255 530L278 518M266 536L289 524M277 542L300 530" stroke="#91A785"/>
+<!-- Everyday objects at the fourth orbit. -->
+<use href="#platform" x="911" y="566"/>
+<path d="M862 539L910 515L961 541V565L913 589L862 563Z" fill="#BD9D68"/><path d="M862 539L910 515L961 541L913 565Z" fill="#E6C993" stroke="#F7E0B4"/>
+<path d="M876 516L910 499L947 517V539L913 556L876 538Z" fill="#6F8E72"/><path d="M876 516L910 499L947 517L913 534Z" fill="#ACC5A2" stroke="#D3DFC1"/>
+<g fill="#69856A" stroke="#EDF0DC" stroke-width="3"><circle cx="165" cy="431" r="7"/><circle cx="686" cy="638" r="7"/><circle cx="983" cy="367" r="7"/><circle cx="520" cy="195" r="7"/></g>
+<g stroke="#93A78E"><path d="M116 128H148M132 112V144M1068 651H1100M1084 635V667"/><circle cx="600" cy="680" r="5"/></g>
+</svg>

@@ -1,0 +1,41 @@
+---
+import Arrow from './Arrow.astro';
+import { site } from '../data/site';
+---
+<section class="hero shell" aria-labelledby="hero-title">
+  <div class="hero-copy"><div class="eyebrow hero-eyebrow"><span class="status-dot"></span> INDEPENDENT MIND. CONNECTED SYSTEMS.</div>
+    <h1 id="hero-title">From interactive<br /><span class="hero-accent">worlds</span> to<br />intelligent products<span class="mint">.</span></h1>
+    <p class="hero-intro">{site.introduction}</p>
+    <div class="hero-actions"><a class="button button-primary" href="#work">Explore my work <Arrow direction="down" /></a><a class="text-link" href="#about">A little about me <Arrow /></a></div>
+  </div>
+  <div class="hero-art" aria-label="Original spatial illustration of experience, logic and systems">
+    <div class="art-coordinate art-coordinate-top"><span>FIG. 01 / A WAY OF THINKING</span><span>↗</span></div>
+    <img class="hero-poster" src="/images/hero-system.svg" width="1200" height="1100" alt="An original exploded assembly: three connected translucent layers around a mint core, representing experience, logic, and systems." fetchpriority="high" />
+    <div id="hero-canvas" class="hero-canvas" hidden></div>
+    <div class="art-coordinate art-coordinate-bottom"><span class="art-caption">EXPERIENCE / LOGIC / SYSTEMS</span><button type="button" class="scene-toggle" data-scene-toggle aria-pressed="false" hidden>Explore in 3D <span aria-hidden="true">↗</span></button></div>
+    <p class="scene-status sr-only" role="status" aria-live="polite"></p>
+  </div>
+  <div class="hero-foot"><span><span class="small-cross" aria-hidden="true">+</span> REAL-TIME ROOTS. PRODUCT MINDSET.</span><span class="hero-location">25.2854° N &nbsp; 51.5310° E <span>DOHA, QA</span></span><a href="#work" aria-label="Scroll to selected work">SCROLL TO EXPLORE <span aria-hidden="true">↓</span></a></div>
+</section>
+<script>
+  const button = document.querySelector<HTMLButtonElement>('[data-scene-toggle]');
+  const target = document.querySelector<HTMLDivElement>('#hero-canvas');
+  const poster = document.querySelector<HTMLImageElement>('.hero-poster');
+  const status = document.querySelector<HTMLElement>('.scene-status');
+  let dispose: (() => void) | undefined;
+  if (button && target && poster && status) {
+    button.hidden = false;
+    button.addEventListener('click', async () => {
+      if (dispose) { dispose(); dispose = undefined; target.hidden = true; poster.style.opacity = '1'; button.setAttribute('aria-pressed', 'false'); button.innerHTML = 'Explore in 3D <span aria-hidden="true">↗</span>'; status.textContent = 'Static illustration restored.'; return; }
+      button.disabled = true; button.textContent = 'Preparing 3D…'; status.textContent = 'Preparing interactive illustration.';
+      try {
+        const { mountScene } = await import('../islands/mountScene');
+        target.hidden = false;
+        dispose = await mountScene(target);
+        poster.style.opacity = '0'; button.setAttribute('aria-pressed', 'true'); button.innerHTML = 'Return to illustration <span aria-hidden="true">↙</span>'; status.textContent = '3D enabled. Pointer movement changes the view. The scene is decorative; all content remains available outside it.';
+      } catch { target.hidden = true; poster.style.opacity = '1'; button.textContent = '3D unavailable — try again'; status.textContent = 'The 3D view could not start. The static illustration is available.'; }
+      finally { button.disabled = false; }
+    });
+    window.addEventListener('pagehide', () => dispose?.(), { once: true });
+  }
+</script>

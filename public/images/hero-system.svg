@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1100" viewBox="0 0 1200 1100" fill="none" role="img" aria-labelledby="title desc">
+<title id="title">An architecture of connected intelligence</title><desc id="desc">An original exploded isometric computational assembly. Three translucent graphite plates float on precision steel rods around a luminous faceted mint core, with etched circuits, optical grids and polished edges.</desc>
+<defs>
+ <linearGradient id="plate" x1="220" y1="180" x2="900" y2="660" gradientUnits="userSpaceOnUse"><stop stop-color="#3A5159" stop-opacity=".5"/><stop offset=".52" stop-color="#192328" stop-opacity=".8"/><stop offset="1" stop-color="#88D6C4" stop-opacity=".15"/></linearGradient>
+ <linearGradient id="edge" x1="150" y1="0" x2="1060" y2="0" gradientUnits="userSpaceOnUse"><stop stop-color="#455C63"/><stop offset=".46" stop-color="#8AADB0"/><stop offset=".49" stop-color="#26373E"/><stop offset="1" stop-color="#4B6C71"/></linearGradient>
+ <linearGradient id="coreTop" x1="420" y1="420" x2="790" y2="590" gradientUnits="userSpaceOnUse"><stop stop-color="#E2FFF2"/><stop offset=".45" stop-color="#88D6C4"/><stop offset="1" stop-color="#55A792"/></linearGradient>
+ <linearGradient id="coreLeft" x1="420" y1="500" x2="600" y2="730" gradientUnits="userSpaceOnUse"><stop stop-color="#6CBCAB"/><stop offset="1" stop-color="#2E736C"/></linearGradient>
+ <linearGradient id="coreRight" x1="590" y1="700" x2="800" y2="550" gradientUnits="userSpaceOnUse"><stop stop-color="#173C3D"/><stop offset="1" stop-color="#67B49E"/></linearGradient>
+ <linearGradient id="rod"><stop stop-color="#26353C"/><stop offset=".42" stop-color="#9CAFB1"/><stop offset=".58" stop-color="#D5E8DE"/><stop offset="1" stop-color="#34454C"/></linearGradient>
+ <radialGradient id="light"><stop stop-color="#88D6C4" stop-opacity=".17"/><stop offset="1" stop-color="#88D6C4" stop-opacity="0"/></radialGradient>
+ <pattern id="grid" width="48" height="24" patternUnits="userSpaceOnUse"><path d="M0 0L48 24M48 0L0 24" stroke="#87A5AA" stroke-opacity=".11" stroke-width=".7"/></pattern>
+ <filter id="shadow" x="-30%" y="-100%" width="160%" height="300%"><feGaussianBlur stdDeviation="23"/></filter>
+ <filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="7"/></filter>
+ <g id="fastener"><ellipse rx="13" ry="6.5" fill="#101619" stroke="#6F8A8F"/><ellipse cy="-2" rx="8" ry="4" fill="#415A61" stroke="#94B1B1" stroke-width=".7"/><path d="M-4-4L4 0" stroke="#D7E8DF" stroke-width="1.2"/></g>
+ <g id="collar"><ellipse rx="17" ry="8" fill="#283B42" stroke="#6E9095"/><ellipse cy="-5" rx="17" ry="8" fill="#415A60" stroke="#9CB6B6"/><ellipse cy="-5" rx="7" ry="3.5" fill="#16252B"/></g>
+</defs>
+<ellipse cx="607" cy="863" rx="437" ry="167" fill="#050B0D" opacity=".52" filter="url(#shadow)"/>
+<ellipse cx="597" cy="558" rx="490" ry="410" fill="url(#light)"/>
+<g stroke="#476169" stroke-width="1" opacity=".3"><path d="M49 693L600 969L1154 692M95 729L649 1006M143 752L697 1029M42 744L602 464L1164 745"/><path d="M600 64V116M574 90H626M1115 493V535M1094 514H1136"/></g>
+<!-- Foundation: machined graphite with two visible chamfered edges. -->
+<path d="M140 737L590 512L1050 742V773L600 998L140 768Z" fill="#152127" stroke="#48616A"/>
+<path d="M140 737L600 967L1050 742L590 512Z" fill="#25363D" stroke="#6D8990" stroke-width="1.3"/>
+<path d="M140 737L600 967V998L140 768Z" fill="#1A292F"/><path d="M600 967L1050 742V773L600 998Z" fill="#101B20"/>
+<path d="M153 738L600 961L1037 743" stroke="url(#edge)" stroke-width="2"/>
+<path d="M180 737L590 532L1010 742L600 947Z" fill="url(#grid)" stroke="#6D9195" stroke-opacity=".44"/>
+<g stroke="#6A8E94" stroke-opacity=".55"><path d="M270 738L589 579L920 744L600 904Z"/><path d="M336 737L590 610L854 742L600 869Z"/><path d="M403 736L590 643L787 741L600 835Z"/></g>
+<path d="M464 742L591 678L724 744L598 808Z" fill="#101D22" stroke="#88D6C4" stroke-opacity=".7"/>
+<path d="M288 787L409 726L468 755M751 783L814 752L879 784M489 891L553 859L521 843" stroke="#88D6C4" stroke-width="2"/>
+<g fill="#88D6C4"><ellipse cx="288" cy="787" rx="4" ry="2"/><ellipse cx="468" cy="755" rx="4" ry="2"/><ellipse cx="879" cy="784" rx="4" ry="2"/></g>
+<g stroke="#517179" stroke-width="2"><path d="M184 765L228 787M195 771V780M207 777V786M219 783V792M967 813L1014 789M967 819L1014 795"/></g>
+<!-- Rear stanchions and indexed sleeves. -->
+<path d="M586 253V611" stroke="#17242A" stroke-width="15"/><path d="M586 253V611" stroke="url(#rod)" stroke-width="9"/>
+<path d="M938 429V787" stroke="#17242A" stroke-width="15"/><path d="M938 429V787" stroke="url(#rod)" stroke-width="9"/>
+<use href="#collar" x="586" y="591"/><use href="#collar" x="938" y="766"/>
+<!-- Suspended middle circuit carrier. -->
+<path d="M193 564L590 366L998 570V583L600 782L193 579Z" fill="#213C40" stroke="#597E82"/>
+<path d="M193 564L590 366L998 570L600 768Z" fill="#203D40" fill-opacity=".82" stroke="#9ACBBF" stroke-opacity=".65"/>
+<path d="M221 564L590 380L970 570L600 754Z" fill="url(#grid)" stroke="#88D6C4" stroke-opacity=".28"/>
+<path d="M248 566L407 487L479 523M273 578L420 504L480 534M297 590L423 527L477 554M666 713L800 646L748 620M693 725L838 653L775 621M792 492L890 541L797 588" stroke="#88D6C4" stroke-width="1.3" stroke-opacity=".65"/>
+<g fill="#15272D" stroke="#799B9E"><path d="M311 588L359 564L411 590L364 614Z"/><path d="M758 676L806 652L855 677L807 701Z"/><path d="M681 442L721 422L770 447L730 467Z"/></g>
+<g fill="#E6B875"><ellipse cx="340" cy="587" rx="3" ry="1.7"/><ellipse cx="354" cy="594" rx="3" ry="1.7"/><ellipse cx="368" cy="601" rx="3" ry="1.7"/><ellipse cx="817" cy="677" rx="3" ry="1.7"/></g>
+<path d="M193 564L600 768L998 570" stroke="#A9DDCE" stroke-opacity=".62" stroke-width="1.5"/>
+<!-- Luminous, solid computational heart. -->
+<path d="M418 509L600 418L787 511L605 603V714L418 621Z" fill="#88D6C4" opacity=".18" filter="url(#glow)"/>
+<path d="M418 509L605 603V714L418 621Z" fill="url(#coreLeft)" stroke="#90DCC7"/>
+<path d="M605 603L787 511V622L605 714Z" fill="url(#coreRight)" stroke="#4F978A"/>
+<path d="M418 509L600 418L787 511L605 603Z" fill="url(#coreTop)" stroke="#D5FFF0" stroke-width="1.5"/>
+<path d="M438 509L600 428L767 511L605 592Z" stroke="#EEFFF4" stroke-opacity=".65"/>
+<path d="M453 510L600 436L751 511L605 584Z" stroke="#327668" stroke-opacity=".45"/>
+<path d="M418 509L605 603V714M605 603L787 511" stroke="#C2F8DD" stroke-width="2"/>
+<path d="M431 538L593 619M431 551L593 632M431 564L593 645M431 577L593 658M431 590L593 671M431 603L593 684" stroke="#214F4C" stroke-opacity=".32"/>
+<g stroke="#90DCC7" stroke-opacity=".4"><path d="M621 608V687M641 598V677M661 588V667M681 578V657M701 568V647M721 558V637M741 548V627M761 538V617"/></g>
+<path d="M546 511L601 484L658 512L604 539Z" fill="#DFFFEF" fill-opacity=".45" stroke="#F2FFF5"/><path d="M571 511L602 496L632 511L603 527Z" fill="#3E8B78"/>
+<!-- Transparent upper optical plate, with real depth at the edge. -->
+<path d="M140 407L590 182L1050 412V427L600 652L140 422Z" fill="#15262C" fill-opacity=".4" stroke="#48676F"/>
+<path d="M140 407L590 182L1050 412L600 637Z" fill="url(#plate)" stroke="#9BB7B9" stroke-width="1.3"/>
+<path d="M170 407L590 197L1020 412L600 622Z" fill="url(#grid)" stroke="#9AC7C4" stroke-opacity=".32"/>
+<path d="M140 407L600 637L1050 412" stroke="url(#edge)" stroke-width="2"/>
+<path d="M246 407L590 235L944 412L600 584Z" stroke="#9CC3C1" stroke-opacity=".37"/>
+<path d="M407 408L590 317L783 413L600 505Z" fill="#88D6C4" fill-opacity=".035" stroke="#9CE2D1" stroke-opacity=".62"/>
+<path d="M431 408L590 329L759 413L600 493Z" stroke="#88D6C4" stroke-opacity=".2"/>
+<path d="M590 317V342M407 408L432 421M783 413L758 426M600 505V480" stroke="#C6E8DB" stroke-width="2"/>
+<g stroke="#91B1B4" stroke-opacity=".55"><path d="M300 360L396 312M314 367L410 319M328 374L424 326M786 465L882 417M800 472L896 424M814 479L910 431"/><path d="M427 273L491 305M441 266L505 298M455 259L519 291"/></g>
+<g stroke="#E6B875" stroke-width="2"><path d="M311 458L372 488M325 451L386 481M339 444L400 474"/></g>
+<!-- Foreground supports pierce all three layers. -->
+<path d="M255 429V785" stroke="#18272E" stroke-width="15"/><path d="M255 429V785" stroke="url(#rod)" stroke-width="9"/>
+<path d="M602 602V958" stroke="#18272E" stroke-width="15"/><path d="M602 602V958" stroke="url(#rod)" stroke-width="9"/>
+<use href="#collar" x="255" y="764"/><use href="#collar" x="602" y="936"/><use href="#collar" x="255" y="603"/><use href="#collar" x="602" y="776"/>
+<use href="#fastener" x="586" y="236"/><use href="#fastener" x="938" y="412"/><use href="#fastener" x="255" y="414"/><use href="#fastener" x="602" y="587"/>
+<g stroke="#88D6C4" stroke-opacity=".55" stroke-dasharray="3 7"><path d="M586 125V214M255 326V393M938 320V391M602 509V564"/></g>
+<g fill="#B2C7C7"><circle cx="586" cy="125" r="2"/><circle cx="255" cy="326" r="2"/><circle cx="938" cy="320" r="2"/></g>
+<path d="M869 903L947 864L986 884M198 660L112 617L112 567" stroke="#70949A" stroke-opacity=".46"/><circle cx="986" cy="884" r="4" stroke="#E6B875"/><circle cx="112" cy="567" r="4" stroke="#88D6C4"/>
+</svg>

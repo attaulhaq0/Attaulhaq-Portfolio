@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" fill="none" role="img" aria-labelledby="title desc">
+<title id="title">Survival — three worlds, one wilderness</title><desc id="desc">Original geometric wilderness artwork. Glacial blue-gray peaks, a mint-toned alpine forest and warm amber desert cliffs meet around a winding river. Fine atmospheric mist separates layered faceted mountains.</desc>
+<defs>
+<linearGradient id="sky" x1="0" y1="0" x2="0" y2="650" gradientUnits="userSpaceOnUse"><stop stop-color="#B3C6C6"/><stop offset="1" stop-color="#EBEBD8"/></linearGradient>
+<linearGradient id="water" x1="680" y1="445" x2="588" y2="800" gradientUnits="userSpaceOnUse"><stop stop-color="#ACC7BE"/><stop offset=".5" stop-color="#7FAEA2"/><stop offset="1" stop-color="#4F8D85"/></linearGradient>
+<linearGradient id="mist" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#EBEEE1" stop-opacity="0"/><stop offset=".6" stop-color="#EBEEE1" stop-opacity=".4"/><stop offset="1" stop-color="#EBEEE1" stop-opacity="0"/></linearGradient>
+<g id="pine"><path d="M0-56L-17-24H-10L-24-4H-14L-30 17H30L14-4H24L10-24H17Z" fill="#315D51"/><path d="M0-56V17H30L14-4H24L10-24H17Z" fill="#21463F"/><path d="M-2 17H2V27H-2Z" fill="#263F36"/></g>
+<g id="pineLight"><path d="M0-50L-15-22H-9L-21-4H-12L-27 15H27L12-4H21L9-22H15Z" fill="#618577"/><path d="M0-50V15H27L12-4H21L9-22H15Z" fill="#416C60"/><path d="M-2 15H2V24H-2Z" fill="#426456"/></g>
+</defs>
+<path fill="url(#sky)" d="M0 0H1200V800H0Z"/>
+<circle cx="914" cy="156" r="60" fill="#F2E4BE" opacity=".9"/><circle cx="914" cy="156" r="75" stroke="#F0E7CC" stroke-opacity=".35"/>
+<path d="M0 343L98 290L143 309L244 174L329 293L413 232L493 334L571 274L646 350L724 284L824 345L931 289L1025 347L1112 277L1200 318V566H0Z" fill="#A3B7B6"/>
+<path d="M244 174L265 314L329 293ZM413 232L434 330L493 334ZM724 284L757 371L824 345Z" fill="#BDCBC3"/>
+<!-- Glacier biome: jagged crystalline faces and snow caps. -->
+<path d="M0 439L102 322L172 362L302 142L439 349L491 287L617 462L727 506L0 590Z" fill="#71918F"/>
+<path d="M302 142L281 390L209 504L439 349Z" fill="#94ADA7"/>
+<path d="M302 142L377 360L439 349L339 253Z" fill="#C4D2C8"/>
+<path d="M302 142L226 270L269 249L285 282L304 244L345 271L333 226Z" fill="#F0F0E0"/>
+<path d="M302 142L304 244L345 271L333 226Z" fill="#D3DFD3"/>
+<path d="M102 322L84 456L172 362L128 413Z" fill="#ABC2B6"/><path d="M491 287L457 400L617 462Z" fill="#8CA69E"/><path d="M491 287L457 348L483 341L501 365L514 345Z" fill="#E3E6D6"/>
+<path d="M0 496L129 430L237 496L367 406L470 491L586 471L689 532V650H0Z" fill="#577D73"/>
+<path d="M129 430L150 522L237 496ZM367 406L341 508L470 491Z" fill="#84A396"/>
+<path fill="url(#mist)" d="M0 384H1200V566H0Z"/>
+<!-- Desert biome: terraced sandstone and bronze light. -->
+<path d="M690 501L757 374L823 366L852 293L954 293L989 372L1064 365L1114 320L1200 333V655L877 626Z" fill="#B49668"/>
+<path d="M852 293L830 434L893 465L954 293Z" fill="#DEC08A"/><path d="M954 293L947 430L989 372Z" fill="#907A59"/>
+<path d="M823 366L798 466L830 434L852 293Z" fill="#8B805F"/>
+<path d="M852 293L866 281H941L954 293Z" fill="#E9C992"/>
+<path d="M1114 320L1088 464L1168 490L1200 333Z" fill="#D0AE76"/>
+<path d="M850 324H945M846 349H935M840 378H925M837 400H916M1109 350L1195 361M1104 378L1187 389M1098 405L1178 416" stroke="#F1D39D" stroke-opacity=".32" stroke-width="2"/>
+<path d="M676 542L775 468L850 497L922 432L1010 486L1111 452L1200 504V703H703Z" fill="#9D8B60"/>
+<path d="M775 468L794 569L850 497ZM922 432L916 531L1010 486Z" fill="#C6AE7B"/>
+<path fill="url(#mist)" d="M0 466H1200V617H0Z"/>
+<!-- The meltwater connects rather than divides the three climates. -->
+<path d="M655 468L690 476L640 519L684 548L654 584L708 628L681 681L763 800H405L512 696L572 645L594 602L553 566L591 523Z" fill="url(#water)"/>
+<path d="M655 468L633 515L606 527L574 565L613 601L591 648L532 701L449 800" stroke="#D9E2C9" stroke-opacity=".6" stroke-width="2"/>
+<path d="M641 548L665 548M601 574L640 574M622 621L676 621M565 675L644 675M542 701L610 701M573 740L694 740M497 772L624 772" stroke="#D1DEC5" stroke-opacity=".4"/>
+<!-- Alpine biome: forested angular ridges and dense scale variation. -->
+<path d="M0 583L103 533L212 553L313 501L441 563L553 566L594 602L572 645L512 696L405 800H0Z" fill="#638671"/>
+<path d="M0 647L114 595L243 641L341 562L469 623L528 670L405 800H0Z" fill="#426B58"/>
+<path d="M313 501L330 575L441 563ZM114 595L143 663L243 641Z" fill="#7F9C7C"/>
+<g><use href="#pineLight" transform="translate(60 550) scale(.58)"/><use href="#pineLight" transform="translate(109 532) scale(.7)"/><use href="#pineLight" transform="translate(149 554) scale(.6)"/><use href="#pineLight" transform="translate(226 552) scale(.65)"/><use href="#pineLight" transform="translate(279 525) scale(.72)"/><use href="#pineLight" transform="translate(319 520) scale(.55)"/><use href="#pineLight" transform="translate(355 539) scale(.8)"/><use href="#pineLight" transform="translate(400 556) scale(.5)"/><use href="#pineLight" transform="translate(462 584) scale(.65)"/><use href="#pineLight" transform="translate(502 578) scale(.45)"/>
+<use href="#pine" transform="translate(27 640) scale(1.2)"/><use href="#pine" transform="translate(86 620) scale(.9)"/><use href="#pine" transform="translate(158 651) scale(1.1)"/><use href="#pine" transform="translate(218 628) scale(.85)"/><use href="#pine" transform="translate(269 613) scale(.95)"/><use href="#pine" transform="translate(326 596) scale(1.05)"/><use href="#pine" transform="translate(370 624) scale(.8)"/><use href="#pine" transform="translate(424 637) scale(.9)"/><use href="#pine" transform="translate(473 653) scale(.62)"/></g>
+<!-- Near desert shelf and foreground glacial rock. -->
+<path d="M708 628L793 571L872 604L962 542L1061 590L1200 557V800H763L681 681Z" fill="#796F50"/>
+<path d="M793 571L770 657L851 664L872 604Z" fill="#B19B69"/><path d="M962 542L991 662L1061 590Z" fill="#AA9566"/>
+<path d="M751 704L850 666L952 710L1064 649L1200 705V800H763Z" fill="#444D3D"/>
+<path d="M1064 649L1108 742L1200 705Z" fill="#7C7953"/>
+<path d="M0 733L92 676L163 723L280 682L401 749L443 800H0Z" fill="#233E36"/><path d="M92 676L115 758L163 723ZM280 682L305 758L401 749Z" fill="#3E5B47"/>
+<use href="#pine" transform="translate(39 730) scale(1.7)"/><use href="#pine" transform="translate(203 754) scale(1.6)"/>
+<path d="M803 683L820 661L841 667L853 684L831 695Z" fill="#C1AA77"/><path d="M831 695L820 661L841 667L853 684Z" fill="#8F835C"/>
+<g stroke="#526E64" stroke-width="1.7" stroke-linecap="round"><path d="M587 207L596 211L605 206M613 196L620 199L627 195M650 221L658 225L666 221"/></g>
+</svg>

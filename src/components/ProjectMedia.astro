@@ -1,0 +1,8 @@
+---
+import type { Project } from '../data/projects';
+interface Props { project: Project }
+const { project } = Astro.props;
+---
+<figure class="case-media">
+  {project.media ? <><video controls playsinline preload="none" poster={project.media.poster} width="1200" height="800" aria-label={`${project.name} demonstration`}><source src={project.media.src} />{project.media.captions && <track kind="captions" src={project.media.captions} srclang="en" label="English" default />}Your browser does not support embedded video. <a href={project.media.src}>Download the demonstration.</a></video><figcaption>{project.media.caption}</figcaption>{project.media.transcript && <details class="transcript"><summary>Read video transcript</summary><p>{project.media.transcript}</p></details>}</> : <><img src={project.cover} alt={project.coverAlt} width="1200" height="800" fetchpriority="high" /><figcaption>Original concept illustration · A visual interpretation of the project, not a product screenshot.</figcaption></>}
+</figure>

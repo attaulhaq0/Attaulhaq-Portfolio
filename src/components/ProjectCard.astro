@@ -1,0 +1,12 @@
+---
+import type { Project } from '../data/projects';
+import Arrow from './Arrow.astro';
+interface Props { project: Project; compact?: boolean }
+const { project, compact = false } = Astro.props;
+---
+<article class:list={['project-card', `project-${project.theme}`, { 'project-compact': compact }]}>
+  <a class="project-art-link" href={`/work/${project.slug}/`} aria-label={`Read ${project.name} case study`}><div class="project-art"><img src={project.cover} alt={project.coverAlt} width="1200" height="800" loading="lazy" decoding="async" /><span class="project-image-label">CONCEPT ILLUSTRATION</span><span class="project-open"><Arrow /></span></div></a>
+  <div class="project-meta"><span>{project.category}</span><span>{project.year}</span></div>
+  <div class="project-title-row"><h3><a href={`/work/${project.slug}/`}>{project.name}</a></h3><span class="project-number">/{project.index}</span></div>
+  <p>{project.summary}</p><div class="project-tags">{project.tags.slice(0, 3).map(tag => <span>{tag}</span>)}</div>
+</article>

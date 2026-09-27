@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" fill="none" role="img" aria-labelledby="title desc">
+<title id="title">AegisOps — the geometry of a voice</title><desc id="desc">An original dark teal signal sculpture: a luminous mint voice waveform runs through layered elliptical acoustic arcs, with small connected operational nodes and precise radial calibration marks.</desc>
+<defs>
+<linearGradient id="ring" x1="291" y1="119" x2="902" y2="663" gradientUnits="userSpaceOnUse"><stop stop-color="#91CCBD"/><stop offset=".3" stop-color="#476D72"/><stop offset=".65" stop-color="#163C43"/><stop offset="1" stop-color="#6E9696"/></linearGradient>
+<linearGradient id="wave" x1="177" y1="0" x2="1033" y2="0" gradientUnits="userSpaceOnUse"><stop stop-color="#406B70"/><stop offset=".28" stop-color="#88D6C4"/><stop offset=".5" stop-color="#D6F2DD"/><stop offset=".74" stop-color="#88D6C4"/><stop offset="1" stop-color="#406B70"/></linearGradient>
+<radialGradient id="space"><stop stop-color="#214C4D"/><stop offset="1" stop-color="#102327"/></radialGradient>
+<filter id="glow" x="-30%" y="-100%" width="160%" height="300%"><feGaussianBlur stdDeviation="11"/></filter>
+<pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse"><path d="M48 0H0V48" stroke="#779494" stroke-opacity=".055"/></pattern>
+<g id="node"><path d="M0-24L24-12V14L0 26L-24 14V-12Z" fill="#1B373C" stroke="#719B99"/><path d="M-24-12L0 0L24-12M0 0V26" stroke="#719B99"/><path d="M0-15L14-8L0-1L-14-8Z" fill="#88D6C4"/></g>
+</defs>
+<path fill="url(#space)" d="M0 0H1200V800H0Z"/><path fill="url(#grid)" d="M0 0H1200V800H0Z"/>
+<g stroke="#5F878A" stroke-opacity=".25"><path d="M0 400H1200M600 0V800M90 690L1110 110M90 110L1110 690"/><circle cx="600" cy="400" r="326" stroke-dasharray="2 13"/><circle cx="600" cy="400" r="287"/></g>
+<!-- Offset edges turn the acoustic rings into physical, layered ribbons. -->
+<g transform="rotate(-24 600 400)">
+<ellipse cx="600" cy="416" rx="342" ry="240" stroke="#081B21" stroke-width="22"/><ellipse cx="600" cy="400" rx="342" ry="240" stroke="url(#ring)" stroke-width="11"/><ellipse cx="600" cy="394" rx="342" ry="240" stroke="#A4C5BC" stroke-opacity=".3"/>
+<ellipse cx="600" cy="413" rx="281" ry="192" stroke="#0D242B" stroke-width="19"/><ellipse cx="600" cy="400" rx="281" ry="192" stroke="url(#ring)" stroke-width="8"/><ellipse cx="600" cy="397" rx="281" ry="192" stroke="#ACDCCB" stroke-opacity=".35"/>
+<ellipse cx="600" cy="411" rx="220" ry="144" stroke="#0A2228" stroke-width="16"/><ellipse cx="600" cy="400" rx="220" ry="144" stroke="url(#ring)" stroke-width="6"/>
+<ellipse cx="600" cy="400" rx="163" ry="101" stroke="#79B7AA" stroke-opacity=".46" stroke-width="2"/>
+<path d="M258 400A342 240 0 0 1 600 160" stroke="#B7E1CA" stroke-width="4"/><path d="M881 400A281 192 0 0 1 600 592" stroke="#88D6C4" stroke-width="3"/>
+<g stroke="#9FC7BD" stroke-opacity=".5"><path d="M600 133V146M600 654V667M232 400H245M956 400H969M353 211L363 221M837 579L847 589M350 590L361 581M840 219L850 209"/></g>
+</g>
+<!-- Voice is a deliberately composed bar sculpture, not a fake dashboard. -->
+<path d="M177 400H1023" stroke="#71B6A7" stroke-opacity=".3"/>
+<path d="M220 387V413M240 380V420M260 387V413M280 371V429M300 358V442M320 375V425M340 349V451M360 328V472M380 354V446M400 319V481M420 292V508M440 326V474M460 353V447M480 304V496M500 252V548M520 283V517M540 334V466M560 300V500M580 222V578M600 245V555M620 291V509M640 323V477M660 284V516M680 269V531M700 310V490M720 339V461M740 320V480M760 350V450M780 336V464M800 360V440M820 345V455M840 373V427M860 362V438M880 378V422M900 369V431M920 384V416M940 379V421M960 389V411M980 394V406" stroke="#88D6C4" stroke-width="7" opacity=".24" filter="url(#glow)"/>
+<path d="M220 387V413M240 380V420M260 387V413M280 371V429M300 358V442M320 375V425M340 349V451M360 328V472M380 354V446M400 319V481M420 292V508M440 326V474M460 353V447M480 304V496M500 252V548M520 283V517M540 334V466M560 300V500M580 222V578M600 245V555M620 291V509M640 323V477M660 284V516M680 269V531M700 310V490M720 339V461M740 320V480M760 350V450M780 336V464M800 360V440M820 345V455M840 373V427M860 362V438M880 378V422M900 369V431M920 384V416M940 379V421M960 389V411M980 394V406" stroke="url(#wave)" stroke-width="5" stroke-linecap="round"/>
+<g stroke="#729994" stroke-width="1.2"><path d="M347 209L240 155H158V222M834 596L948 652H1042V586M290 522L184 575H115"/><path d="M902 243L993 198H1069" stroke-dasharray="4 5"/></g>
+<use href="#node" x="158" y="244"/><use href="#node" x="1042" y="561"/><use href="#node" x="109" y="575"/>
+<circle cx="1069" cy="198" r="7" fill="#E6B875"/><circle cx="1069" cy="198" r="17" stroke="#E6B875" stroke-opacity=".35"/>
+<g fill="#A7C5B8"><circle cx="347" cy="209" r="3"/><circle cx="834" cy="596" r="3"/><circle cx="290" cy="522" r="3"/></g>
+<g stroke="#607F81"><path d="M84 90H124M104 70V110M1076 690H1116M1096 670V710"/></g>
+</svg>
