@@ -12,6 +12,7 @@ The active site is an Astro portfolio with static HTML and focused JavaScript en
 | Tool names and project-specific contexts | `src/data/tech-stack.ts` | `TechStack.astro` on the homepage and cases |
 | Event stories, photographs, sources and immersive education | `src/data/moments.ts` | `FieldNotes.astro` |
 | Historical Fiverr metrics and Subrickzz certificate | `src/data/achievements.ts` | `CareerHighlights.astro` |
+| Public avatar, site and font credits | `src/pages/credits.astro`, `public/licenses/` | Static credits page, linked by `Footer.astro` |
 
 Component names in this document are under `src/components/` unless a different path is given. Shared layout is `src/layouts/BaseLayout.astro`; it loads fonts/styles, metadata, navigation, contact/footer and `SectionMotion.astro`. The homepage is `src/pages/index.astro`. Five stable project slugs generate `/work/<slug>/`; `survival-game` is Digital Dynasty's retained slug. A custom 404, robots and sitemap routes are under `src/pages/`.
 

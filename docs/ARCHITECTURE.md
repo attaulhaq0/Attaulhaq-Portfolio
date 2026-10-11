@@ -2,13 +2,13 @@
 
 ## Static first
 
-Astro builds seven HTML pages: the homepage, five project routes and a custom 404. Text, navigation, contact and illustrations work without client-side JavaScript. Case studies come from one typed project array rather than a database. React is reserved for the owner-approved 3D hero character, not used to hydrate the whole page.
+Astro builds eight HTML pages: the homepage, five project routes, public credits and a custom 404. Text, navigation, contact and illustrations work without client-side JavaScript. Case studies come from one typed project array rather than a database. React is reserved for the owner-approved 3D hero character, not used to hydrate the whole page.
 
 ```
 src/data/                 typed owner/project content
 src/layouts/              shared document, metadata, fonts and chrome
 src/components/           reusable Astro UI and media
-src/pages/                homepage, generated cases and 404
+src/pages/                homepage, generated cases, credits and 404
 src/islands/              automatic React/Three hero enhancement
 src/styles/               shared design tokens and section-organized CSS
 public/images/            original conceptual illustrations and approved photo exports

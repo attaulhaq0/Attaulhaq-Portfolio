@@ -28,6 +28,8 @@ The active hero uses the original avatar by [Moncy Yohannan](https://www.moncy.d
 
 `public/images/source-character-poster.webp` is rendered directly from that model by `scripts/render-source-character.mjs`, using the same authored standing rig pose, camera and lighting as the automatic runtime scene. The foreground monitor is hidden for the portfolio portrait composition. The avatar has no owner photograph texture and is a decorative character rather than a claim of the owner's likeness. The earlier original studio/personal models remain separate retained assets. The inspiration's HDR environment, trial plugins, page design and animation orchestration are not included. The new scene integration is authored for this static-first portfolio.
 
+The public `/credits/` page links to Moncy Yohannan and credits the decorative avatar and its rendered poster, using the owner-confirmed permission scope. It includes brief site/tool/typeface notices without publishing private source details. Exact bundled Manrope and Source Sans 3 SIL Open Font License notices are preserved under `public/licenses/`.
+
 ## October 2026 Sora work concepts
 
 The owner explicitly requested Sora 2 clips for the case pages. Two four-second, 1280×720 videos were generated through the already authorized Microsoft Foundry deployment, with no person uploads. `aegis-voice-concept.mp4` animates the original microphone, waveform and retrieval-node sculpture. `family-approval-concept.mp4` animates light between the original connected glass homes. They are labeled as AI-generated concept animations, not actual product interfaces, deployed architecture or recorded product behavior.
