@@ -35,7 +35,7 @@ Original site code and artwork: all rights reserved unless a separate license is
 
 Run `G:/Portfolio Website/Start-Portfolio.ps1` to keep TEMP/TMP, npm cache and Playwright browsers on G:. Add `-Build` for the static production preview.
 
-The reusable photo-informed model is `public/models/atta-avatar.glb`. Run `node scripts/export-avatar.mjs` to rebuild it from the authored geometry and face texture. This is a stylized personal model, not a photogrammetry scan. The website generates the same scene on demand so its model file does not delay the initial page.
+The retained photo-informed study is `public/models/atta-avatar.glb`. Run `node scripts/export-avatar.mjs` to rebuild it from the authored geometry and face texture. This earlier stylized model is not a photogrammetry scan and is not the active hero.
 
 The current hero automatically loads the owner-permitted `SourceCharacter.tsx` integration and `public/models/source-character.glb`. Its actual animation clip responds to native scroll. A transparent mesh-rendered poster supports loading, WebGL failure and no-JavaScript reading. Earlier studio and personal models remain separate. The inspiration site runs independently at `http://127.0.0.1:4330/` for comparison; portfolio preview remains `http://127.0.0.1:4321/`.
 

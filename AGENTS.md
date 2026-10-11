@@ -17,7 +17,7 @@ Read `README.md`, `docs/INDEX.md`, `docs/CODEBASE-MAP.md`, `docs/EDITING.md`, `d
 - `src/data/achievements.ts`: historical owner-confirmed Fiverr metrics and Subrickzz employment/certificate.
 - `src/data/tech-stack.ts`: tool names and evidence-backed project contexts.
 - Use first-person, employer-relevant copy. Distinguish personal contribution from team scope, design from implementation, and implementation from release. Never invent expertise, outcomes, awards, metrics, project status or endorsements. Owner-confirmed historical Fiverr values are not claims about current seller status.
-- Current positioning leads with AI engineering, agentic systems and product development. Game development is the historical origin and supporting work, not the primary hiring offer. Keep original game studies and recordings; no cloud-career claims. Prefer direct headings and concrete contributions over repeated commentary about the website.
+- Current positioning covers intelligent systems, software engineering and product development. Agentic intelligence is a strength rather than an exclusive hiring niche. Cuevo is the learning-intelligence product; E Deviser is the company. Game development is the historical origin and supporting work, not the primary hiring offer. Keep original game studies and recordings; no cloud-career claims. Prefer direct headings and concrete contributions over repeated commentary about the website.
 - Record new sources and claim boundaries in `docs/CONTENT-PROVENANCE.md`. Preserve original historical paths/hashes. Source-specific avatar permission recorded in `docs/THIRD-PARTY.md` does not authorize other reference assets or general redistribution.
 
 ## Rendering and interactions

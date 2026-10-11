@@ -32,7 +32,7 @@ export const techStack: StackGroup[] = [
     description: 'Retrieval, context and controlled actions in my AI and product engineering work.',
     accent: 'lavender',
     tools: [
-      { name: 'RAG workflows', context: 'Scoped retrieval and AI assistance', projects: ['edeviser', 'aegisops'] },
+      { name: 'RAG workflows', context: 'Scoped retrieval and relevant context', projects: ['edeviser', 'aegisops'] },
       { name: 'AI agents & orchestration', context: 'Structured assistance and coordinated AI workflows', projects: [] },
       { name: 'Vector search & embeddings', context: 'Retrieval and vector-database workflows', projects: [] },
       { name: 'PostgreSQL', context: 'Data models in AegisOps and Family OS', projects: ['aegisops', 'family-os'] },
@@ -55,7 +55,7 @@ export const techStack: StackGroup[] = [
 techStack.sort((a, b) => Number(a.index) - Number(b.index));
 
 export const projectStackNotes: Record<string, string> = {
-  'edeviser': 'Retrieval and role-aware assistance form part of my product and architecture work.',
+  'edeviser': 'Retrieval and agentic intelligence form part of my product and engineering work on Cuevo at E Deviser.',
   'aegisops': 'These technologies describe the reporting and retrieval design; they do not imply a verified production deployment.',
   'family-os': 'These tools and model references belong to the current project design.',
   'cosmo-conqueror': 'Tools used across my gameplay development and integration work at Subrickzz.',

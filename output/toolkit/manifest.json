@@ -1,0 +1,31 @@
+{
+  "provider": "Microsoft Foundry",
+  "imageDeployment": "gpt-image-2.5-sunburst",
+  "videoDeployment": "sora-2",
+  "conceptualOnly": true,
+  "scope": "Original illustrated toolkit artwork and four-second decorative motion; not a captured implementation or a claim of every vendor tool.",
+  "input": "G:/Portfolio Website/.review/toolkit-concept/toolkit-ecosystem.png",
+  "imagePrompt": "Create a cohesive single editorial 3D illustration for Sheikh Atta-ul-Haq's personal portfolio toolkit section. Input images2and3 are style references from our actual website: luminous purple/cyan sculptural isometric worlds with rounded cube tiles, clean simplified dimensional objects, soft violet gradients, restrained teal/cyan highlights and near-blackplumbackground. Input1 is a person identity reference but DO NOT include any person in this toolkit image; only styleobjects from refs2/3 matter here.\n\nSubject: a compact intelligent-systems ecosystem of SIX clearly distinct original isometric objects around one small central glowingviolet core, neatly connected by fine cyan paths. The six objects represent: software development (a simple bracket/code tile), agentic intelligence (small translucent interlocking decisioncubes), retrieval (an open book and magnifying lens), data (a neat stacked database cylinder), development/delivery (a gear with small versioning branch), interactive systems (one restrained gamecontroller). No vendorlogos, no brand marks, no names, no fake expertise claims, no text, no typography. This is an abstract visual not a labeled software architecture. Each object cleanly separated and readable, no huge dominantgamecontroller, balance across software/product/agent/data. A smallhexagonalviolet platform/cube connector theme repeats tastefully. Soft mattegeometry with luminous edges, dark near-black #09080d background naturally blending into page, generous empty outer margins.\n\nLandscape3:2around1536x1024. One composition oneimage. Polished existingportfolioillustrationstyle, no panels/cards/websitechrome. We will add actual accessible labels as HTML around it. No line crossing text because no text inside. Avoid overwhelming clutter/sci-fi weapons/inventedvendorlogos. Cohesive lavender, plum and cyan, warm subtle highlight permitted. Preserve the exactsoftisometricstyle of attached websiteimages2/3.\n",
+  "motionPrompt": "Animate the supplied isometric toolkit illustration with a locked camera. Preserve all six original objects, their shape, proportions, placements and violet/cyan palette. Keep the dark background still. A subtle cyan pulse travels along the connector paths into the central core, then softly lights the software, intelligence, retrieval, data, delivery and interactive-system nodes. Use restrained glow and tiny hover movement of at most a few pixels; no rotating camera, no new objects, no text, no logos, no morphing or explosive effects. Smooth four-second motion suitable for a portfolio toolkit illustration. This is a decorative conceptual animation, not a product interface recording. No audio.\n",
+  "export": {
+    "video": "public/media/toolkit-ecosystem-motion.mp4",
+    "seconds": 4,
+    "width": 1280,
+    "height": 720,
+    "audio": false,
+    "sha256": "a4925d920bd7462d7b839fe6c5d626b4b3698f44507d2b6bea23cc07a91c45ef"
+  },
+  "artwork": {
+    "src": "public/images/toolkit-ecosystem.webp",
+    "width": 1000,
+    "height": 667,
+    "sha256": "6706b7768722bc193f43a2b18bcaba5d70d822097ae4c1897cdbeec6b74f50a2"
+  },
+  "poster": {
+    "src": "public/images/toolkit-motion-poster.webp",
+    "timestamp": 1.5,
+    "width": 1000,
+    "height": 562
+  },
+  "fullDecode": true
+}

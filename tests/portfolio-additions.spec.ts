@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 
 test('project rows alternate illustration placement and preserve mobile reading order', async ({ page, isMobile }) => {
   await page.goto('/');
-  await expect(page.locator('.project-card h3')).toHaveText(['E Deviser', 'AegisOps', 'Family OS', 'Cosmo Conqueror']);
+  await expect(page.locator('.project-card h3')).toHaveText(['Cuevo', 'AegisOps', 'Family OS', 'Cosmo Conqueror']);
   const layout = await page.locator('.project-card').evaluateAll(cards => cards.map(card => ({
     art: card.querySelector('.project-art-wrap')!.getBoundingClientRect(),
     text: card.querySelector('.project-copy')!.getBoundingClientRect(),
@@ -14,15 +14,15 @@ test('project rows alternate illustration placement and preserve mobile reading 
   }
 });
 
-test('current positioning leads with AI engineering and preserves the game development origin', async ({ page }) => {
+test('current positioning covers intelligent systems and preserves the game development origin', async ({ page }) => {
   await page.goto('/');
-  await expect(page).toHaveTitle('Sheikh Atta-ul-Haq — AI & Product Engineer');
-  await expect(page.locator('#intro-title')).toContainText('AI engineering, agentic systems');
-  await expect(page.locator('.hero-role-note')).toContainText('Agentic systems & RAG');
-  await expect(page.locator('.capability-row h3')).toHaveText(['AI & agentic engineering', 'Product & system design', 'Implementation & validation']);
+  await expect(page).toHaveTitle('Sheikh Atta-ul-Haq — Product & Systems Engineer');
+  await expect(page.locator('#intro-title')).toContainText('Intelligent systems');
+  await expect(page.locator('.hero-role-note')).toContainText('Intelligent systems & automation');
+  await expect(page.locator('.capability-row h3')).toHaveText(['Intelligent systems', 'Product & system design', 'Implementation & validation']);
   await expect(page.locator('.tech-stack-group h3')).toHaveText(['AI & agentic systems', 'Software & delivery', 'Game development foundation']);
   await expect(page.locator('#about')).toContainText('I started in game development');
-  await expect(page.locator('#contact')).toContainText('Hiring for AI engineering');
+  await expect(page.locator('#contact')).toContainText('growing an engineering team');
   await expect(page.locator('.hero-role')).not.toContainText('Unreal');
 });
 
