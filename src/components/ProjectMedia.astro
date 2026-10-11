@@ -23,7 +23,7 @@ const clips = project.clips;
 {project.media?.description && <p class="case-media-description">{project.media.description}</p>}
 {project.media?.transcript && <details class="transcript"><summary>Read video transcript</summary><p>{project.media.transcript}</p></details>}
 {project.gallery && project.gallery.length > 0 && <div class="case-gallery" aria-label={`${project.name} captures`}>
-  {project.gallery.slice(0, 3).map(image => <figure><a href={image.src} target="_blank" rel="noopener noreferrer" aria-label={`Open full capture: ${image.alt}`}><img src={image.src} alt={image.alt} width={image.width} height={image.height} loading="lazy" decoding="async" /><span aria-hidden="true">View capture ↗</span></a><figcaption>{image.caption}</figcaption></figure>)}
+  {project.gallery.slice(0, 3).map(image => <figure><a href={image.src} target="_blank" rel="noopener noreferrer" aria-label={`Open full capture: ${image.alt}`}><img src={image.src} alt={image.alt} width={image.width} height={image.height} loading="lazy" decoding="async" /></a><figcaption>{image.caption}</figcaption></figure>)}
 </div>}
 {clips && clips.length > 0 && <section class="project-demonstrations" aria-labelledby={`focused-title-${project.slug}`}>
   <div class="project-demonstrations-heading"><span class="eyebrow">A CLOSER LOOK</span><h2 id={`focused-title-${project.slug}`}>Focused demonstrations.</h2></div>

@@ -24,11 +24,12 @@ test('Cosmo provides real primary playback and separate focused demonstrations',
   await page.goto(caseUrl);
   const primary = page.locator('.case-media video');
   await expect(primary).toHaveCount(1);
+  await primary.scrollIntoViewIfNeeded();
   await primary.evaluate(async (video: HTMLVideoElement) => { video.muted = true; await video.play(); });
   await expect.poll(() => primary.evaluate((video: HTMLVideoElement) => video.currentTime)).toBeGreaterThan(.3);
   await primary.evaluate((video: HTMLVideoElement) => video.pause());
-  await expect(page.locator('.project-demo')).toHaveCount(3);
-  await expect(page.locator('.project-demo-video')).toHaveCount(3);
+  await expect(page.locator('.project-demo')).toHaveCount(4);
+  await expect(page.locator('.project-demo-video')).toHaveCount(4);
   for (const video of await page.locator('.project-demo-video').all()) {
     await expect(video).toHaveAttribute('preload', 'none');
     await expect(video).not.toHaveAttribute('autoplay', '');
@@ -38,7 +39,7 @@ test('Cosmo provides real primary playback and separate focused demonstrations',
 
 test('a focused clip plays only on request and pauses when its disclosure closes', async ({ page }) => {
   await page.goto(caseUrl);
-  await expect(page.locator('.project-demo')).toHaveCount(3);
+  await expect(page.locator('.project-demo')).toHaveCount(4);
   for (const demo of await page.locator('.project-demo').all()) {
     await demo.locator('summary').click();
     const video = demo.locator('.project-demo-video');

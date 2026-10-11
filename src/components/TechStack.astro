@@ -10,8 +10,8 @@ const tools = projectSlug ? techStack.flatMap(group => group.tools.filter(tool =
   <ul>{tools.map(tool => <li><strong>{tool.name}</strong><span>{tool.context}</span></li>)}</ul>
   <p>{projectStackNotes[projectSlug]}</p>
 </div> : <section class="tech-stack-section shell" id="stack" aria-labelledby="stack-title">
-  <div class="section-topline"><span class="eyebrow">THE TOOLKIT</span><span class="section-side-note">From gameplay to product systems.</span></div>
-  <div class="tech-stack-heading"><h2 id="stack-title">What I build <em>with.</em></h2><p>Different tools for different problems. Here’s where they fit into my work.</p></div>
+  <div class="section-topline"><span class="eyebrow">THE TOOLKIT</span><span class="section-side-note">AI, data and practical workflows.</span></div>
+  <div class="tech-stack-heading"><h2 id="stack-title">What I build <em>with.</em></h2><p>Tools for my current AI and product work, with the game development foundation that came before.</p></div>
   <div class="tech-stack-groups">{techStack.map(group => <article class:list={['tech-stack-group', `stack-accent-${group.accent}`]}>
     <div class="tech-stack-group-heading"><span aria-hidden="true">/{group.index}</span><h3>{group.title}</h3></div>
     <p class="tech-stack-group-description">{group.description}</p>

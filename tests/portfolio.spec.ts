@@ -109,7 +109,7 @@ test('all essential content works without JavaScript', async ({ browser, isMobil
   await expect(page.locator('.hero-poster')).toHaveCSS('opacity', '1');
   await expect(page.locator('canvas')).toHaveCount(0);
   await page.locator('.project-title-row a').first().click();
-  await expect(page.locator('h1')).toContainText('Cosmo Conqueror');
+  await expect(page.locator('h1')).toContainText('E Deviser');
   await context.close();
 });
 

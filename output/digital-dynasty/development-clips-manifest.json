@@ -1,0 +1,280 @@
+{
+  "date": "2026-10-11",
+  "timezone": "Asia/Riyadh",
+  "authorization": "Owner requested preservation of the original case studies and footage, with additional selected development clips.",
+  "source": {
+    "path": "F:/Digital Dynasty/.mp4",
+    "bytes": 53125155,
+    "sha256": "81967616cfa805987bfc73bdc51073732c9bf0c2f1443f99ddc35aa8dec529c9",
+    "durationSeconds": 162,
+    "width": 1920,
+    "height": 1080,
+    "frameRate": 30,
+    "sourcePreservedWhole": true,
+    "sha256AfterExport": "81967616cfa805987bfc73bdc51073732c9bf0c2f1443f99ddc35aa8dec529c9"
+  },
+  "originalPublishedAssetsUnchanged": true,
+  "editing": "Actual source frames only. Full 16:9 source context retained; no generative edits or cropping. Source audio removed, metadata stripped, 30fps H.264/yuv420p encoding at CRF23, medium preset with faststart.",
+  "clips": [
+    {
+      "name": "inventory-crafting",
+      "media": "public/media/digital-dynasty-inventory-crafting.mp4",
+      "poster": "public/images/digital-dynasty/inventory-crafting.webp",
+      "segments": [
+        {
+          "startSeconds": 38,
+          "endSeconds": 43,
+          "content": "Inventory slots, character statistics and an equipped stone tool in the prototype test arena."
+        },
+        {
+          "startSeconds": 55,
+          "endSeconds": 60,
+          "content": "Gathering stone and wood, then the Stone Hatchet recipe and timed crafting feedback."
+        }
+      ],
+      "posterSourceTimestampSeconds": 58,
+      "caption": "Inventory, equipment and Stone Hatchet crafting in the Digital Dynasty prototype.",
+      "description": "The test-arena recording shows inventory slots and character statistics, an equipped tool, resource gathering, and a recipe panel with ingredients and timed crafting feedback.",
+      "visibleEvidence": [
+        "Inventory and character statistics panels are visible.",
+        "A tool is equipped in the first-person view.",
+        "Stone and wood gathering feedback appears before the Stone Hatchet recipe.",
+        "The recipe lists ingredients and displays a Crafting Item progress bar."
+      ],
+      "implementationUnknowns": [
+        "The recording does not establish underlying data structures, save persistence, replication correctness or personal authorship of every visible asset.",
+        "The source window uses SurvivalCraft prototype labels; retained labels are not renamed to imply a different released build."
+      ],
+      "chronological": true,
+      "durationSeconds": 10,
+      "width": 1280,
+      "height": 720,
+      "frameRate": 30,
+      "videoCodec": "h264",
+      "pixelFormat": "yuv420p",
+      "audio": "removed",
+      "metadata": "stripped",
+      "crf": 23,
+      "preset": "medium",
+      "faststart": true,
+      "outputBytes": 1507155,
+      "outputSha256": "5f55c7a137a5454c303b35b7acaf4b3e3d85df71697ef4f54f1f59dcd1473d3b",
+      "posterBytes": 105684,
+      "posterSha256": "e0d02246acc85738e79f69655e4ca60cf1739a0f2acfa348ddbf44e877f3eef1",
+      "decodedFrames": 300,
+      "decodeExit": 0,
+      "decodeDiagnostics": [],
+      "independentCopies": [
+        "G:/Portfolio Website/Attaulhaq-Portfolio",
+        "G:/Attaulhaq-Creative-Portfolio"
+      ],
+      "verification": {
+        "fullDecode": {
+          "exitCode": 0,
+          "frames": 300,
+          "diagnostics": []
+        },
+        "stream": {
+          "codec": "h264 High",
+          "width": 1280,
+          "height": 720,
+          "frameRate": 30,
+          "aspectRatio": "16:9",
+          "audioStreams": 0,
+          "durationSeconds": 10
+        },
+        "poster": {
+          "format": "webp",
+          "width": 1280,
+          "height": 720
+        },
+        "visualReview": {
+          "date": "2026-10-11",
+          "sourceAndOutputContactSheetsInspected": true,
+          "posterInspected": true,
+          "fullSourceFrameRetained": true
+        },
+        "independentCopyChecks": [
+          {
+            "project": "G:/Portfolio Website/Attaulhaq-Portfolio",
+            "path": "public/media/digital-dynasty-inventory-crafting.mp4",
+            "sha256": "5f55c7a137a5454c303b35b7acaf4b3e3d85df71697ef4f54f1f59dcd1473d3b"
+          },
+          {
+            "project": "G:/Portfolio Website/Attaulhaq-Portfolio",
+            "path": "public/images/digital-dynasty/inventory-crafting.webp",
+            "sha256": "e0d02246acc85738e79f69655e4ca60cf1739a0f2acfa348ddbf44e877f3eef1"
+          },
+          {
+            "project": "G:/Attaulhaq-Creative-Portfolio",
+            "path": "public/media/digital-dynasty-inventory-crafting.mp4",
+            "sha256": "5f55c7a137a5454c303b35b7acaf4b3e3d85df71697ef4f54f1f59dcd1473d3b"
+          },
+          {
+            "project": "G:/Attaulhaq-Creative-Portfolio",
+            "path": "public/images/digital-dynasty/inventory-crafting.webp",
+            "sha256": "e0d02246acc85738e79f69655e4ca60cf1739a0f2acfa348ddbf44e877f3eef1"
+          }
+        ]
+      }
+    },
+    {
+      "name": "construction",
+      "media": "public/media/digital-dynasty-construction.mp4",
+      "poster": "public/images/digital-dynasty/construction.webp",
+      "segments": [
+        {
+          "startSeconds": 90,
+          "endSeconds": 101,
+          "content": "Structural placement in the prototype arena: foundations, green/red wall previews, a built doorway and staircase placement."
+        }
+      ],
+      "posterSourceTimestampSeconds": 98,
+      "caption": "Structural placement previews and a timber staircase in the Digital Dynasty prototype.",
+      "description": "The arena demonstration moves from placed foundations to green and red structural previews, a timber doorway and staircase placement, with original debug lines and HUD retained.",
+      "visibleEvidence": [
+        "Placed foundations and a timber doorway remain visible.",
+        "Green and red placement previews appear as the selected structural piece moves.",
+        "A staircase preview is followed by a placed timber staircase."
+      ],
+      "implementationUnknowns": [
+        "The footage does not prove the exact placement-validation algorithm, collision rules, snapping implementation, networking or persistence.",
+        "Prototype HUD and debug lines are retained."
+      ],
+      "chronological": true,
+      "durationSeconds": 11,
+      "width": 1280,
+      "height": 720,
+      "frameRate": 30,
+      "videoCodec": "h264",
+      "pixelFormat": "yuv420p",
+      "audio": "removed",
+      "metadata": "stripped",
+      "crf": 23,
+      "preset": "medium",
+      "faststart": true,
+      "outputBytes": 4283885,
+      "outputSha256": "c58a00b6b22429abbc9984a63942c3a4702eacf67b53162ea8009e896a1f94de",
+      "posterBytes": 81274,
+      "posterSha256": "619919ec68c4ed782918405361d859beddd323d6ea308cb2ef6d7642e861458b",
+      "decodedFrames": 330,
+      "decodeExit": 0,
+      "decodeDiagnostics": [],
+      "independentCopies": [
+        "G:/Portfolio Website/Attaulhaq-Portfolio",
+        "G:/Attaulhaq-Creative-Portfolio"
+      ],
+      "verification": {
+        "fullDecode": {
+          "exitCode": 0,
+          "frames": 330,
+          "diagnostics": []
+        },
+        "stream": {
+          "codec": "h264 High",
+          "width": 1280,
+          "height": 720,
+          "frameRate": 30,
+          "aspectRatio": "16:9",
+          "audioStreams": 0,
+          "durationSeconds": 11
+        },
+        "poster": {
+          "format": "webp",
+          "width": 1280,
+          "height": 720
+        },
+        "visualReview": {
+          "date": "2026-10-11",
+          "sourceAndOutputContactSheetsInspected": true,
+          "posterInspected": true,
+          "fullSourceFrameRetained": true
+        },
+        "independentCopyChecks": [
+          {
+            "project": "G:/Portfolio Website/Attaulhaq-Portfolio",
+            "path": "public/media/digital-dynasty-construction.mp4",
+            "sha256": "c58a00b6b22429abbc9984a63942c3a4702eacf67b53162ea8009e896a1f94de"
+          },
+          {
+            "project": "G:/Portfolio Website/Attaulhaq-Portfolio",
+            "path": "public/images/digital-dynasty/construction.webp",
+            "sha256": "619919ec68c4ed782918405361d859beddd323d6ea308cb2ef6d7642e861458b"
+          },
+          {
+            "project": "G:/Attaulhaq-Creative-Portfolio",
+            "path": "public/media/digital-dynasty-construction.mp4",
+            "sha256": "c58a00b6b22429abbc9984a63942c3a4702eacf67b53162ea8009e896a1f94de"
+          },
+          {
+            "project": "G:/Attaulhaq-Creative-Portfolio",
+            "path": "public/images/digital-dynasty/construction.webp",
+            "sha256": "619919ec68c4ed782918405361d859beddd323d6ea308cb2ef6d7642e861458b"
+          }
+        ]
+      }
+    }
+  ],
+  "originalMediaVerification": [
+    {
+      "project": "G:/Portfolio Website/Attaulhaq-Portfolio",
+      "media": "public/media/cosmo-showcase.mp4",
+      "sha256": "d928f1e8db7473b99f5dcf3f95349324d73308dd544f6af96d3698a6e0e8569c",
+      "unchanged": true
+    },
+    {
+      "project": "G:/Portfolio Website/Attaulhaq-Portfolio",
+      "media": "public/media/cosmo-spirit-boss.mp4",
+      "sha256": "cab5635f2dba5d97b7596cc9846cdb069302221f1a8290a7fddaa8bb04cc32fb",
+      "unchanged": true
+    },
+    {
+      "project": "G:/Portfolio Website/Attaulhaq-Portfolio",
+      "media": "public/media/cosmo-miniboss.mp4",
+      "sha256": "efd968011622cca18c891c4209c1c32a83f57c7b0a7208d1414aa36b88d7f909",
+      "unchanged": true
+    },
+    {
+      "project": "G:/Portfolio Website/Attaulhaq-Portfolio",
+      "media": "public/media/cosmo-projectiles.mp4",
+      "sha256": "31d230571269355516a6bdf6982848d7183f3de27d71d552df54722173f451d1",
+      "unchanged": true
+    },
+    {
+      "project": "G:/Portfolio Website/Attaulhaq-Portfolio",
+      "media": "public/media/digital-dynasty-gameplay.mp4",
+      "sha256": "0ed888dbec8d2a0e39ca4f0dd474db5e6cba6cc40d25f1d34b602562e8446903",
+      "unchanged": true
+    },
+    {
+      "project": "G:/Attaulhaq-Creative-Portfolio",
+      "media": "public/media/cosmo-showcase.mp4",
+      "sha256": "d928f1e8db7473b99f5dcf3f95349324d73308dd544f6af96d3698a6e0e8569c",
+      "unchanged": true
+    },
+    {
+      "project": "G:/Attaulhaq-Creative-Portfolio",
+      "media": "public/media/cosmo-spirit-boss.mp4",
+      "sha256": "cab5635f2dba5d97b7596cc9846cdb069302221f1a8290a7fddaa8bb04cc32fb",
+      "unchanged": true
+    },
+    {
+      "project": "G:/Attaulhaq-Creative-Portfolio",
+      "media": "public/media/cosmo-miniboss.mp4",
+      "sha256": "efd968011622cca18c891c4209c1c32a83f57c7b0a7208d1414aa36b88d7f909",
+      "unchanged": true
+    },
+    {
+      "project": "G:/Attaulhaq-Creative-Portfolio",
+      "media": "public/media/cosmo-projectiles.mp4",
+      "sha256": "31d230571269355516a6bdf6982848d7183f3de27d71d552df54722173f451d1",
+      "unchanged": true
+    },
+    {
+      "project": "G:/Attaulhaq-Creative-Portfolio",
+      "media": "public/media/digital-dynasty-gameplay.mp4",
+      "sha256": "0ed888dbec8d2a0e39ca4f0dd474db5e6cba6cc40d25f1d34b602562e8446903",
+      "unchanged": true
+    }
+  ]
+}

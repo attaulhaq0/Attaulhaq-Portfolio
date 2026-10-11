@@ -1,7 +1,6 @@
 ---
 import { freelanceMilestone, employmentMilestone } from '../data/achievements';
 import '../styles/career-highlights.css';
-import Arrow from './Arrow.astro';
 const { certificate } = employmentMilestone;
 ---
 
@@ -10,8 +9,8 @@ const { certificate } = employmentMilestone;
     <span class="eyebrow">PROFESSIONAL MILESTONES</span>
   </div>
   <div class="career-highlights-heading">
-    <h2 id="career-highlights-title">Experience built<br /><em>through the work.</em></h2>
-    <p>Client delivery and professional experience, with a record of the work behind them.</p>
+    <h2 id="career-highlights-title">Freelance work.<br /><em>Professional experience.</em></h2>
+    <p>Freelance work across AI, software and automation, alongside my earlier role at Subrickzz.</p>
   </div>
 
   <div class="career-highlights-grid">
@@ -22,7 +21,7 @@ const { certificate } = employmentMilestone;
         <p class="career-milestone-description">{freelanceMilestone.description}</p>
         <dl class="career-metrics">{freelanceMilestone.metrics.map(metric => <div><dt>{metric.label}</dt><dd>{metric.value}</dd></div>)}</dl>
       </div>
-      <figure class="fiverr-evidence"><a href={freelanceMilestone.image.src} target="_blank" rel="noopener noreferrer" aria-label="Open full-size Fiverr record"><img src={freelanceMilestone.image.src} alt={freelanceMilestone.image.alt} width={freelanceMilestone.image.width} height={freelanceMilestone.image.height} loading="lazy" decoding="async" /><span class="fiverr-full-record">Open full-size Fiverr record <Arrow /></span></a><figcaption>{freelanceMilestone.image.caption}</figcaption></figure>
+      <figure class="fiverr-evidence"><a href={freelanceMilestone.image.src} target="_blank" rel="noopener noreferrer" aria-label="Open full-size Fiverr record"><img src={freelanceMilestone.image.src} alt={freelanceMilestone.image.alt} width={freelanceMilestone.image.width} height={freelanceMilestone.image.height} loading="lazy" decoding="async" /></a><figcaption>{freelanceMilestone.image.caption}</figcaption></figure>
     </article>
 
     <article class="career-employment" aria-labelledby="employment-milestone-title">
@@ -33,8 +32,7 @@ const { certificate } = employmentMilestone;
       <details class="career-certificate" id="career-certificate">
         <summary><span>View experience certificate</span><span class="career-certificate-toggle" aria-hidden="true">+</span></summary>
         <figure>
-          <a class="career-certificate-full" href={certificate.src} target="_blank" rel="noopener noreferrer">Open full-size certificate <span class="sr-only">in a new tab</span><Arrow /></a>
-          <img src={certificate.src} alt={certificate.alt} width={certificate.width} height={certificate.height} loading="lazy" decoding="async" />
+          <a href={certificate.src} target="_blank" rel="noopener noreferrer" aria-label="Open full-size certificate"><img src={certificate.src} alt={certificate.alt} width={certificate.width} height={certificate.height} loading="lazy" decoding="async" /></a>
           <figcaption>{certificate.caption}</figcaption>
         </figure>
       </details>

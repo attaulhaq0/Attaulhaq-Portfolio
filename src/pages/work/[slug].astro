@@ -47,5 +47,5 @@ const sectionTitles = project.sectionTitles ?? { overview: "The context.", contr
     <section id="system"><span class="eyebrow">03 / UNDER THE HOOD</span><h2>{sectionTitles.system}</h2><WorkflowDiagram project={project} /><DevelopmentEvidence project={project} /><ConceptMotion project={project} /></section>
     <section id="considerations"><span class="eyebrow">04 / DESIGN CONSIDERATIONS</span><h2>{sectionTitles.considerations}</h2><div class="considerations">{project.designConsiderations.map(item => <article><h3>{item.title}</h3><p>{item.body}</p></article>)}</div><div class="scope-note"><span aria-hidden="true">↳</span><p>{project.scopeNote}</p></div></section>
   </div></div></section>
-  <a class="next-project shell" href={`/work/${next.slug}/`}><div><span class="eyebrow">NEXT EXPLORATION</span><h2>{next.name}</h2></div><Arrow /></a>
+  <a class="next-project shell" href={`/work/${next.slug}/`}><div><span class="eyebrow">NEXT PROJECT</span><h2>{next.name}</h2></div><Arrow /></a>
 </BaseLayout>

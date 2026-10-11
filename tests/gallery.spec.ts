@@ -1,10 +1,35 @@
-import { test, expect } from '@playwright/test';
+import { test, expect, type Locator, type Page } from '@playwright/test';
 
 const homepage = process.env.PORTFOLIO_GALLERY_URL ?? '/';
+
+async function swipePhoto(page: Page, photo: Locator, direction: 'left' | 'right' | 'vertical') {
+  await photo.evaluate(element => window.scrollTo({ top: element.getBoundingClientRect().top + scrollY - 220, behavior: 'instant' }));
+  await photo.evaluate((image: HTMLImageElement) => image.decode());
+  await photo.scrollIntoViewIfNeeded();
+  await photo.evaluate(element => window.scrollTo({ top: element.getBoundingClientRect().top + scrollY - 220, behavior: 'instant' }));
+  const bounds = await photo.boundingBox();
+  expect(bounds).toBeTruthy();
+  const width = page.viewportSize()!.width;
+  const left = Math.max(35, bounds!.x + 25);
+  const right = Math.min(width - 35, bounds!.x + bounds!.width - 25);
+  const x = direction === 'right' ? left : right;
+  const end = direction === 'right' ? right : left;
+  const y = Math.max(250, Math.min(600, bounds!.y + bounds!.height * .25));
+  expect(await page.evaluate(({ x, y }) => document.elementFromPoint(x, y)?.tagName, { x, y })).toBe('IMG');
+  const touch = await page.context().newCDPSession(page);
+  await touch.send('Input.dispatchTouchEvent', { type: 'touchStart', touchPoints: [{ x, y, id: 1 }] });
+  for (let step = 1; step <= 14; step++) {
+    await touch.send('Input.dispatchTouchEvent', { type: 'touchMove', touchPoints: [{ x: direction === 'vertical' ? x : x + (end - x) * step / 14, y: direction === 'vertical' ? y - 170 * step / 14 : y, id: 1 }] });
+    await page.waitForTimeout(20);
+  }
+  await touch.send('Input.dispatchTouchEvent', { type: 'touchEnd', touchPoints: [] });
+  await touch.detach();
+}
 
 test.beforeEach(async ({ page }) => {
   await page.emulateMedia({ reducedMotion: 'reduce' });
   await page.goto(homepage);
+  await page.evaluate(() => document.fonts.ready);
 });
 
 test('story navigation scrolls to another moment and updates the current story', async ({ page }) => {
@@ -139,7 +164,9 @@ test('branded portrait graphics pair into complete pages and retain every image'
   const firstPage = media.locator('[data-photo-slide]').first();
   await expect(firstPage.locator('figure')).toHaveCount(2);
   const images = firstPage.locator('img');
+  await firstPage.scrollIntoViewIfNeeded();
   for (const image of await images.all()) {
+    await image.evaluate((image: HTMLImageElement) => image.decode());
     await expect(image).toHaveCSS('object-fit', 'contain');
     await expect(image).toHaveCSS('aspect-ratio', 'auto');
   }
@@ -172,4 +199,41 @@ test('paired graphics remain accessible through native scrolling without JavaScr
   }
   await expect(media.getByRole('button', { name: 'Next photo page', exact: true })).not.toBeVisible();
   await context.close();
+});
+
+test('mobile story controls appear before tall photo pages and photo links have no overlay labels', async ({ page, isMobile }) => {
+  test.skip(!isMobile, 'The mobile gallery keeps story controls above its tall photo pages.');
+  await page.setViewportSize({ width: 320, height: 844 });
+  await expect(page.locator('[data-moments-next]')).toBeVisible();
+  await page.locator('[data-moments-track]').evaluate(element => window.scrollTo({ top: element.getBoundingClientRect().top + scrollY - 220, behavior: 'instant' }));
+  const next = await page.locator('[data-moments-next]').boundingBox();
+  const firstPhoto = await page.locator('[data-moment-slide]').first().locator('img').first().boundingBox();
+  expect(next && firstPhoto).toBeTruthy();
+  expect(next!.y).toBeGreaterThanOrEqual(0);
+  expect(next!.y + next!.height).toBeLessThanOrEqual(firstPhoto!.y);
+  await expect(page.locator('.moment-photo a > span')).toHaveCount(0);
+  await expect(page.locator('.moment-photo a').first()).toHaveAttribute('aria-label', /Open full image:/);
+});
+
+test('mobile photo swipes reach the next story at the edge while vertical touch still scrolls the page', async ({ page, isMobile }) => {
+  test.skip(!isMobile, 'Uses real mobile touch gestures.');
+  await page.setViewportSize({ width: 320, height: 844 });
+  const story = page.locator('[data-moment="13"]');
+  const index = await story.evaluate(element => Array.from(element.parentElement!.children).indexOf(element));
+  await page.locator('[data-moments-page]').nth(index).click();
+  const current = page.locator('[data-moments-current]');
+  await expect(current).toHaveText(String(index + 1).padStart(2, '0'));
+  await swipePhoto(page, story.locator('img').first(), 'left');
+  await expect(story.locator('[data-photo-current]')).toHaveText('02');
+  await expect(current).toHaveText(String(index + 1).padStart(2, '0'));
+  await swipePhoto(page, story.locator('img').last(), 'left');
+  await expect(current).toHaveText(String(index + 2).padStart(2, '0'));
+  const nextStory = page.locator('[data-moment-slide]').nth(index + 1);
+  await swipePhoto(page, nextStory.locator('img').first(), 'right');
+  await expect(current).toHaveText(String(index + 1).padStart(2, '0'));
+  await story.locator('img').last().evaluate(element => window.scrollTo({ top: element.getBoundingClientRect().top + scrollY - 220, behavior: 'instant' }));
+  const before = await page.evaluate(() => scrollY);
+  await swipePhoto(page, story.locator('img').last(), 'vertical');
+  await expect.poll(() => page.evaluate(() => scrollY)).toBeGreaterThan(before + 50);
+  await expect(current).toHaveText(String(index + 1).padStart(2, '0'));
 });

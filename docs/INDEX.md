@@ -8,7 +8,7 @@ Start with the [codebase map](CODEBASE-MAP.md) to find the component or data fil
 | [Editing](EDITING.md) | Updating biography, projects, galleries, CV and media |
 | [Architecture](ARCHITECTURE.md) | Static HTML, automatic standing-to-seated hero, native interactions and lifecycle decisions |
 | [Content provenance](CONTENT-PROVENANCE.md) | Sources, dates, claim boundaries and historical changes |
-| [Third-party notices](THIRD-PARTY.md) | Dependencies, source-specific model permission and visual rights |
+| [Third-party notices](THIRD-PARTY.md) | Dependencies, source-specific model permission, compact footer attribution and visual rights |
 | [Hostinger deployment](HOSTINGER.md) | Building and publishing the static `dist/` output |
 | [Vercel review hosting](VERCEL.md) | Independent public review link and verified artifact updates |
 | [Spatial design record](design/2026-10-11-spatial-portfolio.md) | Historical design decisions; current code and owner instructions take precedence |

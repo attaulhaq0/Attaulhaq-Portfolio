@@ -1,0 +1,173 @@
+{
+  "date": "2026-10-11",
+  "timezone": "Asia/Riyadh",
+  "authorization": "Owner requested preservation of the original case studies and footage, with additional selected development clips.",
+  "source": {
+    "path": "F:/Cosmo_Portfolio/Dragon Attack Sequence.mp4",
+    "bytes": 46186016,
+    "sha256": "689800c5432cb92132bb0f99a2ac22fd33362dc6248fca4312aec0298731a543",
+    "sha256AfterExport": "689800c5432cb92132bb0f99a2ac22fd33362dc6248fca4312aec0298731a543",
+    "durationSeconds": 36.05,
+    "width": 1920,
+    "height": 1080,
+    "frameRate": 60,
+    "sourcePreservedWhole": true
+  },
+  "originalPublishedAssetsUnchanged": true,
+  "editing": "Actual source frames only. Full 16:9 source context retained; no generative edits, masks or cropping. Source audio removed, metadata stripped, 30fps H.264/yuv420p encoding at CRF23, medium preset with faststart.",
+  "clips": [
+    {
+      "name": "dragon-attack",
+      "media": "public/media/cosmo-dragon-attack.mp4",
+      "poster": "public/images/cosmo/dragon-attack.webp",
+      "startSeconds": 16,
+      "endSeconds": 32,
+      "durationSeconds": 16,
+      "posterSourceTimestampSeconds": 19,
+      "caption": "Dragon flight, close passes and a fiery attack in the Cosmo prototype.",
+      "description": "A winged creature banks past the player, approaches with fire effects and finishes on the ground in the recorded development encounter.",
+      "visibleEvidence": [
+        "The dragon banks and passes close overhead as the player tracks it.",
+        "Another approach includes large fire effects and player shooting.",
+        "Winged approach and descent are visible; the creature ends resting on the ground."
+      ],
+      "implementationUnknowns": [
+        "The recording alone does not establish the path algorithm, behavior-tree layout, animation authorship, collision rules or death-state implementation.",
+        "Personal contribution and release status require owner-confirmed records beyond the footage."
+      ],
+      "retainedContext": "Original HUD and benign Unreal Building Navigation (5,679) progress toast retained. Selected interval avoids the initial recording notification and weapon selector.",
+      "width": 1280,
+      "height": 720,
+      "frameRate": 30,
+      "videoCodec": "h264",
+      "pixelFormat": "yuv420p",
+      "audio": "removed",
+      "metadata": "stripped",
+      "crf": 23,
+      "preset": "medium",
+      "faststart": true,
+      "outputBytes": 7435148,
+      "outputSha256": "ed31a24a3c534799b5346c7e1ae5447fbb7fc8abd43a47689029130ae256c3cd",
+      "posterBytes": 47542,
+      "posterSha256": "a4bbaab0a88d32a3b641ff3a67db1aa23eca1a0a4477ca195b5601970bf21ad1",
+      "decodedFrames": 480,
+      "decodeExit": 0,
+      "decodeDiagnostics": [],
+      "independentCopies": [
+        "G:/Portfolio Website/Attaulhaq-Portfolio",
+        "G:/Attaulhaq-Creative-Portfolio"
+      ],
+      "verification": {
+        "fullDecode": {
+          "exitCode": 0,
+          "frames": 480,
+          "diagnostics": []
+        },
+        "stream": {
+          "codec": "h264 High",
+          "width": 1280,
+          "height": 720,
+          "frameRate": 30,
+          "aspectRatio": "16:9",
+          "audioStreams": 0,
+          "durationSeconds": 16
+        },
+        "poster": {
+          "format": "webp",
+          "width": 1280,
+          "height": 720
+        },
+        "visualReview": {
+          "date": "2026-10-11",
+          "sourceAndOutputContactSheetsInspected": true,
+          "posterInspected": true,
+          "fullSourceFrameRetained": true
+        },
+        "independentCopyChecks": [
+          {
+            "project": "G:/Portfolio Website/Attaulhaq-Portfolio",
+            "path": "public/media/cosmo-dragon-attack.mp4",
+            "sha256": "ed31a24a3c534799b5346c7e1ae5447fbb7fc8abd43a47689029130ae256c3cd"
+          },
+          {
+            "project": "G:/Portfolio Website/Attaulhaq-Portfolio",
+            "path": "public/images/cosmo/dragon-attack.webp",
+            "sha256": "a4bbaab0a88d32a3b641ff3a67db1aa23eca1a0a4477ca195b5601970bf21ad1"
+          },
+          {
+            "project": "G:/Attaulhaq-Creative-Portfolio",
+            "path": "public/media/cosmo-dragon-attack.mp4",
+            "sha256": "ed31a24a3c534799b5346c7e1ae5447fbb7fc8abd43a47689029130ae256c3cd"
+          },
+          {
+            "project": "G:/Attaulhaq-Creative-Portfolio",
+            "path": "public/images/cosmo/dragon-attack.webp",
+            "sha256": "a4bbaab0a88d32a3b641ff3a67db1aa23eca1a0a4477ca195b5601970bf21ad1"
+          }
+        ]
+      }
+    }
+  ],
+  "originalMediaVerification": [
+    {
+      "project": "G:/Portfolio Website/Attaulhaq-Portfolio",
+      "media": "public/media/cosmo-showcase.mp4",
+      "sha256": "d928f1e8db7473b99f5dcf3f95349324d73308dd544f6af96d3698a6e0e8569c",
+      "unchanged": true
+    },
+    {
+      "project": "G:/Portfolio Website/Attaulhaq-Portfolio",
+      "media": "public/media/cosmo-spirit-boss.mp4",
+      "sha256": "cab5635f2dba5d97b7596cc9846cdb069302221f1a8290a7fddaa8bb04cc32fb",
+      "unchanged": true
+    },
+    {
+      "project": "G:/Portfolio Website/Attaulhaq-Portfolio",
+      "media": "public/media/cosmo-miniboss.mp4",
+      "sha256": "efd968011622cca18c891c4209c1c32a83f57c7b0a7208d1414aa36b88d7f909",
+      "unchanged": true
+    },
+    {
+      "project": "G:/Portfolio Website/Attaulhaq-Portfolio",
+      "media": "public/media/cosmo-projectiles.mp4",
+      "sha256": "31d230571269355516a6bdf6982848d7183f3de27d71d552df54722173f451d1",
+      "unchanged": true
+    },
+    {
+      "project": "G:/Portfolio Website/Attaulhaq-Portfolio",
+      "media": "public/media/digital-dynasty-gameplay.mp4",
+      "sha256": "0ed888dbec8d2a0e39ca4f0dd474db5e6cba6cc40d25f1d34b602562e8446903",
+      "unchanged": true
+    },
+    {
+      "project": "G:/Attaulhaq-Creative-Portfolio",
+      "media": "public/media/cosmo-showcase.mp4",
+      "sha256": "d928f1e8db7473b99f5dcf3f95349324d73308dd544f6af96d3698a6e0e8569c",
+      "unchanged": true
+    },
+    {
+      "project": "G:/Attaulhaq-Creative-Portfolio",
+      "media": "public/media/cosmo-spirit-boss.mp4",
+      "sha256": "cab5635f2dba5d97b7596cc9846cdb069302221f1a8290a7fddaa8bb04cc32fb",
+      "unchanged": true
+    },
+    {
+      "project": "G:/Attaulhaq-Creative-Portfolio",
+      "media": "public/media/cosmo-miniboss.mp4",
+      "sha256": "efd968011622cca18c891c4209c1c32a83f57c7b0a7208d1414aa36b88d7f909",
+      "unchanged": true
+    },
+    {
+      "project": "G:/Attaulhaq-Creative-Portfolio",
+      "media": "public/media/cosmo-projectiles.mp4",
+      "sha256": "31d230571269355516a6bdf6982848d7183f3de27d71d552df54722173f451d1",
+      "unchanged": true
+    },
+    {
+      "project": "G:/Attaulhaq-Creative-Portfolio",
+      "media": "public/media/digital-dynasty-gameplay.mp4",
+      "sha256": "0ed888dbec8d2a0e39ca4f0dd474db5e6cba6cc40d25f1d34b602562e8446903",
+      "unchanged": true
+    }
+  ]
+}

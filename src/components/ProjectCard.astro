@@ -13,7 +13,7 @@ const cardCover = project.homeCover ?? project.cover;
   <div class="project-copy"><div class="project-meta"><span>{project.category}</span><span>{project.year}</span></div>
   <div class="project-title-row"><h3><a href={`/work/${project.slug}/`}>{project.name}</a></h3><span class="project-number">/{project.index}</span></div>
   <p>{project.summary}</p><div class="project-tags">{project.tags.slice(0, 3).map(tag => <span>{tag}</span>)}</div>
-  <a class="text-link project-read-link" href={`/work/${project.slug}/`}>Explore the project <Arrow /></a></div>
+  <a class="text-link project-read-link" href={`/work/${project.slug}/`}>Read case study <Arrow /></a></div>
 </article>
 <script>
   const motions = document.querySelectorAll<HTMLDetailsElement>('.project-motion, .project-playback');

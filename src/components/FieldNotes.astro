@@ -43,7 +43,7 @@ const isPortraitGraphic = (photo: { alt: string; width: number; height: number }
                 <div class="moment-photo-track" data-photo-track tabindex="0" role="region" aria-roledescription="carousel" aria-label={`Photos from ${moment.context}`}>
                   {photoSpreads.map(spread => <div class:list={['moment-photo-spread', { 'moment-photo-spread-paired': spread.length === 2, 'moment-photo-spread-document': spread.every(isPortraitGraphic) }]} data-photo-slide>
                     {spread.map(photo => <figure class="moment-photo">
-                    <a href={photo.src} target="_blank" rel="noopener noreferrer" aria-label={`Open full image: ${photo.alt}`}><img class:list={['moment-image', { 'moment-document-image': /newspaper|report|announcement|certificate|branded|branding|graphic/i.test(photo.alt), 'moment-portrait-graphic': isPortraitGraphic(photo) }]} src={photo.src} alt={photo.alt} width={photo.width} height={photo.height} loading="lazy" decoding="async" style={`object-position: ${photo.position ?? '50% 50%'};`} /><span class="moment-image-open" aria-hidden="true">View full image ↗</span></a>
+                    <a href={photo.src} target="_blank" rel="noopener noreferrer" aria-label={`Open full image: ${photo.alt}`}><img class:list={['moment-image', { 'moment-document-image': /newspaper|report|announcement|certificate|branded|branding|graphic/i.test(photo.alt), 'moment-portrait-graphic': isPortraitGraphic(photo) }]} src={photo.src} alt={photo.alt} width={photo.width} height={photo.height} loading="lazy" decoding="async" style={`object-position: ${photo.position ?? '50% 50%'};`} /></a>
                     <figcaption>{photo.alt}</figcaption>
                   </figure>)}
                   </div>)}
@@ -156,6 +156,39 @@ const isPortraitGraphic = (photo: { alt: string; width: number; height: number }
       event.preventDefault();
       goTo(target);
     };
+    // Keep native photo swiping; hand off only a new outward swipe at its boundary.
+    let edgeTouch: { x: number; y: number; previous: boolean; next: boolean; direction: number } | undefined;
+    const clearTouch = () => { edgeTouch = undefined; };
+    const touchStart = (event: TouchEvent) => {
+      clearTouch();
+      if (event.touches.length !== 1 || !(event.target instanceof Element) || event.target.closest('button')) return;
+      const photoTrack = event.target.closest<HTMLElement>('[data-photo-track]');
+      if (!photoTrack) return;
+      const touch = event.touches[0];
+      edgeTouch = { x: touch.clientX, y: touch.clientY, previous: photoTrack.scrollLeft <= 2 && current > 0, next: photoTrack.scrollLeft >= photoTrack.scrollWidth - photoTrack.clientWidth - 2 && current < slides.length - 1, direction: 0 };
+    };
+    const touchMove = (event: TouchEvent) => {
+      if (!edgeTouch || event.touches.length !== 1) { clearTouch(); return; }
+      const deltaX = event.touches[0].clientX - edgeTouch.x;
+      const deltaY = event.touches[0].clientY - edgeTouch.y;
+      if (Math.abs(deltaY) > 12 && Math.abs(deltaY) >= Math.abs(deltaX)) { clearTouch(); return; }
+      if (Math.abs(deltaX) < 12 || Math.abs(deltaX) <= Math.abs(deltaY) * 1.3) return;
+      const direction = deltaX < 0 ? 1 : -1;
+      if (direction === 1 ? edgeTouch.next : edgeTouch.previous) {
+        edgeTouch.direction = direction;
+        if (event.cancelable) event.preventDefault();
+      }
+    };
+    const touchEnd = (event: TouchEvent) => {
+      const gesture = edgeTouch;
+      clearTouch();
+      if (!gesture?.direction || event.changedTouches.length !== 1) return;
+      const deltaX = event.changedTouches[0].clientX - gesture.x;
+      const deltaY = event.changedTouches[0].clientY - gesture.y;
+      if (deltaX * gesture.direction > -55 || Math.abs(deltaX) <= Math.abs(deltaY) * 1.3) return;
+      if (event.cancelable) event.preventDefault();
+      goTo(current + gesture.direction);
+    };
     const resize = new ResizeObserver(scheduleSync);
     const photoLifecycles = Array.from(gallery.querySelectorAll<HTMLElement>('[data-event-photos]')).map(photos => {
       const photoTrack = photos.querySelector<HTMLElement>('[data-photo-track]');
@@ -218,6 +251,10 @@ const isPortraitGraphic = (photo: { alt: string; width: number; height: number }
       attached = true;
       track.addEventListener('scroll', scheduleSync, { passive: true });
       track.addEventListener('keydown', onKey);
+      track.addEventListener('touchstart', touchStart, { passive: true });
+      track.addEventListener('touchmove', touchMove, { passive: false });
+      track.addEventListener('touchend', touchEnd, { passive: false });
+      track.addEventListener('touchcancel', clearTouch, { passive: true });
       previous.addEventListener('click', onPrevious);
       next.addEventListener('click', onNext);
       pages.forEach(page => page.addEventListener('click', onPage));
@@ -230,6 +267,11 @@ const isPortraitGraphic = (photo: { alt: string; width: number; height: number }
       attached = false;
       track.removeEventListener('scroll', scheduleSync);
       track.removeEventListener('keydown', onKey);
+      track.removeEventListener('touchstart', touchStart);
+      track.removeEventListener('touchmove', touchMove);
+      track.removeEventListener('touchend', touchEnd);
+      track.removeEventListener('touchcancel', clearTouch);
+      clearTouch();
       previous.removeEventListener('click', onPrevious);
       next.removeEventListener('click', onNext);
       pages.forEach(page => page.removeEventListener('click', onPage));

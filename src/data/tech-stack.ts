@@ -14,9 +14,9 @@ export interface StackGroup {
 
 export const techStack: StackGroup[] = [
   {
-    index: '01',
-    title: 'Real-time worlds',
-    description: 'Tools I use to connect player actions, enemy behavior and gameplay feedback.',
+    index: '03',
+    title: 'Game development foundation',
+    description: 'Tools from my earlier Unreal Engine work on interactive systems and game AI.',
     accent: 'cyan',
     tools: [
       { name: 'Unreal Engine 5', context: 'Gameplay and interactive environments', projects: ['cosmo-conqueror', 'survival-game'] },
@@ -27,9 +27,9 @@ export const techStack: StackGroup[] = [
     ],
   },
   {
-    index: '02',
-    title: 'Product & AI',
-    description: 'Agent and retrieval workflows, with data tools tied to the project designs below.',
+    index: '01',
+    title: 'AI & agentic systems',
+    description: 'Retrieval, context and controlled actions in my AI and product engineering work.',
     accent: 'lavender',
     tools: [
       { name: 'RAG workflows', context: 'Scoped retrieval and AI assistance', projects: ['edeviser', 'aegisops'] },
@@ -41,9 +41,9 @@ export const techStack: StackGroup[] = [
     ],
   },
   {
-    index: '03',
-    title: 'Development & delivery',
-    description: 'Languages and delivery tools from my wider development work.',
+    index: '02',
+    title: 'Software & delivery',
+    description: 'Languages and tools I use to prototype, implement, version and validate software.',
     accent: 'magenta',
     tools: [
       { name: 'Python & JavaScript', context: 'General development and implementation', projects: [] },
@@ -52,6 +52,7 @@ export const techStack: StackGroup[] = [
     ],
   },
 ];
+techStack.sort((a, b) => Number(a.index) - Number(b.index));
 
 export const projectStackNotes: Record<string, string> = {
   'edeviser': 'Retrieval and role-aware assistance form part of my product and architecture work.',

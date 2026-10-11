@@ -2,6 +2,7 @@ import { test, expect } from '@playwright/test';
 
 test('project rows alternate illustration placement and preserve mobile reading order', async ({ page, isMobile }) => {
   await page.goto('/');
+  await expect(page.locator('.project-card h3')).toHaveText(['E Deviser', 'AegisOps', 'Family OS', 'Cosmo Conqueror']);
   const layout = await page.locator('.project-card').evaluateAll(cards => cards.map(card => ({
     art: card.querySelector('.project-art-wrap')!.getBoundingClientRect(),
     text: card.querySelector('.project-copy')!.getBoundingClientRect(),
@@ -11,6 +12,18 @@ test('project rows alternate illustration placement and preserve mobile reading 
     else if (index % 2 === 0) expect(item.artX).toBeLessThan(item.textX);
     else expect(item.artX).toBeGreaterThan(item.textX);
   }
+});
+
+test('current positioning leads with AI engineering and preserves the game development origin', async ({ page }) => {
+  await page.goto('/');
+  await expect(page).toHaveTitle('Sheikh Atta-ul-Haq — AI & Product Engineer');
+  await expect(page.locator('#intro-title')).toContainText('AI engineering, agentic systems');
+  await expect(page.locator('.hero-role-note')).toContainText('Agentic systems & RAG');
+  await expect(page.locator('.capability-row h3')).toHaveText(['AI & agentic engineering', 'Product & system design', 'Implementation & validation']);
+  await expect(page.locator('.tech-stack-group h3')).toHaveText(['AI & agentic systems', 'Software & delivery', 'Game development foundation']);
+  await expect(page.locator('#about')).toContainText('I started in game development');
+  await expect(page.locator('#contact')).toContainText('Hiring for AI engineering');
+  await expect(page.locator('.hero-role')).not.toContainText('Unreal');
 });
 
 test('illustrated homepage covers lead to actual recordings and real case evidence', async ({ page }) => {
@@ -58,7 +71,7 @@ test('employers can download the supplied CV from navigation and see current too
   await expect(fiverrImage).toHaveAttribute('height', '638');
   await expect(fiverrImage).toHaveAttribute('alt', /profile/i);
   await expect(page.getByRole('link', { name: 'Open full-size Fiverr record' })).toHaveAttribute('href', '/images/fiverr-level-overview.webp');
-  await expect(page.locator('.fiverr-full-record')).toHaveText('Open full-size Fiverr record');
+  await expect(page.locator('.fiverr-full-record')).toHaveCount(0);
   await fiverrImage.scrollIntoViewIfNeeded();
   await expect.poll(() => fiverrImage.evaluate((image: HTMLImageElement) => image.complete && image.naturalWidth > 0)).toBeTruthy();
   await expect(fiverrImage).toHaveCSS('object-fit', 'contain');

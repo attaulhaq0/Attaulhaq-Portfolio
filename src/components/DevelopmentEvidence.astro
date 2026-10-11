@@ -4,8 +4,19 @@ interface Props { project: Project }
 const { project } = Astro.props;
 const image = project.developmentImage;
 ---
+{project.developmentNotes && <section class="development-notes" aria-label={`${project.name} development notes`}>
+  <h3>Development notes</h3>
+  {project.developmentNotes.map(note => <article><h4>{note.title}</h4><p>{note.body}</p></article>)}
+</section>}
 {image && <details class="development-evidence development-detail">
  <summary><span><span class="eyebrow">DEVELOPMENT / BLUEPRINT LOGIC</span><strong>Explore the development map</strong></span><span aria-hidden="true">+</span></summary>
- <figure><a href={image.src} target="_blank" rel="noopener noreferrer" aria-label={`Open full ${project.name} development diagram`}><img src={image.src} alt={image.alt} width={image.width} height={image.height} loading="lazy" decoding="async" /><span>Open full diagram ↗</span></a><figcaption>{image.caption}</figcaption></figure>
+ <figure><a href={image.src} target="_blank" rel="noopener noreferrer" aria-label={`Open full ${project.name} development diagram`}><img src={image.src} alt={image.alt} width={image.width} height={image.height} loading="lazy" decoding="async" /></a><figcaption>{image.caption}</figcaption></figure>
  <ol>{image.points.map(point => <li>{point}</li>)}</ol>
 </details>}
+<style>
+ .development-notes { margin: 24px 0 32px; }
+ .development-notes > h3 { font-size: 23px; margin-bottom: 22px; }
+ .development-notes article { border-top: 1px solid var(--line); padding-block: 18px; }
+ .development-notes h4 { font-size: 17px; margin-bottom: 10px; }
+ .development-notes p { color: var(--muted); font-size: 15px; line-height: 1.75; }
+</style>

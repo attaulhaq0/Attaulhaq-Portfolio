@@ -12,7 +12,7 @@ The active site is an Astro portfolio with static HTML and focused JavaScript en
 | Tool names and project-specific contexts | `src/data/tech-stack.ts` | `TechStack.astro` on the homepage and cases |
 | Event stories, photographs, sources and immersive education | `src/data/moments.ts` | `FieldNotes.astro` |
 | Historical Fiverr metrics and Subrickzz certificate | `src/data/achievements.ts` | `CareerHighlights.astro` |
-| Public avatar, site and font credits | `src/pages/credits.astro`, `public/licenses/` | Static credits page, linked by `Footer.astro` |
+| Public avatar attribution and bundled font notices | `src/components/Footer.astro`, `public/licenses/` | Compact avatar attribution in the shared footer; exact font notices remain bundled |
 
 Component names in this document are under `src/components/` unless a different path is given. Shared layout is `src/layouts/BaseLayout.astro`; it loads fonts/styles, metadata, navigation, contact/footer and `SectionMotion.astro`. The homepage is `src/pages/index.astro`. Five stable project slugs generate `/work/<slug>/`; `survival-game` is Digital Dynasty's retained slug. A custom 404, robots and sitemap routes are under `src/pages/`.
 
@@ -60,6 +60,8 @@ Check import order in `BaseLayout.astro` before changing a shared rule. Prefer a
 | `G:/Portfolio Website/.review/` | Private source exports, screenshots and audit notes outside the repository |
 
 `public/` is deployed; `output/`, source and private review folders are not. Review content before adding any asset to `public/`. Keep raw recordings, unreviewed reports, private dashboards, credentials and restricted reference assets private. Inspect the current component/data reference before assuming a retained file is active.
+
+The current content order leads with E Deviser, AegisOps and Family OS, followed by earlier Cosmo and Digital Dynasty game work. Project `developmentNotes` adds documented engineering detail alongside preserved primary showcases and focused clips. Image anchors retain accessible names; visible full-size labels are intentionally absent. Mobile outer story and inner photo navigation are independent.
 
 ## Regeneration and checks
 

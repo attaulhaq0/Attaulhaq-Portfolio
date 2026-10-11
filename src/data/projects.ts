@@ -44,6 +44,7 @@ export type Project = {
   clips?: { title: string; src: string; poster: string; caption: string; description?: string; width: number; height: number; durationLabel: string }[];
   conceptMotion?: { src: string; poster: string; caption: string; title: string };
   developmentImage?: { src: string; alt: string; caption: string; width: number; height: number; points: string[] };
+  developmentNotes?: { title: string; body: string }[];
 };
 
 export const projects: Project[] = [
@@ -67,7 +68,7 @@ export const projects: Project[] = [
     homeCoverAlt: 'Original isometric learning illustration with an open book and connected roles.',
     conceptMotion: { src: '/media/education-concept.mp4', poster: '/images/edeviser-render.webp', title: 'Learning, in motion.', caption: 'AI-generated concept animation of light moving through a glass book. A visual metaphor for learning, created with Sora 2.' },
     theme: 'light',
-    tags: ['Product strategy', 'Education', 'RAG', 'Role-based workflows'],
+    tags: ['Agentic systems', 'RAG', 'Product strategy', 'Role-based workflows'],
     featured: true,
     overview: 'An education platform serves people with different responsibilities: administrators, coordinators, teachers, students and parents. My work at E Deviser connects those perspectives through Arabic and English workflows, with attention to relevant learning context, scoped retrieval and approval-gated AI actions.',
     contributions: [
@@ -112,7 +113,7 @@ export const projects: Project[] = [
     theme: 'dark',
     tags: ['Voice workflows', 'RAG', 'PostgreSQL', 'pgvector', 'RBAC'],
     featured: true,
-    overview: 'Frontline reports contain valuable context, but spoken observations and operational records serve different purposes. AegisOps explores that transition through agentic AI, retrieval of standard operating procedures, issue correlation and shift synthesis. The design also addresses tenant boundaries, offline synchronization and cloud or sovereign deployment options.',
+    overview: 'Frontline reports contain valuable context, but spoken observations and operational records serve different purposes. AegisOps explores that transition through agentic AI, retrieval of standard operating procedures, issue correlation and shift synthesis. The design also addresses tenant boundaries, offline synchronization and deployment requirements.',
     contributions: [
       { title: 'Reporting experience', body: 'I work on the relationship between multilingual voice input, structured reports and the context needed by operational teams.' },
       { title: 'Operational intelligence', body: 'My system-design work connects RAG-based SOP retrieval, issue correlation, verification and shift summaries.' },
@@ -176,7 +177,7 @@ export const projects: Project[] = [
   },
   {
     slug: 'cosmo-conqueror',
-    homeOrder: 0,
+    homeOrder: 4,
     sectionTitles: {"overview":"The logic behind the encounter.","contribution":"Combat, behavior and mission design.","system":"How an encounter moves forward.","considerations":"Responsive and readable combat."},
     index: '04',
     name: 'Cosmo Conqueror',
@@ -197,6 +198,11 @@ export const projects: Project[] = [
     tags: ['Gameplay systems', 'Behavior trees', 'Blueprints', 'Mission design'],
     featured: true,
     overview: 'Action gameplay depends on systems responding coherently to the same moment: enemy behavior, combat reactions, animation and mission progression. My work on Cosmo Conqueror connected those layers through reusable gameplay logic. I also designed 33 story-driven missions, with branching narrative and reusable mission frameworks.',
+    developmentNotes: [
+      { title: 'Behavior and encounter logic', body: 'My documented work connects Behavior Trees, combat interactions and mission state. The development map summarizes that relationship; it is an explanatory reconstruction rather than a capture of the project’s original Blueprint graph.' },
+      { title: 'Reusable mission systems', body: 'I designed 33 story-driven missions and reusable mission frameworks. Organizing related gameplay events into shared logic helped structure the work across the human and alien perspectives.' },
+      { title: 'Animation and prototype feedback', body: 'Motion Warping, Niagara and Chaos formed part of my integration work. The separate clips show encounter movement, attack feedback and a graybox projectile test. They demonstrate prototype behavior without establishing ownership of every animation or environment asset.' },
+    ],
     contributions: [
       { title: 'Combat and enemy behavior', body: 'I worked on behavior trees, enemy and combat systems, including melee interactions, dodging, hit reactions and Motion Warping.' },
       { title: 'Mission and progression design', body: 'I designed 33 story-driven missions and worked on branching narrative, reusable mission frameworks and progression systems.' },
@@ -232,6 +238,7 @@ export const projects: Project[] = [
       { title: 'Spirit boss encounter', src: '/media/cosmo-spirit-boss.mp4', poster: '/images/cosmo/spirit-boss.webp', durationLabel: '24 seconds', width: 1280, height: 720, description: 'A closer look at ranged attacks, encounter effects and player movement.', caption: 'Silent excerpt from Alien Vs Spirit Boss Gameplay. Original gameplay HUD is retained.' },
       { title: 'Miniboss combat', src: '/media/cosmo-miniboss.mp4', poster: '/images/cosmo/miniboss.webp', durationLabel: '24 seconds', width: 1280, height: 720, description: 'Aiming, firing and reacting to moving fire attacks in the Iggy/Scorch encounter.', caption: 'Silent excerpt from IggyAndScorchMiniBoss. Development gameplay, with the original HUD.' },
       { title: 'Projectile feedback', src: '/media/cosmo-projectiles.mp4', poster: '/images/cosmo/projectiles.webp', durationLabel: '15 seconds', width: 1280, height: 720, description: 'A graybox test showing projectile effects and visible hit and health feedback.', caption: 'Silent graybox projectile demonstration. Internal diagnostic text is retained; desktop recording controls are removed.' },
+      { title: 'Dragon flight and attack', src: '/media/cosmo-dragon-attack.mp4', poster: '/images/cosmo/dragon-attack.webp', durationLabel: '16 seconds', width: 1280, height: 720, description: 'Flight banking, close passes and a fiery approach, showing another encounter in the development build.', caption: 'Dragon flight, close passes and a fiery attack in the Cosmo prototype. Original HUD and navigation-build status are retained.' },
     ],
     external: { label: 'Visit Subrickzz', url: 'https://subrickzz.com/' },
   },
@@ -257,6 +264,11 @@ export const projects: Project[] = [
     tags: ['Unreal Engine 5', 'Blueprint scripting', 'Crafting & building', 'Survival systems'],
     featured: false,
     overview: 'Digital Dynasty gave me a practical setting for working through the dependencies of a survival game. Resources move through inventory and crafting into tools and structures, while experience and skills shape what a player can do next. The final report documents that loop through design diagrams, interfaces and manual test records. The supplied presentation shows the prototype in action, including inventory, exploration, construction, combat and multiplayer test scenes.',
+    developmentNotes: [
+      { title: 'Inventory and recipe checks', body: 'The report connects collected resources with recipe requirements and item creation. My recorded validation checks material consumption during crafting; the focused clip shows the inventory, equipment and Stone Hatchet interface in the prototype.' },
+      { title: 'Placement validation', body: 'Construction needs to connect inventory with terrain and collision rules. I verified structure placement in the final-year project. The focused construction clip shows placement previews and a timber staircase; the development map explains the checks without claiming it is the exact Blueprint implementation.' },
+      { title: 'Progression and persistent state', body: 'My documented checks cover movement, collisions, experience-based leveling and save/load restoration of inventory and position. These are historical project test records; the original showcase remains available alongside the new focused excerpts.' },
+    ],
     contributions: [
       { title: 'Gameplay systems and Blueprint development', body: 'I worked on the Unreal Engine 5 project using Blueprint scripting, connecting survival activities, player interactions and persistent game state within the wider game.' },
       { title: 'Crafting and construction', body: 'I verified that creating an item consumes the required materials and that structures can be placed consistently with terrain and collision rules. These checks test how inventory, crafting and the world agree.' },
@@ -290,6 +302,10 @@ export const projects: Project[] = [
       { src: '/images/digital-dynasty/exploration.webp', alt: 'Digital Dynasty river environment with forested shoreline and survival HUD.', caption: 'Exploration and survival context in the prototype world.', width: 1280, height: 720 },
       { src: '/images/digital-dynasty/inventory.webp', alt: 'Digital Dynasty inventory and crafting tabs with character equipment and survival statistics.', caption: 'Inventory, crafting access and the player’s survival state.', width: 1280, height: 720 },
       { src: '/images/digital-dynasty/structures.webp', alt: 'A wooden structure and stairs shown during a Digital Dynasty Unreal Engine building demonstration.', caption: 'Construction demonstrated inside Unreal Engine.', width: 1280, height: 720 },
+    ],
+    clips: [
+      { title: 'Inventory and crafting', src: '/media/digital-dynasty-inventory-crafting.mp4', poster: '/images/digital-dynasty/inventory-crafting.webp', durationLabel: '10 seconds', width: 1280, height: 720, description: 'Inventory, equipment and Stone Hatchet crafting in the original prototype.', caption: 'Inventory, equipment and Stone Hatchet crafting in the Digital Dynasty prototype. Silent excerpt from the original final-year recording.' },
+      { title: 'Construction and placement', src: '/media/digital-dynasty-construction.mp4', poster: '/images/digital-dynasty/construction.webp', durationLabel: '11 seconds', width: 1280, height: 720, description: 'Structural placement previews and a timber staircase, with the original development context.', caption: 'Structural placement previews and a timber staircase in the Digital Dynasty prototype. Silent excerpt from the original final-year recording.' },
     ],
   },
 ];
