@@ -75,10 +75,13 @@
 .career-highlights { padding-block: 66px 72px; }
 .about-grid { gap: 60px; }
 .about-intro > p { max-width: 550px; }
-.fiverr-evidence { margin-top: 25px; }
-.fiverr-evidence a { display: block; border: 1px solid #554661; border-radius: 6px; }
-.fiverr-evidence img { display: block; width: 100%; height: auto; object-fit: contain; }
-.fiverr-evidence figcaption { font-size: 12px; line-height: 1.7; color: var(--muted); margin-top: 12px; }
+.fiverr-evidence { margin: 0; }
+.fiverr-evidence a { display: block; }
+.fiverr-evidence img { display: block; width: 100%; height: auto; object-fit: contain; border-radius: 6px; }
+.fiverr-full-record { display: flex; align-items: center; gap: 10px; min-height: 44px; padding-top: 8px; color: #dfc7ff; font-size: 13px; }
+.fiverr-full-record .arrow { width: 14px; }
+.fiverr-evidence a:hover .fiverr-full-record { color: var(--paper); }
+.fiverr-evidence figcaption { font-size: 12px; line-height: 1.7; color: #c5b8d4; margin-top: 12px; }
 .moment-story-topline .moment-story-context, .moment-photo figcaption, .moment-photo-count-label, .moments-gallery-arrow > span:not([aria-hidden]) { font-size: 11px; }
 .moments-gallery .moment-story .moment-image-open { font-size: 10px; }
 @media (max-width: 760px) { .home-gameplay figcaption { flex-wrap: wrap; gap: 6px 18px; } }

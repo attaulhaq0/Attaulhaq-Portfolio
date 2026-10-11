@@ -51,7 +51,7 @@ Check import order in `BaseLayout.astro` before changing a shared rule. Prefer a
 | `public/images/moments/` | Approved event/photo exports and complete branded summit pages |
 | `public/images/source-character-poster.webp`, `public/models/source-character.glb` | Active standing fallback and permitted model |
 | `public/images/subrickzz-experience-certificate.webp` | Full approved employment certificate export |
-| `public/images/fiverr-performance-metrics.webp` | Focused historical Fiverr metrics, separate from the employment certificate |
+| `public/images/fiverr-level-overview.webp` | Complete owner-requested historical Fiverr screenshot, including profile photo and Level 2 panel; previous metrics-only export remains retained |
 | `public/media/` | Optimized silent gameplay, immersive walkthrough and labeled concept clips |
 | `public/documents/sheikh-atta-ul-haq-cv.pdf` | Intact approved two-page résumé; navigation download only |
 | `output/imagegen/` | Original generated images, exact prompts and source/export manifests for home/case/editorial/workflow/development art |

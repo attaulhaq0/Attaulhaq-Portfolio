@@ -14,9 +14,9 @@ export const freelanceMilestone = {
     { value: '5 months', label: 'to reach Level 2' },
   ] satisfies CareerMetric[],
   image: {
-    src: '/images/fiverr-performance-metrics.webp', width: 842, height: 307,
-    alt: 'Historical Fiverr performance metrics showing a 4.9 rating, 84 orders, 62 unique clients and PKR 1,291,348 earnings.',
-    caption: 'A focused crop of my historical Fiverr metrics, supplied from my freelance milestone record.',
+    src: '/images/fiverr-level-overview.webp', width: 1280, height: 638,
+    alt: 'Historical Fiverr Level 2 overview with Atta-ul-Haq’s profile photo, the original account-status notice and performance metrics: 4.9 rating, 84 orders, 62 unique clients and PKR 1,291,348 earnings.',
+    caption: 'My historical Fiverr Level 2 overview and performance record, including my profile photo. This screenshot reflects that point in time.',
   },
 };
 

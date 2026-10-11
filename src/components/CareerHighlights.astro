@@ -16,11 +16,13 @@ const { certificate } = employmentMilestone;
 
   <div class="career-highlights-grid">
     <article class="career-freelance" aria-labelledby="freelance-milestone-title">
-      <p class="career-milestone-meta"><span>{freelanceMilestone.platform}</span><span>{freelanceMilestone.period}</span></p>
-      <h3 id="freelance-milestone-title">{freelanceMilestone.title}</h3>
-      <p class="career-milestone-description">{freelanceMilestone.description}</p>
-      <dl class="career-metrics">{freelanceMilestone.metrics.map(metric => <div><dt>{metric.label}</dt><dd>{metric.value}</dd></div>)}</dl>
-      <figure class="fiverr-evidence"><a href={freelanceMilestone.image.src} target="_blank" rel="noopener noreferrer" aria-label="Open full Fiverr performance metrics"><img src={freelanceMilestone.image.src} alt={freelanceMilestone.image.alt} width={freelanceMilestone.image.width} height={freelanceMilestone.image.height} loading="lazy" decoding="async" /></a><figcaption>{freelanceMilestone.image.caption}</figcaption></figure>
+      <div class="career-freelance-copy">
+        <p class="career-milestone-meta"><span>{freelanceMilestone.platform}</span><span>{freelanceMilestone.period}</span></p>
+        <h3 id="freelance-milestone-title">{freelanceMilestone.title}</h3>
+        <p class="career-milestone-description">{freelanceMilestone.description}</p>
+        <dl class="career-metrics">{freelanceMilestone.metrics.map(metric => <div><dt>{metric.label}</dt><dd>{metric.value}</dd></div>)}</dl>
+      </div>
+      <figure class="fiverr-evidence"><a href={freelanceMilestone.image.src} target="_blank" rel="noopener noreferrer" aria-label="Open full-size Fiverr record"><img src={freelanceMilestone.image.src} alt={freelanceMilestone.image.alt} width={freelanceMilestone.image.width} height={freelanceMilestone.image.height} loading="lazy" decoding="async" /><span class="fiverr-full-record">Open full-size Fiverr record <Arrow /></span></a><figcaption>{freelanceMilestone.image.caption}</figcaption></figure>
     </article>
 
     <article class="career-employment" aria-labelledby="employment-milestone-title">

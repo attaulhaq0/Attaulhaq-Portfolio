@@ -20,12 +20,27 @@
 }
 .career-highlights-grid {
   display: grid;
-  grid-template-columns: 1.5fr 1fr;
-  gap: 64px;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 52px;
 }
-.career-highlights-grid > article { min-width: 0; padding-top: 26px; }
-.career-freelance { border-top: 1px solid #527573; }
-.career-employment { border-top: 1px solid #78546f; }
+.career-highlights-grid > article { min-width: 0; }
+.career-freelance {
+  display: grid;
+  grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr);
+  gap: clamp(28px, 4vw, 56px);
+  align-items: center;
+  padding: clamp(28px, 3.5vw, 48px);
+  border: 1px solid #68428c;
+  border-radius: 18px;
+  background: linear-gradient(125deg, #29143e, #1d122b);
+}
+.career-freelance > * { min-width: 0; }
+.career-freelance .career-milestone-meta,
+.career-freelance .career-metrics dd { color: #dfc7ff; }
+.career-freelance .career-milestone-meta > span:last-child,
+.career-freelance .career-milestone-description,
+.career-freelance .career-metrics dt { color: #c5b8d4; }
+.career-employment { border-top: 1px solid #78546f; padding-top: 26px; }
 .career-milestone-meta {
   display: flex;
   justify-content: space-between;
@@ -114,8 +129,8 @@
 .career-certificate img { display: block; width: 100%; height: auto; object-fit: contain; background: #fff; }
 .career-certificate figcaption { margin-top: 17px; color: var(--muted); font-size: 13px; line-height: 1.75; }
 @media (max-width: 1000px) {
-  .career-highlights-heading,
-  .career-highlights-grid { gap: 36px; grid-template-columns: 1.35fr 1fr; }
+  .career-highlights-heading { gap: 36px; grid-template-columns: 1.35fr 1fr; }
+  .career-freelance { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
   .career-metrics { gap: 14px; }
   .career-metrics dd { font-size: 27px; }
 }
@@ -125,7 +140,8 @@
   .career-highlights-heading h2 { font-size: clamp(34px, 8.3vw, 47px); }
   .career-highlights-heading > p { max-width: 430px; font-size: 15px; }
   .career-highlights-grid { grid-template-columns: 1fr; gap: 36px; }
-  .career-highlights-grid > article { padding-top: 22px; }
+  .career-freelance { grid-template-columns: minmax(0, 1fr); padding: 24px; gap: 28px; border-radius: 14px; }
+  .career-employment { padding-top: 22px; }
   .career-highlights-grid h3 { font-size: 30px; }
   .career-milestone-meta { margin-bottom: 17px; }
   .career-milestone-description { font-size: 15px; margin-top: 17px; }

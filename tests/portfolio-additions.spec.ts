@@ -53,17 +53,34 @@ test('employers can download the supplied CV from navigation and see current too
   await expect(page.locator('#milestones')).toContainText('62+');
   await expect(page.locator('#milestones')).toContainText('PKR 1M+');
   const fiverrImage = page.locator('.career-freelance .fiverr-evidence img');
-  await expect(fiverrImage).toHaveAttribute('src', '/images/fiverr-performance-metrics.webp');
+  await expect(fiverrImage).toHaveAttribute('src', '/images/fiverr-level-overview.webp');
+  await expect(fiverrImage).toHaveAttribute('width', '1280');
+  await expect(fiverrImage).toHaveAttribute('height', '638');
+  await expect(fiverrImage).toHaveAttribute('alt', /profile/i);
+  await expect(page.getByRole('link', { name: 'Open full-size Fiverr record' })).toHaveAttribute('href', '/images/fiverr-level-overview.webp');
+  await expect(page.locator('.fiverr-full-record')).toHaveText('Open full-size Fiverr record');
   await fiverrImage.scrollIntoViewIfNeeded();
   await expect.poll(() => fiverrImage.evaluate((image: HTMLImageElement) => image.complete && image.naturalWidth > 0)).toBeTruthy();
   await expect(fiverrImage).toHaveCSS('object-fit', 'contain');
   const fiverrDimensions = await fiverrImage.evaluate((image: HTMLImageElement) => {
     const bounds = image.getBoundingClientRect();
     const frame = image.parentElement!.getBoundingClientRect();
-    return { displayedRatio: bounds.width / bounds.height, naturalRatio: image.naturalWidth / image.naturalHeight, insideFrame: bounds.left >= frame.left && bounds.right <= frame.right && bounds.top >= frame.top && bounds.bottom <= frame.bottom };
+    return { displayedRatio: bounds.width / bounds.height, naturalRatio: image.naturalWidth / image.naturalHeight, naturalWidth: image.naturalWidth, naturalHeight: image.naturalHeight, insideFrame: bounds.left >= frame.left && bounds.right <= frame.right && bounds.top >= frame.top && bounds.bottom <= frame.bottom };
   });
   expect(fiverrDimensions.displayedRatio).toBeCloseTo(fiverrDimensions.naturalRatio, 2);
+  expect(fiverrDimensions.naturalWidth).toBe(1280);
+  expect(fiverrDimensions.naturalHeight).toBe(638);
   expect(fiverrDimensions.insideFrame).toBeTruthy();
+  const milestoneLayout = await page.locator('.career-freelance').evaluate(card => {
+    const copy = card.querySelector('.career-freelance-copy')!.getBoundingClientRect();
+    const art = card.querySelector('.fiverr-evidence')!.getBoundingClientRect();
+    const cardBounds = card.getBoundingClientRect();
+    const employment = document.querySelector('.career-employment')!.getBoundingClientRect();
+    return { copyRight: copy.right, copyBottom: copy.bottom, artLeft: art.left, artTop: art.top, cardBottom: cardBounds.bottom, employmentTop: employment.top };
+  });
+  if (isMobile) expect(milestoneLayout.artTop).toBeGreaterThan(milestoneLayout.copyBottom);
+  else expect(milestoneLayout.artLeft).toBeGreaterThan(milestoneLayout.copyRight);
+  expect(milestoneLayout.employmentTop).toBeGreaterThan(milestoneLayout.cardBottom);
   await expect(page.locator('.career-employment .fiverr-evidence')).toHaveCount(0);
   await expect(page.locator('.career-freelance .career-certificate')).toHaveCount(0);
   await expect(page.locator('.career-employment > .career-certificate')).toHaveCount(1);
