@@ -9,28 +9,58 @@ import { GLTFLoader, type GLTF } from 'three/addons/loaders/GLTFLoader.js';
 export const sourceCharacterUrl = '/models/source-character.glb';
 
 /** Authored rig pose; the supplied asset does not contain a standing animation. */
-function createStandingPose(root: Group) {
-  const bones = ['spine', 'thighL', 'thighR', 'shinL', 'shinR', 'footL', 'footR', 'upper_armL', 'upper_armR', 'forearmL', 'forearmR'];
-  const saved = bones.map(name => root.getObjectByName(name)).filter((bone): bone is Object3D => Boolean(bone)).map(bone => ({ bone, quaternion: bone.quaternion.clone(), position: bone.position.clone() }));
+function createStandingPose(root: Group, relaxedHands: { bone: Object3D; quaternion: Quaternion }[]) {
+  const names = ['spine', 'thighL', 'thighR', 'shinL', 'shinR', 'footL', 'footR', 'upper_armL', 'upper_armR', 'forearmL', 'forearmR'];
+  const bones = names.map(name => root.getObjectByName(name)).filter((bone): bone is Object3D => Boolean(bone));
+  bones.push(...relaxedHands.map(({ bone }) => bone));
+  const saved = bones.map(bone => ({ bone, quaternion: bone.quaternion.clone(), position: bone.position.clone() }));
+  // Typing wrists/fingers must not leak into the standing greeting. Retain the
+  // asset's natural hand axes instead of straightening every finger to zero.
+  relaxedHands.forEach(({ bone, quaternion }) => { bone.quaternion.copy(quaternion); });
+  const orientLimb = (name: string, direction: Vector3, twist = 0) => {
+    const limb = root.getObjectByName(name)!;
+    root.updateMatrixWorld(true);
+    direction.normalize();
+    const desired = new Quaternion().setFromUnitVectors(new Vector3(0, 1, 0), direction);
+    desired.premultiply(new Quaternion().setFromAxisAngle(direction, twist));
+    limb.quaternion.copy(limb.parent!.getWorldQuaternion(new Quaternion()).invert().multiply(desired));
+  };
   const hip = root.getObjectByName('spine')!;
   hip.rotation.set(0, 0, 0); hip.position.y = 7.3; hip.position.z = 0;
   for (const side of ['L', 'R']) {
     root.getObjectByName(`thigh${side}`)!.rotation.set(Math.PI, 0, 0);
     root.getObjectByName(`shin${side}`)!.rotation.set(0, 0, 0);
     root.getObjectByName(`foot${side}`)!.rotation.set(-Math.PI / 2, 0, 0);
-    root.updateMatrixWorld(true);
-    const arm = root.getObjectByName(`upper_arm${side}`)!;
-    const desired = new Quaternion().setFromUnitVectors(new Vector3(0, 1, 0), new Vector3(side === 'L' ? .13 : -.13, -1, .02).normalize());
-    arm.quaternion.copy(arm.parent!.getWorldQuaternion(new Quaternion()).invert().multiply(desired));
-    root.getObjectByName(`forearm${side}`)!.rotation.set(0, 0, 0);
   }
-  const standing = saved.map(({ bone }) => ({ bone, quaternion: bone.quaternion.clone(), position: bone.position.clone() }));
+  // A small open-hand greeting gives the silhouette purpose. The relaxed arm
+  // has its own elbow bend and roll so the sleeve and palm do not turn inward.
+  orientLimb('upper_armL', new Vector3(.6, -.85, .1));
+  orientLimb('forearmL', new Vector3(.22, .92, .24));
+  orientLimb('upper_armR', new Vector3(-.20, -1, .04), -.45);
+  orientLimb('forearmR', new Vector3(-.12, -1, .18), 1.35);
+  const standing = saved.map(({ bone }) => ({ bone, quaternion: bone.quaternion.clone(), position: bone.position.clone(), arm: /^(?:upper_arm|forearm|hand|palm|thumb|f_)/.test(bone.name), loweredQuaternion: undefined as Quaternion | undefined }));
+  // Route the greeting hand outside the face while lowering. A direct shortest
+  // rotation from greeting to typing would sweep the palm across the mouth.
+  orientLimb('upper_armL', new Vector3(.75, -.66, .14));
+  orientLimb('forearmL', new Vector3(.8, -.25, .58));
+  for (const entry of standing) {
+    if (entry.bone.name === 'upper_armL' || entry.bone.name === 'forearmL') entry.loweredQuaternion = entry.bone.quaternion.clone();
+  }
   saved.forEach(({ bone, quaternion, position }) => { bone.quaternion.copy(quaternion); bone.position.copy(position); });
   return standing;
 }
 
 export function applyStandingBlend(model: { root: Group; standing: ReturnType<typeof createStandingPose> }, seated: number) {
-  model.standing.forEach(({ bone, quaternion, position }) => { bone.quaternion.slerp(quaternion, 1 - seated); bone.position.lerp(position, 1 - seated); });
+  model.standing.forEach(({ bone, quaternion, position, arm, loweredQuaternion }) => {
+    // Settle hands toward their source placement as the desk arrives, before
+    // the hips finish sitting; otherwise a relaxed hand passes below the desk.
+    const blend = arm ? Math.min(1, seated / .65) : seated;
+    if (loweredQuaternion) {
+      if (blend < .45) bone.quaternion.copy(quaternion).slerp(loweredQuaternion, blend / .45);
+      else bone.quaternion.slerp(loweredQuaternion, (1 - blend) / .55);
+    } else bone.quaternion.slerp(quaternion, 1 - blend);
+    bone.position.lerp(position, 1 - seated);
+  });
   for (const object of model.root.children) if (object.name !== 'metarig002' && object.name !== 'Plane004' && object.name !== 'screenlight') object.visible = seated > .58;
   model.root.updateMatrixWorld(true);
 }
@@ -38,6 +68,10 @@ export function applyStandingBlend(model: { root: Group; standing: ReturnType<ty
 /** The owner confirmed permission to use Moncy Yohannan's supplied avatar. */
 export function prepareSourceCharacter(gltf: GLTF) {
   const root = gltf.scene;
+  const relaxedHands: { bone: Object3D; quaternion: Quaternion }[] = [];
+  root.traverse(bone => {
+    if (/^(?:hand|palm|thumb|f_)/.test(bone.name)) relaxedHands.push({ bone, quaternion: bone.quaternion.clone() });
+  });
   const mixer = new AnimationMixer(root);
   const intro = gltf.animations.find(clip => clip.name === 'introAnimation');
   let pose;
@@ -59,7 +93,7 @@ export function prepareSourceCharacter(gltf: GLTF) {
   const typingClip = gltf.animations.find(clip => clip.name === 'typing');
   const typing = typingClip ? mixer.clipAction(new AnimationClip('Scroll typing', typingClip.duration, typingClip.tracks.filter(track => /(?:arm|hand|palm|thumb|f_|thigh|shin|toe|heel)/i.test(track.name)))) : undefined;
   const keys = gltf.animations.filter(clip => ['key1', 'key2', 'key5', 'key6'].includes(clip.name)).map(clip => mixer.clipAction(clip));
-  const standing = createStandingPose(root);
+  const standing = createStandingPose(root, relaxedHands);
   const model = { root, head, rest, mixer, pose, typing, keys, standing, introDuration: intro?.duration ?? 0 };
   applyStandingBlend(model, 0);
   return model;
