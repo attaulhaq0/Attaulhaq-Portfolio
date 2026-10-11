@@ -1,7 +1,11 @@
 @media (min-width: 1101px) and (prefers-reduced-motion: no-preference) {
+  /* Decorative WebGL must never steal native link or disclosure activation. */
+  #hero-canvas, #hero-canvas * { pointer-events: none !important; }
   .spatial-hero:has(.scene-journey) { overflow: visible; }
   .spatial-hero .hero-art:has(.scene-journey) { animation: none; transform: none; }
   #hero-canvas.scene-journey { position: fixed; inset: auto; z-index: 2; transition: opacity .3s ease; }
+  /* Reserve the journey's space before asynchronous model readiness can shift the page. */
+  .intro-section { min-height: 650px; }
   body:has(#hero-canvas.scene-journey) .intro-section {
     min-height: 650px; grid-template-columns: 42% 1fr; gap: 24px 56px; align-content: center;
   }

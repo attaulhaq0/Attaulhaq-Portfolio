@@ -23,9 +23,21 @@ function PortraitCamera() {
   return null;
 }
 
-export default function SystemScene({ onReady }: { onReady: () => void }) {
+function ResumeFrame({ active, onContextLost }: { active: boolean; onContextLost?: () => void }) {
+  const { invalidate, gl } = useThree();
+  useEffect(() => { if (active) invalidate(); }, [active, invalidate]);
+  useEffect(() => {
+    const lost = (event: Event) => { event.preventDefault(); onContextLost?.(); };
+    gl.domElement.addEventListener('webglcontextlost', lost);
+    return () => gl.domElement.removeEventListener('webglcontextlost', lost);
+  }, [gl, onContextLost]);
+  return null;
+}
+
+export default function SystemScene({ onReady, onActiveChange, onContextLost }: { onReady: () => void; onActiveChange?: (active: boolean) => void; onContextLost?: () => void }) {
   const wrapper = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(true);
+  useEffect(() => { onActiveChange?.(visible); }, [visible, onActiveChange]);
   useEffect(() => {
     let onScreen = true;
     const sync = () => setVisible(onScreen && !document.hidden && wrapper.current?.closest<HTMLElement>('#hero-canvas')?.dataset.journeyStage !== 'complete');
@@ -50,6 +62,7 @@ export default function SystemScene({ onReady }: { onReady: () => void }) {
         gl.outputColorSpace = SRGBColorSpace;
       }}>
       <PortraitCamera />
+      <ResumeFrame active={visible} onContextLost={onContextLost} />
       <ambientLight intensity={.50} color="#dbd4ec" />
       <hemisphereLight args={['#e2dcf5', '#24192f', .82]} />
       <directionalLight position={[10, 17, 20]} intensity={2.25} color="#fff0df" />

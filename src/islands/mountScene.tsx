@@ -10,7 +10,7 @@ class SceneBoundary extends Component<{ children: ReactNode; onError: (error: Er
 }
 
 // Dynamically started after the static hero is readable. The page never waits for WebGL.
-export function mountScene(container: HTMLElement, signal?: AbortSignal): Promise<() => void> {
+export function mountScene(container: HTMLElement, signal?: AbortSignal, onRuntimeError?: () => void): Promise<() => void> {
   return new Promise((resolve, reject) => {
     if (signal?.aborted) { reject(new DOMException('Scene initialization cancelled.', 'AbortError')); return; }
     const root = createRoot(container);
@@ -22,7 +22,12 @@ export function mountScene(container: HTMLElement, signal?: AbortSignal): Promis
       signal?.removeEventListener('abort', abort);
       root.unmount();
     };
-    const timeout = window.setTimeout(() => fail(new Error('WebGL initialization timed out.')), 15000);
+    let timeout: number | undefined;
+    const activity = (active: boolean) => {
+      if (settled) return;
+      window.clearTimeout(timeout);
+      timeout = active ? window.setTimeout(() => fail(new Error('WebGL initialization timed out.')), 15000) : undefined;
+    };
     const fail = (error: Error) => {
       if (settled) return;
       settled = true;
@@ -36,7 +41,12 @@ export function mountScene(container: HTMLElement, signal?: AbortSignal): Promis
       else dispose();
     };
     signal?.addEventListener('abort', abort, { once: true });
-    root.render(<SceneBoundary onError={fail}><SystemScene onReady={() => {
+    activity(!document.hidden);
+    const contextLost = () => {
+      if (!settled) fail(new Error('WebGL context was lost during initialization.'));
+      else { queueMicrotask(dispose); onRuntimeError?.(); }
+    };
+    root.render(<SceneBoundary onError={fail}><SystemScene onActiveChange={activity} onContextLost={contextLost} onReady={() => {
       if (settled || signal?.aborted) return;
       settled = true;
       window.clearTimeout(timeout);

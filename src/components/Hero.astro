@@ -92,7 +92,10 @@ const posterSrc = '/images/source-character-poster.webp';
         sceneContainer.style.height = '100%';
         target.append(sceneContainer);
         target.hidden = false;
-        const unmount = await mountScene(sceneContainer, loading.signal);
+        const unmount = await mountScene(sceneContainer, loading.signal, () => {
+          if (pageSuspended || request !== sceneRequest) return;
+          resetScene(); art.dataset.sceneState = 'fallback'; status.textContent = 'The character illustration remains available.';
+        });
         if (pageSuspended || request !== sceneRequest) { unmount(); sceneContainer.remove(); return; }
         dispose = () => { unmount(); sceneContainer.remove(); };
         poster.style.opacity = '0'; art.classList.add('scene-active'); art.dataset.sceneState = 'ready';

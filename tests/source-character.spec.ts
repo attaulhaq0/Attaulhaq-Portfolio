@@ -119,3 +119,28 @@ test('desktop avatar carries into the introduction then leaves before selected w
   await expect(page.locator('#hero-canvas')).toHaveAttribute('data-journey-stage', 'complete');
   await expect(page.locator('#hero-canvas')).toHaveCSS('opacity', '0');
 });
+
+test('a valid model finishing offscreen waits for return instead of timing out', async ({ page, isMobile }) => {
+  test.skip(!isMobile, 'The desktop journey intentionally stays on screen longer.');
+  test.setTimeout(45000);
+  let release!: () => void;
+  const pending = new Promise<void>(resolve => { release = resolve; });
+  await page.route(`**${modelPath}`, async route => { await pending; await route.continue(); });
+  await page.goto(homepage);
+  await expect(page.locator('canvas')).toHaveCount(1);
+  await page.evaluate(() => window.scrollTo({ top: 1800, behavior: 'instant' }));
+  release();
+  await page.waitForTimeout(15500);
+  await expect(page.locator('.hero-art')).toHaveAttribute('data-scene-state', 'loading');
+  await page.evaluate(() => window.scrollTo({ top: 0, behavior: 'instant' }));
+  await ready(page);
+});
+
+test('a lost WebGL context restores the poster after successful startup', async ({ page }) => {
+  await page.goto(homepage);
+  await ready(page);
+  await page.locator('canvas').evaluate(canvas => canvas.dispatchEvent(new Event('webglcontextlost', { cancelable: true })));
+  await expect(page.locator('.hero-art')).toHaveAttribute('data-scene-state', 'fallback');
+  await expect(page.locator('canvas')).toHaveCount(0);
+  await expect(page.locator('.hero-poster')).toHaveCSS('opacity', '1');
+});

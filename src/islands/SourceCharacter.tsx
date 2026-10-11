@@ -167,14 +167,14 @@ export default function SourceCharacter({ onReady, active }: { onReady: () => vo
       invalidate();
     };
     const motionChange = () => { if (reduced.matches) leave(); syncScroll(); };
-    canvas.addEventListener('pointermove', move, { passive: true });
+    window.addEventListener('pointermove', move, { passive: true });
     canvas.addEventListener('pointerleave', leave);
     reduced.addEventListener('change', motionChange);
     window.addEventListener('scroll', syncScroll, { passive: true });
     window.addEventListener('resize', syncScroll, { passive: true });
     syncScroll();
     return () => {
-      canvas.removeEventListener('pointermove', move);
+      window.removeEventListener('pointermove', move);
       canvas.removeEventListener('pointerleave', leave);
       reduced.removeEventListener('change', motionChange);
       window.removeEventListener('scroll', syncScroll);

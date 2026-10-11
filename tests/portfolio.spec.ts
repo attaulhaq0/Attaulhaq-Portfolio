@@ -23,6 +23,7 @@ test('homepage is complete and starts its 3D character automatically', async ({ 
 });
 
 test('homepage meets automated WCAG A/AA checks', async ({ page }) => {
+  await page.emulateMedia({ reducedMotion: 'reduce' });
   await page.goto('/');
   await page.evaluate(() => document.fonts.ready);
   const results = await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21aa']).analyze();

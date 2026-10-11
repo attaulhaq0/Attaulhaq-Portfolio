@@ -27,7 +27,16 @@ test('keyboard focus immediately reveals its pending content', async ({ page }) 
   await expect(certificate).toHaveCSS('transition-duration', '0s');
 });
 
-test('the first pointer click opens pending certificate content after navigation', async ({ page, isMobile }) => {
+test('the first pointer click opens pending certificate content after navigation', async ({ page, isMobile }, testInfo) => {
+  await page.addInitScript(() => {
+    (window as any).__certificatePointerAudit = [];
+    for (const type of ['pointerdown', 'pointerup', 'click', 'focusin']) document.addEventListener(type, event => {
+      const summary = document.querySelector('.career-certificate summary');
+      if (!summary) return;
+      const bounds = summary.getBoundingClientRect();
+      (window as any).__certificatePointerAudit.push({ type, target: (event.target as Element)?.tagName, x: (event as PointerEvent).clientX, y: (event as PointerEvent).clientY, top: bounds.top, bottom: bounds.bottom, scroll: scrollY, scene: (document.querySelector('.hero-art') as HTMLElement)?.dataset.sceneState, open: summary.closest('details')?.open });
+    }, true);
+  });
   await page.emulateMedia({ reducedMotion: 'no-preference' });
   await page.goto('/');
   if (isMobile) await page.locator('.mobile-nav summary').click();
@@ -38,7 +47,8 @@ test('the first pointer click opens pending certificate content after navigation
   const certificate = page.locator('.career-certificate');
   await expect(certificate).toHaveAttribute('data-motion-state', 'pending');
   await certificate.locator('summary').click();
-  await expect(certificate).toHaveAttribute('open', '');
+  try { await expect(certificate).toHaveAttribute('open', ''); }
+  catch (error) { await testInfo.attach('certificate-pointer-audit', { body: JSON.stringify(await page.evaluate(() => (window as any).__certificatePointerAudit), null, 2), contentType: 'application/json' }); throw error; }
 });
 
 test('revealing a pending interactive block on pointer focus keeps its target in place', async ({ page }) => {
@@ -63,6 +73,33 @@ test('revealing a pending interactive block on pointer focus keeps its target in
   await page.mouse.up();
   expect(Math.abs(after!.y - before!.y)).toBeLessThan(1);
   await expect(certificate).toHaveAttribute('open', '');
+});
+
+test('late 3D readiness keeps the certificate target and intro geometry stable', async ({ page, isMobile }) => {
+  test.skip(isMobile, 'The desktop scene journey uses reserved intro geometry.');
+  await page.route(/\/mountScene[^/]*\.js$/, route => route.fulfill({ contentType: 'application/javascript', body: `
+    export function mountScene(container, signal) {
+      return new Promise(resolve => { window.__completeScene = () => { const canvas = document.createElement('canvas'); canvas.style.cssText = 'position:fixed;inset:0;width:100vw;height:100vh;pointer-events:auto'; container.append(canvas); resolve(() => container.replaceChildren()); }; });
+    }
+  ` }));
+  await page.emulateMedia({ reducedMotion: 'no-preference' });
+  await page.goto('/');
+  await page.waitForFunction(() => typeof (window as any).__completeScene === 'function');
+  await page.addStyleTag({ content: 'html, body, main, section { overflow-anchor: none; }' });
+  const summary = page.locator('.career-certificate summary');
+  await summary.scrollIntoViewIfNeeded();
+  const before = await summary.boundingBox();
+  const introBefore = await page.locator('.intro-section').boundingBox();
+  await page.mouse.move(before!.x + before!.width / 2, before!.y + before!.height / 2);
+  await page.mouse.down();
+  await page.evaluate(() => (window as any).__completeScene());
+  await expect(page.locator('.hero-art')).toHaveAttribute('data-scene-state', 'ready');
+  const after = await summary.boundingBox();
+  const introAfter = await page.locator('.intro-section').boundingBox();
+  await page.mouse.up();
+  expect(Math.abs(introAfter!.height - introBefore!.height)).toBeLessThan(1);
+  expect(Math.abs(after!.y - before!.y)).toBeLessThan(1);
+  await expect(page.locator('.career-certificate')).toHaveAttribute('open', '');
 });
 
 test('reduced motion shows every section and reacts when the preference changes', async ({ page }) => {
