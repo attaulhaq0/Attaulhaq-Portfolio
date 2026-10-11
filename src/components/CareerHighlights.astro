@@ -28,15 +28,14 @@ const { certificate } = employmentMilestone;
       <h3 id="employment-milestone-title">{employmentMilestone.role}<span>at {employmentMilestone.company}.</span></h3>
       <p class="career-employment-arrangement">{employmentMilestone.arrangement}</p>
       <p class="career-milestone-description">{employmentMilestone.description}</p>
+      <details class="career-certificate" id="career-certificate">
+        <summary><span>View experience certificate</span><span class="career-certificate-toggle" aria-hidden="true">+</span></summary>
+        <figure>
+          <a class="career-certificate-full" href={certificate.src} target="_blank" rel="noopener noreferrer">Open full-size certificate <span class="sr-only">in a new tab</span><Arrow /></a>
+          <img src={certificate.src} alt={certificate.alt} width={certificate.width} height={certificate.height} loading="lazy" decoding="async" />
+          <figcaption>{certificate.caption}</figcaption>
+        </figure>
+      </details>
     </article>
   </div>
-
-  <details class="career-certificate" id="career-certificate">
-    <summary><span>View experience certificate</span><span class="career-certificate-toggle" aria-hidden="true">+</span></summary>
-    <figure>
-      <a class="career-certificate-full" href={certificate.src} target="_blank" rel="noopener noreferrer">Open full-size certificate <span class="sr-only">in a new tab</span><Arrow /></a>
-      <img src={certificate.src} alt={certificate.alt} width={certificate.width} height={certificate.height} loading="lazy" decoding="async" />
-      <figcaption>{certificate.caption}</figcaption>
-    </figure>
-  </details>
 </section>

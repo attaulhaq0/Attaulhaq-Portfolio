@@ -52,13 +52,27 @@ test('employers can download the supplied CV from navigation and see current too
   await expect(page.locator('#stack')).toContainText('Docker');
   await expect(page.locator('#milestones')).toContainText('62+');
   await expect(page.locator('#milestones')).toContainText('PKR 1M+');
-  await expect(page.locator('.career-freelance .fiverr-evidence img')).toHaveAttribute('src', '/images/fiverr-performance-metrics.webp');
+  const fiverrImage = page.locator('.career-freelance .fiverr-evidence img');
+  await expect(fiverrImage).toHaveAttribute('src', '/images/fiverr-performance-metrics.webp');
+  await fiverrImage.scrollIntoViewIfNeeded();
+  await expect.poll(() => fiverrImage.evaluate((image: HTMLImageElement) => image.complete && image.naturalWidth > 0)).toBeTruthy();
+  await expect(fiverrImage).toHaveCSS('object-fit', 'contain');
+  const fiverrDimensions = await fiverrImage.evaluate((image: HTMLImageElement) => {
+    const bounds = image.getBoundingClientRect();
+    const frame = image.parentElement!.getBoundingClientRect();
+    return { displayedRatio: bounds.width / bounds.height, naturalRatio: image.naturalWidth / image.naturalHeight, insideFrame: bounds.left >= frame.left && bounds.right <= frame.right && bounds.top >= frame.top && bounds.bottom <= frame.bottom };
+  });
+  expect(fiverrDimensions.displayedRatio).toBeCloseTo(fiverrDimensions.naturalRatio, 2);
+  expect(fiverrDimensions.insideFrame).toBeTruthy();
   await expect(page.locator('.career-employment .fiverr-evidence')).toHaveCount(0);
+  await expect(page.locator('.career-freelance .career-certificate')).toHaveCount(0);
+  await expect(page.locator('.career-employment > .career-certificate')).toHaveCount(1);
   await expect(page.locator('#about')).toContainText('I started by');
   const certificate = page.locator('#career-certificate');
   await certificate.locator('summary').click();
   await expect(certificate).toHaveAttribute('open', '');
   await expect(certificate.locator('img')).toBeVisible();
+  await expect(certificate.getByRole('link', { name: 'Open full-size certificate' })).toHaveAttribute('href', '/images/subrickzz-experience-certificate.webp');
 });
 
 test('Qatar talk is second and branded LinkedIn pages stay intact', async ({ page }) => {
