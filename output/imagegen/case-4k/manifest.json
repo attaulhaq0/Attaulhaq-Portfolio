@@ -1,0 +1,134 @@
+{
+  "provider": "Microsoft Foundry",
+  "deployment": "gpt-image-2.5-sunburst",
+  "mode": "Owner-authorized API fallback using unmodified bundled CLI",
+  "requestSize": "auto",
+  "constraint": "Bundled CLI treats custom deployment aliases as legacy size models. Auto returned1672x941; 4K exports are clearly upscaled derivatives, not claimed native4K generations.",
+  "reference": "G:/Pictures/utility.png",
+  "conceptualOnly": true,
+  "items": [
+    {
+      "slug": "aegisops",
+      "source": "output\\imagegen\\case-4k\\aegisops.png",
+      "nativeDimensions": [
+        1672,
+        941
+      ],
+      "sourceSha256": "0d4a400a2e2f5d2b9dffc883d5aaf01474aa16f7f1c4ed54dda6304bf4df366d",
+      "outputs": [
+        {
+          "path": "public\\images\\case-studies\\aegisops-768.webp",
+          "dimensions": [
+            768,
+            432
+          ],
+          "bytes": 40092,
+          "sha256": "5ed528dc2c112dd68aab2b16672422bfb280b94957fb768f8b36688529bdda17",
+          "upscaled": false
+        },
+        {
+          "path": "public\\images\\case-studies\\aegisops-1600.webp",
+          "dimensions": [
+            1600,
+            900
+          ],
+          "bytes": 117708,
+          "sha256": "bb1ba8ab975adffc8e726692ad17b3209524f4113d3beb3e9d9b6fd31deeb445",
+          "upscaled": false
+        },
+        {
+          "path": "public\\images\\case-studies\\aegisops-3840.webp",
+          "dimensions": [
+            3840,
+            2160
+          ],
+          "bytes": 403230,
+          "sha256": "4efaf77bf1b3eb325c2e202f4e4571734669cd01b5b2be46e6ca7473ebfdaec7",
+          "upscaled": true
+        }
+      ]
+    },
+    {
+      "slug": "edeviser",
+      "source": "output\\imagegen\\case-4k\\edeviser.png",
+      "nativeDimensions": [
+        1672,
+        941
+      ],
+      "sourceSha256": "9f1ec39337cb2d277296fbfd464c15abcf00ac5fd7ec0a3715a4b510912f465c",
+      "outputs": [
+        {
+          "path": "public\\images\\case-studies\\edeviser-768.webp",
+          "dimensions": [
+            768,
+            432
+          ],
+          "bytes": 26762,
+          "sha256": "2f5dd4cbff9c4e3e11cc27fe024ca342472575885215b2b2777c4f8ae5bf1e88",
+          "upscaled": false
+        },
+        {
+          "path": "public\\images\\case-studies\\edeviser-1600.webp",
+          "dimensions": [
+            1600,
+            900
+          ],
+          "bytes": 73302,
+          "sha256": "dc9ea06940902a125eedc1d5bdcd92216f5a3495709791f622a760533837af89",
+          "upscaled": false
+        },
+        {
+          "path": "public\\images\\case-studies\\edeviser-3840.webp",
+          "dimensions": [
+            3840,
+            2160
+          ],
+          "bytes": 245836,
+          "sha256": "84a44ab382b7028007747f2363173b537930c51648cb512c13238d9c9649aea1",
+          "upscaled": true
+        }
+      ]
+    },
+    {
+      "slug": "family-os",
+      "source": "output\\imagegen\\case-4k\\family-os.png",
+      "nativeDimensions": [
+        1672,
+        941
+      ],
+      "sourceSha256": "53c5ae2c3293951fa3ce5ea9444cf797e2aaa616a527e04aa4e9e40b382eeafe",
+      "outputs": [
+        {
+          "path": "public\\images\\case-studies\\family-os-768.webp",
+          "dimensions": [
+            768,
+            432
+          ],
+          "bytes": 32246,
+          "sha256": "20fcddf4eb3e2eae4f55aaca16c57078d3f38c9996c94c58c07ecd92b7e942b0",
+          "upscaled": false
+        },
+        {
+          "path": "public\\images\\case-studies\\family-os-1600.webp",
+          "dimensions": [
+            1600,
+            900
+          ],
+          "bytes": 86012,
+          "sha256": "f66c25f1cbdd683bd85808ca98df8d930d13f96b698c3655b55a6c20064fd940",
+          "upscaled": false
+        },
+        {
+          "path": "public\\images\\case-studies\\family-os-3840.webp",
+          "dimensions": [
+            3840,
+            2160
+          ],
+          "bytes": 297642,
+          "sha256": "de111b73fda4cdefebf5074d77d75061357c3c9e1a41458f12e2a200849fb2f4",
+          "upscaled": true
+        }
+      ]
+    }
+  ]
+}

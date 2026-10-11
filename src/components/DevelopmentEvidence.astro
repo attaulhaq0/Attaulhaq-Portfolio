@@ -1,0 +1,11 @@
+---
+import type { Project } from '../data/projects';
+interface Props { project: Project }
+const { project } = Astro.props;
+const image = project.developmentImage;
+---
+{image && <details class="development-evidence development-detail">
+ <summary><span><span class="eyebrow">DEVELOPMENT / BLUEPRINT LOGIC</span><strong>Explore the development map</strong></span><span aria-hidden="true">+</span></summary>
+ <figure><a href={image.src} target="_blank" rel="noopener noreferrer" aria-label={`Open full ${project.name} development diagram`}><img src={image.src} alt={image.alt} width={image.width} height={image.height} loading="lazy" decoding="async" /><span>Open full diagram ↗</span></a><figcaption>{image.caption}</figcaption></figure>
+ <ol>{image.points.map(point => <li>{point}</li>)}</ol>
+</details>}

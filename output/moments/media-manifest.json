@@ -1,0 +1,369 @@
+{
+  "date": "2026-10-11",
+  "timezone": "Asia/Riyadh",
+  "authorization": "Owner explicitly requested supplied personal and E Deviser event pictures for portfolio gallery.",
+  "images": [
+    {
+      "name": "qstp-team",
+      "source": "G:\\LinkedIn-Posts\\2026-10-09\\Selected_Post_Photos\\Post_1_QSTP_and_CUEVO\\01_CUEVO_Team.jpg",
+      "sourceSha256": "e135e6dd958ef537c5849cdb8dcbafb36dfd4e76d7d925c1c540b84fade61458",
+      "sourceDimensions": [
+        3520,
+        2130
+      ],
+      "output": "public\\images\\moments\\qstp-team.webp",
+      "outputSha256": "a0997f3be4350770468d1bb41670d88f54b5ddee9ad2948dbea4428df5758f0f",
+      "dimensions": [
+        1400,
+        847
+      ],
+      "bytes": 207802,
+      "context": "Owner-supplied CUEVO team photograph at QSTP; approved personal post selection.",
+      "processing": "EXIF orientation, proportional resize, WebP encode, metadata omitted; no generative edits."
+    },
+    {
+      "name": "sprint-panel",
+      "source": "G:\\LinkedIn-Posts\\2026-10-09\\Selected_Post_Photos\\Post_1_QSTP_and_CUEVO\\05_SPRINT_Panel.jpg",
+      "sourceSha256": "19bc31ddc5930b1f13f956cf759a9698817352ed2c70970ea89dfed716657d5f",
+      "sourceDimensions": [
+        1280,
+        853
+      ],
+      "output": "public\\images\\moments\\sprint-panel.webp",
+      "outputSha256": "93f7890db76c64e35bc3886f12266a1d6406323cd99976a3bcc4bb4df5fe233a",
+      "dimensions": [
+        1280,
+        853
+      ],
+      "bytes": 94426,
+      "context": "User supplied with QSTP SPRINT recap in highlights chat; organizer session photograph.",
+      "processing": "EXIF orientation, proportional resize, WebP encode, metadata omitted; no generative edits."
+    },
+    {
+      "name": "sprint-group",
+      "source": "G:\\LinkedIn-Posts\\2026-10-09\\Selected_Post_Photos\\Post_1_QSTP_and_CUEVO\\03_SPRINT_Group.jpg",
+      "sourceSha256": "4b81a0e5a21574e11646fbd26387ca9c357a7cab77203b1e44e2686502871356",
+      "sourceDimensions": [
+        1280,
+        683
+      ],
+      "output": "public\\images\\moments\\sprint-group.webp",
+      "outputSha256": "b563612dfff0b6cc96d3537ea13e65522056c09d7a011ea9ba88b65a69826a5a",
+      "dimensions": [
+        1280,
+        683
+      ],
+      "bytes": 166138,
+      "context": "User supplied with QSTP SPRINT recap; organizer group photograph.",
+      "processing": "EXIF orientation, proportional resize, WebP encode, metadata omitted; no generative edits."
+    },
+    {
+      "name": "yec-closing",
+      "source": "G:\\LinkedIn-Posts\\2026-10-09\\Selected_Post_Photos\\Post_1_QSTP_and_CUEVO\\06_YEC_Closing.jpg",
+      "sourceSha256": "5a03b87e7adf334f6270f62e3d99827df5f95813e133b3b82a9423cab3fe89f2",
+      "sourceDimensions": [
+        2252,
+        4000
+      ],
+      "output": "public\\images\\moments\\yec-closing.webp",
+      "outputSha256": "c0e05dca551271d6958f9d31775f101491de42e2313b50cc6111d8b7a4182ef5",
+      "dimensions": [
+        901,
+        1600
+      ],
+      "bytes": 167366,
+      "context": "User confirmed late-August QSTP x YEC closing gathering.",
+      "processing": "EXIF orientation, proportional resize, WebP encode, metadata omitted; no generative edits."
+    },
+    {
+      "name": "paklaunch",
+      "source": "G:\\LinkedIn-Posts\\2026-10-09\\Selected_Post_Photos\\Post_2_Community_and_Leadership\\04_Paklaunch.jpg",
+      "sourceSha256": "d1840a13e46887285368cf448b8762512936803bdda43a154346f4572f91a56f",
+      "sourceDimensions": [
+        2252,
+        3000
+      ],
+      "output": "public\\images\\moments\\paklaunch.webp",
+      "outputSha256": "f42dc5d76adf5b52e7e33e7ccf6c6bdaaed0a7ac2a2d3af0dc13d73e413342da",
+      "dimensions": [
+        1201,
+        1600
+      ],
+      "bytes": 168258,
+      "context": "Owner-supplied Paklaunch Doha meetup photograph.",
+      "processing": "EXIF orientation, proportional resize, WebP encode, metadata omitted; no generative edits."
+    },
+    {
+      "name": "eo-qatar",
+      "source": "G:\\LinkedIn-Posts\\2026-10-09\\Selected_Post_Photos\\Post_2_Community_and_Leadership\\05_EO_Qatar.jpg",
+      "sourceSha256": "eb848ad256004e58b519f904a1970efb0e9580633624e0beafe5989d5f022370",
+      "sourceDimensions": [
+        4000,
+        2252
+      ],
+      "output": "public\\images\\moments\\eo-qatar.webp",
+      "outputSha256": "b9b0512ee442c9777130951339520522c1233c4d530c10b01302251dffbf0421",
+      "dimensions": [
+        1400,
+        788
+      ],
+      "bytes": 82714,
+      "context": "Owner-supplied photograph from EO Qatar growth session.",
+      "processing": "EXIF orientation, proportional resize, WebP encode, metadata omitted; no generative edits."
+    },
+    {
+      "name": "qatar-event-show",
+      "source": "G:\\LinkedIn-Posts\\2026-10-09\\Selected_Post_Photos\\Post_2_Community_and_Leadership\\03_Qatar_Event_Show.jpg",
+      "sourceSha256": "598e3322b0d01c1b72123b1decca9b98303338f652af760734af262078019972",
+      "sourceDimensions": [
+        2252,
+        3250
+      ],
+      "output": "public\\images\\moments\\qatar-event-show.webp",
+      "outputSha256": "a253cef1b12922c56c2344746de26ff9f70df84417894072e754928fdb1d1a55",
+      "dimensions": [
+        1109,
+        1600
+      ],
+      "bytes": 258402,
+      "context": "Owner-supplied Qatar Event Show visit photograph.",
+      "processing": "EXIF orientation, proportional resize, WebP encode, metadata omitted; no generative edits."
+    },
+    {
+      "name": "mcit-ai-workshop",
+      "source": "G:\\LinkedIn-Posts\\2026-10-09\\Selected_Post_Photos\\Post_3_Google_Cloud_and_AI\\05_Separate_MCIT_AI_Workshop.jpg",
+      "sourceSha256": "4af3ffc0e17088134ee8bf0c744cfbaff36ae13b92fab1afeb2960867e5b0fc2",
+      "sourceDimensions": [
+        4000,
+        2252
+      ],
+      "output": "public\\images\\moments\\mcit-ai-workshop.webp",
+      "outputSha256": "0482eb899088f437d63e6389d2e2c16e923868a71c3e8ea9c98db51f921a2a30",
+      "dimensions": [
+        1400,
+        788
+      ],
+      "bytes": 109092,
+      "context": "Owner-supplied separate September MCIT AI workshop photograph.",
+      "processing": "EXIF orientation, proportional resize, WebP encode, metadata omitted; no generative edits."
+    },
+    {
+      "name": "scale-now",
+      "source": "G:\\LinkedIn-Posts\\2026-10-09\\Separate_Scale_Now\\Scale_Now_Panel.jpg",
+      "sourceSha256": "c1d5074e22dc9ff9c3df4ac7ea841f2ed88460b33357e32b4d2865b50d16b077",
+      "sourceDimensions": [
+        4032,
+        3024
+      ],
+      "output": "public\\images\\moments\\scale-now.webp",
+      "outputSha256": "4df49f9cba11bd36f89a17908c57486113ea1aa1b199dcce214ddf64aff2e62c",
+      "dimensions": [
+        1400,
+        1050
+      ],
+      "bytes": 137274,
+      "context": "Owner-supplied IMG_4091; separate September 30 Scale Now panel.",
+      "processing": "EXIF orientation, proportional resize, WebP encode, metadata omitted; no generative edits."
+    },
+    {
+      "name": "google-keynote",
+      "source": "G:\\LinkedIn-Posts\\2026-10-09\\Selected_Post_Photos\\Post_3_Google_Cloud_and_AI\\03_Keynote.jpg",
+      "sourceSha256": "e500c49e0f5dc25ecd5faedf338d99c84795482ce3443dcfd21e35fa9010d16e",
+      "sourceDimensions": [
+        2252,
+        4000
+      ],
+      "output": "public\\images\\moments\\google-keynote.webp",
+      "outputSha256": "7d2a809a74ad6189472acdc999ac400daeec5bd356feadf4be69ce53dec73906",
+      "dimensions": [
+        901,
+        1600
+      ],
+      "bytes": 207722,
+      "context": "Owner-supplied Google Cloud Summit keynote photograph.",
+      "processing": "EXIF orientation, proportional resize, WebP encode, metadata omitted; no generative edits."
+    },
+    {
+      "name": "google-exhibition",
+      "source": "G:\\LinkedIn-Posts\\2026-10-09\\Selected_Post_Photos\\Post_3_Google_Cloud_and_AI\\04_Exhibition_Floor.jpg",
+      "sourceSha256": "a7e1122e7cf1275bcce2db23f496a9b409108def588bf3a051425d308ff0ae70",
+      "sourceDimensions": [
+        720,
+        1110
+      ],
+      "output": "public\\images\\moments\\google-exhibition.webp",
+      "outputSha256": "1a8edf8b66fc60764f844a96de436b5df23857e47316d0870b112022711e8660",
+      "dimensions": [
+        720,
+        1110
+      ],
+      "bytes": 165900,
+      "context": "Owner-supplied summit exhibition-floor photograph.",
+      "processing": "EXIF orientation, proportional resize, WebP encode, metadata omitted; no generative edits."
+    },
+    {
+      "name": "google-venue",
+      "source": "G:\\LinkedIn-Posts\\2026-10-09\\4K_Exports\\Enhanced_Source_Photos\\Google_Cloud_Venue.jpg",
+      "sourceSha256": "f05c30cdb57e32a8b649e297c5285f086d67a5afae98e31a185e642682a1dcb0",
+      "sourceDimensions": [
+        683,
+        1024
+      ],
+      "output": "public\\images\\moments\\google-venue.webp",
+      "outputSha256": "5a84e5d389074130aa8414dc63ec1c700ed292608ed93e32a5b62db3217b0c7b",
+      "dimensions": [
+        683,
+        1024
+      ],
+      "bytes": 101486,
+      "context": "User supplied extra venue photograph specifically for Google Cloud Summit.",
+      "processing": "EXIF orientation, proportional resize, WebP encode, metadata omitted; no generative edits."
+    },
+    {
+      "name": "bahria-welcome",
+      "source": "G:\\E Deviser Website\\public\\review\\media\\ai-future-summit-welcome.webp",
+      "sourceSha256": "831cadee2dd76986c9222f7b47d3b740ee54081fdfdd803db069673e71cb78e7",
+      "sourceDimensions": [
+        960,
+        869
+      ],
+      "output": "public\\images\\moments\\bahria-welcome.webp",
+      "outputSha256": "946fa3ef17c6147368946c7a7aefc15579ca83293984092d831399770ab38352",
+      "dimensions": [
+        960,
+        869
+      ],
+      "bytes": 78404,
+      "context": "User-supplied E Deviser Ecosystem Key Moments PDF page 3; cropped event photo.",
+      "processing": "EXIF orientation, proportional resize, WebP encode, metadata omitted; no generative edits."
+    },
+    {
+      "name": "bahria-report",
+      "source": "G:\\E Deviser Website\\public\\review\\media\\the-patriot-ai-future-summit.webp",
+      "sourceSha256": "ef9827038d01f79220de8e324ee32dbe322221eaae624818b981bf723aca7b22",
+      "sourceDimensions": [
+        1400,
+        1324
+      ],
+      "output": "public\\images\\moments\\bahria-report.webp",
+      "outputSha256": "bb1c10e4f00d3cc2b18510603710b8b0d4037994bda3aad6fad386370100ce75",
+      "dimensions": [
+        1400,
+        1324
+      ],
+      "bytes": 303696,
+      "context": "User-supplied PDF page 7; The Patriot press report artifact.",
+      "processing": "EXIF orientation, proportional resize, WebP encode, metadata omitted; no generative edits."
+    },
+    {
+      "name": "bahria-series",
+      "source": "G:\\E Deviser Website\\public\\review\\media\\the-patriot-summit-series.webp",
+      "sourceSha256": "80a4cbf5be5eb05821a1ffec4c491f155eb788bca1fcce6ccf6834640130751d",
+      "sourceDimensions": [
+        1400,
+        1332
+      ],
+      "output": "public\\images\\moments\\bahria-series.webp",
+      "outputSha256": "916b8b26836f28210f4008008dd3406e8e9879c1de74c22d19cad8a6331975e6",
+      "dimensions": [
+        1400,
+        1332
+      ],
+      "bytes": 215202,
+      "context": "User-supplied PDF page 15; The Patriot series announcement artifact.",
+      "processing": "EXIF orientation, proportional resize, WebP encode, metadata omitted; no generative edits."
+    },
+    {
+      "name": "edtech-panel",
+      "source": "G:\\E Deviser Website\\public\\review\\media\\edtech-forum-panel.webp",
+      "sourceSha256": "6ebe94852450fbc0e819a6a48eab657022b3b1485cb95e3aff7f246bb77caf39",
+      "sourceDimensions": [
+        960,
+        879
+      ],
+      "output": "public\\images\\moments\\edtech-panel.webp",
+      "outputSha256": "f77ca2413fb48fd2a7ca69bb735396104462f8ce70f0a71fefd8f116fea415bb",
+      "dimensions": [
+        960,
+        879
+      ],
+      "bytes": 106698,
+      "context": "User-supplied PDF page 6; separate EdTech Future Forum panel photo.",
+      "processing": "EXIF orientation, proportional resize, WebP encode, metadata omitted; no generative edits."
+    },
+    {
+      "name": "edtech-group",
+      "source": "G:\\E Deviser Website\\public\\review\\media\\edtech-forum-group.webp",
+      "sourceSha256": "f49b6a55f2bc36b991a088434a28de749e7b41f77ee6130f77027777aba8e203",
+      "sourceDimensions": [
+        960,
+        456
+      ],
+      "output": "public\\images\\moments\\edtech-group.webp",
+      "outputSha256": "73a49412a939b5d07b9ce6d0a24dcdde316ee1690b5d6f152bfbd46c5e3989b5",
+      "dimensions": [
+        960,
+        456
+      ],
+      "bytes": 59972,
+      "context": "User-supplied PDF page 2 lower photo; EdTech Future Forum group.",
+      "processing": "EXIF orientation, proportional resize, WebP encode, metadata omitted; no generative edits."
+    },
+    {
+      "name": "edtech-certificate",
+      "source": "G:\\E Deviser Website\\public\\review\\media\\edtech-forum-certificate.webp",
+      "sourceSha256": "06aac4a8a58567d11fa78cff64133efe9740d656d429835387a29b257cdf4daf",
+      "sourceDimensions": [
+        960,
+        869
+      ],
+      "output": "public\\images\\moments\\edtech-certificate.webp",
+      "outputSha256": "2268d8d3971695dbb014418f83d0e7f7b89f9ee8167cb8f233feece9599254c5",
+      "dimensions": [
+        960,
+        869
+      ],
+      "bytes": 108500,
+      "context": "User-supplied PDF page 17; participant certificate presentation.",
+      "processing": "EXIF orientation, proportional resize, WebP encode, metadata omitted; no generative edits."
+    },
+    {
+      "name": "edtech-report",
+      "source": "G:\\E Deviser Website\\public\\review\\media\\the-patriot-edtech-forum.webp",
+      "sourceSha256": "de2772d75acc1c99ab660a4751a7f2f33a94ac11f7969d7755e05a5c69e37f58",
+      "sourceDimensions": [
+        1400,
+        1332
+      ],
+      "output": "public\\images\\moments\\edtech-report.webp",
+      "outputSha256": "d570c1006c8e9726b119071a9ed6f558e9174094625de6b30c34dd09a14f5587",
+      "dimensions": [
+        1400,
+        1332
+      ],
+      "bytes": 287882,
+      "context": "User-supplied PDF page 4; The Patriot forum report artifact.",
+      "processing": "EXIF orientation, proportional resize, WebP encode, metadata omitted; no generative edits."
+    },
+    {
+      "name": "bahria-group",
+      "source": "G:\\E Deviser Website\\output\\media-review\\ecosystem\\embedded-images\\page-02-image-01-X1.jp2",
+      "sourceSha256": "34c69a093b0a9a455e77a07ca6fd25b0d81a5add9cc87db0e5006473e9afec23",
+      "crop": [
+        237,
+        654,
+        1743,
+        1322
+      ],
+      "output": "public\\images\\moments\\bahria-group.webp",
+      "outputSha256": "ca47279ca6e5e0a7f3c30f8c07ac01049927bb55159cf46802bb9924c11b0e6e",
+      "dimensions": [
+        1400,
+        621
+      ],
+      "bytes": 96722,
+      "context": "Upper group photo in user-supplied PDF page 2; associated with AI x Future Summit by source layout and participant setting; no individuals identified.",
+      "processing": "Rectangular crop, proportional resize and WebP encode only."
+    }
+  ]
+}

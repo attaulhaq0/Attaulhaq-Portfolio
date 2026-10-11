@@ -1,0 +1,27 @@
+Use case: infographic-diagram
+Asset type: original explanatory development map for a personal game-development portfolio, landscape 1536x1024.
+Style: a polished, flat, readable Blueprint-inspired node diagram on a dark ink panel with a faint square grid. This is an independently illustrated systems explainer, NOT a screenshot, NOT an actual Unreal Engine graph and NOT an assertion of exact project implementation. No toolbars, menus, engine logo, fake code, pseudo-code, file names, credentials or decorative gibberish. Clean cyan and violet node categories, warm amber for validation decisions, white flow connectors with clear arrowheads. Large bold modern typography. Keep all text crisp and exactly as supplied. Use generous spacing. No overlapping labels or crossing wires, no gratuitous wiring. Small round ports and squared rounded-corner nodes suggest visual scripting without pretending to be native software. Every edge must have a clear directional arrowhead. Flat orthographic composition, not perspective or neon 3D.
+Header title and scope subtitle must be clearly readable. Footer must say exactly: "Explanatory reconstruction - not an original project graph".
+
+Title, verbatim: "DIGITAL DYNASTY"
+Subtitle, verbatim: "Inventory, crafting and construction checks"
+Draw six large numbered stages in a simple two-row flow: 01 -> 02 -> 03 across top row, then 04 -> 05 -> 06 across lower row. Use a single clear turning connector from03 to04. These stage titles must be large and exactly:
+"01  PLAYER INTERACTION"
+"02  INVENTORY"
+"03  RECIPE CHECK"
+"04  CRAFT ITEM"
+"05  PLACEMENT CHECK"
+"06  SAVED PROGRESS"
+Supporting labels, exactly:
+Stage01: "Explore / gather"
+Stage02: "Materials / quantities"
+Stage03: "Required materials?"
+Stage04: "Consume materials"; "Create item"
+Stage05: "Terrain / collision?"
+Stage06: "Inventory / position / XP"
+Stage03 is amber validation; route an arrow labeled "Enough" to04. An amber branch labeled "Missing" leads to a separate compact note: "Keep inventory unchanged". Do not connect Missing to04.
+Stage04 produces an item and leads to05 only via an edge labeled "Structure item". This is a building-item branch, not a statement that every crafted tool requires placement.
+Stage05 is amber validation; branch "Valid" to a compact cyan result node labeled "Place structure"; then arrow from that result to06. Branch "Blocked" to a separate compact note labeled "Adjust preview"; connect that note back to05 with an amber arrow. Do not route a blocked placement to Place structure.
+Draw02->03 labeled "Recipe request",01->02 labeled "Collected resources". Keep supporting result nodes compact and spatially separate from the six main numbered stages. Stage06 means persistence of ongoing progress; not automatic saving after each craft. Include a small footnote above scope footer, exactly: "Save/load preserves ongoing player state".
+Use cyan stages01,02,04; amber03,05; violet06. The complete diagram must remain legible, with large short labels and no overlapping or tangled connections. All flow labels at least22px at1536width. Header around54px.
+Accuracy: existing project report pages34-38 describe resource/inventory/recipe/crafting/construction/progression and saved-state relations. Manual tests on pages47,51,52 record movement/collision, required-material consumption, terrain/collision placement rules, leveling and save/load restoration. Explanatory reconstruction only: no exact native Blueprint syntax, no undocumented database, cloud, anti-cheat, multiplayer scale, save timing or code. Required materials must be checked before consumption. Blocked construction must not place a structure. Keep those logic meanings unambiguous.

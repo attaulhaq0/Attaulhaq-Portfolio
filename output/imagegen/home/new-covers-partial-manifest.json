@@ -1,0 +1,50 @@
+[
+  {
+    "slug": "aegisops",
+    "source": "output\\imagegen\\home\\aegisops.png",
+    "sourceSha256": "f8b8e94f179995ee0f1b681629605085d8cc021d05f5f78e190785782492c003",
+    "sourceDimensions": [
+      1536,
+      1024
+    ],
+    "output": "public\\images\\home\\aegisops-illustration.webp",
+    "publicPath": "/images/home/aegisops-illustration.webp",
+    "sha256": "476555b0a77882b999be36215c2d6d13cb8ef84dd34e42d42ff2c954b16a0d1d",
+    "bytes": 69122,
+    "dimensions": [
+      1200,
+      800
+    ],
+    "alphaCorners": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "visualQa": "Original inspected; centered sculpture, cyan/violet reference language, no real interface, no people/text, ample empty margins; alpha only outer empty border."
+  },
+  {
+    "slug": "family-os",
+    "source": "output\\imagegen\\home\\family-os.png",
+    "sourceSha256": "d00e1d9e4da05e45cbe026ff290558077a502f47423d3876bd9957d3a80506b3",
+    "sourceDimensions": [
+      1536,
+      1024
+    ],
+    "output": "public\\images\\home\\family-os-illustration.webp",
+    "publicPath": "/images/home/family-os-illustration.webp",
+    "sha256": "2b88b3ff12ea51dfd8bde779712740f858a0c35b3d05ae888e36b22f2834beba",
+    "bytes": 81902,
+    "dimensions": [
+      1200,
+      800
+    ],
+    "alphaCorners": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "visualQa": "Original inspected; centered sculpture, cyan/violet reference language, no real interface, no people/text, ample empty margins; alpha only outer empty border."
+  }
+]

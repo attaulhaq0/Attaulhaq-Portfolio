@@ -1,0 +1,86 @@
+---
+import '../styles/section-motion.css';
+---
+
+<script>
+  const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const blocks = Array.from(document.querySelectorAll<HTMLElement>([
+    '.intro-section > div', '.section-heading', '.project-card', '.fyp-feature',
+    '.capabilities-heading', '.capability-row', '.tech-stack-heading', '.tech-stack-group',
+    '.about-grid > div', '.career-highlights-heading', '.career-highlights-grid > article',
+    '.career-certificate', '.moments-gallery', '.immersive-note', '.case-showcase-heading',
+    '.case-content > section', '.next-project', '.contact-section > .shell', '.contact-cv', '.footer',
+  ].join(','))).filter(block => !block.closest('.spatial-hero, .hero-art, #hero-canvas'));
+  const regions = Array.from(document.querySelectorAll<HTMLElement>('main > section:not(.spatial-hero):not(.case-hero), .case-content > section, .contact-section'));
+  const accents = ['violet', 'cyan', 'magenta'];
+  regions.forEach((region, index) => { region.dataset.motionAccent = accents[index % accents.length]; });
+  let observer: IntersectionObserver | undefined;
+  let attached = false;
+  let suspended = false;
+
+  const reveal = (block: HTMLElement, immediate = false) => {
+    if (immediate) block.dataset.motionImmediate = '';
+    block.dataset.motionState = 'entered';
+    observer?.unobserve(block);
+  };
+  const revealAll = () => blocks.forEach(block => reveal(block, true));
+  const revealFocus = (event: FocusEvent) => {
+    if (!(event.target instanceof Element)) return;
+    blocks.filter(block => block.contains(event.target as Node)).forEach(block => reveal(block, true));
+  };
+  const revealHash = (hash = location.hash) => {
+    if (!hash) return;
+    let id: string;
+    try { id = decodeURIComponent(hash.slice(1)); } catch { return; }
+    const destination = document.getElementById(id);
+    if (!destination) return;
+    blocks.filter(block => block.contains(destination)).forEach(block => reveal(block, true));
+  };
+  const revealAnchor = (event: MouseEvent) => {
+    if (!(event.target instanceof Element)) return;
+    const link = event.target.closest<HTMLAnchorElement>('a[href]');
+    if (!link) return;
+    const destination = new URL(link.href, location.href);
+    if (destination.origin === location.origin && destination.pathname === location.pathname) revealHash(destination.hash);
+  };
+  const hashChanged = () => revealHash();
+  const detach = () => {
+    observer?.disconnect();
+    observer = undefined;
+    document.removeEventListener('focusin', revealFocus);
+    document.removeEventListener('click', revealAnchor);
+    window.removeEventListener('hashchange', hashChanged);
+    attached = false;
+    revealAll();
+  };
+  const attach = () => {
+    if (attached || suspended) return;
+    if (motionPreference.matches || !('IntersectionObserver' in window)) { revealAll(); return; }
+    observer = new IntersectionObserver(entries => {
+      if (suspended) return;
+      entries.forEach(entry => { if (entry.isIntersecting) reveal(entry.target as HTMLElement); });
+    }, { rootMargin: '0px 0px 64px 0px', threshold: 0 });
+    attached = true;
+    document.addEventListener('focusin', revealFocus);
+    document.addEventListener('click', revealAnchor);
+    window.addEventListener('hashchange', hashChanged);
+    blocks.forEach(block => {
+      // Enhancement only arms blocks below the viewport; the first screen never waits.
+      if (block.dataset.motionState === 'entered' || block.getBoundingClientRect().top <= innerHeight + 64 || block.contains(document.activeElement)) {
+        reveal(block, true);
+      } else {
+        delete block.dataset.motionImmediate;
+        block.dataset.motionState = 'pending';
+        observer?.observe(block);
+      }
+    });
+    revealHash();
+  };
+  const preferenceChanged = () => { detach(); if (!motionPreference.matches) attach(); };
+  const pageHidden = () => { suspended = true; detach(); motionPreference.removeEventListener('change', preferenceChanged); };
+  const pageShown = () => { suspended = false; motionPreference.addEventListener('change', preferenceChanged); attach(); };
+  motionPreference.addEventListener('change', preferenceChanged);
+  window.addEventListener('pagehide', pageHidden);
+  window.addEventListener('pageshow', pageShown);
+  attach();
+</script>

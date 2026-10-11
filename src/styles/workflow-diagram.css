@@ -1,0 +1,52 @@
+/* The ring arranges numbered stages; it does not imply a feedback cycle. */
+.workflow-diagram { --workflow-accent: #c2a4ff; margin-top: 37px; }
+.workflow-light { --workflow-accent: #9bdedc; }
+.workflow-dark { --workflow-accent: #a6baff; }
+.workflow-amber { --workflow-accent: #edc294; }
+.workflow-enhanced { display: grid; grid-template-columns: 1.1fr 1fr; gap: 32px; align-items: center; }
+.workflow-ring { position: relative; min-width: 0; width: 100%; aspect-ratio: 1; max-width: 480px; margin-inline: auto; background: radial-gradient(circle, #34223d55, transparent 61%); }
+.workflow-orbit { position: absolute; inset: 17%; border: 1px dashed #8b739f70; border-bottom-color: transparent; border-radius: 50%; transform: rotate(18deg); }
+.workflow-center { position: absolute; left: 50%; top: 49%; transform: translate(-50%, -50%); width: 38%; text-align: center; display: flex; flex-direction: column; align-items: center; }
+.workflow-center-mark { color: var(--workflow-accent); font-size: 35px; line-height: 1; margin-bottom: 10px; }
+.workflow-center strong { color: var(--paper); font-family: var(--font-display); font-size: 15px; font-weight: 500; line-height: 1.5; letter-spacing: -.03em; }
+.workflow-center > span:last-child { color: var(--muted); font-size: 10px; letter-spacing: .06em; margin-top: 8px; }
+.workflow-stage { position: absolute; left: var(--stage-x); top: var(--stage-y); transform: translate(-50%, -50%); width: 29%; min-height: 70px; display: flex; flex-direction: column; align-items: center; gap: 7px; padding: 9px 4px; border: 0; border-radius: 7px; background: #100d16; color: #c1b6cd; }
+.workflow-stage-number { width: 36px; height: 36px; display: grid; place-items: center; border: 1px solid #79618d; border-radius: 50%; font-size: 11px; color: var(--workflow-accent); background: #16101f; }
+.workflow-stage-title { font-family: var(--font-display); font-size: 10px; line-height: 1.45; letter-spacing: -.02em; text-align: center; }
+.workflow-stage[aria-pressed='true'] .workflow-stage-number { color: #100d16; background: var(--workflow-accent); border-color: var(--workflow-accent); box-shadow: 0 0 0 5px #c2a4ff12; }
+.workflow-stage[aria-pressed='true'] { color: var(--paper); }
+.workflow-stage:hover .workflow-stage-number { border-color: #ece2ff; }
+.workflow-ring-instruction { position: absolute; bottom: 1%; left: 0; right: 0; text-align: center; color: #b9a9c7; font-size: 10px; }
+.workflow-diagram .system-flow { margin-top: 0; }
+.workflow-diagram .system-flow li { border: 0; border-top: 1px solid #6a487b; border-radius: 0; background: transparent; padding: 24px 0; gap: 16px; margin-bottom: 0; scroll-margin-top: 120px; }
+.workflow-diagram .system-index { width: 34px; height: 34px; border-radius: 50%; border: 1px solid #6e547d; color: var(--workflow-accent); }
+.workflow-detail-eyebrow { color: var(--workflow-accent); font-size: 9px; letter-spacing: .1em; display: block; margin-bottom: 14px; }
+.workflow-diagram .system-flow h3 { font-size: clamp(21px, 2.1vw, 30px); line-height: 1.25; margin-bottom: 17px; letter-spacing: -.035em; color: var(--paper); }
+.workflow-diagram .system-flow p { font-size: 15px; color: var(--muted); line-height: 1.9; }
+.workflow-enhanced .system-flow { min-height: 235px; }
+.workflow-enhanced .system-flow li { padding: 27px 0; }
+@media (max-width: 1100px) {
+  .workflow-enhanced { grid-template-columns: 1fr; gap: 28px; }
+  .workflow-ring { max-width: 430px; }
+  .workflow-enhanced .system-flow { min-height: 160px; }
+}
+@media (max-width: 760px) {
+  .workflow-diagram { margin-top: 25px; }
+  .workflow-enhanced { gap: 19px; }
+  .workflow-ring { max-width: 370px; margin-bottom: 14px; }
+  .workflow-stage { min-height: 68px; width: 30%; gap: 5px; }
+  .workflow-stage-title { font-size: 10px; }
+  .workflow-stage-number { width: 32px; height: 32px; font-size: 10px; }
+  .workflow-center strong { font-size: 12px; }
+  .workflow-center-mark { font-size: 28px; margin-bottom: 7px; }
+  .workflow-center > span:last-child { font-size: 10px; }
+  .workflow-ring-instruction { font-size: 10px; bottom: -5%; }
+  .workflow-diagram .system-flow h3 { font-size: 24px; }
+  .workflow-diagram .system-flow p { font-size: 14px; }
+  .workflow-enhanced .system-flow { min-height: 195px; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .workflow-stage-number { transition: background .2s, box-shadow .2s, border-color .2s; }
+  .workflow-enhanced [data-workflow-detail]:not([hidden]) { animation: workflow-reveal .25s ease both; }
+  @keyframes workflow-reveal { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+}

@@ -1,13 +1,13 @@
 /* Edit this file to re-theme the entire site. Keep contrast checks in the test suite. */
 :root {
-  --ink: #101619;
-  --surface: #192328;
-  --paper: #f2f0e9;
-  --muted: #b7c2c7;
-  --mint: #88d6c4;
-  --teal: #176454;
+  --ink: #09080d;
+  --surface: #111017;
+  --paper: #f0ecf5;
+  --muted: #aaa3b4;
+  --mint: #c2a4ff;
+  --teal: #c2a4ff;
   --amber: #e6b875;
-  --line: #2c383d;
+  --line: #29242f;
   --font-display: 'Manrope', sans-serif;
   --font-body: 'Source Sans 3', sans-serif;
   --shell: 1320px;

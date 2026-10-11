@@ -9,25 +9,38 @@ class SceneBoundary extends Component<{ children: ReactNode; onError: (error: Er
   render() { return this.state.failed ? null : this.props.children; }
 }
 
-// Loaded only after an explicit user request. No React or Three on initial page load.
-export function mountScene(container: HTMLElement): Promise<() => void> {
+// Dynamically started after the static hero is readable. The page never waits for WebGL.
+export function mountScene(container: HTMLElement, signal?: AbortSignal): Promise<() => void> {
   return new Promise((resolve, reject) => {
+    if (signal?.aborted) { reject(new DOMException('Scene initialization cancelled.', 'AbortError')); return; }
     const root = createRoot(container);
     let settled = false;
+    let unmounted = false;
+    const dispose = () => {
+      if (unmounted) return;
+      unmounted = true;
+      signal?.removeEventListener('abort', abort);
+      root.unmount();
+    };
     const timeout = window.setTimeout(() => fail(new Error('WebGL initialization timed out.')), 15000);
     const fail = (error: Error) => {
       if (settled) return;
       settled = true;
       window.clearTimeout(timeout);
       // Avoid unmounting synchronously inside React error handling.
-      queueMicrotask(() => root.unmount());
+      queueMicrotask(dispose);
       reject(error);
     };
+    const abort = () => {
+      if (!settled) fail(new DOMException('Scene initialization cancelled.', 'AbortError'));
+      else dispose();
+    };
+    signal?.addEventListener('abort', abort, { once: true });
     root.render(<SceneBoundary onError={fail}><SystemScene onReady={() => {
-      if (settled) return;
+      if (settled || signal?.aborted) return;
       settled = true;
       window.clearTimeout(timeout);
-      resolve(() => root.unmount());
+      resolve(dispose);
     }} /></SceneBoundary>);
   });
 }

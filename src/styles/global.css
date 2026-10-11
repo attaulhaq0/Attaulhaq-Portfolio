@@ -96,7 +96,7 @@ a, button, summary { outline-offset: 6px; }
 .project-title-row { display: flex; justify-content: space-between; gap: 20px; align-items: center; margin-top: 7px; }
 .project-title-row h3 { font-size: 29px; letter-spacing: -.04em; }
 .project-title-row a:hover { color: var(--teal); }
-.project-number { color: #65756e; font-size: 13px; }
+.project-number { color: #53635b; font-size: 13px; }
 .project-card > p { max-width: 410px; margin-top: 10px; font-size: 16px; color: #53605c; line-height: 1.55; }
 .project-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
 .project-tags span { font-size: 10px; color: #40534c; border: 1px solid #cbd2ca; padding: 3px 10px; border-radius: 3px; }

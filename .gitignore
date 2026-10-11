@@ -11,3 +11,17 @@ test-results/
 Thumbs.db
 *.tsbuildinfo
 public/media/raw/
+output/imagegen/python-deps/
+output/sora/raw/
+.local/
+.runtime/
+__pycache__/
+*.pyc
+tmp/
+.review/
+output/imagegen/pip-cache/
+output/design-audit/
+output/imagegen/avatar-*
+output/imagegen/avatar-studio.png
+output/sora/avatar-*
+output/**/qa/

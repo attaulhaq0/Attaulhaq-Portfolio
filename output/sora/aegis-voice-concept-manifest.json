@@ -1,0 +1,21 @@
+{
+  "provider": "Microsoft Foundry",
+  "method": "POST",
+  "url": "https://edeviser-sweden-resource.services.ai.azure.com/openai/v1/videos",
+  "encoding": "multipart/form-data",
+  "authorization": "Bearer [REDACTED]",
+  "fields": {
+    "model": "sora-2",
+    "prompt": "A premium abstract voice-and-retrieval sculpture comes gently to life. Preserve the supplied original conceptual illustration's exact object arrangement: one elegant brushed-metal microphone at center; the surrounding open cyan and violet glass arcs; a row of small transparent waveform ellipses at the left; and three linked glass nodes shaped as a sphere, cube and pyramid at the right. The composition is an original conceptual illustration, not an actual application or product interface. Change the lighting to a brighter refined lavender-plum studio with a softly illuminated cyan reflective floor and luminous violet-cyan glass edges; keep a visible smooth studio backdrop rather than a black void. Over four seconds, a gentle ice-cyan pulse moves from the left waveform ellipses into the microphone, then passes slowly through the three existing thin curved connections to the three right-hand glass nodes in sequence. Each node receives one subtle inner glow. The microphone and all sculpture objects stay completely fixed: no deformation, no rotation, no extra objects, no new connections. Locked camera, absolutely no zoom, pan, orbit, cuts or framing change. Calm, fluid continuous motion and physically believable glass refraction. Restrained luminous accents, clear high-end materials, soft studio shadows. No people, hands, letters, text, labels, logos, UI, badges, fireworks, particles or starfield. No dialogue, no voices, no music or sound effects. A beautiful silent motion study for a portfolio case page.",
+    "seconds": "4",
+    "size": "1280x720"
+  },
+  "input_reference": {
+    "file": "output\\sora\\aegis-voice-reference-1280x720.png",
+    "mimeType": "image/png",
+    "size": "1280x720"
+  },
+  "networkUsed": false,
+  "output": "output\\sora\\raw\\aegis-voice-concept.mp4",
+  "reviewedAt": "2026-10-11T14:12:20.472Z"
+}

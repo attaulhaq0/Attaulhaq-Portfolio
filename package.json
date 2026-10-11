@@ -4,7 +4,9 @@
   "private": true,
   "type": "module",
   "license": "UNLICENSED",
-  "engines": { "node": ">=22.12.0" },
+  "engines": {
+    "node": ">=22.12.0"
+  },
   "scripts": {
     "dev": "astro dev --host 127.0.0.1 --port 4321",
     "build": "astro build",
@@ -29,6 +31,7 @@
     "@astrojs/check": "^0.9.6",
     "@axe-core/playwright": "^4.11.0",
     "@playwright/test": "^1.58.0",
+    "@types/node": "^26.6.5",
     "@types/react": "^19.2.0",
     "@types/react-dom": "^19.2.0",
     "@types/three": "^0.183.0",

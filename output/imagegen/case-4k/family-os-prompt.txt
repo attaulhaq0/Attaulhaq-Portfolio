@@ -1,0 +1,7 @@
+Use case: stylized-concept
+Asset type: 4K wide conceptual artwork for a product architect's portfolio work-page header.
+Input image 1 is a STYLE REFERENCE ONLY. Make a new original sculpture, borrowing the dimensional layering and violet/cyan/magenta accents without copying subjects or layout.
+Subject: household coordination with explicit human control. Three elegant translucent lavender miniature homes at different elevations on one compact layered violet platform, a clear cyan shared calendar tile with abstract squares and no text, a single magenta circular review gate on the connecting path, and two small violet resource tokens. A few purposeful cyan paths connect these objects. Strong composition and limited symbols.
+Composition: coherent wide16:9 editorial sculpture centered with generous empty margins, entirely seamless warm white #f4f1ed studio backdrop, soft ambient neutral shadows and bright studio light. No darkbackdrop, muddyplum atmosphere or horizon. No clipped objects.
+Palette: violet/lavender homes and platform, controlled cyan paths, one magenta reviewgate. Neutral brightwarmwhite background.
+Style: sophisticated polished 3D conceptual illustration with precise bevels, dimensional matte and translucent glass. No stock corporate people, photographs, readabletext, logos, currency, fakeUI or screenshot claim. No clutter. This is a visual metaphor for household coordination, not liveproduct footage.

@@ -1,0 +1,28 @@
+[
+  {
+    "slug": "edeviser",
+    "source": "public\\images\\editorial-product.webp",
+    "sourceSha256": "9f3ca0347df4ff6d060157f1fbf16bbd5e8a4013ec6c67eef833db7fe24080dd",
+    "output": "public\\images\\home\\edeviser-illustration.webp",
+    "sha256": "4a3833918a6a977580bd9653e2e0e34a143a85e8e02436daa4a370275de6673e",
+    "bytes": 50632,
+    "dimensions": [
+      1200,
+      800
+    ],
+    "processing": "Proportional1200x800 resize; alpha smoothstep fade over outer10percent empty border. Interior sculpture preserved."
+  },
+  {
+    "slug": "cosmo-conqueror",
+    "source": "public\\images\\editorial-gameplay.webp",
+    "sourceSha256": "b15d0456496468dabbfd272b26d39f5bb87c14c531472201423c6e4d113c2841",
+    "output": "public\\images\\home\\cosmo-conqueror-illustration.webp",
+    "sha256": "81fff88754e299b8b6af7a618095b9f9e3445bbdb6cb4bbb9280cb43b57fd64c",
+    "bytes": 72234,
+    "dimensions": [
+      1200,
+      800
+    ],
+    "processing": "Proportional1200x800 resize; alpha smoothstep fade over outer10percent empty border. Interior sculpture preserved."
+  }
+]

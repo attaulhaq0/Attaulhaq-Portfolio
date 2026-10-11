@@ -1,0 +1,18 @@
+---
+interface Props { name: string; src: string; poster: string; duration: string }
+const { name, src, poster, duration } = Astro.props;
+---
+<figure class="home-gameplay">
+ <video controls playsinline preload="none" poster={poster} width="1280" height="720" aria-label={`${name} actual gameplay showcase`}><source src={src} type="video/mp4" />Your browser does not support video. <a href={src}>Download gameplay</a>.</video>
+ <figcaption><span>Watch my gameplay work</span><span>{duration}</span></figcaption>
+</figure>
+<script>
+ document.querySelectorAll<HTMLVideoElement>('.home-gameplay video').forEach(video => {
+  const pause = () => video.pause();
+  const visibility = () => { if (document.hidden) pause(); };
+  const observer = new IntersectionObserver(entries => { if (!entries[0]?.isIntersecting) pause(); });
+  const attach = () => { document.addEventListener('visibilitychange', visibility); observer.observe(video); };
+  const detach = () => { pause(); document.removeEventListener('visibilitychange', visibility); observer.disconnect(); };
+  attach(); window.addEventListener('pagehide', detach); window.addEventListener('pageshow', attach);
+ });
+</script>

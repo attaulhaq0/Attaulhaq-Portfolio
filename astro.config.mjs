@@ -8,5 +8,9 @@ export default defineConfig({
   output: 'static',
   trailingSlash: 'always',
   integrations: [react()],
-  vite: { build: { chunkSizeWarningLimit: 650 } },
+  devToolbar: { enabled: false },
+  vite: {
+    optimizeDeps: { exclude: ['@vitejs/plugin-react/preamble', 'three/addons/utils/BufferGeometryUtils.js'] },
+    build: { chunkSizeWarningLimit: 650 },
+  },
 });

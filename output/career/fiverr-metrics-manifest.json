@@ -1,0 +1,34 @@
+{
+  "date": "2026-10-11",
+  "source": {
+    "path": "C:/Users/hp/AppData/Local/Temp/codex-clipboard-7a364f9f-c753-4381-8f07-cfcb20c7e610.png",
+    "privateCopy": ".review/career-sources/fiverr-owner-screenshot.png",
+    "width": 1280,
+    "height": 638,
+    "sha256": "2925457c8066147f8abfd8d286593d3d4a89a41ce2bcd64c1b20fc0478f661ed"
+  },
+  "output": {
+    "path": "public/images/fiverr-performance-metrics.webp",
+    "width": 842,
+    "height": 307,
+    "bytes": 48466,
+    "sha256": "3e71712246a9a2b736086fb40a8b982898c48c13bdc94391d98b04ce3ea27967",
+    "crop": {
+      "left": 370,
+      "top": 289,
+      "width": 842,
+      "height": 307
+    }
+  },
+  "scope": "Owner explicitly requested publication of supplied Fiverr photo. Focused crop of complete performance-metrics heading and all six cells. No text/value/content alterations or generative edits. Excludes browser chrome, account balance, portrait, level-status card and status warning outside selected metrics region. Public copy must describe historical screenshot, not certify current seller status.",
+  "visibleValues": {
+    "rating": "4.9",
+    "orders": "84",
+    "uniqueClients": "62",
+    "earnings": "PKR 1,291,348",
+    "successScore": "not supplied",
+    "responseRate": "not supplied"
+  },
+  "caption": "Historical Fiverr performance metrics from the screenshot I supplied: 4.9 rating, 84 orders, 62 unique clients and PKR 1,291,348 earned. This focused detail does not represent my current seller status.",
+  "alt": "Historical Fiverr performance dashboard showing a 4.9 rating, 84 orders, 62 unique clients and PKR 1,291,348 in earnings; success score and response rate display dashes."
+}

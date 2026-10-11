@@ -1,0 +1,234 @@
+{
+  "scope": "Sampled source review and full decode verification of chosen12sec excerpts. Original source files unchanged.",
+  "selections": [
+    {
+      "id": "forest",
+      "file": "F:/Cosmo_Portfolio/AlienmissionForest^Underground^RuinedCity.mp4",
+      "sha256": "2f1ada141aceabfc19aae5b1f4af1d1a05535ec19124cbb2c5e6b73b7b2882ff",
+      "start": 150,
+      "end": 162,
+      "crop": {
+        "x": 0,
+        "y": 34,
+        "width": 1920,
+        "height": 1006
+      },
+      "poster": 160,
+      "publicImage": "forest.webp",
+      "output": {
+        "path": "G:/Portfolio Website/.runtime/qa/cosmo/staged/forest-reel.mp4",
+        "bytes": 7178112,
+        "sha256": "7419dede2544b80f66406f7bb52323d17bfe0c012ca6578238678aaf6f7b84f5",
+        "duration": 12,
+        "width": 1280,
+        "height": 720,
+        "fps": 30,
+        "audio": "removed for deliberate silentexcerpt",
+        "aspect": "source crop aspectpreserved; letterboxed1280×720",
+        "validation": "Full selected12sec decode to null exit0 with no decoder errors; metadata1280×720H26430fps; audio removed"
+      },
+      "posterPath": "public/images/cosmo/forest.webp",
+      "review": {
+        "id": "alien-mission",
+        "file": "F:/Cosmo_Portfolio/AlienmissionForest^Underground^RuinedCity.mp4",
+        "sha256": "2f1ada141aceabfc19aae5b1f4af1d1a05535ec19124cbb2c5e6b73b7b2882ff",
+        "bytes": 2862417160,
+        "durationSeconds": 2309.79,
+        "width": 1920,
+        "height": 1080,
+        "fps": 30,
+        "videoCodec": "H264 Main",
+        "audio": {
+          "codec": "AAC LC",
+          "sampleRate": 44100,
+          "channels": 2
+        },
+        "observations": [
+          {
+            "range": [
+              2,
+              923.12
+            ],
+            "description": "Alien forest, luminous trees/foliage, yellow objective markers, shooting samples and an underground industrial dialogue/quest sequence. Windows taskbar persists on the bottom in these sampled frames.",
+            "confidence": "sampled distributed frames and precise146–166/290–310 intervals"
+          },
+          {
+            "range": [
+              1076.64,
+              2304.79
+            ],
+            "description": "Ruined city segment with portrait cutscene, rain/grass traversal, objective UI, gate structures, later cloak traversal and energy weapon effects. Later samples include red status text; at1537.19 a red line/grid is visible in world.",
+            "confidence": "sampled distributed frames"
+          }
+        ],
+        "selections": [
+          {
+            "start": 150,
+            "end": 162,
+            "purpose": "Alien forest environment through actual player traversal",
+            "quality": "preferred",
+            "posterSeconds": 160,
+            "visibleEvidence": "Continuous third-person run over terrain toward a portal objective, blue bioluminescent ground details and large alien trees. No visible debug banner in target interval.",
+            "issues": [
+              "Windows taskbar40px and standalone previewtitlebar34px require crop outside gameplay",
+              "Dark brown ground retains detail but will benefit from good poster selection",
+              "No combat in this interval; describe traversal/environment"
+            ],
+            "cropRecommendation": {
+              "x": 0,
+              "y": 34,
+              "width": 1920,
+              "height": 1006,
+              "reason": "Exact full-resolution boundary: remove34px previewtitlebar+40pxOStaskbar, preservegameHUD"
+            }
+          },
+          {
+            "start": 290,
+            "end": 306,
+            "purpose": "Narrative/mission presentation in underground industrial space",
+            "quality": "secondary",
+            "posterSeconds": 300.91,
+            "visibleEvidence": "Alien character portraits, alternate character shots, on-screen dialogue captions and transition toward LEAVE NO ONE BEHIND quest state with group of characters.",
+            "issues": [
+              "Baked dialogue captions are very small",
+              "At297s an actor silhouette partially occludes camera",
+              "Windows taskbar present",
+              "Audio exists; preserve speech only with genuine captions/transcript, or label silent excerpt"
+            ],
+            "cropRecommendation": {
+              "x": 0,
+              "y": 34,
+              "width": 1920,
+              "height": 1006,
+              "reason": "Exact full-resolution boundary: remove34px previewtitlebar+40pxOStaskbar, preservegameHUD"
+            }
+          }
+        ],
+        "exclude": [
+          {
+            "range": [
+              1537.19,
+              1537.19
+            ],
+            "reason": "Precise distributed sample displays red debug/world grid lines."
+          },
+          {
+            "range": [
+              1844.23,
+              1997.75
+            ],
+            "reason": "Sampled invisible character traversal and red status banner; less legible as environment showcase."
+          }
+        ]
+      }
+    },
+    {
+      "id": "city",
+      "file": "F:/Cosmo_Portfolio/RuinedCityAliensideupdated.mp4",
+      "sha256": "0798bcf2c5f5a3171721dac722843ea8a6a9f51e0ba5ff10aef97189eb53f571",
+      "start": 474,
+      "end": 486,
+      "crop": {
+        "x": 0,
+        "y": 50,
+        "width": 2560,
+        "height": 1390
+      },
+      "poster": 488.2,
+      "publicImage": "mission.webp",
+      "output": {
+        "path": "G:/Portfolio Website/.runtime/qa/cosmo/staged/city-reel.mp4",
+        "bytes": 5578410,
+        "sha256": "d60c883c0d74b4d3f3b9a39f0fc76e0f4039aafd01717d4fb2acf3b1a5c28fd6",
+        "duration": 12,
+        "width": 1280,
+        "height": 720,
+        "fps": 30,
+        "audio": "removed for deliberate silentexcerpt",
+        "aspect": "source crop aspectpreserved; letterboxed1280×720",
+        "validation": "Full selected12sec decode to null exit0 with no decoder errors; metadata1280×720H26430fps; audio removed"
+      },
+      "posterPath": "public/images/cosmo/mission.webp",
+      "review": {
+        "id": "ruined-city",
+        "file": "F:/Cosmo_Portfolio/RuinedCityAliensideupdated.mp4",
+        "sha256": "0798bcf2c5f5a3171721dac722843ea8a6a9f51e0ba5ff10aef97189eb53f571",
+        "bytes": 3019759511,
+        "durationSeconds": 1475.31,
+        "width": 2560,
+        "height": 1440,
+        "fps": 30,
+        "videoCodec": "H264 Main",
+        "audio": {
+          "codec": "AAC LC",
+          "sampleRate": 44100,
+          "channels": 2
+        },
+        "observations": [
+          {
+            "range": [
+              2,
+              589.32
+            ],
+            "description": "Third-person alien gameplay: portal, grassy ruined city traversal, objective navigation and dialogue cutscenes. Rain and motion blur are visible; city geometry and weapon HUD are legible.",
+            "confidence": "sampled 7 distributed frames plus target sequence"
+          },
+          {
+            "range": [
+              687.21,
+              1470.31
+            ],
+            "description": "Later samples include a persistent red text/status banner, invisible/cloaked character traversal, enemy encounter and repeated bright blue muzzle/energy flashes. This footage is useful as prototype evidence but less clean as a first portfolio impression.",
+            "confidence": "sampled 9 distributed frames"
+          }
+        ],
+        "selections": [
+          {
+            "start": 474,
+            "end": 486,
+            "purpose": "City mission traversal and portal approach",
+            "quality": "preferred",
+            "posterSeconds": 488.2,
+            "visibleEvidence": "Alien character runs through a large gold sci-fi gate toward another character; EVENING THE ODDS mission title visible earlier in interval. Clear environment and gameplay composition.",
+            "issues": [
+              "Thin Unreal standalone preview titlebar at top; crop only chrome if publishing",
+              "Short aiming/turning moments; cut at476 avoids abrupt camera around471–474",
+              "Rain and game motion blur are native capture"
+            ],
+            "cropRecommendation": {
+              "x": 0,
+              "y": 50,
+              "width": 2560,
+              "height": 1390,
+              "reason": "Exact fullres boundary: remove50px standalonepreviewtitlebar only"
+            }
+          },
+          {
+            "start": 1268,
+            "end": 1284,
+            "purpose": "Combat energy effects and third-person weapon reaction",
+            "quality": "secondary",
+            "posterSeconds": 1275.27,
+            "visibleEvidence": "Repeated blue energy/muzzle flashes and dust while alien character changes direction in ruined city.",
+            "issues": [
+              "Long repetitive firing",
+              "Very bright flash obscures silhouette in some frames",
+              "Faint prototype status/debug text at top",
+              "No demonstrated target hit in sampled frames; do not claim AI targeting verification"
+            ]
+          }
+        ],
+        "exclude": [
+          {
+            "range": [
+              785.1,
+              980.87
+            ],
+            "reason": "Distributed samples dominated by invisible/cloaked traversal and persistent red status text; difficult for viewer to understand without context."
+          }
+        ]
+      }
+    }
+  ],
+  "provenance": "Owner-supplied Cosmo development footage; third-person gameplay, missionHUD and environment. No released/performance/soleartauthorship claim. OS chrome removed outside gameplay, gameplayHUD retained."
+}

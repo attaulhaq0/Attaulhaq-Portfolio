@@ -1,0 +1,54 @@
+{
+  "date": "2026-10-11",
+  "scope": "Owner requested prior pointing Google Cloud portrait and additional distinct summit photos. Sources identified from the exact historical approved photo folder referenced by G:/LinkedIn-Posts/2026-10-09/compare_google_cloud_options.py and update_linkedin_collages.py. These show summit attendance, not owner speaker/Google partnership claims.",
+  "items": [
+    {
+      "name": "google-pointing",
+      "source": "C:/Users/hp/.codex/visualizations/2026/10/06/01a111e4-c91f-7ce0-84f7-a4cd845b710c/LinkedIn_Photos/Additional_Edited_Photos/Google_Cloud_Personal_Photo.jpg",
+      "alt": "Atta-ul-Haq pointing toward the Google Cloud Customers in Action display at Google Cloud Summit Doha.",
+      "output": "public/images/moments/google-pointing.webp",
+      "width": 901,
+      "height": 1600,
+      "bytes": 152632,
+      "sourceSha256": "4e3536d4a63579f633f7a185d73b703d3ad377769dd77f9c730d7a50e8818162",
+      "outputSha256": "250ea4a736188cae4fe714b60686d7d197b3750b8cccd54ab68c8e2d274cf184",
+      "processing": "Full existing approved photo export retained; resize only, WebP and metadata removal. No generative edits."
+    },
+    {
+      "name": "google-foyer",
+      "source": "C:/Users/hp/.codex/visualizations/2026/10/06/01a111e4-c91f-7ce0-84f7-a4cd845b710c/LinkedIn_Photos/Additional_Edited_Photos/Google_Cloud_Foyer.jpg",
+      "alt": "Attendees in the Google Cloud Summit foyer beneath the keynote and partner expo banners.",
+      "output": "public/images/moments/google-foyer.webp",
+      "width": 901,
+      "height": 1600,
+      "bytes": 225316,
+      "sourceSha256": "6358feafe4660a6a7a2bcb8f0ea6d99e86c0fa11a7951e3e6594828f9594507d",
+      "outputSha256": "e620263fa725312c68646949fff68322bb6794848a61a9bedf1c62fe3b57b0d3",
+      "processing": "Full existing approved photo export retained; resize only, WebP and metadata removal. No generative edits."
+    },
+    {
+      "name": "google-auditorium",
+      "source": "C:/Users/hp/.codex/visualizations/2026/10/06/01a111e4-c91f-7ce0-84f7-a4cd845b710c/LinkedIn_Photos/Edited_Full_Frame/07_Google_Cloud_Auditorium.jpg",
+      "alt": "Audience and illuminated screens inside the Google Cloud Summit auditorium.",
+      "output": "public/images/moments/google-auditorium.webp",
+      "width": 1280,
+      "height": 853,
+      "bytes": 136938,
+      "sourceSha256": "a1213e693c6e0d06542ad4ca5ad7137aef4bf63e779943b4b9dce5aac6ad2cb1",
+      "outputSha256": "632b4a93692f2df01edc98ae32915db3404b68459e832e25deef2041d22415b6",
+      "processing": "Full existing approved photo export retained; resize only, WebP and metadata removal. No generative edits."
+    },
+    {
+      "name": "google-stage-wide",
+      "source": "C:/Users/hp/.codex/visualizations/2026/10/06/01a111e4-c91f-7ce0-84f7-a4cd845b710c/LinkedIn_Photos/Edited_Full_Frame/09_Google_Cloud_Stage.jpg",
+      "alt": "A wide view of the Google Cloud Summit stage and seated audience.",
+      "output": "public/images/moments/google-stage-wide.webp",
+      "width": 1280,
+      "height": 960,
+      "bytes": 133662,
+      "sourceSha256": "38cca02bdc020f42bfbe78bed922f7d02df43fe6996490b162a7e5852179ceb9",
+      "outputSha256": "f99ea26b6f36cf535f05e7561410d56f9045cc2083e891d85906bd197897fa3d",
+      "processing": "Full existing approved photo export retained; resize only, WebP and metadata removal. No generative edits."
+    }
+  ]
+}

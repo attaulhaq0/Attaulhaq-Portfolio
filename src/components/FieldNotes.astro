@@ -1,0 +1,245 @@
+---
+import { moments, immersiveClassroom } from '../data/moments';
+// Keep the owner's Qatar talk near the start, without changing stable story ids.
+const stories = [...moments].sort((a, b) => (a.number === '10' ? 1.5 : a.number === '13' ? 4.5 : Number(a.number)) - (b.number === '10' ? 1.5 : b.number === '13' ? 4.5 : Number(b.number)));
+const isPortraitGraphic = (photo: { alt: string; width: number; height: number }) => /branded|branding|graphic/i.test(photo.alt) && photo.width / photo.height < .9;
+---
+
+<section class="field-notes shell" id="moments" aria-labelledby="moments-title">
+  <div class="section-topline">
+    <span class="eyebrow">04 / OUT IN THE WORLD</span>
+    <span class="section-side-note">A few moments beyond the work.</span>
+  </div>
+
+  <div class="section-heading field-notes-heading">
+    <h2 id="moments-title">The work is digital.<br /><em>The connections are human.</em></h2>
+    <p>Ideas grow through people. A glimpse of the places, conversations, and everyday moments along the way.</p>
+  </div>
+
+  <div class="moments-gallery" data-moments-gallery>
+    <div class="moments-gallery-toolbar">
+      <p class="moments-gallery-hint" id="moments-gallery-instructions">Scroll or swipe through the stories. Use the arrow keys when the gallery is focused.</p>
+      <div class="moments-gallery-navigation" data-moments-controls hidden>
+        <span class="moments-gallery-count"><span data-moments-current>01</span><span aria-hidden="true"> / </span><span>{String(stories.length).padStart(2, '0')}</span></span>
+      </div>
+    </div>
+    <div class="moments-gallery-stage">
+      <div class="moments-story-arrows" data-moments-controls hidden><button type="button" class="moments-gallery-arrow" data-moments-previous aria-label="Previous story" disabled><span aria-hidden="true">←</span><span>Previous story</span></button><button type="button" class="moments-gallery-arrow" data-moments-next aria-label="Next story"><span>Next story</span><span aria-hidden="true">→</span></button></div>
+    <div class="moments-gallery-track" data-moments-track tabindex="0" role="region" aria-roledescription="carousel" aria-label="Stories beyond the screen" aria-describedby="moments-gallery-instructions">
+      {stories.map((moment, index) => {
+        const photos = [{ src: moment.image, alt: moment.alt, width: moment.width, height: moment.height, position: moment.position }, ...(moment.images ?? []).filter(image => image.src !== moment.image)];
+        const photoSpreads: (typeof photos)[] = [];
+        for (let photoIndex = 0; photoIndex < photos.length; photoIndex += 1) {
+          const photo = photos[photoIndex];
+          const nextPhoto = photos[photoIndex + 1];
+          if (isPortraitGraphic(photo) && nextPhoto && isPortraitGraphic(nextPhoto)) { photoSpreads.push([photo, nextPhoto]); photoIndex += 1; }
+          else photoSpreads.push([photo]);
+        }
+        const hasPairedSpread = photoSpreads.some(spread => spread.length === 2);
+        return (
+          <article class="moment-story moment-figure" data-moment-slide data-moment={moment.number} aria-roledescription="slide" aria-label={`${index + 1} of ${stories.length}: ${moment.title}`}>
+            <div class:list={['moment-story-media', { 'moment-story-media-spreads': hasPairedSpread }]} data-event-photos data-photo-total={photos.length} data-photo-page-total={photoSpreads.length}>
+              <div class="moment-photo-stage">
+                <div class="moment-photo-track" data-photo-track tabindex="0" role="region" aria-roledescription="carousel" aria-label={`Photos from ${moment.context}`}>
+                  {photoSpreads.map(spread => <div class:list={['moment-photo-spread', { 'moment-photo-spread-paired': spread.length === 2, 'moment-photo-spread-document': spread.every(isPortraitGraphic) }]} data-photo-slide>
+                    {spread.map(photo => <figure class="moment-photo">
+                    <a href={photo.src} target="_blank" rel="noopener noreferrer" aria-label={`Open full image: ${photo.alt}`}><img class:list={['moment-image', { 'moment-document-image': /newspaper|report|announcement|certificate|branded|branding|graphic/i.test(photo.alt), 'moment-portrait-graphic': isPortraitGraphic(photo) }]} src={photo.src} alt={photo.alt} width={photo.width} height={photo.height} loading="lazy" decoding="async" style={`object-position: ${photo.position ?? '50% 50%'};`} /><span class="moment-image-open" aria-hidden="true">View full image ↗</span></a>
+                    <figcaption>{photo.alt}</figcaption>
+                  </figure>)}
+                  </div>)}
+                </div>
+                {photoSpreads.length > 1 && <div class="moment-photo-arrows" data-photo-controls hidden><button type="button" data-photo-previous aria-label={hasPairedSpread ? 'Previous photo page' : 'Previous photo'} disabled><span aria-hidden="true">←</span></button><button type="button" data-photo-next aria-label={hasPairedSpread ? 'Next photo page' : 'Next photo'}><span aria-hidden="true">→</span></button></div>}
+              </div>
+              <div class="moment-photo-footer"><span class="moment-photo-count"><span data-photo-current>01</span> / {String(photoSpreads.length).padStart(2, '0')} <span class="moment-photo-count-label">{hasPairedSpread ? `pages · ${photos.length} images` : photos.length === 1 ? 'photograph' : 'photographs'}</span></span>{photoSpreads.length > 1 && <div class="moment-photo-pagination" data-photo-controls hidden>{photoSpreads.map((_, photoIndex) => <button type="button" data-photo-page={photoIndex} aria-label={`Show photo ${hasPairedSpread ? 'page ' : ''}${photoIndex + 1} from ${moment.context}`} aria-current={photoIndex === 0 ? 'true' : undefined}><span aria-hidden="true"></span></button>)}</div>}</div>
+            </div>
+            <div class="moment-story-copy">
+              <div class="moment-story-topline"><span class="moment-number" aria-hidden="true">/{String(index + 1).padStart(2, '0')}</span><p class="moment-story-context moment-meta">{moment.context}</p></div>
+              <h3>{moment.title}</h3>
+              <p class="moment-story-description">{moment.description}</p>
+              {(moment.date || moment.location || moment.role) && <dl class="moment-story-facts">
+                {moment.date && <div><dt>When</dt><dd>{moment.date}</dd></div>}
+                {moment.location && <div><dt>Where</dt><dd>{moment.location}</dd></div>}
+                {moment.role && <div><dt>My involvement</dt><dd>{moment.role}</dd></div>}
+              </dl>}
+              {moment.source && <a class="moment-source-link text-link" href={moment.source.url} target="_blank" rel="noopener noreferrer">{moment.source.label} <span aria-hidden="true">↗</span></a>}
+              {moment.details && moment.details.length > 0 && <details class="moment-story-more">
+                <summary>More from this moment <span aria-hidden="true">+</span></summary>
+                {moment.details && moment.details.length > 0 && <ul class="moment-story-details">{moment.details.map(detail => <li>{detail}</li>)}</ul>}
+              </details>}
+            </div>
+          </article>
+        );
+      })}
+    </div>
+    </div>
+    <div class="moments-gallery-pagination" data-moments-pagination hidden>
+      {stories.map((moment, index) => <button type="button" data-moments-page={index} aria-label={`Show story ${String(index + 1).padStart(2, '0')}: ${moment.title}`} aria-current={index === 0 ? 'true' : undefined}><span>{String(index + 1).padStart(2, '0')}</span></button>)}
+    </div>
+    <p class="sr-only" role="status" aria-live="polite" aria-atomic="true" data-moments-announcement></p>
+  </div>
+
+  <div class="immersive-note" aria-labelledby="immersive-title">
+    <div class="immersive-copy">
+      <span class="immersive-status"><span aria-hidden="true"></span>{immersiveClassroom.status}</span>
+      <h3 id="immersive-title">{immersiveClassroom.title}</h3>
+      <p>{immersiveClassroom.description}</p>
+    </div>
+    <figure class="immersive-video">
+      <video
+        controls
+        playsinline
+        preload="none"
+        width="1280"
+        height="720"
+        poster={immersiveClassroom.poster}
+        aria-label="Immersive classroom development walkthrough"
+        aria-describedby="immersive-caption"
+      >
+        <source src={immersiveClassroom.src} type="video/mp4" />
+        <p>Your browser does not support this video. <a href={immersiveClassroom.src}>Download the classroom walkthrough.</a></p>
+      </video>
+      <figcaption class="immersive-caption" id="immersive-caption">{immersiveClassroom.caption}</figcaption>
+    </figure>
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll<HTMLElement>('[data-moments-gallery]').forEach(gallery => {
+    const track = gallery.querySelector<HTMLElement>('[data-moments-track]');
+    const slides = Array.from(gallery.querySelectorAll<HTMLElement>('[data-moment-slide]'));
+    const previous = gallery.querySelector<HTMLButtonElement>('[data-moments-previous]');
+    const next = gallery.querySelector<HTMLButtonElement>('[data-moments-next]');
+    const currentLabel = gallery.querySelector<HTMLElement>('[data-moments-current]');
+    const pages = Array.from(gallery.querySelectorAll<HTMLButtonElement>('[data-moments-page]'));
+    const announcement = gallery.querySelector<HTMLElement>('[data-moments-announcement]');
+    if (!track || !previous || !next || !currentLabel || slides.length === 0) return;
+
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    let current = 0;
+    let animationFrame = 0;
+    let attached = false;
+    const position = (index: number) => slides[index].offsetLeft - slides[0].offsetLeft;
+    const sync = () => {
+      animationFrame = 0;
+      let nearest = 0;
+      let distance = Infinity;
+      slides.forEach((_, index) => {
+        const candidate = Math.abs(position(index) - track.scrollLeft);
+        if (candidate < distance) { nearest = index; distance = candidate; }
+      });
+      const changed = nearest !== current;
+      current = nearest;
+      currentLabel.textContent = String(current + 1).padStart(2, '0');
+      previous.disabled = current === 0;
+      next.disabled = current === slides.length - 1;
+      pages.forEach((page, index) => {
+        if (index === current) page.setAttribute('aria-current', 'true');
+        else page.removeAttribute('aria-current');
+      });
+      if (changed && announcement) announcement.textContent = `Story ${current + 1} of ${slides.length}: ${slides[current].querySelector('h3')?.textContent ?? ''}`;
+    };
+    const scheduleSync = () => { if (!animationFrame) animationFrame = requestAnimationFrame(sync); };
+    const goTo = (index: number) => {
+      track.scrollTo({ left: position(Math.max(0, Math.min(index, slides.length - 1))), behavior: reducedMotion.matches ? 'instant' : 'smooth' });
+      scheduleSync();
+    };
+    const onPrevious = () => goTo(current - 1);
+    const onNext = () => goTo(current + 1);
+    const onPage = (event: Event) => {
+      const button = event.currentTarget as HTMLButtonElement;
+      goTo(Number(button.dataset.momentsPage));
+    };
+    const onKey = (event: KeyboardEvent) => {
+      if (event.target !== track) return;
+      const target = event.key === 'ArrowLeft' ? current - 1 : event.key === 'ArrowRight' ? current + 1 : event.key === 'Home' ? 0 : event.key === 'End' ? slides.length - 1 : undefined;
+      if (target === undefined) return;
+      event.preventDefault();
+      goTo(target);
+    };
+    const resize = new ResizeObserver(scheduleSync);
+    const photoLifecycles = Array.from(gallery.querySelectorAll<HTMLElement>('[data-event-photos]')).map(photos => {
+      const photoTrack = photos.querySelector<HTMLElement>('[data-photo-track]');
+      const photoSlides = Array.from(photos.querySelectorAll<HTMLElement>('[data-photo-slide]'));
+      const photoPrevious = photos.querySelector<HTMLButtonElement>('[data-photo-previous]');
+      const photoNext = photos.querySelector<HTMLButtonElement>('[data-photo-next]');
+      const photoPages = Array.from(photos.querySelectorAll<HTMLButtonElement>('[data-photo-page]'));
+      const photoCurrent = photos.querySelector<HTMLElement>('[data-photo-current]');
+      if (!photoTrack || !photoCurrent || photoSlides.length < 2 || !photoPrevious || !photoNext) return undefined;
+      let photoIndex = 0;
+      let frame = 0;
+      const photoPosition = (index: number) => photoSlides[index].offsetLeft - photoSlides[0].offsetLeft;
+      const syncPhotos = () => {
+        frame = 0;
+        photoIndex = photoSlides.reduce((best, _, index) => Math.abs(photoPosition(index) - photoTrack.scrollLeft) < Math.abs(photoPosition(best) - photoTrack.scrollLeft) ? index : best, 0);
+        photoCurrent.textContent = String(photoIndex + 1).padStart(2, '0');
+        photoPrevious.disabled = photoIndex === 0;
+        photoNext.disabled = photoIndex === photoSlides.length - 1;
+        photoPages.forEach((page, index) => { if (index === photoIndex) page.setAttribute('aria-current', 'true'); else page.removeAttribute('aria-current'); });
+      };
+      const schedulePhotos = () => { if (!frame) frame = requestAnimationFrame(syncPhotos); };
+      const goToPhoto = (index: number) => photoTrack.scrollTo({ left: photoPosition(Math.max(0, Math.min(index, photoSlides.length - 1))), behavior: reducedMotion.matches ? 'instant' : 'smooth' });
+      const previousPhoto = () => goToPhoto(photoIndex - 1);
+      const nextPhoto = () => goToPhoto(photoIndex + 1);
+      const selectPhoto = (event: Event) => goToPhoto(Number((event.currentTarget as HTMLButtonElement).dataset.photoPage));
+      const photoKey = (event: KeyboardEvent) => {
+        if (event.target !== photoTrack) return;
+        const target = event.key === 'ArrowLeft' ? photoIndex - 1 : event.key === 'ArrowRight' ? photoIndex + 1 : event.key === 'Home' ? 0 : event.key === 'End' ? photoSlides.length - 1 : undefined;
+        if (target === undefined) return;
+        event.preventDefault();
+        event.stopPropagation();
+        goToPhoto(target);
+      };
+      const photoResize = new ResizeObserver(schedulePhotos);
+      return {
+        attach() {
+          photoTrack.addEventListener('scroll', schedulePhotos, { passive: true });
+          photoTrack.addEventListener('keydown', photoKey);
+          photoPrevious.addEventListener('click', previousPhoto);
+          photoNext.addEventListener('click', nextPhoto);
+          photoPages.forEach(page => page.addEventListener('click', selectPhoto));
+          photoResize.observe(photoTrack);
+          photos.querySelectorAll<HTMLElement>('[data-photo-controls]').forEach(control => { control.hidden = false; });
+          syncPhotos();
+        },
+        detach() {
+          photoTrack.removeEventListener('scroll', schedulePhotos);
+          photoTrack.removeEventListener('keydown', photoKey);
+          photoPrevious.removeEventListener('click', previousPhoto);
+          photoNext.removeEventListener('click', nextPhoto);
+          photoPages.forEach(page => page.removeEventListener('click', selectPhoto));
+          photoResize.disconnect();
+          if (frame) cancelAnimationFrame(frame);
+          frame = 0;
+        },
+      };
+    });
+    const attach = () => {
+      if (attached) return;
+      attached = true;
+      track.addEventListener('scroll', scheduleSync, { passive: true });
+      track.addEventListener('keydown', onKey);
+      previous.addEventListener('click', onPrevious);
+      next.addEventListener('click', onNext);
+      pages.forEach(page => page.addEventListener('click', onPage));
+      resize.observe(track);
+      photoLifecycles.forEach(lifecycle => lifecycle?.attach());
+      gallery.querySelectorAll<HTMLElement>('[data-moments-controls], [data-moments-pagination]').forEach(control => { control.hidden = false; });
+      sync();
+    };
+    const detach = () => {
+      attached = false;
+      track.removeEventListener('scroll', scheduleSync);
+      track.removeEventListener('keydown', onKey);
+      previous.removeEventListener('click', onPrevious);
+      next.removeEventListener('click', onNext);
+      pages.forEach(page => page.removeEventListener('click', onPage));
+      resize.disconnect();
+      photoLifecycles.forEach(lifecycle => lifecycle?.detach());
+      if (animationFrame) cancelAnimationFrame(animationFrame);
+      animationFrame = 0;
+    };
+    attach();
+    window.addEventListener('pagehide', detach);
+    window.addEventListener('pageshow', attach);
+  });
+</script>

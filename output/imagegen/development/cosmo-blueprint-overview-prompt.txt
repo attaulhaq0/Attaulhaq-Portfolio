@@ -1,0 +1,22 @@
+Use case: infographic-diagram
+Asset type: original explanatory development map for a personal game-development portfolio, landscape 1536x1024.
+Style: a polished, flat, readable Blueprint-inspired node diagram on a dark ink panel with a faint square grid. This is an independently illustrated systems explainer, NOT a screenshot, NOT an actual Unreal Engine graph and NOT an assertion of exact project implementation. No toolbars, menus, engine logo, fake code, pseudo-code, file names, credentials or decorative gibberish. Clean cyan and violet node categories, warm amber for validation decisions, white flow connectors with clear arrowheads. Large bold modern typography. Keep all text crisp and exactly as supplied. Use generous spacing. No overlapping labels or crossing wires, no gratuitous wiring. Small round ports and squared rounded-corner nodes suggest visual scripting without pretending to be native software. Every edge must have a clear directional arrowhead. Flat orthographic composition, not perspective or neon 3D.
+Header title and scope subtitle must be clearly readable. Footer must say exactly: "Explanatory reconstruction - not an original project graph".
+
+Title, verbatim: "COSMO CONQUEROR"
+Subtitle, verbatim: "Encounter, behavior and mission systems"
+Draw five large numbered stages, three across an upper row and two across a lower row. Flow goes 01 -> 02 -> 03 -> 04 -> 05; use a single clean turning connector from 03 to 04. The main stage titles must be large and exactly these:
+"01  ENCOUNTER CONTEXT"
+"02  BEHAVIOR RESPONSE"
+"03  COMBAT INTERACTION"
+"04  GAMEPLAY FEEDBACK"
+"05  MISSION PROGRESSION"
+Stage01 supporting labels, each on its own line: "Objective"; "Player interaction".
+Stage02 supporting labels, each on its own line: "Behavior Trees"; "Enemy state".
+Stage03 supporting labels, each on its own line: "Melee / dodge"; "Hit reactions".
+Stage04 supporting labels, each on its own line: "Animation / Motion Warping"; "Niagara / Chaos".
+Stage05 supporting labels, each on its own line: "Gameplay events"; "Objective / progression".
+Edge labels between stages, exactly: 01->02 "Encounter state"; 02->03 "Behavior action"; 03->04 "Interaction result"; 04->05 "Relevant event".
+Add a single subtle violet feedback connector from stage05 back to stage01 with label "Next objective". Keep that feedback along the outer margin, with distinct arrowhead into01. This is a conceptual objective loop, not an exact Behavior Tree.
+Make stages01 and03 cyan, stages02 and05 violet, stage04 cyan-violet. Primary titles around30px and supporting labels around25px at1536width. Header around58px, subtitle around27px. Footer at least22px.
+Accuracy: the owner's supplied CV supports Behavior Trees, combat, melee, dodge, hit reactions, Motion Warping, mission frameworks, progression, Blueprint optimization, Chaos and Niagara. Do not invent variable names, branch conditions, replication architecture, released mission count or benchmarks. This diagram deliberately shows conceptual relationships only. No exact native Blueprint syntax. No claim all animation systems call all effects or that all combat events complete missions.

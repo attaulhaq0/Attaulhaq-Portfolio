@@ -1,0 +1,42 @@
+---
+import { freelanceMilestone, employmentMilestone } from '../data/achievements';
+import '../styles/career-highlights.css';
+import Arrow from './Arrow.astro';
+const { certificate } = employmentMilestone;
+---
+
+<section class="career-highlights shell" id="milestones" aria-labelledby="career-highlights-title">
+  <div class="section-topline">
+    <span class="eyebrow">PROFESSIONAL MILESTONES</span>
+  </div>
+  <div class="career-highlights-heading">
+    <h2 id="career-highlights-title">Experience built<br /><em>through the work.</em></h2>
+    <p>Client delivery and professional experience, with a record of the work behind them.</p>
+  </div>
+
+  <div class="career-highlights-grid">
+    <article class="career-freelance" aria-labelledby="freelance-milestone-title">
+      <p class="career-milestone-meta"><span>{freelanceMilestone.platform}</span><span>{freelanceMilestone.period}</span></p>
+      <h3 id="freelance-milestone-title">{freelanceMilestone.title}</h3>
+      <p class="career-milestone-description">{freelanceMilestone.description}</p>
+      <dl class="career-metrics">{freelanceMilestone.metrics.map(metric => <div><dt>{metric.label}</dt><dd>{metric.value}</dd></div>)}</dl>
+      <figure class="fiverr-evidence"><a href={freelanceMilestone.image.src} target="_blank" rel="noopener noreferrer" aria-label="Open full Fiverr performance metrics"><img src={freelanceMilestone.image.src} alt={freelanceMilestone.image.alt} width={freelanceMilestone.image.width} height={freelanceMilestone.image.height} loading="lazy" decoding="async" /></a><figcaption>{freelanceMilestone.image.caption}</figcaption></figure>
+    </article>
+
+    <article class="career-employment" aria-labelledby="employment-milestone-title">
+      <p class="career-milestone-meta">{employmentMilestone.dates}</p>
+      <h3 id="employment-milestone-title">{employmentMilestone.role}<span>at {employmentMilestone.company}.</span></h3>
+      <p class="career-employment-arrangement">{employmentMilestone.arrangement}</p>
+      <p class="career-milestone-description">{employmentMilestone.description}</p>
+    </article>
+  </div>
+
+  <details class="career-certificate" id="career-certificate">
+    <summary><span>View experience certificate</span><span class="career-certificate-toggle" aria-hidden="true">+</span></summary>
+    <figure>
+      <a class="career-certificate-full" href={certificate.src} target="_blank" rel="noopener noreferrer">Open full-size certificate <span class="sr-only">in a new tab</span><Arrow /></a>
+      <img src={certificate.src} alt={certificate.alt} width={certificate.width} height={certificate.height} loading="lazy" decoding="async" />
+      <figcaption>{certificate.caption}</figcaption>
+    </figure>
+  </details>
+</section>

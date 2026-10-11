@@ -1,0 +1,57 @@
+/* Content is visible by default. Only the observer can arm an offscreen entrance. */
+:root {
+  --section-motion-distance: 18px;
+  --section-motion-duration: 420ms;
+  --section-motion-ease: cubic-bezier(.2, .7, .2, 1);
+}
+[data-motion-accent="violet"] { --section-accent: #c2a4ff; }
+[data-motion-accent="cyan"] { --section-accent: #9bdedc; }
+[data-motion-accent="magenta"] { --section-accent: #dea7d5; }
+:is(.section-topline, .capabilities-heading) > .eyebrow { color: var(--section-accent, var(--mint)); }
+.desktop-nav a { position: relative; }
+.desktop-nav a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 5px;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+.desktop-nav a:is(:hover, :focus-visible)::after { transform: scaleX(1); }
+
+@media (prefers-reduced-motion: no-preference) {
+  [data-motion-state] {
+    transition: opacity var(--section-motion-duration) var(--section-motion-ease), transform var(--section-motion-duration) var(--section-motion-ease);
+  }
+  [data-motion-state="pending"] { opacity: 0; transform: translate3d(0, var(--section-motion-distance), 0); }
+  /* A native control must keep its hit target stable while focus reveals it. */
+  [data-motion-state]:has(a, button, summary, input, select, textarea, [tabindex]) {
+    transform: none;
+    transition-property: opacity;
+  }
+  [data-motion-state="entered"] { opacity: 1; transform: none; }
+  [data-motion-immediate] { transition: none !important; }
+  .desktop-nav a::after { transition: transform 180ms ease; }
+  @view-transition { navigation: auto; }
+  ::view-transition-old(root) { animation: section-page-out 160ms ease both; }
+  ::view-transition-new(root) { animation: section-page-in 180ms ease both; }
+  @keyframes section-page-out { to { opacity: 0; } }
+  @keyframes section-page-in { from { opacity: 0; } to { opacity: 1; } }
+}
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .project-art-link .project-art { transition: transform 240ms var(--section-motion-ease), border-color 240ms ease; }
+  .project-art-link:is(:hover, :focus-visible) .project-art { transform: translateY(-4px) rotate(-.4deg); border-color: var(--section-accent, var(--mint)); }
+  .project-card:nth-child(even) .project-art-link:is(:hover, :focus-visible) .project-art { transform: translateY(-4px) rotate(.4deg); }
+  .case-gallery a { transition: transform 220ms var(--section-motion-ease), border-color 220ms ease; }
+  .case-gallery a:is(:hover, :focus-visible) { transform: translateY(-3px); }
+}
+@media print {
+  [data-motion-state] { opacity: 1 !important; transform: none !important; transition: none !important; }
+}
+@media (prefers-reduced-motion: reduce) {
+  [data-motion-state] { opacity: 1 !important; transform: none !important; transition: none !important; }
+  ::view-transition-old(root), ::view-transition-new(root) { animation: none; }
+}

@@ -1,0 +1,57 @@
+{
+  "date": "2026-10-11",
+  "timezone": "Asia/Riyadh",
+  "provider": "Microsoft Foundry",
+  "model": "sora-2",
+  "jobId": "video_6acb7e2fd178819099207bbb63a3ec3e",
+  "status": "completed",
+  "creationRequestsSubmitted": 1,
+  "secondsRequested": "4",
+  "sizeRequested": "1280x720",
+  "serverGenerationSeconds": 55,
+  "promptFile": "output/sora/education-concept-prompt.txt",
+  "referenceImage": "output/sora/education-concept-reference-1280x720.png",
+  "referenceImageSha256": "1f00eae8e94973f1cdfc5c0376f8a68afcffabf381334837f82ccce7a634040a",
+  "inputContent": "Original glass-book education sculpture only; no people images. Separate request from the failed portrait job.",
+  "rawBytes": 2004391,
+  "rawSha256": "f992adf344029143f3c5db836bd05eed270d4e1c1c02470e8c31933b9a60b972",
+  "processing": {
+    "source": "output\\sora\\raw\\education-concept.mp4",
+    "output": "public\\media\\education-concept.mp4",
+    "sourceDimensions": [
+      1280,
+      720
+    ],
+    "productionDimensions": [
+      1080,
+      720
+    ],
+    "crop": [
+      100,
+      0,
+      1180,
+      720
+    ],
+    "fps": 30.0,
+    "rawFrames": 120,
+    "productionFrames": 111,
+    "durationSeconds": 3.7,
+    "wrapBlendSeconds": 0.3,
+    "audio": "Removed; no audio stream is passed to writer.",
+    "productionBytes": 408827,
+    "productionSha256": "067f360c9cfb3d7741720a69d072beaf3dc3835ac5d3fb66eb8d5c030a49030a",
+    "samples": "output/sora/qa/education-concept-contact-sheet.jpg",
+    "limit": "Ending blend reduces wrap discontinuity; no claim of pixel-identical loop boundary."
+  },
+  "visualQA": {
+    "samples": 6,
+    "geometry": "Book, pages, three glass forms and pedestal retain composition.",
+    "camera": "Camera framing remains stable across samples.",
+    "motion": "Restrained small light/refraction changes, minimal motion.",
+    "content": "No people, lettering, new UI or logos.",
+    "silence": "ffmpeg stream inspection reports only video; explicit audio stream mapping fails because none exists.",
+    "codecVerified": "h264/yuv420p 1080x720 at 30fps, 3.7 seconds.",
+    "loopLimit": "0.3-second blend reduces wrap discontinuity; no claim of perfect frame identity."
+  },
+  "secretsIncluded": false
+}

@@ -1,0 +1,134 @@
+/* Native story gallery: readable HTML, horizontal swiping, optional controls. */
+.moments-gallery { min-width: 0; }
+.moments-gallery-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 28px; margin-bottom: 24px; }
+.moments-gallery-hint { color: var(--muted); font-size: 12px; line-height: 1.6; max-width: 470px; }
+.moments-gallery-navigation { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+.moments-gallery-count { color: var(--muted); font-size: 12px; margin-right: 14px; font-variant-numeric: tabular-nums; }
+.moments-gallery-count > span:first-child { color: var(--mint); }
+.moments-gallery-stage { position: relative; }
+.moments-story-arrows { position: absolute; inset: 0; pointer-events: none; z-index: 3; }
+.moments-gallery-arrow { position: absolute; top: 50%; transform: translateY(-50%); min-width: 46px; min-height: 46px; border: 1px solid #796190; border-radius: 5px; color: var(--mint); background: #17101feF; display: flex; align-items: center; justify-content: center; gap: 8px; padding: 9px 12px; font-size: 22px; pointer-events: auto; box-shadow: 0 4px 15px #0005; }
+.moments-gallery-arrow[data-moments-previous] { left: -20px; }
+.moments-gallery-arrow[data-moments-next] { right: -20px; }
+.moments-gallery-arrow > span:not([aria-hidden]) { font-size: 10px; }
+.moments-gallery-arrow:hover { color: var(--paper); background: #21192c; border-color: var(--mint); }
+.moments-gallery-arrow:disabled { opacity: .35; cursor: default; }
+.moments-gallery-track { position: relative; display: grid; grid-auto-flow: column; grid-auto-columns: 91%; gap: 24px; overflow-x: auto; overflow-y: hidden; scroll-snap-type: x mandatory; scroll-padding-inline: 0; padding: 3px 0 22px; scrollbar-width: thin; scrollbar-color: #604679 #16101f; align-items: start; }
+.moments-gallery-track:focus-visible { outline-offset: 5px; }
+.moments-gallery-track::-webkit-scrollbar { height: 5px; }
+.moments-gallery-track::-webkit-scrollbar-track { background: #16101f; }
+.moments-gallery-track::-webkit-scrollbar-thumb { background: #604679; border-radius: 20px; }
+.moments-gallery .moment-story { display: grid; grid-template-columns: 1.18fr 1fr; scroll-snap-align: start; margin: 0; min-width: 0; align-self: start; background: #100d16; border: 1px solid #33273f; border-radius: 8px; overflow: hidden; }
+.moment-story-media { display: flex; flex-direction: column; min-width: 0; background: #19131f; }
+.moment-photo-stage { position: relative; }
+.moment-photo-track { display: grid; grid-auto-flow: column; grid-auto-columns: 100%; overflow-x: auto; overflow-y: hidden; scroll-snap-type: x mandatory; scrollbar-width: thin; scrollbar-color: #604679 #16101f; }
+.moment-photo-spread { min-width: 0; scroll-snap-align: start; }
+.moment-photo { min-width: 0; }
+.moment-photo > a { display: block; position: relative; }
+.moments-gallery .moment-story .moment-photo .moment-image { width: 100%; height: auto; min-height: 0; max-height: none; aspect-ratio: 4/3; object-fit: cover; }
+.moments-gallery .moment-story .moment-photo .moment-document-image { object-fit: contain; background: #19131f; }
+.moment-photo figcaption { padding: 14px 19px 0; color: #bbb0c6; font-size: 11px; line-height: 1.7; min-height: 64px; }
+.moment-photo-arrows { position: absolute; top: calc((100% - 64px) / 2); transform: translateY(-50%); left: 12px; right: 12px; display: flex; justify-content: space-between; pointer-events: none; }
+.moment-photo-arrows button { width: 44px; height: 44px; display: grid; place-items: center; border-radius: 50%; border: 1px solid #ffffff70; background: #0b0814de; color: #f0ecf5; font-size: 22px; pointer-events: auto; }
+.moment-photo-arrows button:hover { background: #342443; }
+.moment-photo-arrows button:disabled { opacity: .3; cursor: default; }
+.moment-photo-footer { display: flex; align-items: center; justify-content: space-between; gap: 15px; padding: 7px 19px 12px; }
+.moment-photo-count { color: var(--mint); font-size: 11px; font-variant-numeric: tabular-nums; }
+.moment-photo-count-label { color: var(--muted); margin-left: 7px; font-size: 10px; }
+.moment-photo-pagination { display: flex; align-items: center; }
+.moment-photo-pagination button { border: 0; background: transparent; width: 32px; min-height: 44px; display: grid; place-items: center; }
+.moment-photo-pagination button > span { width: 5px; height: 5px; border-radius: 50%; background: #8d779e; }
+.moment-photo-pagination button[aria-current='true'] > span { background: var(--mint); box-shadow: 0 0 0 4px #c2a4ff20; }
+.moment-story-primary { min-width: 0; height: 100%; min-height: 430px; border-radius: 0; }
+.moment-story-primary > a { position: relative; display: block; height: 100%; }
+.moment-image-open { position: absolute; right: 16px; bottom: 16px; color: #f0ecf5; background: #09080dcc; border: 1px solid #ffffff35; border-radius: 4px; padding: 8px 11px; font-size: 10px; }
+.moments-gallery .moment-story .moment-image { display: block; width: 100%; height: 100%; min-height: 430px; max-height: 620px; object-fit: cover; transition: none; transform: none; }
+.moment-story-extra { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; margin-top: 20px; }
+.moment-story-extra figure { min-width: 0; }
+.moment-story-extra img { display: block; width: 100%; height: 135px; object-fit: cover; border-radius: 3px; }
+.moment-story-extra a { display: block; }
+.moment-story-extra a > span { display: block; color: var(--mint); font-size: 10px; margin-top: 7px; }
+.moment-story-copy { padding: clamp(28px, 3.5vw, 52px); min-width: 0; }
+.moment-story-topline { display: flex; align-items: flex-start; gap: 18px; margin-bottom: 22px; }
+.moment-story-topline .moment-number { padding-top: 1px; flex-shrink: 0; font-size: 11px; }
+.moment-story-context { font-size: 10px; letter-spacing: .1em; line-height: 1.65; text-transform: uppercase; color: var(--mint); }
+.moment-story h3 { font-size: clamp(30px, 3vw, 45px); letter-spacing: -.04em; line-height: 1.17; margin-bottom: 21px; overflow-wrap: break-word; }
+.moment-story-description { color: #c5bccf; font-size: 16px; line-height: 1.8; }
+.moment-story-facts { margin: 28px 0 0; padding-top: 23px; border-top: 1px solid var(--line); display: grid; gap: 14px; }
+.moment-story-facts > div { display: grid; grid-template-columns: 75px 1fr; gap: 16px; }
+.moment-story-facts dt { color: var(--muted); font-size: 10px; line-height: 1.8; }
+.moment-story-facts dd { color: var(--paper); font-size: 13px; line-height: 1.6; margin: 0; }
+.moment-story-details { margin: 25px 0 0; padding-left: 17px; color: var(--muted); font-size: 13px; line-height: 1.8; }
+.moment-story-details li + li { margin-top: 10px; }
+.moment-story-details li::marker { color: #b598d1; }
+.moment-story-more { margin-top: 24px; border-top: 1px solid var(--line); }
+.moment-story-more summary { list-style: none; min-height: 48px; display: flex; align-items: center; justify-content: space-between; gap: 20px; font-size: 12px; color: var(--mint); cursor: pointer; }
+.moment-story-more summary::-webkit-details-marker { display: none; }
+.moment-story-more summary > span { font-size: 21px; line-height: 1; }
+.moment-story-more[open] summary > span { transform: rotate(45deg); }
+.moment-story-more .moment-story-details { margin-top: 8px; }
+.moments-gallery-pagination { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-top: 23px; }
+.moments-gallery-pagination button { display: grid; place-items: center; width: 36px; min-height: 44px; color: var(--muted); background: transparent; border: 0; border-bottom: 1px solid transparent; font-size: 11px; font-variant-numeric: tabular-nums; }
+.moments-gallery-pagination button:hover { color: var(--paper); }
+.moments-gallery-pagination button[aria-current='true'] { color: var(--mint); border-bottom-color: var(--mint); }
+@media (max-width: 1100px) {
+  .moments-gallery-track { grid-auto-columns: 94%; gap: 18px; }
+  .moment-story-copy { padding: 30px; }
+  .moments-gallery .moment-story .moment-image { min-height: 380px; }
+  .moment-story-primary { min-height: 380px; }
+  .moment-story h3 { font-size: 32px; }
+}
+@media (max-width: 760px) {
+  .moments-gallery-toolbar { align-items: flex-end; gap: 16px; margin-bottom: 18px; }
+  .moments-gallery-hint { max-width: 185px; font-size: 10px; }
+  .moments-gallery-count { font-size: 10px; margin-right: 4px; }
+  .moments-gallery-navigation { gap: 7px; }
+  .moments-story-arrows { position: relative; display: flex; justify-content: space-between; margin-top: 15px; order: 2; }
+  .moments-gallery-stage { display: flex; flex-direction: column; }
+  .moments-gallery-arrow { position: static; transform: none; min-height: 44px; }
+  .moments-gallery-arrow[data-moments-previous], .moments-gallery-arrow[data-moments-next] { left: auto; right: auto; }
+  .moments-gallery-track { grid-auto-columns: 94%; gap: 14px; scroll-snap-type: x proximity; padding-bottom: 18px; }
+  .moments-gallery .moment-story { grid-template-columns: 1fr; }
+  .moment-story-primary { height: auto; min-height: 0; }
+  .moments-gallery .moment-story .moment-image { width: 100%; height: auto; min-height: 0; max-height: 300px; aspect-ratio: 4/3; object-fit: cover; }
+  .moments-gallery .moment-story .moment-photo .moment-image { max-height: 300px; }
+  .moment-photo figcaption { font-size: 10px; padding: 12px 16px 0; min-height: 61px; }
+  .moment-photo-footer { padding: 3px 16px 8px; }
+  .moment-photo-count-label { display: none; }
+  .moment-photo-arrows { left: 9px; right: 9px; }
+  .moment-photo-pagination button { width: 30px; }
+  .moment-story-extra { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .moment-story-extra img { height: 100px; }
+  .moment-story-copy { padding: 26px 24px 30px; }
+  .moment-story-topline { gap: 13px; margin-bottom: 17px; }
+  .moment-story-context { font-size: 9px; }
+  .moment-story h3 { font-size: 29px; margin-bottom: 17px; }
+  .moment-story-description { font-size: 15px; line-height: 1.75; }
+  .moment-story-facts { margin-top: 22px; padding-top: 20px; gap: 11px; }
+  .moment-story-facts > div { grid-template-columns: 70px 1fr; gap: 13px; }
+  .moment-story-details { font-size: 12px; margin-top: 20px; }
+  .moment-story-more { margin-top: 20px; }
+  .moments-gallery-pagination { gap: 4px; margin-top: 14px; }
+  .moments-gallery-pagination button { width: 30px; }
+}
+.moment-story-topline .moment-story-context { font-size: 10px; }
+/* Portrait event graphics form complete pages; their own branding stays in frame. */
+.moment-photo-spread-paired { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; gap: 12px; padding: 16px 14px 10px; }
+.moment-photo-spread-document:not(.moment-photo-spread-paired) { padding: 16px 14px 10px; }
+.moments-gallery .moment-story .moment-photo .moment-portrait-graphic { width: 100%; height: auto; aspect-ratio: auto; object-fit: contain; min-height: 0; max-height: 480px; background: #19131f; }
+.moment-photo-spread-document .moment-photo > a { width: fit-content; max-width: 100%; margin-inline: auto; }
+.moment-photo-spread-document:not(.moment-photo-spread-paired) .moment-photo > a { width: min(100%, 335px); }
+.moment-photo-spread-document .moment-photo figcaption { padding: 12px 2px 0; min-height: 0; }
+.moment-photo-spread-document .moment-image-open { right: 7px; bottom: 7px; padding: 6px 8px; font-size: 9px; }
+.moment-story-media-spreads .moment-photo-arrows { top: auto; bottom: -51px; transform: none; left: 10px; right: 10px; }
+.moment-story-media-spreads .moment-photo-arrows button { width: 34px; height: 34px; font-size: 19px; }
+.moment-story-media-spreads .moment-photo-footer { padding: 11px 53px 12px; flex-wrap: wrap; justify-content: center; gap: 0 12px; }
+.moment-story-media-spreads .moment-photo-count-label { display: inline; }
+@media (max-width: 760px) {
+  .moment-photo-spread-paired { grid-template-columns: 1fr; gap: 20px; padding: 17px 14px 16px; }
+  .moments-gallery .moment-story .moment-photo .moment-portrait-graphic { max-height: 340px; }
+  .moment-photo-spread-document .moment-photo > a,
+  .moment-photo-spread-document:not(.moment-photo-spread-paired) .moment-photo > a { width: min(100%, 280px); }
+  .moment-photo-spread-document .moment-photo figcaption { max-width: 280px; margin-inline: auto; font-size: 11px; }
+  .moment-story-media-spreads .moment-photo-footer { padding-inline: 45px; }
+}

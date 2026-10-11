@@ -1,0 +1,20 @@
+---
+import { techStack, projectStackNotes } from '../data/tech-stack';
+interface Props { projectSlug?: string }
+const { projectSlug } = Astro.props;
+const tools = projectSlug ? techStack.flatMap(group => group.tools.filter(tool => tool.projects.includes(projectSlug))) : [];
+---
+
+{projectSlug ? tools.length > 0 && <div class="project-tech-stack" aria-label="Project tools">
+  <span class="project-tech-label">TOOLS & TECHNOLOGY</span>
+  <ul>{tools.map(tool => <li><strong>{tool.name}</strong><span>{tool.context}</span></li>)}</ul>
+  <p>{projectStackNotes[projectSlug]}</p>
+</div> : <section class="tech-stack-section shell" id="stack" aria-labelledby="stack-title">
+  <div class="section-topline"><span class="eyebrow">THE TOOLKIT</span><span class="section-side-note">From gameplay to product systems.</span></div>
+  <div class="tech-stack-heading"><h2 id="stack-title">What I build <em>with.</em></h2><p>Different tools for different problems. Here’s where they fit into my work.</p></div>
+  <div class="tech-stack-groups">{techStack.map(group => <article class:list={['tech-stack-group', `stack-accent-${group.accent}`]}>
+    <div class="tech-stack-group-heading"><span aria-hidden="true">/{group.index}</span><h3>{group.title}</h3></div>
+    <p class="tech-stack-group-description">{group.description}</p>
+    <ul class="tech-stack-tools">{group.tools.map(tool => <li><span class="tech-stack-tool-mark" aria-hidden="true">+</span><div><strong>{tool.name}</strong><span>{tool.context}</span></div></li>)}</ul>
+  </article>)}</div>
+</section>}

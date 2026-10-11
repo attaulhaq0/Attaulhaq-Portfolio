@@ -1,0 +1,8 @@
+Use case: stylized-concept
+Asset type: original editorial illustration for a developer's violet personal portfolio.
+Input image 1 is a STYLE AND COLOR REFERENCE ONLY. Create an entirely new scene with different objects and arrangement. Borrow its crisp isometric construction, layered violet platform, cyan highlights and magenta details.
+Subject: building a real-time interactive world. A compact violet isometric game-world platform, a miniature terrain landscape and gateway, a game controller in cyan, and a few distinct connected gameplay logic nodes orbiting it. Connect player input, environment and logic through three purposeful light paths. No people needed.
+Style: sophisticated isometric vector-like 3D illustration, crisp geometry, clean gradients, generous gaps, elegant soft dimensional shadows, professional editorial quality rather than cartoon sticker.
+Composition: one unified sculpture centered in a wide 3:2 frame, comfortably within the frame, with large empty margins. Clear silhouette, not a collage of tiny disconnected symbols.
+Palette: predominantly violet and lavender (#c2a4ff), deep plum structures, controlled cyan (#6ee8e2) and magenta (#eaa0df) accent details. Matte near-black #09080d uniform seamless background with no horizon or border. Color is in the sculpture, not a glowing background.
+Constraints: entirely original conceptual illustration. No money, coins, dollar symbols, success charts, logos, readable text, labels, fake UI, watermark, stock business imagery, or portrait. No clipping or photographic realism.

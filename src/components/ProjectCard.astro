@@ -1,12 +1,27 @@
 ---
 import type { Project } from '../data/projects';
 import Arrow from './Arrow.astro';
+import HomeGameplay from './HomeGameplay.astro';
+import { existsSync } from 'node:fs';
 interface Props { project: Project; compact?: boolean }
 const { project, compact = false } = Astro.props;
+const hasMotion = project.slug === 'edeviser' && existsSync(new URL('../../public/media/education-concept.mp4', import.meta.url));
+const cardCover = project.homeCover ?? project.cover;
 ---
 <article class:list={['project-card', `project-${project.theme}`, { 'project-compact': compact }]}>
-  <a class="project-art-link" href={`/work/${project.slug}/`} aria-label={`Read ${project.name} case study`}><div class="project-art"><img src={project.cover} alt={project.coverAlt} width="1200" height="800" loading="lazy" decoding="async" /><span class="project-image-label">CONCEPT ILLUSTRATION</span><span class="project-open"><Arrow /></span></div></a>
-  <div class="project-meta"><span>{project.category}</span><span>{project.year}</span></div>
+  <div class="project-art-wrap">{project.media ? <HomeGameplay name={project.name} src={project.media.src} poster={cardCover} duration={project.media.durationLabel ?? 'Gameplay showcase'} /> : <a class="project-art-link" href={`/work/${project.slug}/`} aria-label={`Read ${project.name} case study`}><div class="project-art"><img src={cardCover} srcset={project.homeCover ? undefined : project.coverSrcSet} sizes="(max-width: 760px) calc(100vw - 48px), 750px" alt={project.homeCoverAlt ?? project.coverAlt} width={project.homeCover ? 1200 : project.coverWidth ?? 1200} height={project.homeCover ? 800 : project.coverHeight ?? 800} loading="lazy" decoding="async" /><span class="project-open"><Arrow /></span></div></a>}{hasMotion && <details class="project-motion"><summary>Watch the concept in motion <span aria-hidden="true">▷</span></summary><figure><video controls muted playsinline preload="none" poster={cardCover} aria-label="E Deviser glass-book concept animation"><source src="/media/education-concept.mp4" type="video/mp4" /></video><figcaption>Concept animation of light moving through a glass book. Created with Sora 2.</figcaption></figure></details>}</div>
+  <div class="project-copy"><div class="project-meta"><span>{project.category}</span><span>{project.year}</span></div>
   <div class="project-title-row"><h3><a href={`/work/${project.slug}/`}>{project.name}</a></h3><span class="project-number">/{project.index}</span></div>
   <p>{project.summary}</p><div class="project-tags">{project.tags.slice(0, 3).map(tag => <span>{tag}</span>)}</div>
+  <a class="text-link project-read-link" href={`/work/${project.slug}/`}>Explore the project <Arrow /></a></div>
 </article>
+<script>
+  const motions = document.querySelectorAll<HTMLDetailsElement>('.project-motion, .project-playback');
+  const pauseAll = () => motions.forEach(details => details.querySelector('video')?.pause());
+  motions.forEach(details => details.addEventListener('toggle', () => { if (!details.open) details.querySelector('video')?.pause(); }));
+  const observer = new IntersectionObserver(entries => entries.forEach(entry => { if (!entry.isIntersecting && entry.target instanceof HTMLVideoElement) entry.target.pause(); }));
+  motions.forEach(details => { const video = details.querySelector('video'); if (video) observer.observe(video); });
+  document.addEventListener('visibilitychange', () => { if (document.hidden) pauseAll(); });
+  window.addEventListener('pagehide', () => { pauseAll(); observer.disconnect(); });
+  window.addEventListener('pageshow', () => motions.forEach(details => { const video = details.querySelector('video'); if (video) observer.observe(video); }));
+</script>

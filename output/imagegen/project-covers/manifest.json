@@ -1,0 +1,137 @@
+{
+  "date": "2026-10-11",
+  "timezone": "Asia/Riyadh",
+  "provider": "Microsoft Foundry",
+  "model": "gpt-image-2.5-sunburst",
+  "mode": "Authorized API fallback using unmodified bundled imagegen CLI",
+  "baseUrl": "https://edeviser-sweden-resource.services.ai.azure.com/openai/v1/",
+  "requests": {
+    "onePerConcept": true,
+    "maxConcurrent": 2,
+    "total": 4
+  },
+  "requestedSize": "1536x1024",
+  "quality": "high",
+  "productionSize": [
+    1200,
+    800
+  ],
+  "deliveryFormat": "WebP",
+  "background": "Requested #111017 seamless dark plum; rendered studio illumination varies across floor and near-black background.",
+  "licensingScope": "Original model-generated conceptual illustrations; no supplied proprietary portfolio or game assets used.",
+  "items": [
+    {
+      "slug": "edeviser",
+      "source": {
+        "path": "output\\imagegen\\project-covers\\edeviser.png",
+        "bytes": 2111949,
+        "sha256": "e7fe850c717c2d4a6aa2785ba3c1022c4d9527540221dcb8700f0c6ace1bc76a",
+        "dimensions": [
+          1536,
+          1024
+        ]
+      },
+      "production": {
+        "path": "public\\images\\edeviser-render.webp",
+        "bytes": 93546,
+        "sha256": "9d6fbfe73f4f4392620a93a78823cdc747281879e3e256aa95a6bee1d2b290d4",
+        "dimensions": [
+          1200,
+          800
+        ]
+      },
+      "prompt": "output\\imagegen\\project-covers\\edeviser-prompt.txt",
+      "promptSha256": "a3158bdd0cb6930d4c14d4510bfe97066800432467300465b0875777ab17c30d",
+      "generationSeconds": 56.7,
+      "illustrationOnly": true,
+      "realProductEvidence": false,
+      "referenceAssetsUsed": false,
+      "visualInspection": "Coordinated dark-plum physically rendered conceptual sculpture; no labels, logos, UI or screenshot claims."
+    },
+    {
+      "slug": "aegisops",
+      "source": {
+        "path": "output\\imagegen\\project-covers\\aegisops.png",
+        "bytes": 1957741,
+        "sha256": "c13ba5908e228bcae79417d22e6385f24a0d612bd084e26be8b6569e93265191",
+        "dimensions": [
+          1536,
+          1024
+        ]
+      },
+      "production": {
+        "path": "public\\images\\aegisops-render.webp",
+        "bytes": 69532,
+        "sha256": "bbff5b68c20597012cbedd5e9773abf610bae9fc101cb8bd7a52bd4dc8d0cb21",
+        "dimensions": [
+          1200,
+          800
+        ]
+      },
+      "prompt": "output\\imagegen\\project-covers\\aegisops-prompt.txt",
+      "promptSha256": "0436b86f35ddbc7835b7d4c87aa33c723a5ded5b1807b1c80f7ef7bdc7875877",
+      "generationSeconds": 66.4,
+      "illustrationOnly": true,
+      "realProductEvidence": false,
+      "referenceAssetsUsed": false,
+      "visualInspection": "Coordinated dark-plum physically rendered conceptual sculpture; no labels, logos, UI or screenshot claims."
+    },
+    {
+      "slug": "family-os",
+      "source": {
+        "path": "output\\imagegen\\project-covers\\family-os.png",
+        "bytes": 2072440,
+        "sha256": "5fc08cbb3dc696233ef9de13cb2794f6b818b5929ce5c1c3caa007f9fe45dd47",
+        "dimensions": [
+          1536,
+          1024
+        ]
+      },
+      "production": {
+        "path": "public\\images\\family-os-render.webp",
+        "bytes": 68040,
+        "sha256": "dcab989cab511aa7027c79539e562243cafbf6574b7d4b4a1956271fdc75b43d",
+        "dimensions": [
+          1200,
+          800
+        ]
+      },
+      "prompt": "output\\imagegen\\project-covers\\family-os-prompt.txt",
+      "promptSha256": "aa7dec376ef0e78ee500382ac0299ab631eb6c6633c17d4a9eb3cd720dae5634",
+      "generationSeconds": 50.8,
+      "illustrationOnly": true,
+      "realProductEvidence": false,
+      "referenceAssetsUsed": false,
+      "visualInspection": "Coordinated dark-plum physically rendered conceptual sculpture; no labels, logos, UI or screenshot claims."
+    },
+    {
+      "slug": "cosmo-conqueror",
+      "source": {
+        "path": "output\\imagegen\\project-covers\\cosmo-conqueror.png",
+        "bytes": 2201842,
+        "sha256": "001d55a0183c021e9363e4c152143b57e340e231e2afe1fb8c2592a51b2dd940",
+        "dimensions": [
+          1536,
+          1024
+        ]
+      },
+      "production": {
+        "path": "public\\images\\cosmo-conqueror-render.webp",
+        "bytes": 101630,
+        "sha256": "e7316154f88c81acf7c89a7974dc66ebe3e21465f9f1c83c2befe47d9b88218f",
+        "dimensions": [
+          1200,
+          800
+        ]
+      },
+      "prompt": "output\\imagegen\\project-covers\\cosmo-conqueror-prompt.txt",
+      "promptSha256": "2a7e1871f1994eb277d0046dc8a130b246d9c2111d71be4f854f988119b87402",
+      "generationSeconds": 51.6,
+      "illustrationOnly": true,
+      "realProductEvidence": false,
+      "referenceAssetsUsed": false,
+      "visualInspection": "Coordinated dark-plum physically rendered conceptual sculpture; no labels, logos, UI or screenshot claims."
+    }
+  ],
+  "secretsIncluded": false
+}

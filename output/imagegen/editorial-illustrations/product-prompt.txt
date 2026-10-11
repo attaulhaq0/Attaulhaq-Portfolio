@@ -1,0 +1,8 @@
+Use case: stylized-concept
+Asset type: original editorial illustration for a developer and product builder's violet portfolio.
+Input image 1 is a STYLE AND COLOR REFERENCE ONLY. Create a different scene, using its crisp isometric forms and cyan/violet/magenta palette principles without copying its layout or objects.
+Subject: shaping an idea into a useful learning product. An elegant layered violet isometric platform holds an open translucent cyan book, a small lavender lightbulb, three connected role-shaped abstract figures and a simple violet laptop. A few magenta and cyan pathways connect the learning object with the people and laptop, suggesting learning, interaction and thoughtful product systems. No specific real product interface is depicted.
+Style: sophisticated isometric vector-like 3D illustration with clean gradients, crisp silhouettes, carefully separated forms, soft dimensional shadows. Refined editorial object composition.
+Composition: one coherent compact sculpture centered in a wide 3:2 frame, large calm empty margins. Minimal object count; strong readable silhouette.
+Palette: predominantly violet/lavender (#c2a4ff), deep plum, controlled cyan (#6ee8e2), selective magenta (#eaa0df). Matte near-black #09080d uniform seamless background, no horizon or box edge, no glowing background.
+Constraints: original conceptual illustration, no claims of real product footage. No text, logos, labels, watermark, charts, currency symbols, coins or stock corporate imagery. Abstract people only; no personal likenesses or photos. Keep the entire scene inside the frame.

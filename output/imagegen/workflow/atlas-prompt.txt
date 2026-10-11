@@ -1,0 +1,12 @@
+Use case: stylized-concept
+Asset type: original workflow illustration sprite atlas for a personal developer portfolio.
+Image1 is a STYLE REFERENCE only: use its coherent premium isometric low-poly violet and cyan sculptures, modular floating platforms, luminous graceful connectors and polished rendering. Make entirely new small process vignettes. No original game controller, mountain or portal composition.
+Canvas1536x1024, exact uniform 3columns by2rows, each cell512x512. Five separate individual sculptures, sixthcellcompletelyempty. No lines, labels, borders or separators between cells. Each vignette is independently centered in its cell and contained within central65percent of its cell. NO parts, glow, shadow or connectors crossing cell boundaries. Perfect identical deep dark background #100d16 over entirecanvas, with generousemptybackgroundbetween every vignette. Same scale, camera angle, consistent violet/cyan/magenta palette, polished crisp geometry, soft containedglow. Orthographic isometric threequarter perspective. No people, faces, text, letters, numerals, labels, logos, watermarks, fakeUI, screens or sourcecode. Do NOT use a diagram or lineart; these must be richly modeled3Doriginalrasterillustrations.
+Exactcellcontent:
+Top-leftcell: CONTEXT metaphor, a small opencyanbook and a floatingvioletcontexttoken connected to a compactstackofmaterials on onevioletbase. Simpleclearshape, onecoherentvignette.
+Top-middlecell: CHECK/DECISION metaphor, a violetgate formed by twosquaredpillarsonsmallbase and a cyandiamondbearingonesimplechecksymbol. A luminous path passes through checkedgate. Nofantasyportal, noextraquestionmark.
+Top-rightcell: CREATION metaphor, a cyanhammer floatingbeside a violetmodularworkflowcube being assembled fromthreefittedblocks. Onecleanbase andclearconstructiveaction, nohand.
+Bottom-leftcell: REVIEW/FEEDBACK metaphor, a violetreporttile with threeblankhorizontalraisedbars and a cyanloopedarrow sweepingaround a smallsignaltoken. Deliberateclearloop, nolettercharacters.
+Bottom-middlecell: OUTCOME/PERSISTENCE metaphor, a violetarchivebox with a cyanclosedlid and a simplechecktoken, with three neatlystackedfinishedtiles on thebase. Solidcompletedobject, nofilesystemiconlogo.
+Bottom-rightcell: entirelyempty#100d16 background. No sculpture, no mark.
+Allfivevignettesmustbesmallandfullyisolatedwithin their512x512cells. Perfectconsistent size and visualweight. Softdarkshadowsstaywithin each cellcentral75percent. Conceptual processmetaphors only, not any actualsoftwarecapture or proprietaryprojectasset.

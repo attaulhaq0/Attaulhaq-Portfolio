@@ -1,0 +1,67 @@
+{
+  "created": "2026-10-11",
+  "mode": "User-authorized fallback CLI",
+  "tool": "Unmodified C:/Users/hp/.codex/skills/.system/imagegen/scripts/image_gen.py generate-batch",
+  "model": "gpt-image-2.5-sunburst",
+  "provider": "Existing owner-authorized Microsoft Foundry Azure deployment",
+  "baseUrl": "https://edeviser-sweden-resource.services.ai.azure.com/openai/v1/",
+  "requestedSize": "1536x1024",
+  "quality": "high",
+  "generationSeconds": [
+    61.9,
+    63.8
+  ],
+  "items": [
+    {
+      "slug": "cosmo-blueprint-overview",
+      "originalGenerated": "output\\imagegen\\development\\cosmo-blueprint-overview.png",
+      "originalGeneratedBytes": 1232045,
+      "originalGeneratedSha256": "444761e881e7a4669881979467b107f51ece9c214dd3d968cb6550c4810e332f",
+      "selectedSource": "output\\imagegen\\development\\cosmo-blueprint-overview.png",
+      "selectedSourceSha256": "444761e881e7a4669881979467b107f51ece9c214dd3d968cb6550c4810e332f",
+      "publicPath": "/images/development/cosmo-blueprint-overview.webp",
+      "output": "public\\images\\development\\cosmo-blueprint-overview.webp",
+      "bytes": 171424,
+      "sha256": "47574b6547191a6a0f03f9da913b0e4bfa8526a30cbcdd585512fc623e077ba4",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "prompt": "output\\imagegen\\development\\cosmo-blueprint-overview-prompt.txt",
+      "promptSha256": "f623a481b343049c36f21100cc36c494bacefbad89c9322df7105d7c70147887",
+      "caption": "Cosmo Conqueror: explanatory map of encounter context, Behavior Trees, combat reactions, gameplay feedback and mission progression. Original reconstruction based on the supplied CV; not an Unreal Engine screenshot or exact project graph.",
+      "illustrationOnly": true,
+      "actualProjectGraph": false,
+      "actualScreenshot": false,
+      "sourceEvidence": "Updated supplied CV and src/data/projects.ts",
+      "visualQa": "All stage labels, supporting labels, arrow directions, branching conditions and scope footer inspected at full resolution."
+    },
+    {
+      "slug": "digital-dynasty-blueprint-overview",
+      "originalGenerated": "output\\imagegen\\development\\digital-dynasty-blueprint-overview.png",
+      "originalGeneratedBytes": 1211071,
+      "originalGeneratedSha256": "f1c1de211141dfdb3358120e5969bd96d686f89a80baa8218f23aef75460099d",
+      "selectedSource": "output\\imagegen\\development\\digital-dynasty-blueprint-overview-corrected.png",
+      "selectedSourceSha256": "6fa2f514c7d61a08d0a322d53c759019d6369e1390d06b48aedebcdc33f0213b",
+      "publicPath": "/images/development/digital-dynasty-blueprint-overview.webp",
+      "output": "public\\images\\development\\digital-dynasty-blueprint-overview.webp",
+      "bytes": 178242,
+      "sha256": "108d832e53bac99616c9d2e0c778386abfd3d57fe8c6ebee93fc3dec3aec459f",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "prompt": "output\\imagegen\\development\\digital-dynasty-blueprint-overview-prompt.txt",
+      "promptSha256": "f09720ae4b930716d99880f8ea1453a4255a9b436922b1cd9ee63a7d934e51e4",
+      "caption": "Digital Dynasty: explanatory map of inventory, material requirements, crafting, valid structure placement and saved progress. Original reconstruction based on the project report; not an Unreal Engine screenshot or exact Blueprint graph.",
+      "illustrationOnly": true,
+      "actualProjectGraph": false,
+      "actualScreenshot": false,
+      "sourceEvidence": "Owner-supplied Digital Dynasty report physical pages34-38,47,51,52 and src/data/projects.ts",
+      "visualQa": "All stage labels, supporting labels, arrow directions, branching conditions and scope footer inspected at full resolution.",
+      "localCorrection": "Generated blocked/retry connector was ambiguous. Local raster composite removes wrong upward Blocked arrow, routes Blocked from placement check into Adjust preview, and adds separate Recheck return arrow. All generated originals retained; no native code graph claim."
+    }
+  ],
+  "privateAssetsOrSourceGraphsUsed": false,
+  "licensingScope": "Original generated explanatory images; no proprietary Unreal project source or restricted reference assets used."
+}

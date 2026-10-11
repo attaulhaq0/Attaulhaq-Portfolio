@@ -6,20 +6,34 @@ export const site = {
   email: 'atta@edeviser.com',
   location: 'Doha, Qatar',
   github: 'https://github.com/attaulhaq0',
+  linkedin: 'https://www.linkedin.com/in/sheikh-atta-ul-haq-7a7527241/',
+  calendly: 'https://calendly.com/attaulhaqsheikh/connect-with-sheikh-atta-ul-haq',
+  cv: { url: '/documents/sheikh-atta-ul-haq-cv.pdf', filename: 'Sheikh-Atta-ul-Haq-CV.pdf', label: 'Download CV', format: 'PDF · 2 pages · 306 KB' },
   repository: 'https://github.com/attaulhaq0/Attaulhaq-Portfolio',
-  description: 'The personal portfolio of Sheikh Atta-ul-Haq. Exploring the intersection of Unreal Engine, AI-native products, interaction design, and thoughtful systems.',
-  introduction: 'My background is in Unreal Engine. Today, I work on AI-native products—connecting the experience people see with the systems that make it possible.',
-  contactMessage: 'Have an interesting problem in mind? Let’s talk about what it could become.',
+  description: 'Sheikh Atta-ul-Haq — developer and product builder in Doha. Unreal Engine gameplay, AI-native product workflows, system design and hands-on implementation.',
+  introduction: 'From a player’s next move to a learner’s next step, I work on the logic that makes an experience respond.',
+  contactMessage: 'Hiring for gameplay, product development or AI workflows? I’d be glad to talk about your team, the problem and where I can contribute.',
+  about: {
+    title: 'I started by building worlds.',
+    paragraphs: [
+      'With Unreal Engine 5, I learned to turn ideas into interactive experiences, designing gameplay systems, mechanics and VR experiences that respond to the people using them.',
+      'That experience changed the way I think about technology. I became interested in how it can understand people, adapt to them and make complex experiences feel natural. That led me from game development into AI and product engineering.',
+      'Today, I focus on intelligent and agentic systems that use context, reason through tasks and help people get things done. As CPO at E Deviser, I apply that thinking to our EdTech product, exploring more personalized, engaging and effective learning.',
+      'I enjoy working where engineering meets product: taking a rough prototype, figuring out the technology behind it and turning it into something people can use. My goal is to build technology that feels like an intelligent experience.',
+      'Outside work, I’m usually playing a AAA game, tinkering with cars or experimenting with something new.',
+    ],
+    invitation: 'Building with AI, agentic systems or emerging technology? I’m always interested in a good conversation.',
+  },
 };
 
 export const experience = [
-  { dates: '2025 — Present', role: 'Co-Founder & Chief Product Officer', company: 'E Deviser', location: 'Doha, Qatar', description: 'Product direction, architecture and development for an AI-native education platform. Bringing role-aware experiences, personalized learning and controlled AI assistance together.' },
-  { dates: '2024 — 2025', role: 'Game Developer', company: 'Subrickzz', location: 'Remote · United Kingdom', description: 'Gameplay systems, AI behavior, combat and mission design for Cosmo Conqueror. Building the logic behind responsive, real-time experiences.' },
-  { dates: 'Education', role: 'BS Computer Science', company: 'COMSATS University Islamabad', location: 'Pakistan', description: 'An Unreal Engine 5 survival game as my final-year project: an exploration of procedural worlds and interconnected gameplay systems.' },
+  { dates: 'Oct 2025 — Present', role: 'Chief Product Officer & AI Product Engineer', company: 'E Deviser', location: 'Doha, Qatar', description: 'I lead product direction and contribute to architecture and development for AI-native education, including role-aware workflows and controlled AI assistance.' },
+  { dates: 'Jan 2024 — Jan 2025', role: 'Game Developer · Full-time', company: 'Subrickzz', location: 'Remote · United Kingdom', description: 'Built connected missions, combat and enemy behavior for Cosmo Conqueror. The case study shows my gameplay work; my experience certificate is available below.' },
+  { dates: 'Education', role: 'BS Computer Science', company: 'COMSATS University Islamabad', location: 'Pakistan', description: 'Built Digital Dynasty, my award-winning final-year survival game project, with Unreal Engine 5 and Blueprint scripting, connecting player interaction, crafting, building and progression.' },
 ];
 
 export const capabilities = [
-  { number: '01', title: 'Experience first.', body: 'Start with the person using it. Map the interaction, remove unnecessary steps, and make the underlying complexity feel approachable.', tags: ['Interaction design', 'Product thinking', 'Real-time experiences'] },
-  { number: '02', title: 'Understand the system.', body: 'Trace how information and decisions move. Give every component a clear responsibility—and know where human control belongs.', tags: ['System design', 'AI workflows', 'Gameplay logic'] },
-  { number: '03', title: 'Build. Question. Refine.', body: 'Turn an idea into something tangible. Test the assumptions, look closely at what breaks, and improve the parts that matter.', tags: ['Prototyping', 'Implementation', 'Iteration'] },
+  { number: '01', title: 'Gameplay & interaction', body: 'I connect player input, AI behavior and feedback in Unreal Engine. My work includes combat, mission logic, Blueprint scripting and interactive environments.', tags: ['Unreal Engine', 'Gameplay systems', 'Interaction design'] },
+  { number: '02', title: 'Product & AI workflows', body: 'I turn product direction into role-aware workflows and structured AI assistance, with retrieval, data models and clear approval boundaries.', tags: ['System design', 'AI & RAG workflows', 'Data modeling'] },
+  { number: '03', title: 'Implementation & validation', body: 'I work through prototypes, implementation and testing. I check the relationships between inputs, state changes and results, including crafting, placement and saved progress.', tags: ['Blueprint scripting', 'Prototyping', 'Gameplay validation'] },
 ];

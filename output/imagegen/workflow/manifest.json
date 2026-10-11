@@ -1,0 +1,143 @@
+{
+  "created": "2026-10-11",
+  "model": "gpt-image-2.5-sunburst",
+  "provider": "Existing authorized Microsoft Foundry deployment",
+  "mode": "Unmodified bundled imagegen CLI edit, one style reference",
+  "nativeSize": [
+    1536,
+    1024
+  ],
+  "requestedSize": "1536x1024",
+  "generationSeconds": 59.5,
+  "source": "output\\imagegen\\workflow\\atlas.png",
+  "sourceSha256": "99d225af9f21bc53ba3ededfd5216d2f720a0391d6f7bb24658815635465d8d0",
+  "prompt": "output\\imagegen\\workflow\\atlas-prompt.txt",
+  "promptSha256": "d504a47ebb3a1128cbf852e5a4c9ea9bd3a49481131f76b7c6817757d475fc16",
+  "styleReference": "output\\imagegen\\editorial-illustrations\\gameplay.png",
+  "styleReferenceSha256": "d2a22974bf1c96ba728ddaff81fa09ab7670a0be75124a58d0f3dee41d348abb",
+  "processing": "Five exact512x512 cell crops. Only outer4.5percent emptyborder alpha-feathered; cropped-art interiors retained. No native4Kclaim.",
+  "scope": "Original conceptual process metaphors, not actual project/software captures or native graphs. Shared illustrations complement numbered accessible HTML stages.",
+  "visualQa": "Atlas inspected: consistent5isolated coherent isometricvignettes, empty6cell, nopeople/text/logos. Productioncropcontactsheet inspected.",
+  "assets": [
+    {
+      "name": "context",
+      "caption": "Book and contextual materials",
+      "crop": [
+        0,
+        0,
+        512,
+        512
+      ],
+      "publicPath": "/images/workflow/context.webp",
+      "output": "public\\images\\workflow\\context.webp",
+      "dimensions": [
+        512,
+        512
+      ],
+      "bytes": 31224,
+      "sha256": "51d4fc101e56dc3e02151060fb54ad676bf9448fec1769f0df3ffd086038fa51",
+      "cornersAlpha": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "decision",
+      "caption": "Checked decision gate",
+      "crop": [
+        512,
+        0,
+        1024,
+        512
+      ],
+      "publicPath": "/images/workflow/decision.webp",
+      "output": "public\\images\\workflow\\decision.webp",
+      "dimensions": [
+        512,
+        512
+      ],
+      "bytes": 28666,
+      "sha256": "389e073ff8e0e3c2b2a86c3b79bf265602e3a5942435eaf4f6631f97db7a61fc",
+      "cornersAlpha": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "build",
+      "caption": "Hammer and modular creation blocks",
+      "crop": [
+        1024,
+        0,
+        1536,
+        512
+      ],
+      "publicPath": "/images/workflow/build.webp",
+      "output": "public\\images\\workflow\\build.webp",
+      "dimensions": [
+        512,
+        512
+      ],
+      "bytes": 27676,
+      "sha256": "483770ef7da0f8257bc77b277ecb70470d8d056db1e8624f979f6acfac76e222",
+      "cornersAlpha": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "review",
+      "caption": "Report and feedback loop",
+      "crop": [
+        0,
+        512,
+        512,
+        1024
+      ],
+      "publicPath": "/images/workflow/review.webp",
+      "output": "public\\images\\workflow\\review.webp",
+      "dimensions": [
+        512,
+        512
+      ],
+      "bytes": 27030,
+      "sha256": "d36bdbf2631e5ed2d3115f77fa2a08d9c980c028d929449b8513e53fc37618c2",
+      "cornersAlpha": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "outcome",
+      "caption": "Checked saved archive",
+      "crop": [
+        512,
+        512,
+        1024,
+        1024
+      ],
+      "publicPath": "/images/workflow/outcome.webp",
+      "output": "public\\images\\workflow\\outcome.webp",
+      "dimensions": [
+        512,
+        512
+      ],
+      "bytes": 26772,
+      "sha256": "ae2b0d7a45b1d2b8a8b2db7682dc11c6a7e08e2fba0f5e03b3abfa47276b1e90",
+      "cornersAlpha": [
+        0,
+        0,
+        0,
+        0
+      ]
+    }
+  ]
+}

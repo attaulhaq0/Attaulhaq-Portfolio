@@ -1,0 +1,28 @@
+{
+  "source": "output\\sora\\raw\\education-concept.mp4",
+  "output": "public\\media\\education-concept.mp4",
+  "sourceDimensions": [
+    1280,
+    720
+  ],
+  "productionDimensions": [
+    1080,
+    720
+  ],
+  "crop": [
+    100,
+    0,
+    1180,
+    720
+  ],
+  "fps": 30.0,
+  "rawFrames": 120,
+  "productionFrames": 111,
+  "durationSeconds": 3.7,
+  "wrapBlendSeconds": 0.3,
+  "audio": "Removed; no audio stream is passed to writer.",
+  "productionBytes": 408827,
+  "productionSha256": "067f360c9cfb3d7741720a69d072beaf3dc3835ac5d3fb66eb8d5c030a49030a",
+  "samples": "output/sora/qa/education-concept-contact-sheet.jpg",
+  "limit": "Ending blend reduces wrap discontinuity; no claim of pixel-identical loop boundary."
+}

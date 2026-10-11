@@ -1,0 +1,146 @@
+{
+  "created": "2026-10-11",
+  "mode": "User-authorized unmodified imagegen CLI edit",
+  "model": "gpt-image-2.5-sunburst",
+  "baseUrl": "https://edeviser-sweden-resource.services.ai.azure.com/openai/v1/",
+  "styleReference": "output\\imagegen\\editorial-illustrations\\gameplay.png",
+  "styleReferenceSha256": "d2a22974bf1c96ba728ddaff81fa09ab7670a0be75124a58d0f3dee41d348abb",
+  "styleReferenceRole": "Style only, original new compositions",
+  "quality": "high",
+  "requestedSize": "1536x1024",
+  "actualGeneratedSize": [
+    1536,
+    1024
+  ],
+  "productionSize": [
+    1200,
+    800
+  ],
+  "generationSeconds": {
+    "aegisops": 66.2,
+    "family-os": 65.2,
+    "digital-dynasty": 59.7
+  },
+  "maxConcurrent": 2,
+  "processing": "Proportional1200x800 resize, WebPquality94. Outer10percent empty border smoothstep alpha feather, cornersalpha0 and centeralpha255. No sculpture cropping. Original generated PNGs retained.",
+  "captions": {
+    "aegisops": "Original illustration of voice capture, scoped retrieval and structured reporting.",
+    "family-os": "Original illustration of shared household planning and checked coordination.",
+    "digital-dynasty": "Original illustration of resource gathering, inventory, crafting and construction."
+  },
+  "items": [
+    {
+      "slug": "aegisops",
+      "source": "output\\imagegen\\home\\aegisops.png",
+      "sourceSha256": "f8b8e94f179995ee0f1b681629605085d8cc021d05f5f78e190785782492c003",
+      "sourceDimensions": [
+        1536,
+        1024
+      ],
+      "output": "public\\images\\home\\aegisops-illustration.webp",
+      "publicPath": "/images/home/aegisops-illustration.webp",
+      "sha256": "476555b0a77882b999be36215c2d6d13cb8ef84dd34e42d42ff2c954b16a0d1d",
+      "bytes": 69122,
+      "dimensions": [
+        1200,
+        800
+      ],
+      "alphaCorners": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "visualQa": "Original inspected; centered sculpture, cyan/violet reference language, no real interface, no people/text, ample empty margins; alpha only outer empty border.",
+      "prompt": "output\\imagegen\\home\\aegisops-prompt.txt",
+      "promptSha256": "b8624750e531563db15660ef1876cd4250530a2d560b6631ed8fdd7ad434bf38",
+      "illustrationOnly": true,
+      "realProductOrGameScreenshot": false
+    },
+    {
+      "slug": "family-os",
+      "source": "output\\imagegen\\home\\family-os.png",
+      "sourceSha256": "d00e1d9e4da05e45cbe026ff290558077a502f47423d3876bd9957d3a80506b3",
+      "sourceDimensions": [
+        1536,
+        1024
+      ],
+      "output": "public\\images\\home\\family-os-illustration.webp",
+      "publicPath": "/images/home/family-os-illustration.webp",
+      "sha256": "2b88b3ff12ea51dfd8bde779712740f858a0c35b3d05ae888e36b22f2834beba",
+      "bytes": 81902,
+      "dimensions": [
+        1200,
+        800
+      ],
+      "alphaCorners": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "visualQa": "Original inspected; centered sculpture, cyan/violet reference language, no real interface, no people/text, ample empty margins; alpha only outer empty border.",
+      "prompt": "output\\imagegen\\home\\family-os-prompt.txt",
+      "promptSha256": "540f3f955dd438c829d601ac4082d414fb2dc26c765aacdb3e12bca1351d408b",
+      "illustrationOnly": true,
+      "realProductOrGameScreenshot": false
+    },
+    {
+      "slug": "digital-dynasty",
+      "source": "output\\imagegen\\home\\digital-dynasty.png",
+      "sourceSha256": "43daa1b9d5f792012299959325165471d5fe9c79368c625343cb72e85d863419",
+      "sourceDimensions": [
+        1536,
+        1024
+      ],
+      "output": "public\\images\\home\\digital-dynasty-illustration.webp",
+      "publicPath": "/images/home/digital-dynasty-illustration.webp",
+      "sha256": "43f754c2e7f0776d9e4d07ae6316464ccfb90017aadd616644cf8c9dcc04500b",
+      "bytes": 102864,
+      "dimensions": [
+        1200,
+        800
+      ],
+      "alphaCorners": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "visualQa": "Centered resource, inventory, crafting and timber construction island; distinct from controller/portal Cosmo sculpture; no real game assets or screenshot claim.",
+      "prompt": "output\\imagegen\\home\\digital-dynasty-prompt.txt",
+      "promptSha256": "97a62dc7846ea407deb108b4614f07fbe35a6dc7bcefd7d6c4593b08cc81adec",
+      "illustrationOnly": true,
+      "realProductOrGameScreenshot": false
+    }
+  ],
+  "reused": [
+    {
+      "slug": "edeviser",
+      "source": "public\\images\\editorial-product.webp",
+      "sourceSha256": "9f3ca0347df4ff6d060157f1fbf16bbd5e8a4013ec6c67eef833db7fe24080dd",
+      "output": "public\\images\\home\\edeviser-illustration.webp",
+      "sha256": "4a3833918a6a977580bd9653e2e0e34a143a85e8e02436daa4a370275de6673e",
+      "bytes": 50632,
+      "dimensions": [
+        1200,
+        800
+      ],
+      "processing": "Proportional1200x800 resize; alpha smoothstep fade over outer10percent empty border. Interior sculpture preserved."
+    },
+    {
+      "slug": "cosmo-conqueror",
+      "source": "public\\images\\editorial-gameplay.webp",
+      "sourceSha256": "b15d0456496468dabbfd272b26d39f5bb87c14c531472201423c6e4d113c2841",
+      "output": "public\\images\\home\\cosmo-conqueror-illustration.webp",
+      "sha256": "81fff88754e299b8b6af7a618095b9f9e3445bbdb6cb4bbb9280cb43b57fd64c",
+      "bytes": 72234,
+      "dimensions": [
+        1200,
+        800
+      ],
+      "processing": "Proportional1200x800 resize; alpha smoothstep fade over outer10percent empty border. Interior sculpture preserved."
+    }
+  ],
+  "visualQa": "All new originals and final production exports opened and visually inspected. Allfive covercornersalpha0; centeropaque. No native4Kclaim."
+}

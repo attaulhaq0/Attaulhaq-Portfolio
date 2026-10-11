@@ -1,0 +1,48 @@
+{
+  "source": {
+    "path": "F:\\Cosmo_Portfolio\\ProjectileSystem.mkv",
+    "bytes": 12537301,
+    "sha256": "d49d7c435faca77cffcf35aba4c609e1ef92664114751bc0f93c32c15de2205b",
+    "startSeconds": 9,
+    "endSeconds": 24
+  },
+  "output": {
+    "path": "G:\\Portfolio Website\\Attaulhaq-Portfolio\\public\\media\\cosmo-projectiles.mp4",
+    "bytes": 4440623,
+    "sha256": "31d230571269355516a6bdf6982848d7183f3de27d71d552df54722173f451d1",
+    "durationSeconds": 15,
+    "width": 1280,
+    "height": 720,
+    "codec": "H264",
+    "frameRate": 30,
+    "audio": "removed; silent",
+    "faststart": true,
+    "decodeToNull": "exit0 with no errors"
+  },
+  "crop": {
+    "source": [
+      1280,
+      720
+    ],
+    "removeDesktopChrome": {
+      "x": 0,
+      "y": 26,
+      "width": 1280,
+      "height": 658
+    },
+    "letterbox": [
+      1280,
+      720
+    ],
+    "scope": "Titlebar/taskbar removed, internal graybox diagnostic HitReaction text retained; original proposed672 crop retained a taskbar sliver and was corrected after visual inspection"
+  },
+  "poster": {
+    "path": "G:\\Portfolio Website\\Attaulhaq-Portfolio\\public\\images\\cosmo\\projectiles.webp",
+    "bytes": 48516,
+    "sha256": "78f55c6afcdc974eaad7f01a09e75eb119b938a1c7d0d3ccf931f55073fd3553",
+    "sourceSecond": 13.8
+  },
+  "title": "Projectile feedback",
+  "caption": "Silent graybox projectile demonstration with visible health and hit feedback.",
+  "description": "Graybox projectile test showing attack effects and visible health/hit feedback."
+}

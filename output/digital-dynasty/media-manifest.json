@@ -1,0 +1,114 @@
+{
+  "source": {
+    "path": "F:/Digital Dynasty/.mp4",
+    "bytes": 53125155,
+    "sha256": "81967616cfa805987bfc73bdc51073732c9bf0c2f1443f99ddc35aa8dec529c9",
+    "durationSeconds": 162,
+    "width": 1920,
+    "height": 1080,
+    "frameRate": 30,
+    "videoCodec": "H264 High",
+    "audioCodec": "AAC LC",
+    "audioSampleRate": 44100,
+    "audioChannels": 2
+  },
+  "output": {
+    "path": "public/media/digital-dynasty-gameplay.mp4",
+    "bytes": 11359490,
+    "sha256": "0ed888dbec8d2a0e39ca4f0dd474db5e6cba6cc40d25f1d34b602562e8446903",
+    "durationSeconds": 60,
+    "width": 1280,
+    "height": 720,
+    "frameRate": 30,
+    "videoCodec": "H264",
+    "pixelFormat": "yuv420p",
+    "audio": "removed: deliberately silent edited excerpt",
+    "metadata": "stripped",
+    "faststart": true
+  },
+  "edit": {
+    "sourcePreserved": true,
+    "chronological": false,
+    "segments": [
+      {
+        "start": 44,
+        "end": 48,
+        "content": "First-person riverbank exploration with hotbar and survival HUD."
+      },
+      {
+        "start": 38,
+        "end": 44,
+        "content": "Inventory and character statistics; equipping a stone tool in a test arena."
+      },
+      {
+        "start": 48,
+        "end": 52,
+        "content": "Crafting demonstration and tool workbench in Unreal Editor."
+      },
+      {
+        "start": 62.5,
+        "end": 67.5,
+        "content": "AI animal encounter in the forest environment with survival status HUD."
+      },
+      {
+        "start": 77,
+        "end": 85,
+        "content": "Wooden building placement and navigation in a play-in-editor preview."
+      },
+      {
+        "start": 90,
+        "end": 98,
+        "content": "Green/red placement previews for structural pieces in the test arena."
+      },
+      {
+        "start": 110,
+        "end": 116,
+        "content": "Weapon and bow demonstration in the test arena."
+      },
+      {
+        "start": 120,
+        "end": 128,
+        "content": "Two player windows and character interaction in a multiplayer test."
+      },
+      {
+        "start": 141,
+        "end": 152,
+        "content": "Tribe interface and session browser demonstrated in the prototype."
+      }
+    ],
+    "cropping": "None. Full 16:9 source frame retained, including visible editor UI, debug overlays, prototype HUD and labels.",
+    "presentation": "Edited silent prototype demonstration; native controls, no autoplay."
+  },
+  "screenshots": [
+    {
+      "name": "exploration",
+      "timestamp": 44.5,
+      "caption": "First-person riverbank exploration with the hotbar and survival HUD, from the prototype recording.",
+      "path": "public/images/digital-dynasty/exploration.webp",
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "name": "inventory",
+      "timestamp": 40.5,
+      "caption": "Inventory, crafting slots and character statistics in the prototype test arena.",
+      "path": "public/images/digital-dynasty/inventory.webp",
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "name": "structures",
+      "timestamp": 84,
+      "caption": "A timber structure and staircase demonstrated in an Unreal Engine play-in-editor window.",
+      "path": "public/images/digital-dynasty/structures.webp",
+      "width": 1280,
+      "height": 720
+    }
+  ],
+  "poster": {
+    "path": "public/images/digital-dynasty-gameplay.webp",
+    "sourceTimestamp": 44.5,
+    "width": 1280,
+    "height": 720
+  }
+}

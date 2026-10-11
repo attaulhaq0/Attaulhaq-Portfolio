@@ -1,0 +1,18 @@
+{
+  "provider": "Microsoft Foundry",
+  "endpoint": "https://edeviser-sweden-resource.services.ai.azure.com/openai/v1/",
+  "output": "output\\sora\\raw\\education-concept.mp4",
+  "job": {
+    "id": "video_6acb7e2fd178819099207bbb63a3ec3e",
+    "status": "completed",
+    "progress": 100,
+    "model": "sora-2",
+    "seconds": "4",
+    "size": "1280x720",
+    "created_at": 1791721009,
+    "completed_at": 1791721064,
+    "expires_at": 1791807409,
+    "error": null
+  },
+  "updatedAt": "2026-10-11T12:18:42.538Z"
+}

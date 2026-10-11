@@ -1,0 +1,20 @@
+import { spawn } from 'node:child_process';
+import { readFile,writeFile,rename,stat } from 'node:fs/promises';
+import { createHash } from 'node:crypto';
+import path from 'node:path';
+const root=process.cwd();const ffmpeg=path.join(root,'output/imagegen/python-deps/imageio_ffmpeg/binaries/ffmpeg-win-x86_64-v7.1.exe');
+const staged='G:/Portfolio Website/.runtime/qa/cosmo/staged';const names=['forest','city','spirit','iggy','reaper'];
+const files=names.map(name=>path.join(staged,`${name}-reel.mp4`));
+const run=args=>new Promise((resolve,reject)=>{const p=spawn(ffmpeg,args,{windowsHide:true});let err='';p.stderr.on('data',c=>err+=c);p.on('error',reject);p.on('exit',code=>code===0?resolve(err):reject(Error(err)));});
+for(const file of files)if((await stat(file)).size<1000)throw Error('Staged clip incomplete');
+const temp=path.join(root,'.local/cosmo-showcase.tmp.mp4');const destination=path.join(root,'public/media/cosmo-showcase.mp4');
+const inputs=files.flatMap(file=>['-i',file]);
+// Retain the source selections, then remove the first 20 seconds of the assembled reel.
+// This removes the 12-second forest excerpt and the first 8 seconds of the city excerpt.
+const trimStartSeconds=20;
+// Further owner-approved edit removes seconds 4–12 from that 52-second reel.
+const filter=files.map((_,i)=>`[${i}:v]setpts=PTS-STARTPTS,setsar=1[v${i}]`).join(';')+';'+files.map((_,i)=>`[v${i}]`).join('')+`concat=n=5:v=1:a=0,trim=start=${trimStartSeconds},setpts=PTS-STARTPTS[assembled];[assembled]split=2[early][late];[early]trim=start=0:end=4,setpts=PTS-STARTPTS[first];[late]trim=start=12:end=52,setpts=PTS-STARTPTS[last];[first][last]concat=n=2:v=1:a=0,format=yuv420p[out]`;
+await run(['-hide_banner','-loglevel','error',...inputs,'-filter_complex',filter,'-map','[out]','-an','-c:v','libx264','-crf','25','-preset','medium','-r','30','-movflags','+faststart','-map_metadata','-1','-y',temp]);
+await run(['-hide_banner','-loglevel','error','-i',temp,'-map','0:v','-f','null','-']);
+await rename(temp,destination);const bytes=await readFile(destination);const hashes=await Promise.all(files.map(async(file,i)=>({name:names[i],file,sha256:createHash('sha256').update(await readFile(file)).digest('hex')})));
+const manifest={output:{path:'public/media/cosmo-showcase.mp4',bytes:bytes.length,sha256:createHash('sha256').update(bytes).digest('hex'),durationSeconds:44,width:1280,height:720,fps:30,codec:'H264',pixelFormat:'yuv420p',audio:'removed; deliberately silent edit',crf:25,faststart:true,fullDecode:'exit 0 no errors'},postAssemblyTrim:{startSeconds:trimStartSeconds,originalDurationSeconds:72,retainedDurationSeconds:44},staged:hashes,edit:[{source:'AlienmissionForest^Underground^RuinedCity.mp4',start:150,end:162,topic:'Mission traversal in the alien forest'},{source:'RuinedCityAliensideupdated.mp4',start:474,end:486,topic:'Ruined-city gate and objective traversal'},{source:'Alien Vs Spirit Boss Gameplay.mp4',start:98,end:116,topic:'Spirit boss combat'},{source:'IggyAndScorchMiniBoss.mp4',start:50,end:68,topic:'Miniboss attacks and player movement'},{source:'Female Reaper Gameplay.mp4',start:31,end:43,topic:'Reaper encounter and shield effects'}],retainedEdit:[{source:'RuinedCityAliensideupdated.mp4',start:482,end:486,topic:'Ruined-city gate and objective traversal'},{source:'Alien Vs Spirit Boss Gameplay.mp4',start:106,end:116,topic:'Spirit boss combat'},{source:'IggyAndScorchMiniBoss.mp4',start:50,end:68,topic:'Miniboss attacks and player movement'},{source:'Female Reaper Gameplay.mp4',start:31,end:43,topic:'Reaper encounter and shield effects'}],scope:'Selected source excerpts reviewed; full final output decoded. The owner-approved first 20 seconds are removed after assembly, followed by seconds 4–12 of the resulting 52-second reel; remaining intervals retain their original order. In-game HUD/prototype state retained. OS chrome removed only in traversal sources with letterboxing. No source audio used. Source metadata/hash manifests separate.'};await writeFile(path.join(root,'output/cosmo/showcase-manifest.json'),JSON.stringify(manifest,null,2));console.log(JSON.stringify(manifest.output));

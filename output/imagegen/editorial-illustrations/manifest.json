@@ -1,0 +1,33 @@
+{
+  "provider": "Microsoft Foundry",
+  "deployment": "gpt-image-2.5-sunburst",
+  "mode": "Owner-authorized API fallback through unmodified bundled CLI edit with utility.png as style reference",
+  "sourceReference": "G:/Pictures/utility.png",
+  "conceptualOnly": true,
+  "prompts": [
+    "gameplay-prompt.txt",
+    "product-prompt.txt"
+  ],
+  "items": [
+    {
+      "source": "output\\imagegen\\editorial-illustrations\\gameplay.png",
+      "target": "public\\images\\editorial-gameplay.webp",
+      "dimensions": [
+        1200,
+        800
+      ],
+      "bytes": 59908,
+      "sha256": "b15d0456496468dabbfd272b26d39f5bb87c14c531472201423c6e4d113c2841"
+    },
+    {
+      "source": "output\\imagegen\\editorial-illustrations\\product.png",
+      "target": "public\\images\\editorial-product.webp",
+      "dimensions": [
+        1200,
+        800
+      ],
+      "bytes": 40610,
+      "sha256": "9f3ca0347df4ff6d060157f1fbf16bbd5e8a4013ec6c67eef833db7fe24080dd"
+    }
+  ]
+}

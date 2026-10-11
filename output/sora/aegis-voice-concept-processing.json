@@ -1,0 +1,52 @@
+{
+  "provider": "Microsoft Foundry",
+  "model": "sora-2",
+  "source": {
+    "path": "output/sora/raw/aegis-voice-concept.mp4",
+    "bytes": 1619942,
+    "sha256": "aa6042b1f7b4936e49b85f742e2e316d6a519a673ff6f1bae45364c57954f099"
+  },
+  "output": {
+    "path": "public/media/aegis-voice-concept.mp4",
+    "bytes": 596629,
+    "sha256": "8aec68db22ee87436f697d6bd1de98567c3e7ef48411680795a71e538a73b89a",
+    "durationSeconds": 4,
+    "width": 1280,
+    "height": 720,
+    "frameRate": 30,
+    "codec": "H264",
+    "pixelFormat": "yuv420p",
+    "audio": "Removed; deliberately silent concept animation.",
+    "faststart": true,
+    "fullDecode": "exit 0 no decode errors"
+  },
+  "poster": {
+    "path": "public/images/aegis-voice-concept-poster.webp",
+    "timestamp": 1.5,
+    "width": 1280,
+    "height": 720,
+    "bytes": 64770
+  },
+  "qa": {
+    "contactSheet": "output/sora/qa/aegis-voice-concept-contact-sheet.webp",
+    "timestamps": [
+      0,
+      0.75,
+      1.5,
+      2.25,
+      3,
+      3.75
+    ],
+    "encodingDiagnostic": "",
+    "decodeDiagnostic": ""
+  },
+  "edit": {
+    "colorGrade": "Gentle violet shadow lift and brightened glass midtones.",
+    "filter": "curves=r='0/0.045 0.35/0.42 1/1':g='0/0.025 0.35/0.395 1/1':b='0/0.08 0.35/0.49 1/1'",
+    "geometry": "No geometry, labels or UI added during processing.",
+    "audio": "Removed from public export."
+  },
+  "caption": "AI-generated concept animation: a voice signal flows into connected retrieval nodes. This is a visual metaphor, not footage of the AegisOps interface.",
+  "description": "A stylized microphone, glass waveform and three connected nodes glow with cyan and violet light.",
+  "scope": "Original generated visual metaphor. Not actual product UI, footage, deployed architecture or a verified product behavior. Display with explicit playback controls, no autoplay and preload none."
+}

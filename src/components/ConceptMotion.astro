@@ -1,0 +1,23 @@
+---
+import type { Project } from '../data/projects';
+interface Props { project: Project }
+const { project } = Astro.props;
+const motion = project.conceptMotion;
+---
+{motion && <details class="concept-motion" id={`concept-motion-${project.slug}`}>
+  <summary><span><span class="eyebrow">PROJECT IN MOTION</span><strong>{motion.title}</strong></span><span aria-hidden="true">▷</span></summary>
+  <figure><video controls playsinline muted preload="none" width="1280" height="720" poster={motion.poster} aria-label={`${project.name} concept animation`} aria-describedby={`concept-caption-${project.slug}`}><source src={motion.src} type="video/mp4" />Your browser does not support video. <a href={motion.src}>Download concept animation</a>.</video><figcaption id={`concept-caption-${project.slug}`}>{motion.caption}</figcaption></figure>
+</details>}
+<script>
+ document.querySelectorAll<HTMLDetailsElement>('.concept-motion').forEach(details => {
+  const video = details.querySelector('video');
+  if (!video) return;
+  const pause = () => video.pause();
+  const toggle = () => { if (!details.open) pause(); };
+  const visibility = () => { if (document.hidden) pause(); };
+  const observer = new IntersectionObserver(entries => { if (!entries[0]?.isIntersecting) pause(); });
+  const attach = () => { details.addEventListener('toggle', toggle); document.addEventListener('visibilitychange', visibility); observer.observe(video); };
+  const detach = () => { pause(); details.removeEventListener('toggle', toggle); document.removeEventListener('visibilitychange', visibility); observer.disconnect(); };
+  attach(); window.addEventListener('pagehide', detach); window.addEventListener('pageshow', attach);
+ });
+</script>

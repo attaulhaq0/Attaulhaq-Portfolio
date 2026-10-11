@@ -2,7 +2,72 @@
 import type { Project } from '../data/projects';
 interface Props { project: Project }
 const { project } = Astro.props;
+const imageCaption = project.coverCaption ?? ((project.coverKind ?? 'illustration') === 'illustration'
+  ? 'Original concept illustration · A visual interpretation of the project, not a product screenshot.'
+  : `${project.name} · ${project.coverKind === 'gameplay' ? 'Gameplay capture' : 'Product capture'}.`);
+const mediaWidth = project.media?.width ?? 1200;
+const mediaHeight = project.media?.height ?? 800;
+const captionId = `media-caption-${project.slug}`;
+const clips = project.clips;
 ---
 <figure class="case-media">
-  {project.media ? <><video controls playsinline preload="none" poster={project.media.poster} width="1200" height="800" aria-label={`${project.name} demonstration`}><source src={project.media.src} />{project.media.captions && <track kind="captions" src={project.media.captions} srclang="en" label="English" default />}Your browser does not support embedded video. <a href={project.media.src}>Download the demonstration.</a></video><figcaption>{project.media.caption}</figcaption>{project.media.transcript && <details class="transcript"><summary>Read video transcript</summary><p>{project.media.transcript}</p></details>}</> : <><img src={project.cover} alt={project.coverAlt} width="1200" height="800" fetchpriority="high" /><figcaption>Original concept illustration · A visual interpretation of the project, not a product screenshot.</figcaption></>}
+  {project.media ? <>
+    <video controls playsinline preload="none" poster={project.media.poster} width={mediaWidth} height={mediaHeight} style={`aspect-ratio: ${mediaWidth} / ${mediaHeight};`} aria-label={`${project.name} demonstration`} aria-describedby={captionId}>
+      <source src={project.media.src} type="video/mp4" />
+      {project.media.captions && <track kind="captions" src={project.media.captions} srclang="en" label="English" default />}
+      Your browser does not support embedded video. <a href={project.media.src}>Download the demonstration.</a>
+    </video>
+    <figcaption id={captionId}><span>{project.media.caption}</span>{project.media.durationLabel && <span class="case-media-duration">{project.media.durationLabel}</span>}</figcaption>
+  </> : <><img src={project.cover} alt={project.coverAlt} width="1200" height="800" fetchpriority="high" /><figcaption>{imageCaption}</figcaption></>}
 </figure>
+{project.media?.description && <p class="case-media-description">{project.media.description}</p>}
+{project.media?.transcript && <details class="transcript"><summary>Read video transcript</summary><p>{project.media.transcript}</p></details>}
+{project.gallery && project.gallery.length > 0 && <div class="case-gallery" aria-label={`${project.name} captures`}>
+  {project.gallery.slice(0, 3).map(image => <figure><a href={image.src} target="_blank" rel="noopener noreferrer" aria-label={`Open full capture: ${image.alt}`}><img src={image.src} alt={image.alt} width={image.width} height={image.height} loading="lazy" decoding="async" /><span aria-hidden="true">View capture ↗</span></a><figcaption>{image.caption}</figcaption></figure>)}
+</div>}
+{clips && clips.length > 0 && <section class="project-demonstrations" aria-labelledby={`focused-title-${project.slug}`}>
+  <div class="project-demonstrations-heading"><span class="eyebrow">A CLOSER LOOK</span><h2 id={`focused-title-${project.slug}`}>Focused demonstrations.</h2></div>
+  {clips.map((clip, index) => <details class="project-demo">
+    <summary><span class="project-demo-index" aria-hidden="true">0{index + 1}</span><span class="project-demo-summary"><span class="project-demo-title">{clip.title}</span>{clip.description && <span class="project-demo-description">{clip.description}</span>}</span>{clip.durationLabel && <span class="project-demo-duration">{clip.durationLabel}</span>}<span class="project-demo-symbol" aria-hidden="true">+</span></summary>
+    <figure class="project-demo-content"><video class="project-demo-video" controls playsinline preload="none" poster={clip.poster} width={clip.width} height={clip.height} style={`aspect-ratio: ${clip.width} / ${clip.height};`} aria-label={`${project.name}: ${clip.title}`} aria-describedby={`focused-caption-${project.slug}-${index}`}><source src={clip.src} type="video/mp4" />Your browser does not support this video. <a href={clip.src}>Download the demonstration.</a></video><figcaption id={`focused-caption-${project.slug}-${index}`}>{clip.caption}</figcaption></figure>
+  </details>)}
+</section>}
+
+<script>
+  document.querySelectorAll<HTMLVideoElement>('.case-media > video').forEach(video => {
+    const pause = () => video.pause();
+    const visibility = () => { if (document.hidden) pause(); };
+    const observer = new IntersectionObserver(entries => { if (!entries[0]?.isIntersecting) pause(); });
+    const attach = () => { document.addEventListener('visibilitychange', visibility); observer.observe(video); };
+    const detach = () => { pause(); document.removeEventListener('visibilitychange', visibility); observer.disconnect(); };
+    attach();
+    window.addEventListener('pagehide', detach);
+    window.addEventListener('pageshow', attach);
+  });
+  document.querySelectorAll<HTMLDetailsElement>('.project-demo').forEach(disclosure => {
+    const video = disclosure.querySelector<HTMLVideoElement>('.project-demo-video');
+    if (!video) return;
+    const pause = () => video.pause();
+    const toggle = () => { if (!disclosure.open) pause(); };
+    const visibility = () => { if (document.hidden) pause(); };
+    const observer = new IntersectionObserver(entries => { if (!entries[0].isIntersecting) pause(); });
+    let attached = false;
+    const attach = () => {
+      if (attached) return;
+      attached = true;
+      disclosure.addEventListener('toggle', toggle);
+      document.addEventListener('visibilitychange', visibility);
+      observer.observe(video);
+    };
+    const detach = () => {
+      attached = false;
+      pause();
+      disclosure.removeEventListener('toggle', toggle);
+      document.removeEventListener('visibilitychange', visibility);
+      observer.disconnect();
+    };
+    attach();
+    window.addEventListener('pagehide', detach);
+    window.addEventListener('pageshow', attach);
+  });
+</script>

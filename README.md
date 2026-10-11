@@ -4,9 +4,11 @@ An original personal portfolio for Sheikh Atta-ul-Haq: from interactive worlds t
 
 ## Direction
 
-A fast, accessible, editorial portfolio with original systems-inspired artwork, CV-grounded case studies, and a progressively enhanced spatial hero. Useful content must never wait for WebGL.
+A dark spatial homepage with an owner-permitted source character and native scroll motion, neutral warm-white work-page openings, Sunburst concept artwork, CV-grounded case studies, a slideable gallery of real event stories and an immersive education walkthrough. Useful content never waits for WebGL.
 
 ## Development
+
+Start with [AGENTS.md](AGENTS.md) and the [codebase map](docs/CODEBASE-MAP.md) to find the content, components, media, scripts and verification workflows.
 
 ```sh
 npm ci
@@ -25,6 +27,16 @@ Requires Node.js 22.12 or later (Node 24 LTS recommended). Local preview: http:/
 
 ## Provenance and rights
 
-This is a new implementation, not a redistribution of a reference template. Development is AI-assisted, with design direction and personal/project information supplied by the portfolio owner. Commit history records actual implementation milestones. No restricted reference source or assets are included.
+This is an independent Astro implementation. Development is AI-assisted, with design direction and personal/project information supplied by the portfolio owner. The owner confirmed permission for Moncy Yohannan’s original avatar; its use and attribution are documented in `docs/THIRD-PARTY.md`. The reference’s page source and trial animation plugins are not used by the portfolio.
 
 Original site code and artwork: all rights reserved unless a separate license is supplied. Public visibility is not an open-source license. Third-party dependencies and fonts remain under their respective licenses. See subsequent documentation for editing, architecture and deployment.
+
+## G: workspace launcher
+
+Run `G:/Portfolio Website/Start-Portfolio.ps1` to keep TEMP/TMP, npm cache and Playwright browsers on G:. Add `-Build` for the static production preview.
+
+The reusable photo-informed model is `public/models/atta-avatar.glb`. Run `node scripts/export-avatar.mjs` to rebuild it from the authored geometry and face texture. This is a stylized personal model, not a photogrammetry scan. The website generates the same scene on demand so its model file does not delay the initial page.
+
+The current hero automatically loads the owner-permitted `SourceCharacter.tsx` integration and `public/models/source-character.glb`. Its actual animation clip responds to native scroll. A transparent mesh-rendered poster supports loading, WebGL failure and no-JavaScript reading. Earlier studio and personal models remain separate. The inspiration site runs independently at `http://127.0.0.1:4330/` for comparison; portfolio preview remains `http://127.0.0.1:4321/`.
+
+The approved two-page CV is downloadable at `/documents/sheikh-atta-ul-haq-cv.pdf`. General meeting links use the owner’s separate personal Calendly event. Gameplay remains actual development footage; Sunburst development diagrams and Sora videos are explicitly conceptual explanations. Image exports include 3840×2160 derivatives; the configured deployment returned 1672×941 originals, so the 4K derivatives are upscaled rather than native generations.

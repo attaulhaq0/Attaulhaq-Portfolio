@@ -5,8 +5,16 @@ import '@fontsource/manrope/latin-600.css';
 import '@fontsource/source-sans-3/latin-400.css';
 import '@fontsource/source-sans-3/latin-600.css';
 import '../styles/global.css';
+import '../styles/redesign.css';
+import '../styles/field-notes.css';
+import '../styles/project-media.css';
+import '../styles/case-study.css';
+import '../styles/workflow-diagram.css';
+import '../styles/tech-stack.css';
+import '../styles/editorial-additions.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import SectionMotion from '../components/SectionMotion.astro';
 import { site } from '../data/site';
 interface Props { title?: string; description?: string; image?: string }
 const { title = `${site.name} — Developer & Product Builder`, description = site.description, image = '/images/social-card.svg' } = Astro.props;
@@ -14,5 +22,5 @@ const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site) : undefin
 const socialImage = Astro.site ? new URL(image, Astro.site).href : undefined;
 ---
 <!doctype html>
-<html lang="en"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta name="theme-color" content="#101619" /><meta name="description" content={description} /><meta name="generator" content={Astro.generator} /><title>{title}</title><link rel="icon" type="image/svg+xml" href="/favicon.svg" />{canonical && <link rel="canonical" href={canonical} />}<meta property="og:type" content="website" /><meta property="og:title" content={title} /><meta property="og:description" content={description} />{canonical && <meta property="og:url" content={canonical} />}{socialImage && <meta property="og:image" content={socialImage} />}<meta name="twitter:card" content="summary_large_image" /></head>
-<body id="top"><a class="skip-link" href="#main">Skip to content</a><Header /><main id="main"><slot /></main><Footer /></body></html>
+<html lang="en"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta name="theme-color" content="#09080d" /><meta name="description" content={description} /><meta name="generator" content={Astro.generator} /><title>{title}</title><link rel="icon" type="image/svg+xml" href="/favicon.svg" />{canonical && <link rel="canonical" href={canonical} />}<meta property="og:type" content="website" /><meta property="og:title" content={title} /><meta property="og:description" content={description} />{canonical && <meta property="og:url" content={canonical} />}{socialImage && <meta property="og:image" content={socialImage} />}<meta name="twitter:card" content="summary_large_image" /></head>
+<body id="top"><a class="skip-link" href="#main">Skip to content</a><Header /><main id="main"><slot /></main><Footer compact={Astro.url.pathname !== '/'} /><SectionMotion /></body></html>

@@ -1,0 +1,4 @@
+python-deps/
+pip-cache/
+tmp/
+__pycache__/

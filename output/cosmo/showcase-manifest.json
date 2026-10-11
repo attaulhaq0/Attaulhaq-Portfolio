@@ -1,0 +1,165 @@
+{
+  "output": {
+    "path": "public/media/cosmo-showcase.mp4",
+    "bytes": 16450780,
+    "sha256": "d928f1e8db7473b99f5dcf3f95349324d73308dd544f6af96d3698a6e0e8569c",
+    "durationSeconds": 44,
+    "width": 1280,
+    "height": 720,
+    "fps": 30,
+    "codec": "H264",
+    "pixelFormat": "yuv420p",
+    "audio": "removed; deliberately silent edit",
+    "crf": 25,
+    "faststart": true,
+    "fullDecode": "exit 0 no errors"
+  },
+  "staged": [
+    {
+      "name": "forest",
+      "file": "G:\\Portfolio Website\\.runtime\\qa\\cosmo\\staged\\forest-reel.mp4",
+      "sha256": "7419dede2544b80f66406f7bb52323d17bfe0c012ca6578238678aaf6f7b84f5"
+    },
+    {
+      "name": "city",
+      "file": "G:\\Portfolio Website\\.runtime\\qa\\cosmo\\staged\\city-reel.mp4",
+      "sha256": "d60c883c0d74b4d3f3b9a39f0fc76e0f4039aafd01717d4fb2acf3b1a5c28fd6"
+    },
+    {
+      "name": "spirit",
+      "file": "G:\\Portfolio Website\\.runtime\\qa\\cosmo\\staged\\spirit-reel.mp4",
+      "sha256": "db7d21feab7afb54ee63ea98eb34646247bc4eed9b8f4e6ee1110b9afd06d827"
+    },
+    {
+      "name": "iggy",
+      "file": "G:\\Portfolio Website\\.runtime\\qa\\cosmo\\staged\\iggy-reel.mp4",
+      "sha256": "8b44f7183b8dee4a32b7fda1fe328b988c77cf799074e1a5300c40eb2ac1432c"
+    },
+    {
+      "name": "reaper",
+      "file": "G:\\Portfolio Website\\.runtime\\qa\\cosmo\\staged\\reaper-reel.mp4",
+      "sha256": "2a4b7f4eb7e02ccb17c21630a05df1f07bacb323b831a4bb068fbe58bd0cd594"
+    }
+  ],
+  "edit": [
+    {
+      "source": "AlienmissionForest^Underground^RuinedCity.mp4",
+      "start": 150,
+      "end": 162,
+      "topic": "Mission traversal in the alien forest"
+    },
+    {
+      "source": "RuinedCityAliensideupdated.mp4",
+      "start": 474,
+      "end": 486,
+      "topic": "Ruined-city gate and objective traversal"
+    },
+    {
+      "source": "Alien Vs Spirit Boss Gameplay.mp4",
+      "start": 98,
+      "end": 116,
+      "topic": "Spirit boss combat"
+    },
+    {
+      "source": "IggyAndScorchMiniBoss.mp4",
+      "start": 50,
+      "end": 68,
+      "topic": "Miniboss attacks and player movement"
+    },
+    {
+      "source": "Female Reaper Gameplay.mp4",
+      "start": 31,
+      "end": 43,
+      "topic": "Reaper encounter and shield effects"
+    }
+  ],
+  "scope": "Owner-approved edit removes the first 20 seconds of the original 72-second assembly, then seconds 4–12 of the resulting 52-second reel. The final 44 seconds preserve remaining shot order, framing and silent audio. Original staged selections, prior 52/72-second edits and manifests are retained. Focused clips unchanged.",
+  "postAssemblyTrim": {
+    "startSeconds": 20,
+    "originalDurationSeconds": 72,
+    "retainedDurationSeconds": 52,
+    "authorization": "Owner explicitly approved removal of the first 20 seconds on 2026-10-11."
+  },
+  "preservedOriginal": {
+    "path": ".runtime/media-originals/cosmo-showcase-72s-original.mp4",
+    "bytes": 29613618,
+    "sha256": "d82b68cc04e4360f26a7c612a82ac656ed19bc9411bd4afd9d2884f104a882be",
+    "manifest": ".runtime/media-originals/cosmo-showcase-72s-manifest.json"
+  },
+  "retainedEdit": [
+    {
+      "source": "RuinedCityAliensideupdated.mp4",
+      "start": 482,
+      "end": 486,
+      "topic": "Ruined-city gate and objective traversal"
+    },
+    {
+      "source": "Alien Vs Spirit Boss Gameplay.mp4",
+      "start": 106,
+      "end": 116,
+      "topic": "Spirit boss combat"
+    },
+    {
+      "source": "IggyAndScorchMiniBoss.mp4",
+      "start": 50,
+      "end": 68,
+      "topic": "Miniboss attacks and player movement"
+    },
+    {
+      "source": "Female Reaper Gameplay.mp4",
+      "start": 31,
+      "end": 43,
+      "topic": "Reaper encounter and shield effects"
+    }
+  ],
+  "poster": {
+    "path": "public/images/cosmo/showcase-trimmed.webp",
+    "source": "public/media/cosmo-showcase.mp4",
+    "timestampSeconds": 1,
+    "originalAssemblyTimestampSeconds": 21,
+    "width": 1280,
+    "height": 720,
+    "bytes": 92692,
+    "sha256": "d0aa98b2a1250e88ee29b615ea7eaf90740426177fb066045bd80f0b30354e53",
+    "kind": "Actual gameplay frame; no crop or visual alterations",
+    "unchanged": "The first four seconds remain, so the existing frame at one second is accurate."
+  },
+  "encoding": {
+    "input": ".runtime/media-originals/cosmo-showcase-52s-original.mp4",
+    "accurateSeekSeconds": 20,
+    "video": "libx264",
+    "crf": 25,
+    "preset": "medium",
+    "fps": 30,
+    "pixelFormat": "yuv420p",
+    "audio": "none",
+    "faststart": true,
+    "metadata": "removed",
+    "filter": "[0:v]trim=start=0:end=4,setpts=PTS-STARTPTS[a];[0:v]trim=start=12:end=52,setpts=PTS-STARTPTS[b];[a][b]concat=n=2:v=1:a=0,format=yuv420p[out]"
+  },
+  "preserved52Second": {
+    "path": ".runtime/media-originals/cosmo-showcase-52s-original.mp4",
+    "bytes": 20225135,
+    "sha256": "8aae9034ce4fb40f430bf9e7177f5810f4b9a25f73e7510b4d31a105c6ad3cda",
+    "manifest": ".runtime/media-originals/cosmo-showcase-52s-manifest.json"
+  },
+  "currentReelTrim": {
+    "sourceDurationSeconds": 52,
+    "removed": [
+      4,
+      12
+    ],
+    "retained": [
+      [
+        0,
+        4
+      ],
+      [
+        12,
+        52
+      ]
+    ],
+    "durationSeconds": 44,
+    "authorization": "Owner explicitly requested removal of seconds 4–12 from the current 52-second showcase."
+  }
+}

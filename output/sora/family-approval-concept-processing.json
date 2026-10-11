@@ -1,0 +1,52 @@
+{
+  "provider": "Microsoft Foundry",
+  "model": "sora-2",
+  "source": {
+    "path": "output/sora/raw/family-approval-concept.mp4",
+    "bytes": 1755941,
+    "sha256": "69f26bb3712b41680a8eb0a52e2cdab4ce8fb87b0b845e338e4ef0d1406a0972"
+  },
+  "output": {
+    "path": "public/media/family-approval-concept.mp4",
+    "bytes": 616447,
+    "sha256": "6006ad5aa06ae7e25344e77bcd057fbe57737098edd5807a535ec9d367468d0d",
+    "durationSeconds": 4,
+    "width": 1280,
+    "height": 720,
+    "frameRate": 30,
+    "codec": "H264",
+    "pixelFormat": "yuv420p",
+    "audio": "Removed; deliberately silent concept animation.",
+    "faststart": true,
+    "fullDecode": "exit 0 no decode errors"
+  },
+  "poster": {
+    "path": "public/images/family-approval-concept-poster.webp",
+    "timestamp": 1.5,
+    "width": 1280,
+    "height": 720,
+    "bytes": 56766
+  },
+  "qa": {
+    "contactSheet": "output/sora/qa/family-approval-concept-contact-sheet.webp",
+    "timestamps": [
+      0,
+      0.75,
+      1.5,
+      2.25,
+      3,
+      3.75
+    ],
+    "encodingDiagnostic": "",
+    "decodeDiagnostic": ""
+  },
+  "edit": {
+    "colorGrade": "Gentle violet shadow lift and brightened glass midtones.",
+    "filter": "curves=r='0/0.045 0.35/0.42 1/1':g='0/0.025 0.35/0.395 1/1':b='0/0.08 0.35/0.49 1/1'",
+    "geometry": "No geometry, labels or UI added during processing.",
+    "audio": "Removed from public export."
+  },
+  "caption": "AI-generated concept animation: light moves between connected glass homes. This is a visual metaphor for household coordination, not footage of the Family OS interface.",
+  "description": "Three glass homes connected by illuminated paths on a reflective studio pedestal.",
+  "scope": "Original generated visual metaphor. Not actual product UI, footage, deployed architecture or a verified product behavior. Display with explicit playback controls, no autoplay and preload none."
+}

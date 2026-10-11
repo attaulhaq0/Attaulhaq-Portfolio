@@ -1,0 +1,18 @@
+{
+  "provider": "Microsoft Foundry",
+  "endpoint": "https://edeviser-sweden-resource.services.ai.azure.com/openai/v1/",
+  "output": "output\\sora\\raw\\family-approval-concept.mp4",
+  "job": {
+    "id": "video_6acb9923a2548190999401d1c55885df",
+    "status": "completed",
+    "progress": 100,
+    "model": "sora-2",
+    "seconds": "4",
+    "size": "1280x720",
+    "created_at": 1791727908,
+    "completed_at": 1791727967,
+    "expires_at": 1791814308,
+    "error": null
+  },
+  "updatedAt": "2026-10-11T14:13:50.066Z"
+}
