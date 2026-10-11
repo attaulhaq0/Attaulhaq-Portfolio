@@ -101,7 +101,10 @@ test('Qatar talk is second and branded LinkedIn pages stay intact', async ({ pag
   const summit = stories.filter({ has: page.locator('[src="/images/moments/bahria-welcome-branded.webp"]') });
   const branded = summit.locator('img').first();
   expect(await branded.evaluate(img => getComputedStyle(img).objectFit)).toBe('contain');
-  await expect(summit.locator('figure.moment-photo')).toHaveCount(6);
+  await expect(summit.locator('figure.moment-photo')).toHaveCount(4);
+  await expect(stories).toHaveCount(12);
+  await expect(page.getByRole('heading', { name: 'Education, in conversation.' })).toHaveCount(0);
+  await expect(page.locator('img[src="/images/moments/bahria-group.webp"], img[src="/images/moments/ai-future-fireside-panel-branded.webp"]')).toHaveCount(0);
   await expect(summit.locator('a[href*="7409170356218863616"]')).toHaveCount(1);
   const google = stories.filter({ hasText: 'Google Cloud Summit Doha' });
   await expect(google.locator('figure.moment-photo img').first()).toHaveAttribute('src', '/images/moments/google-pointing.webp');
