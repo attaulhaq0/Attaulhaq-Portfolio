@@ -12,6 +12,7 @@ import '../styles/case-study.css';
 import '../styles/workflow-diagram.css';
 import '../styles/tech-stack.css';
 import '../styles/editorial-additions.css';
+import '../styles/theme.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import SectionMotion from '../components/SectionMotion.astro';
@@ -22,5 +23,13 @@ const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site) : undefin
 const socialImage = Astro.site ? new URL(image, Astro.site).href : undefined;
 ---
 <!doctype html>
-<html lang="en"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta name="theme-color" content="#09080d" /><meta name="description" content={description} /><meta name="generator" content={Astro.generator} /><title>{title}</title><link rel="icon" type="image/svg+xml" href="/favicon.svg" />{canonical && <link rel="canonical" href={canonical} />}<meta property="og:type" content="website" /><meta property="og:title" content={title} /><meta property="og:description" content={description} />{canonical && <meta property="og:url" content={canonical} />}{socialImage && <meta property="og:image" content={socialImage} />}<meta name="twitter:card" content="summary_large_image" /></head>
+<html lang="en" data-theme="dark"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta name="theme-color" content="#100b18" /><script is:inline>
+  (() => {
+    let theme = 'dark';
+    try { const saved = localStorage.getItem('portfolio-theme'); if (saved === 'light' || saved === 'dark') theme = saved; } catch {}
+    document.documentElement.dataset.theme = theme;
+    document.documentElement.style.colorScheme = theme;
+    document.querySelector('meta[name="theme-color"]')?.setAttribute('content', theme === 'dark' ? '#100b18' : '#f3eff9');
+  })();
+</script><meta name="description" content={description} /><meta name="generator" content={Astro.generator} /><title>{title}</title><link rel="icon" type="image/svg+xml" href="/favicon.svg" />{canonical && <link rel="canonical" href={canonical} />}<meta property="og:type" content="website" /><meta property="og:title" content={title} /><meta property="og:description" content={description} />{canonical && <meta property="og:url" content={canonical} />}{socialImage && <meta property="og:image" content={socialImage} />}<meta name="twitter:card" content="summary_large_image" /></head>
 <body id="top"><a class="skip-link" href="#main">Skip to content</a><Header /><main id="main"><slot /></main><Footer compact={Astro.url.pathname !== '/'} /><SectionMotion /></body></html>

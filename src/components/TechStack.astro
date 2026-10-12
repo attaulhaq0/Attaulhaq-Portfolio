@@ -3,6 +3,7 @@ import { techStack, projectStackNotes } from '../data/tech-stack';
 interface Props { projectSlug?: string }
 const { projectSlug } = Astro.props;
 const tools = projectSlug ? techStack.flatMap(group => group.tools.filter(tool => tool.projects.includes(projectSlug))) : [];
+const symbols: Record<string, string> = { '01': 'intelligence', '02': 'software', '03': 'interactive' };
 ---
 
 {projectSlug ? tools.length > 0 && <div class="project-tech-stack" aria-label="Project tools">
@@ -12,9 +13,9 @@ const tools = projectSlug ? techStack.flatMap(group => group.tools.filter(tool =
 </div> : <section class="tech-stack-section shell" id="stack" aria-labelledby="stack-title">
   <div class="section-topline"><span class="eyebrow">THE TOOLKIT</span><span class="section-side-note">Code, intelligence and practical workflows.</span></div>
   <div class="tech-stack-heading">
-    <div class="tech-stack-intro"><h2 id="stack-title">What I build <em>with.</em></h2><p>Tools for intelligent systems, software and product development, grounded in my earlier game development work.</p></div>
+    <div class="tech-stack-intro"><h2 id="stack-title">Tools &<br /><em>technology.</em></h2><p>Languages, data tools and frameworks I use in current product work, alongside the Unreal tools behind my earlier projects.</p></div>
     <div class="tech-stack-art">
-      <img src="/images/toolkit-ecosystem.webp" alt="" width="1000" height="667" loading="lazy" decoding="async" />
+      <img src="/images/toolkit-ecosystem-transparent.webp" alt="" width="1000" height="667" loading="lazy" decoding="async" />
       <details class="tech-stack-motion">
         <summary>See the toolkit in motion <span aria-hidden="true">▷</span></summary>
         <figure><video controls playsinline muted preload="none" width="1280" height="720" poster="/images/toolkit-motion-poster.webp" aria-label="Illustrated toolkit animation" aria-describedby="toolkit-motion-caption"><source src="/media/toolkit-ecosystem-motion.mp4" type="video/mp4" />Your browser does not support video. <a href="/media/toolkit-ecosystem-motion.mp4">Download the animation</a>.</video><figcaption id="toolkit-motion-caption">A four-second illustration of connected development tools.</figcaption></figure>
@@ -22,7 +23,7 @@ const tools = projectSlug ? techStack.flatMap(group => group.tools.filter(tool =
     </div>
   </div>
   <div class="tech-stack-groups">{techStack.map(group => <article class:list={['tech-stack-group', `stack-accent-${group.accent}`]}>
-    <div class="tech-stack-group-heading"><span aria-hidden="true">/{group.index}</span><h3>{group.title}</h3></div>
+    <div class="tech-stack-group-heading"><img class="tech-stack-group-icon" src={`/images/toolkit/${symbols[group.index]}.webp`} alt="" width="64" height="64" loading="lazy" decoding="async" /><span aria-hidden="true">/{group.index}</span><h3>{group.title}</h3></div>
     <p class="tech-stack-group-description">{group.description}</p>
     <ul class="tech-stack-tools">{group.tools.map(tool => <li><span class="tech-stack-tool-mark" aria-hidden="true">+</span><div><strong>{tool.name}</strong><span>{tool.context}</span></div></li>)}</ul>
   </article>)}</div>

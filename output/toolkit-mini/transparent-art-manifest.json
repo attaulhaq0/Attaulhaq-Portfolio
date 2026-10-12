@@ -1,0 +1,536 @@
+{
+  "date": "2026-10-12",
+  "scope": "Transparent siblings for existing generated homepage, workflow, toolkit and three case illustrations; concept art only.",
+  "originalFilesOverwritten": false,
+  "photosOrGameFootageProcessed": false,
+  "apiCalls": 0,
+  "items": [
+    {
+      "source": {
+        "path": "G:/Portfolio Website/Attaulhaq-Portfolio/public/images/case-studies/edeviser-1600.webp",
+        "dimensions": [
+          1600,
+          900
+        ],
+        "bytes": 73302,
+        "sha256": "dc9ea06940902a125eedc1d5bdcd92216f5a3495709791f622a760533837af89",
+        "mode": "RGB",
+        "alphaExtrema": null,
+        "transparentPixelFraction": 0
+      },
+      "output": {
+        "path": "G:/Portfolio Website/Attaulhaq-Portfolio/public/images/case-studies/edeviser-1600-transparent.webp",
+        "dimensions": [
+          1600,
+          900
+        ],
+        "bytes": 110264,
+        "sha256": "b62219ac65d7d170e5b4972f9c175ba792493c4c8d00646a7bc6d2fab0484eea",
+        "mode": "RGBA",
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "transparentPixelFraction": 0.719678
+      },
+      "responsiveExport": {
+        "path": "G:/Portfolio Website/Attaulhaq-Portfolio/public/images/case-studies/edeviser-768-transparent.webp",
+        "dimensions": [
+          768,
+          432
+        ],
+        "bytes": 59518,
+        "sha256": "621b79d2abbb0b0787cf3026fbe0afc6049b1c9c04adb1c1c5ab706737a419f9",
+        "mode": "RGBA",
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "transparentPixelFraction": 0.709889
+      },
+      "method": "u2netp support and chromatic/tonal white-background selection, enclosed pale geometry fill, subpixel alpha and interior-color edge repair"
+    },
+    {
+      "source": {
+        "path": "G:/Portfolio Website/Attaulhaq-Portfolio/public/images/case-studies/aegisops-1600.webp",
+        "dimensions": [
+          1600,
+          900
+        ],
+        "bytes": 117708,
+        "sha256": "bb1ba8ab975adffc8e726692ad17b3209524f4113d3beb3e9d9b6fd31deeb445",
+        "mode": "RGB",
+        "alphaExtrema": null,
+        "transparentPixelFraction": 0
+      },
+      "output": {
+        "path": "G:/Portfolio Website/Attaulhaq-Portfolio/public/images/case-studies/aegisops-1600-transparent.webp",
+        "dimensions": [
+          1600,
+          900
+        ],
+        "bytes": 159410,
+        "sha256": "8e9638e4c84eafb55c4f15338a0fcf5afa3c1b18da90ddebf880f91700d4707b",
+        "mode": "RGBA",
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "transparentPixelFraction": 0.67669
+      },
+      "responsiveExport": {
+        "path": "G:/Portfolio Website/Attaulhaq-Portfolio/public/images/case-studies/aegisops-768-transparent.webp",
+        "dimensions": [
+          768,
+          432
+        ],
+        "bytes": 75654,
+        "sha256": "242ffaa6c63ff0c7b5240f823563977e268721c4d61c5484595440cd7c84e079",
+        "mode": "RGBA",
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "transparentPixelFraction": 0.665389
+      },
+      "method": "u2netp support and chromatic/tonal white-background selection, enclosed pale geometry fill, subpixel alpha and interior-color edge repair"
+    },
+    {
+      "source": {
+        "path": "G:/Portfolio Website/Attaulhaq-Portfolio/public/images/case-studies/family-os-1600.webp",
+        "dimensions": [
+          1600,
+          900
+        ],
+        "bytes": 86012,
+        "sha256": "f66c25f1cbdd683bd85808ca98df8d930d13f96b698c3655b55a6c20064fd940",
+        "mode": "RGB",
+        "alphaExtrema": null,
+        "transparentPixelFraction": 0
+      },
+      "output": {
+        "path": "G:/Portfolio Website/Attaulhaq-Portfolio/public/images/case-studies/family-os-1600-transparent.webp",
+        "dimensions": [
+          1600,
+          900
+        ],
+        "bytes": 119318,
+        "sha256": "b4f040771df0ed440161f31442eaadbb630d84a116b377e5628868823fc2428d",
+        "mode": "RGBA",
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "transparentPixelFraction": 0.629251
+      },
+      "responsiveExport": {
+        "path": "G:/Portfolio Website/Attaulhaq-Portfolio/public/images/case-studies/family-os-768-transparent.webp",
+        "dimensions": [
+          768,
+          432
+        ],
+        "bytes": 56568,
+        "sha256": "3752ecd5a6d456aeff05987597407364b7ca0e4849c1c52a2a17b4bc09921950",
+        "mode": "RGBA",
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "transparentPixelFraction": 0.623436
+      },
+      "method": "u2netp support and chromatic/tonal white-background selection, enclosed pale geometry fill, subpixel alpha and interior-color edge repair"
+    },
+    {
+      "source": {
+        "path": "G:/Portfolio Website/Attaulhaq-Portfolio/public/images/home/aegisops-illustration.webp",
+        "dimensions": [
+          1200,
+          800
+        ],
+        "bytes": 69122,
+        "sha256": "476555b0a77882b999be36215c2d6d13cb8ef84dd34e42d42ff2c954b16a0d1d",
+        "mode": "RGBA",
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "transparentPixelFraction": 0.014117
+      },
+      "output": {
+        "path": "G:/Portfolio Website/Attaulhaq-Portfolio/public/images/home/aegisops-illustration-transparent.webp",
+        "dimensions": [
+          1200,
+          800
+        ],
+        "bytes": 70842,
+        "sha256": "f9141bdea82246ec48f001d1e0066b47e89895de8c893649c7b5cb6b92c113ae",
+        "mode": "RGBA",
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "transparentPixelFraction": 0.817128
+      },
+      "method": "u2netp foreground support plus bright geometry, enclosed-dark-pixel fill, subpixel alpha, nearest-interior color at silhouette to prevent black/gray fringe"
+    },
+    {
+      "source": {
+        "path": "G:/Portfolio Website/Attaulhaq-Portfolio/public/images/home/cosmo-conqueror-illustration.webp",
+        "dimensions": [
+          1200,
+          800
+        ],
+        "bytes": 72234,
+        "sha256": "81fff88754e299b8b6af7a618095b9f9e3445bbdb6cb4bbb9280cb43b57fd64c",
+        "mode": "RGBA",
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "transparentPixelFraction": 0.014117
+      },
+      "output": {
+        "path": "G:/Portfolio Website/Attaulhaq-Portfolio/public/images/home/cosmo-conqueror-illustration-transparent.webp",
+        "dimensions": [
+          1200,
+          800
+        ],
+        "bytes": 84824,
+        "sha256": "22fca6fde6e6a673941312ab83a610a2c28e6fa117c1648cc7d626bef68e2d14",
+        "mode": "RGBA",
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "transparentPixelFraction": 0.722133
+      },
+      "method": "u2netp foreground support plus bright geometry, enclosed-dark-pixel fill, subpixel alpha, nearest-interior color at silhouette to prevent black/gray fringe"
+    },
+    {
+      "source": {
+        "path": "G:/Portfolio Website/Attaulhaq-Portfolio/public/images/home/digital-dynasty-illustration.webp",
+        "dimensions": [
+          1200,
+          800
+        ],
+        "bytes": 102864,
+        "sha256": "43f754c2e7f0776d9e4d07ae6316464ccfb90017aadd616644cf8c9dcc04500b",
+        "mode": "RGBA",
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "transparentPixelFraction": 0.014117
+      },
+      "output": {
+        "path": "G:/Portfolio Website/Attaulhaq-Portfolio/public/images/home/digital-dynasty-illustration-transparent.webp",
+        "dimensions": [
+          1200,
+          800
+        ],
+        "bytes": 107568,
+        "sha256": "528f0e65a04ff501adb3f6a215af9a62ea2cd4558117eca3db47fb2f463cbfd2",
+        "mode": "RGBA",
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "transparentPixelFraction": 0.739439
+      },
+      "method": "u2netp foreground support plus bright geometry, enclosed-dark-pixel fill, subpixel alpha, nearest-interior color at silhouette to prevent black/gray fringe"
+    },
+    {
+      "source": {
+        "path": "G:/Portfolio Website/Attaulhaq-Portfolio/public/images/home/edeviser-illustration.webp",
+        "dimensions": [
+          1200,
+          800
+        ],
+        "bytes": 50632,
+        "sha256": "4a3833918a6a977580bd9653e2e0e34a143a85e8e02436daa4a370275de6673e",
+        "mode": "RGBA",
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "transparentPixelFraction": 0.014117
+      },
+      "output": {
+        "path": "G:/Portfolio Website/Attaulhaq-Portfolio/public/images/home/edeviser-illustration-transparent.webp",
+        "dimensions": [
+          1200,
+          800
+        ],
+        "bytes": 62170,
+        "sha256": "72b20affb1b55d22251c652d00fcd1c2007284dd10e4cad6b6f2b351ea91a16e",
+        "mode": "RGBA",
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "transparentPixelFraction": 0.785907
+      },
+      "method": "u2netp foreground support plus bright geometry, enclosed-dark-pixel fill, subpixel alpha, nearest-interior color at silhouette to prevent black/gray fringe"
+    },
+    {
+      "source": {
+        "path": "G:/Portfolio Website/Attaulhaq-Portfolio/public/images/home/family-os-illustration.webp",
+        "dimensions": [
+          1200,
+          800
+        ],
+        "bytes": 81902,
+        "sha256": "2b88b3ff12ea51dfd8bde779712740f858a0c35b3d05ae888e36b22f2834beba",
+        "mode": "RGBA",
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "transparentPixelFraction": 0.014117
+      },
+      "output": {
+        "path": "G:/Portfolio Website/Attaulhaq-Portfolio/public/images/home/family-os-illustration-transparent.webp",
+        "dimensions": [
+          1200,
+          800
+        ],
+        "bytes": 89306,
+        "sha256": "c5dd57cc914509aeaef1764b7177086b05f2b3118925bc76f09f1ec1e066cb9a",
+        "mode": "RGBA",
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "transparentPixelFraction": 0.778208
+      },
+      "method": "u2netp foreground support plus bright geometry, enclosed-dark-pixel fill, subpixel alpha, nearest-interior color at silhouette to prevent black/gray fringe"
+    },
+    {
+      "source": {
+        "path": "G:/Portfolio Website/Attaulhaq-Portfolio/public/images/workflow/context.webp",
+        "dimensions": [
+          512,
+          512
+        ],
+        "bytes": 31224,
+        "sha256": "51d4fc101e56dc3e02151060fb54ad676bf9448fec1769f0df3ffd086038fa51",
+        "mode": "RGBA",
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "transparentPixelFraction": 0.007797
+      },
+      "output": {
+        "path": "G:/Portfolio Website/Attaulhaq-Portfolio/public/images/workflow/context-transparent.webp",
+        "dimensions": [
+          512,
+          512
+        ],
+        "bytes": 28558,
+        "sha256": "8e63e0753b09d0e2347b2d2846698381c2591fadae539dd47d4133711b559e9e",
+        "mode": "RGBA",
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "transparentPixelFraction": 0.710419
+      },
+      "method": "u2netp foreground support plus bright geometry, enclosed-dark-pixel fill, subpixel alpha, nearest-interior color at silhouette to prevent black/gray fringe"
+    },
+    {
+      "source": {
+        "path": "G:/Portfolio Website/Attaulhaq-Portfolio/public/images/workflow/decision.webp",
+        "dimensions": [
+          512,
+          512
+        ],
+        "bytes": 28666,
+        "sha256": "389e073ff8e0e3c2b2a86c3b79bf265602e3a5942435eaf4f6631f97db7a61fc",
+        "mode": "RGBA",
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "transparentPixelFraction": 0.007797
+      },
+      "output": {
+        "path": "G:/Portfolio Website/Attaulhaq-Portfolio/public/images/workflow/decision-transparent.webp",
+        "dimensions": [
+          512,
+          512
+        ],
+        "bytes": 26884,
+        "sha256": "d2d35917b1946d73709d576230b4f7e1f022534da0c69bd6f514d85606a056a5",
+        "mode": "RGBA",
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "transparentPixelFraction": 0.722904
+      },
+      "method": "u2netp foreground support plus bright geometry, enclosed-dark-pixel fill, subpixel alpha, nearest-interior color at silhouette to prevent black/gray fringe"
+    },
+    {
+      "source": {
+        "path": "G:/Portfolio Website/Attaulhaq-Portfolio/public/images/workflow/build.webp",
+        "dimensions": [
+          512,
+          512
+        ],
+        "bytes": 27676,
+        "sha256": "483770ef7da0f8257bc77b277ecb70470d8d056db1e8624f979f6acfac76e222",
+        "mode": "RGBA",
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "transparentPixelFraction": 0.007797
+      },
+      "output": {
+        "path": "G:/Portfolio Website/Attaulhaq-Portfolio/public/images/workflow/build-transparent.webp",
+        "dimensions": [
+          512,
+          512
+        ],
+        "bytes": 26900,
+        "sha256": "66e808610122a64400584cf6db14668b133ca871f182a58ae310081ceb1e211c",
+        "mode": "RGBA",
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "transparentPixelFraction": 0.747784
+      },
+      "method": "u2netp foreground support plus bright geometry, enclosed-dark-pixel fill, subpixel alpha, nearest-interior color at silhouette to prevent black/gray fringe"
+    },
+    {
+      "source": {
+        "path": "G:/Portfolio Website/Attaulhaq-Portfolio/public/images/workflow/review.webp",
+        "dimensions": [
+          512,
+          512
+        ],
+        "bytes": 27030,
+        "sha256": "d36bdbf2631e5ed2d3115f77fa2a08d9c980c028d929449b8513e53fc37618c2",
+        "mode": "RGBA",
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "transparentPixelFraction": 0.007797
+      },
+      "output": {
+        "path": "G:/Portfolio Website/Attaulhaq-Portfolio/public/images/workflow/review-transparent.webp",
+        "dimensions": [
+          512,
+          512
+        ],
+        "bytes": 24792,
+        "sha256": "657a24da75dff8e148aee6a8ff9979feb4b205c643c9cdba7bbc055531d675bb",
+        "mode": "RGBA",
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "transparentPixelFraction": 0.730659
+      },
+      "method": "u2netp foreground support plus bright geometry, enclosed-dark-pixel fill, subpixel alpha, nearest-interior color at silhouette to prevent black/gray fringe"
+    },
+    {
+      "source": {
+        "path": "G:/Portfolio Website/Attaulhaq-Portfolio/public/images/workflow/outcome.webp",
+        "dimensions": [
+          512,
+          512
+        ],
+        "bytes": 26772,
+        "sha256": "ae2b0d7a45b1d2b8a8b2db7682dc11c6a7e08e2fba0f5e03b3abfa47276b1e90",
+        "mode": "RGBA",
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "transparentPixelFraction": 0.007797
+      },
+      "output": {
+        "path": "G:/Portfolio Website/Attaulhaq-Portfolio/public/images/workflow/outcome-transparent.webp",
+        "dimensions": [
+          512,
+          512
+        ],
+        "bytes": 23950,
+        "sha256": "f78fd54122b7404a7f5d5d4045a3501fb0af80359a23b7b1411a6d62d6b19a38",
+        "mode": "RGBA",
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "transparentPixelFraction": 0.698341
+      },
+      "method": "u2netp foreground support plus bright geometry, enclosed-dark-pixel fill, subpixel alpha, nearest-interior color at silhouette to prevent black/gray fringe"
+    },
+    {
+      "source": {
+        "path": "G:/Portfolio Website/Attaulhaq-Portfolio/public/images/toolkit-ecosystem.webp",
+        "dimensions": [
+          1000,
+          667
+        ],
+        "bytes": 61158,
+        "sha256": "6706b7768722bc193f43a2b18bcaba5d70d822097ae4c1897cdbeec6b74f50a2",
+        "mode": "RGB",
+        "alphaExtrema": null,
+        "transparentPixelFraction": 0
+      },
+      "output": {
+        "path": "G:/Portfolio Website/Attaulhaq-Portfolio/public/images/toolkit-ecosystem-transparent.webp",
+        "dimensions": [
+          1000,
+          667
+        ],
+        "bytes": 79096,
+        "sha256": "9a086623261ee302db8191ebc698c7332af2bc3aab617e1e9d9fff1b744c46ff",
+        "mode": "RGBA",
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "transparentPixelFraction": 0.745795
+      },
+      "method": "u2netp foreground support plus bright geometry, enclosed-dark-pixel fill, subpixel alpha, nearest-interior color at silhouette to prevent black/gray fringe"
+    }
+  ],
+  "first11Verification": {
+    "decode": true,
+    "originalHashUnchanged": true,
+    "reviewSurfaces": [
+      "white",
+      "pale lavender",
+      "deep plum",
+      "checker"
+    ],
+    "rectangleRemoved": true,
+    "apiCalls": 0
+  },
+  "verification": {
+    "decodeCount": 17,
+    "originalSourceHashUnchangedCount": 14,
+    "reviewSurfaces": [
+      "white",
+      "pale lavender",
+      "deep plum",
+      "checker"
+    ],
+    "alphaGenuine": true,
+    "noApiRequests": true,
+    "geometryRepairs": "Restored original dark Cuevo/Cosmo platform contours and pale Cuevo case glass contours; removed a tiny studio-shadow island; retained connector-loop background gaps."
+  },
+  "reviewPaths": [
+    "G:/Portfolio Website/.review/theme-implementation/transparent-art/cuevo-final-lavender.png",
+    "G:/Portfolio Website/.review/theme-implementation/transparent-art/hero-final-contact.jpg",
+    "G:/Portfolio Website/.review/theme-implementation/transparent-art/workflow-contact.jpg",
+    "G:/Portfolio Website/.review/theme-implementation/transparent-art/toolkit-contact.jpg",
+    "G:/Portfolio Website/.review/theme-implementation/transparent-art/case-768-contact.jpg"
+  ]
+}

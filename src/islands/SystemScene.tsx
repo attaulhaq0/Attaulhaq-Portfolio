@@ -3,6 +3,25 @@ import { useEffect, useRef, useState } from 'react';
 import { ACESFilmicToneMapping, SRGBColorSpace } from 'three';
 import SourceCharacter from './SourceCharacter';
 
+function ThemeLighting() {
+  const { gl, invalidate } = useThree();
+  const [light, setLight] = useState(() => document.documentElement.dataset.theme === 'light');
+  useEffect(() => {
+    const sync = () => { setLight(document.documentElement.dataset.theme === 'light'); invalidate(); };
+    window.addEventListener('portfolio:themechange', sync);
+    return () => window.removeEventListener('portfolio:themechange', sync);
+  }, [invalidate]);
+  useEffect(() => { gl.toneMappingExposure = light ? 1.08 : 1.12; invalidate(); }, [light, gl, invalidate]);
+  return <>
+    <ambientLight intensity={light ? .65 : .55} color={light ? '#ece3f7' : '#dbd4ec'} />
+    <hemisphereLight args={[light ? '#efe6fc' : '#e2dcf5', light ? '#89739c' : '#24192f', light ? 1 : .82]} />
+    <directionalLight position={[10, 17, 20]} intensity={2.25} color="#fff0df" />
+    <directionalLight position={[-10, 13, 10]} intensity={light ? .8 : .65} color="#b3a7e9" />
+    <directionalLight position={[-6, 17, -12]} intensity={light ? 2.4 : 3.8} color="#b38aff" />
+    <directionalLight position={[8, 10, -10]} intensity={light ? 1.2 : 1.6} color="#e2a0e9" />
+  </>;
+}
+
 function PortraitCamera() {
   const { camera, size, invalidate } = useThree();
   useEffect(() => {
@@ -63,12 +82,7 @@ export default function SystemScene({ onReady, onActiveChange, onContextLost }: 
       }}>
       <PortraitCamera />
       <ResumeFrame active={visible} onContextLost={onContextLost} />
-      <ambientLight intensity={.50} color="#dbd4ec" />
-      <hemisphereLight args={['#e2dcf5', '#24192f', .82]} />
-      <directionalLight position={[10, 17, 20]} intensity={2.25} color="#fff0df" />
-      <directionalLight position={[-10, 13, 10]} intensity={.60} color="#b3a7e9" />
-      <directionalLight position={[-6, 17, -12]} intensity={3.5} color="#b38aff" />
-      <directionalLight position={[8, 10, -10]} intensity={2.0} color="#e2a0e9" />
+      <ThemeLighting />
       <SourceCharacter onReady={onReady} active={visible} />
     </Canvas>
   </div>;

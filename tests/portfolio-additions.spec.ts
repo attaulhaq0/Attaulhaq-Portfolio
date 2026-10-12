@@ -16,9 +16,9 @@ test('project rows alternate illustration placement and preserve mobile reading 
 
 test('current positioning covers intelligent systems and preserves the game development origin', async ({ page }) => {
   await page.goto('/');
-  await expect(page).toHaveTitle('Sheikh Atta-ul-Haq — Product & Systems Engineer');
-  await expect(page.locator('#intro-title')).toContainText('Intelligent systems');
-  await expect(page.locator('.hero-role-note')).toContainText('Intelligent systems & automation');
+  await expect(page).toHaveTitle('Sheikh Atta-ul-Haq — Software & Product Engineer');
+  await expect(page.locator('#intro-title')).toContainText('working software');
+  await expect(page.locator('.hero-role-note')).toContainText('Applied AI, retrieval & automation');
   await expect(page.locator('.capability-row h3')).toHaveText(['Intelligent systems', 'Product & system design', 'Implementation & validation']);
   await expect(page.locator('.tech-stack-group h3')).toHaveText(['AI & agentic systems', 'Software & delivery', 'Game development foundation']);
   await expect(page.locator('#about')).toContainText('I started in game development');
@@ -31,7 +31,7 @@ test('illustrated homepage covers lead to actual recordings and real case eviden
   const videos = page.locator('.home-gameplay video');
   await expect(videos).toHaveCount(2);
   for (const video of await videos.all()) {
-    await expect(video).toHaveAttribute('poster', /\/images\/home\/.+illustration\.webp/);
+    await expect(video).toHaveAttribute('poster', /\/images\/home\/.+illustration(?:-transparent)?\.webp/);
     await expect(video).toHaveAttribute('preload', 'none');
     await expect(video).not.toHaveAttribute('autoplay', '');
     await video.scrollIntoViewIfNeeded();

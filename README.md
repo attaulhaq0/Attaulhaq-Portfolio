@@ -4,7 +4,7 @@ An original personal portfolio for Sheikh Atta-ul-Haq: from interactive worlds t
 
 ## Direction
 
-A dark spatial homepage with an owner-permitted source character and native scroll motion, neutral warm-white work-page openings, Sunburst concept artwork, CV-grounded case studies, a slideable gallery of real event stories and an immersive education walkthrough. Useful content never waits for WebGL.
+A Velvet Violet spatial homepage with an owner-permitted source character and native scroll motion, a whole-site lavender light mode, transparent Sunburst artwork, CV-grounded case studies, a slideable gallery of real event stories and an immersive education walkthrough. Useful content never waits for WebGL.
 
 ## Development
 

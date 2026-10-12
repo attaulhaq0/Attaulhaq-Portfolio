@@ -9,7 +9,7 @@ export default defineConfig({
   reporter: [['list'], ['html', { open: 'never' }]],
   use: { baseURL: 'http://127.0.0.1:4322', trace: 'retain-on-failure' },
   webServer: {
-    command: 'npm run preview -- --port 4322',
+    command: 'npx astro preview --host 127.0.0.1 --port 4322',
     url: 'http://127.0.0.1:4322',
     reuseExistingServer: !process.env.CI,
     timeout: 30000,

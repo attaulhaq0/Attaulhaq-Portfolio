@@ -1,0 +1,271 @@
+{
+  "date": "2026-10-12",
+  "provider": "Microsoft Foundry",
+  "deployment": "gpt-image-2.5-sunburst",
+  "tool": "Unmodified C:/Users/hp/.codex/skills/.system/imagegen/scripts/image_gen.py",
+  "mode": "Owner-authorized CLI fallback; separate original sculptural assets",
+  "quality": "high",
+  "conceptualOnly": true,
+  "vendorLogos": false,
+  "avatarUsed": false,
+  "sourceAssetsCopied": false,
+  "sourceToolkitReference": {
+    "path": "G:/Portfolio Website/.review/toolkit-concept/toolkit-ecosystem.png",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "bytes": 1439004,
+    "sha256": "19222fc92c20baa9276756dd4c8259139fa0724d54aafb89961e32fbf91b0c80",
+    "mode": "RGB",
+    "alphaExtrema": null,
+    "transparentPixelFraction": 0
+  },
+  "scope": "Three original generic sculptures and one original empty ambient background. No expertise, affiliation or product-behavior claims.",
+  "processing": "Cached rembg u2netp extraction, black-edge defringing, common 88 percent maximum silhouette extent, 192px and 128px transparent WebP exports. Ambient crop to 1440x900 with smooth edge feathering.",
+  "icons": [
+    {
+      "slug": "intelligence",
+      "prompt": "output/toolkit-mini/intelligence-prompt.txt",
+      "original": {
+        "path": "G:/Portfolio Website/.review/theme-implementation/intelligence-original.png",
+        "dimensions": [
+          1024,
+          1024
+        ],
+        "bytes": 633881,
+        "sha256": "29f943a1f5f97dd6e394bb0e497d316c2fb9956b0cc4b20861088b1193309d75",
+        "mode": "RGB",
+        "alphaExtrema": null,
+        "transparentPixelFraction": 0
+      },
+      "cutout": {
+        "path": "G:/Portfolio Website/.review/theme-implementation/intelligence-cutout.png",
+        "dimensions": [
+          773,
+          664
+        ],
+        "bytes": 441189,
+        "sha256": "45a7f3387e3324d68d7fd8804013ade6d8edc173deeeeaa2182c0378e60274bf",
+        "mode": "RGBA",
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "transparentPixelFraction": 0.32208
+      },
+      "exports": [
+        {
+          "path": "G:/Portfolio Website/Attaulhaq-Portfolio/public/images/toolkit/intelligence.webp",
+          "dimensions": [
+            192,
+            192
+          ],
+          "bytes": 10502,
+          "sha256": "8dd0e5385f0dc671afda34275a861d9d64b074703e3f53f9d9b2c6412bea6389",
+          "mode": "RGBA",
+          "alphaExtrema": [
+            0,
+            255
+          ],
+          "transparentPixelFraction": 0.53182
+        },
+        {
+          "path": "G:/Portfolio Website/Attaulhaq-Portfolio/public/images/toolkit/intelligence-128.webp",
+          "dimensions": [
+            128,
+            128
+          ],
+          "bytes": 6438,
+          "sha256": "5a5e48e6e4bc5e9927b5549912fe599d82ae95376c65c5d1258a907217b80d5b",
+          "mode": "RGBA",
+          "alphaExtrema": [
+            0,
+            255
+          ],
+          "transparentPixelFraction": 0.52271
+        }
+      ]
+    },
+    {
+      "slug": "software",
+      "prompt": "output/toolkit-mini/software-prompt.txt",
+      "original": {
+        "path": "G:/Portfolio Website/.review/theme-implementation/software-original.png",
+        "dimensions": [
+          1024,
+          1024
+        ],
+        "bytes": 605853,
+        "sha256": "d8a4269f3baf5703d46be393c2989ce185bc92aed418768b0f5d212fdc3d8bae",
+        "mode": "RGB",
+        "alphaExtrema": null,
+        "transparentPixelFraction": 0
+      },
+      "cutout": {
+        "path": "G:/Portfolio Website/.review/theme-implementation/software-cutout.png",
+        "dimensions": [
+          768,
+          772
+        ],
+        "bytes": 420582,
+        "sha256": "7ad0ffa45b7a23c12fb9fa31b1bdfde1bf0f4fc7ba135e312e4388e1b7a254b2",
+        "mode": "RGBA",
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "transparentPixelFraction": 0.4018
+      },
+      "exports": [
+        {
+          "path": "G:/Portfolio Website/Attaulhaq-Portfolio/public/images/toolkit/software.webp",
+          "dimensions": [
+            192,
+            192
+          ],
+          "bytes": 9740,
+          "sha256": "ad4607360defb848a5d5db59a8d6d9611d0bd8c76bd5f00eb71fba864be14ecc",
+          "mode": "RGBA",
+          "alphaExtrema": [
+            0,
+            255
+          ],
+          "transparentPixelFraction": 0.52436
+        },
+        {
+          "path": "G:/Portfolio Website/Attaulhaq-Portfolio/public/images/toolkit/software-128.webp",
+          "dimensions": [
+            128,
+            128
+          ],
+          "bytes": 6168,
+          "sha256": "0d373e274a11e6fe9dd2bca267eddb0fcff912a6cf8c775b7e0131ced68f8fe0",
+          "mode": "RGBA",
+          "alphaExtrema": [
+            0,
+            255
+          ],
+          "transparentPixelFraction": 0.5141
+        }
+      ]
+    },
+    {
+      "slug": "interactive",
+      "prompt": "output/toolkit-mini/interactive-prompt.txt",
+      "original": {
+        "path": "G:/Portfolio Website/.review/theme-implementation/interactive-original.png",
+        "dimensions": [
+          1024,
+          1024
+        ],
+        "bytes": 773899,
+        "sha256": "cc17c188eb515747d54858a49c0c0caba09386b65d096b4935db4e26f677a5e9",
+        "mode": "RGB",
+        "alphaExtrema": null,
+        "transparentPixelFraction": 0
+      },
+      "cutout": {
+        "path": "G:/Portfolio Website/.review/theme-implementation/interactive-cutout.png",
+        "dimensions": [
+          890,
+          762
+        ],
+        "bytes": 604984,
+        "sha256": "a32675d6a0908f30cc73c5c0c62970dd9761415d0ad86fbf8d4fd47ddddcf1b5",
+        "mode": "RGBA",
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "transparentPixelFraction": 0.36084
+      },
+      "exports": [
+        {
+          "path": "G:/Portfolio Website/Attaulhaq-Portfolio/public/images/toolkit/interactive.webp",
+          "dimensions": [
+            192,
+            192
+          ],
+          "bytes": 9998,
+          "sha256": "6c31fc37a9da5d88e99419f11ff144d91e8b4b8369a23dd9b9a70545b54107d5",
+          "mode": "RGBA",
+          "alphaExtrema": [
+            0,
+            255
+          ],
+          "transparentPixelFraction": 0.56228
+        },
+        {
+          "path": "G:/Portfolio Website/Attaulhaq-Portfolio/public/images/toolkit/interactive-128.webp",
+          "dimensions": [
+            128,
+            128
+          ],
+          "bytes": 6030,
+          "sha256": "adb294f4a2d3fa69537c8f7a55461bf1bc89e72ff8493fe151171b220c8cb0ec",
+          "mode": "RGBA",
+          "alphaExtrema": [
+            0,
+            255
+          ],
+          "transparentPixelFraction": 0.55304
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "publicFilesDecode": true,
+    "iconAlphaSpans0To255": true,
+    "iconsVisuallyReviewedAtPixels": [
+      192,
+      72
+    ],
+    "iconReviewBackgrounds": [
+      "deep plum",
+      "pale lavender"
+    ],
+    "ambientReviewedWithoutTextOrFigures": true
+  },
+  "ambient": {
+    "prompt": "output/toolkit-mini/velvet-ambient-prompt.txt",
+    "original": {
+      "path": "G:/Portfolio Website/.review/theme-implementation/velvet-ambient-original.png",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "bytes": 1371963,
+      "sha256": "d81c30b69f0fde1b4c1bbb78ef16534c2c895cf6abbac666bcca59053882086e",
+      "mode": "RGB",
+      "alphaExtrema": null,
+      "transparentPixelFraction": 0
+    },
+    "export": {
+      "path": "G:/Portfolio Website/Attaulhaq-Portfolio/public/images/theme/velvet-ambient.webp",
+      "dimensions": [
+        1440,
+        900
+      ],
+      "bytes": 13730,
+      "sha256": "0b9f39d27a73671d173d00095bdee844acc43d82754d42b5f128ba1cfc190c43",
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "transparentPixelFraction": 0.01356
+    }
+  },
+  "requestedIconSize": "1024x1024",
+  "requestedAmbientSize": "1536x1024",
+  "generationSeconds": {
+    "intelligence": 80.3,
+    "software": 95.0,
+    "interactive": 81.3,
+    "ambient": 54.3
+  },
+  "apiRequestCount": 4,
+  "independentVisualQa": "All three distinct sculptures inspected at 192 and 72 pixels by a second agent; no clipped parts, alpha holes, dark halos or vendor logos. Small connector details become decorative at 72px.",
+  "secretsIncluded": false
+}

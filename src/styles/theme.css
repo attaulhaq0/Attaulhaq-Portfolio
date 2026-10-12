@@ -1,0 +1,585 @@
+/* Shared color system. Loaded after the component styles so both palettes also
+   cover the retained case studies, native media and documentary content. */
+:root,
+html[data-theme='dark'] {
+  color-scheme: dark;
+  --background: #100b18;
+  --foreground: #f7f2fc;
+  --muted: #c7bbd2;
+  --subtle: #aa9bb8;
+  --accent: #d49af8;
+  --accent-hover: #e4b9ff;
+  --accent-foreground: #241032;
+  --accent-soft: #2a1938;
+  --border: #3d2e4b;
+  --border-strong: #705184;
+  --surface: #191221;
+  --surface-raised: #23182e;
+  --surface-section: #140e1d;
+  --accent-cyan: #93dfe3;
+  --accent-magenta: #e5afd9;
+  --accent-amber: #e7c398;
+  --ambient-top: #5b356934;
+  --ambient-center: #733a9a42;
+  --ambient-ground: #ab61d659;
+  --ambient-contact: #67357d2e;
+  --ambient-image: url('/images/theme/velvet-ambient.webp');
+  --orbit: #a377c21c;
+  --card-shadow: 0 18px 48px #05020c24;
+  --media-background: #0d0914;
+  --media-overlay: #170e24ed;
+  --media-foreground: #f7f2fc;
+  --media-muted: #d2c3df;
+  --media-accent: #dda8ff;
+  --media-border: #b29bc46b;
+  --art-studio: #f4f1ed;
+}
+
+html[data-theme='light'] {
+  color-scheme: light;
+  --background: #f3eff9;
+  --foreground: #2b2035;
+  --muted: #65566f;
+  --subtle: #725e7d;
+  --accent: #7939a9;
+  --accent-hover: #5e2788;
+  --accent-foreground: #ffffff;
+  --accent-soft: #e9def4;
+  --border: #d5c6e1;
+  --border-strong: #a387b7;
+  --surface: #faf7ff;
+  --surface-raised: #e9e0f3;
+  --surface-section: #eee7f6;
+  --accent-cyan: #256f77;
+  --accent-magenta: #8c417e;
+  --accent-amber: #8a5b27;
+  --ambient-top: #d9b7eb48;
+  --ambient-center: #cc9ee04a;
+  --ambient-ground: #b477d43b;
+  --ambient-contact: #d9b8eb4d;
+  --ambient-image: none;
+  --orbit: #9266ab1d;
+  --card-shadow: 0 18px 48px #65417c0b;
+}
+
+/* Existing components consume these aliases; the semantic names above are the
+   palette's single source of truth. No photograph or document is recolored. */
+:root {
+  --ink: var(--background);
+  --paper: var(--foreground);
+  --mint: var(--accent);
+  --teal: var(--accent);
+  --cyan: var(--accent-cyan);
+  --magenta: var(--accent-magenta);
+  --amber: var(--accent-amber);
+  --line: var(--border);
+}
+
+html[data-theme] { background: var(--background); accent-color: var(--accent); }
+html[data-theme] body,
+html[data-theme] body:has(.case-hero-new) {
+  background: var(--background);
+  color: var(--foreground);
+}
+html[data-theme] ::selection { color: var(--accent-foreground); background: var(--accent); }
+html[data-theme] :focus-visible,
+html[data-theme] .paper-section :focus-visible,
+html[data-theme] .case-hero-new :focus-visible,
+html[data-theme] body:has(.case-hero-new) .header :focus-visible {
+  outline-color: var(--accent);
+}
+html[data-theme] .button-primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--accent-foreground);
+}
+html[data-theme] .button-primary:hover {
+  background: var(--accent-hover);
+  border-color: var(--accent-hover);
+}
+html[data-theme] .skip-link { color: var(--accent-foreground); }
+
+/* Navigation stays in the same palette on the homepage, cases and 404. */
+html[data-theme] .header,
+html[data-theme] body:has(.case-hero-new) .header,
+html[data-theme] .header .wordmark,
+html[data-theme] body:has(.case-hero-new) .header .wordmark {
+  color: var(--foreground);
+  border-color: var(--border);
+}
+html[data-theme] body:has(.case-hero-new) .header::before { background: var(--background); }
+html[data-theme] .desktop-nav a,
+html[data-theme] body:has(.case-hero-new) .desktop-nav a { color: var(--foreground); }
+html[data-theme] .desktop-nav a:hover,
+html[data-theme] body:has(.case-hero-new) .desktop-nav a:hover { color: var(--accent); }
+html[data-theme] .desktop-nav .nav-cv,
+html[data-theme] body:has(.case-hero-new) .desktop-nav .nav-cv { color: var(--accent-cyan); }
+html[data-theme] .header-contact,
+html[data-theme] body:has(.case-hero-new) .header-contact {
+  color: var(--foreground);
+  border-color: var(--border-strong);
+  background: transparent;
+}
+html[data-theme] body:has(.case-hero-new) .header-contact:hover { background: var(--accent-soft); }
+html[data-theme] .header-contact .arrow,
+html[data-theme] body:has(.case-hero-new) .header-contact .arrow { color: var(--accent); }
+html[data-theme] .mobile-nav nav,
+html[data-theme] body:has(.case-hero-new) .mobile-nav nav {
+  color: var(--foreground);
+  background: var(--surface);
+  border-color: var(--border-strong);
+  box-shadow: var(--card-shadow);
+}
+html[data-theme] .mobile-nav summary span,
+html[data-theme] body:has(.case-hero-new) .mobile-nav summary span { background: var(--foreground); }
+html[data-theme] .mobile-nav[open] summary span { background: var(--accent); }
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  gap: 7px;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 9px 11px;
+  color: var(--foreground);
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  font-family: var(--font-display);
+  font-size: 11px;
+  line-height: 1.2;
+}
+.theme-toggle:hover { color: var(--accent); border-color: var(--border-strong); background: var(--accent-soft); }
+.theme-toggle svg { width: 18px; height: 18px; flex: 0 0 auto; }
+html[data-theme='dark'] .theme-toggle-moon,
+html[data-theme='light'] .theme-toggle-sun { display: none; }
+html[data-theme='dark'] .theme-toggle-sun,
+html[data-theme='light'] .theme-toggle-moon { display: block; }
+
+/* Velvet Violet: a quiet upper haze, soft rings and grounded lavender light.
+   These decorations retain their existing pointer-free layer and layout. */
+html[data-theme] .hero-atmosphere {
+  background:
+    radial-gradient(ellipse at 50% 7%, var(--ambient-top), transparent 57%),
+    var(--ambient-image) center / cover no-repeat,
+    radial-gradient(ellipse at 50% 63%, var(--ambient-center), transparent 43%);
+}
+html[data-theme] .hero-glow {
+  top: 72%;
+  width: min(48vw, 720px);
+  height: min(38vh, 330px);
+  background: var(--ambient-ground);
+  filter: blur(68px);
+}
+html[data-theme] .hero-atmosphere::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 8%;
+  width: min(44vw, 640px);
+  height: 62px;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: radial-gradient(ellipse, var(--ambient-ground), transparent 70%);
+  filter: blur(13px);
+}
+html[data-theme] .hero-orbit {
+  width: 57vw;
+  height: 57vw;
+  top: 49%;
+  border-color: var(--orbit);
+}
+html[data-theme] .hero-orbit-two { width: 73vw; height: 73vw; }
+html[data-theme] .hero-full-name { color: var(--subtle); }
+html[data-theme] .hero-work-link,
+html[data-theme] .hero-contact-link {
+  color: var(--foreground);
+  border-bottom: 1px solid var(--border-strong);
+}
+html[data-theme] .hero-work-link:hover,
+html[data-theme] .hero-contact-link:hover { color: var(--accent); border-color: var(--accent); }
+html[data-theme] .role-display { color: var(--foreground); font-weight: 600; }
+html[data-theme] .role-outline {
+  color: transparent;
+  letter-spacing: -.035em;
+  -webkit-text-stroke: 1.2px var(--foreground);
+}
+html[data-theme] .role-display .role-lavender,
+html[data-theme] .role-dot { color: var(--accent); }
+html[data-theme] .scene-toggle,
+html[data-theme] .motion-toggle {
+  color: var(--foreground);
+  background: var(--surface);
+  border-color: var(--border-strong);
+}
+html[data-theme] .scene-toggle:hover,
+html[data-theme] .motion-toggle:hover { background: var(--accent-soft); border-color: var(--accent); }
+
+/* Shared sections and project rows. Color changes do not alter the reserved
+   standing-to-seated scroll composition or native media hit targets. */
+html[data-theme] .paper-section { color: var(--foreground); background: var(--background); color-scheme: inherit; }
+html[data-theme] .work-section {
+  background: linear-gradient(180deg, var(--surface-section), var(--background) 42%);
+}
+html[data-theme] .about-section { background: var(--surface-section); }
+html[data-theme] [data-motion-accent='violet'] { --section-accent: var(--accent); }
+html[data-theme] [data-motion-accent='cyan'] { --section-accent: var(--accent-cyan); }
+html[data-theme] [data-motion-accent='magenta'] { --section-accent: var(--accent-magenta); }
+html[data-theme] .muted-heading { color: var(--subtle); }
+html[data-theme] .project-art { background: var(--surface); border-color: var(--border); }
+html[data-theme] .project-art:has(img[src*='/images/home/']),
+html[data-theme] .fyp-feature-art { background: transparent; border: 0; }
+html[data-theme='dark'] .project-art img[src*='/images/home/'] { mix-blend-mode: normal; }
+html[data-theme='light'] .project-art img { mix-blend-mode: normal; }
+html[data-theme] .project-image-label,
+html[data-theme] .fyp-feature-art > span {
+  background: var(--media-overlay);
+  color: var(--media-foreground);
+  border-color: var(--media-border);
+}
+html[data-theme] .project-open {
+  color: var(--accent);
+  background: var(--surface);
+  border-color: var(--border-strong);
+}
+html[data-theme] .project-art-link:hover .project-open { color: var(--accent-foreground); background: var(--accent); }
+html[data-theme] .project-tags { gap: 8px; }
+html[data-theme] .project-tags span {
+  color: var(--foreground);
+  background: color-mix(in srgb, var(--accent-soft) 55%, transparent);
+  border: 1px solid var(--border-strong);
+  border-radius: 20px;
+  padding: 5px 12px;
+  font-size: 11px;
+  line-height: 1.55;
+}
+html[data-theme] .project-tags span:not(:last-child)::after { content: none; }
+html[data-theme] .project-read-link { border-bottom: 1px solid var(--border-strong); }
+html[data-theme] .approach-index,
+html[data-theme] .approach-card ul,
+html[data-theme] .capability-row ul { color: var(--accent); }
+html[data-theme] .about-intro > .about-invitation { color: var(--foreground); }
+
+/* Generated artwork is kept separate from actual photos, captures and video. */
+html[data-theme] .tech-stack-group { --stack-accent: var(--accent); border-color: var(--border-strong); }
+html[data-theme] .stack-accent-cyan { --stack-accent: var(--accent-cyan); }
+html[data-theme] .stack-accent-magenta { --stack-accent: var(--accent-magenta); }
+html[data-theme] .tech-stack-tools li,
+html[data-theme] .project-tech-stack { border-color: var(--border); }
+html[data-theme] .tech-stack-tools li div > span { color: var(--muted); }
+html[data-theme] .tech-stack-motion summary { color: var(--accent); }
+html[data-theme='light'] .tech-stack-art > img { mix-blend-mode: normal; }
+html[data-theme] .tech-stack-group-icon { width: 64px; height: 64px; object-fit: contain; flex: 0 0 auto; }
+html[data-theme] .theme-image-light { display: none; }
+html[data-theme='light'] .theme-image-dark { display: none; }
+html[data-theme='light'] .theme-image-light { display: block; }
+html[data-theme] .tech-stack-art:has(.tech-stack-motion[open]) > img,
+html[data-theme] .tech-stack-art:has(.tech-stack-motion[open]) > .theme-art { display: none; }
+
+/* Historical metrics, full screenshot and intact employment certificate. */
+html[data-theme] .career-highlights {
+  --career-cyan: var(--accent-cyan);
+  --career-magenta: var(--accent-magenta);
+}
+html[data-theme] .career-freelance {
+  background: linear-gradient(125deg, var(--accent-soft), var(--surface));
+  border-color: var(--border-strong);
+  box-shadow: var(--card-shadow);
+}
+html[data-theme] .career-freelance .career-milestone-meta,
+html[data-theme] .career-freelance .career-metrics dd { color: var(--accent); }
+html[data-theme] .career-freelance .career-milestone-meta > span:last-child,
+html[data-theme] .career-freelance .career-milestone-description,
+html[data-theme] .career-freelance .career-metrics dt,
+html[data-theme] .career-metrics dt,
+html[data-theme] .career-employment-arrangement,
+html[data-theme] .fiverr-evidence figcaption { color: var(--muted); }
+html[data-theme] .career-employment { border-color: var(--border-strong); }
+html[data-theme] .fiverr-full-record { color: var(--accent); }
+html[data-theme] .fiverr-evidence img,
+html[data-theme] .career-certificate img { outline: 1px solid var(--border); outline-offset: -1px; }
+
+/* Native story and photo galleries preserve the source images' own color. */
+html[data-theme] .moments-gallery .moment-story { color: var(--foreground); background: var(--surface); border-color: var(--border); }
+html[data-theme] .moment-story-media,
+html[data-theme] .moments-gallery .moment-story .moment-photo .moment-document-image,
+html[data-theme] .moments-gallery .moment-story .moment-photo .moment-portrait-graphic { background: var(--surface-raised); }
+html[data-theme] .moment-photo figcaption,
+html[data-theme] .moment-story-description,
+html[data-theme] .workflow-ring-instruction { color: var(--muted); }
+html[data-theme] .moment-story-details li::marker { color: var(--accent); }
+html[data-theme] .moments-gallery-arrow {
+  color: var(--accent);
+  background: var(--surface);
+  border-color: var(--border-strong);
+  box-shadow: var(--card-shadow);
+}
+html[data-theme] .moments-gallery-arrow:hover { color: var(--foreground); background: var(--accent-soft); border-color: var(--accent); }
+html[data-theme] .moment-photo-arrows button {
+  color: var(--media-foreground);
+  background: var(--media-overlay);
+  border-color: var(--media-border);
+}
+html[data-theme] .moment-photo-arrows button:hover { background: #3c2552; }
+html[data-theme] .moment-photo-pagination button > span { background: var(--subtle); }
+html[data-theme] .moment-photo-pagination button[aria-current='true'] > span {
+  background: var(--accent);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 15%, transparent);
+}
+html[data-theme] .moments-gallery-track,
+html[data-theme] .moment-photo-track { scrollbar-color: var(--border-strong) var(--surface-raised); }
+html[data-theme] .moments-gallery-track::-webkit-scrollbar-track { background: var(--surface-raised); }
+html[data-theme] .moments-gallery-track::-webkit-scrollbar-thumb { background: var(--border-strong); }
+
+/* Case openings share the page palette; warm-white illustration backgrounds
+   remain contained in their original artwork rather than becoming page chrome. */
+html[data-theme] .case-hero-new {
+  --case-accent: var(--accent);
+  color: var(--foreground);
+  color-scheme: inherit;
+  background: radial-gradient(ellipse at 18% 70%, var(--ambient-contact), transparent 58%), var(--background);
+  border-color: var(--border);
+}
+html[data-theme] .case-hero-new .case-back-link,
+html[data-theme] .case-hero-new .case-eyebrow > span:last-child,
+html[data-theme] .case-hero-new .case-description { color: var(--muted); }
+html[data-theme] .case-hero-new .case-facts { border-color: var(--border); }
+html[data-theme] .case-hero-new .case-facts dd { color: var(--foreground); }
+html[data-theme] .case-primary-action {
+  color: var(--accent-foreground);
+  background: var(--accent);
+  border-color: var(--accent);
+}
+html[data-theme] .case-primary-action:hover { background: var(--accent-hover); border-color: var(--accent-hover); }
+html[data-theme] .case-external-action { color: var(--accent); border-color: var(--border-strong); }
+html[data-theme] .case-external-action:hover { color: var(--accent-hover); border-color: var(--accent); }
+html[data-theme] .case-hero-new .case-cover {
+  background: var(--art-studio);
+  border-color: var(--border);
+  box-shadow: var(--card-shadow);
+}
+html[data-theme] .case-cover > img { background: var(--art-studio); }
+html[data-theme] .case-cover:has(> img[src*='-transparent.webp']) { background: transparent; border: 0; box-shadow: none; }
+html[data-theme] .case-cover > img[src*='-transparent.webp'] { background: transparent; object-fit: contain; border-radius: 0; }
+html[data-theme] .case-cover:has(> img[src*='-transparent.webp']) figcaption { background: transparent; border-color: var(--border); }
+html[data-theme] .case-cover-play img { background: var(--media-background); }
+html[data-theme] .case-hero-new .case-cover figcaption {
+  color: var(--muted);
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+}
+html[data-theme] .case-cover-play-label {
+  color: var(--media-foreground);
+  background: var(--media-overlay);
+  border-color: var(--media-border);
+}
+html[data-theme] .case-play-symbol { color: var(--media-accent); border-color: var(--media-accent); }
+html[data-theme] .case-cover-play-label > span:last-child > span { color: var(--media-muted); }
+html[data-theme] .case-cover-play:hover .case-play-symbol { color: #241032; background: var(--media-accent); }
+html[data-theme] .case-body { background: var(--surface-section); }
+html[data-theme] .case-introduction { color: var(--muted); }
+html[data-theme] .case-content h2,
+html[data-theme] .case-content h3,
+html[data-theme] .case-content h4 { color: var(--foreground); }
+html[data-theme] .case-content p,
+html[data-theme] .case-content .case-overview,
+html[data-theme] .case-content .contributions p,
+html[data-theme] .case-content .considerations p { color: var(--muted); }
+html[data-theme] .case-content .contribution-num,
+html[data-theme] .case-content .eyebrow { color: var(--accent); }
+html[data-theme] .case-aside .eyebrow { color: var(--muted); }
+html[data-theme] .case-aside nav a { color: var(--foreground); }
+html[data-theme] .case-aside nav a:hover { color: var(--accent); }
+html[data-theme] body:has(.case-hero-new) :is(.case-showcase, .next-project, .footer) {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+/* A numbered sequence keeps the workflow legible at every width. The existing
+   buttons, stage hashes and HTML explanations retain their native semantics. */
+html[data-theme] .workflow-diagram { --workflow-accent: var(--accent); }
+html[data-theme] .workflow-light { --workflow-accent: var(--accent-cyan); }
+html[data-theme] .workflow-dark { --workflow-accent: var(--accent); }
+html[data-theme] .workflow-amber { --workflow-accent: var(--accent-amber); }
+html[data-theme] .workflow-enhanced { grid-template-columns: minmax(0, 1fr); gap: 24px; align-items: start; }
+html[data-theme] .workflow-ring {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 9px;
+  aspect-ratio: auto;
+  max-width: none;
+  margin: 0;
+  background: transparent;
+}
+html[data-theme] .workflow-orbit,
+html[data-theme] .workflow-center,
+html[data-theme] .workflow-ring-instruction { display: none; }
+html[data-theme] .workflow-stage {
+  position: relative;
+  left: auto;
+  top: auto;
+  transform: none;
+  width: 100%;
+  min-height: 158px;
+  padding: 16px 9px;
+  gap: 14px;
+  justify-content: flex-start;
+  color: var(--foreground);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 7px;
+}
+html[data-theme] .workflow-stage-art { width: 64px; height: 64px; margin-inline: auto; flex: 0 0 auto; }
+html[data-theme] .workflow-stage-title { color: var(--foreground); font-size: 13px; line-height: 1.5; }
+html[data-theme] .workflow-stage .workflow-stage-number {
+  color: var(--workflow-accent);
+  background: var(--surface);
+  border-color: var(--border-strong);
+  width: 24px;
+  height: 24px;
+  font-size: 10px;
+}
+html[data-theme] .workflow-stage[aria-pressed='true'] { color: var(--foreground); background: var(--accent-soft); border-color: var(--workflow-accent); }
+html[data-theme] .workflow-stage[aria-pressed='true'] .workflow-stage-number {
+  color: var(--accent-foreground);
+  background: var(--workflow-accent);
+  border-color: var(--workflow-accent);
+  box-shadow: 0 0 0 5px color-mix(in srgb, var(--workflow-accent) 12%, transparent);
+}
+html[data-theme] .workflow-stage:hover .workflow-stage-number { border-color: var(--workflow-accent); }
+html[data-theme] .system-flow li { background: var(--surface); border-color: var(--border); }
+html[data-theme] .system-index { color: var(--accent); background: var(--background); }
+html[data-theme] .workflow-enhanced .system-flow { min-height: 0; }
+html[data-theme] .workflow-diagram .system-flow li {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  padding: 24px;
+  gap: 18px;
+  margin-bottom: 16px;
+}
+html[data-theme] .workflow-enhanced .system-flow li { margin-bottom: 0; }
+html[data-theme] .workflow-diagram .system-index { border-color: var(--border-strong); }
+html[data-theme] .workflow-diagram .system-flow h3 { color: var(--foreground); font-size: clamp(23px, 2.1vw, 30px); }
+html[data-theme] .workflow-diagram .system-flow p { color: var(--muted); }
+html[data-theme] .concept-motion,
+html[data-theme] .development-detail,
+html[data-theme] .development-evidence figure a { border-color: var(--border-strong); }
+html[data-theme] .development-evidence ol { color: var(--muted); }
+
+/* Captions follow the page; labels over a capture use a stable dark surface. */
+html[data-theme] .case-media > video,
+html[data-theme] .project-demo-video,
+html[data-theme] .immersive-video video { background: var(--media-background); border-color: var(--border); }
+html[data-theme] .case-gallery a { border-color: var(--border); }
+html[data-theme] .case-gallery a:hover { border-color: var(--accent); }
+html[data-theme] .case-gallery a > span,
+html[data-theme] .development-evidence figure a > span {
+  color: var(--media-foreground);
+  background: var(--media-overlay);
+}
+html[data-theme] .project-demo,
+html[data-theme] .project-demo:last-child { border-color: var(--border-strong); }
+html[data-theme] .home-gameplay video,
+html[data-theme] .project-motion video,
+html[data-theme] .tech-stack-motion video { background: var(--media-background); }
+html[data-theme] .home-gameplay video { background: transparent; }
+html[data-theme] .tech-stack-art > img { mix-blend-mode: normal; mask-image: none; }
+
+html[data-theme] .contact-section,
+html[data-theme] body:has(.case-hero-new) .contact-section {
+  color: var(--foreground);
+  background: radial-gradient(ellipse at 35% 110%, var(--ambient-contact), transparent 68%), var(--background);
+}
+html[data-theme] .meeting-button { color: var(--foreground); border-color: var(--border-strong); background: var(--surface); }
+html[data-theme] .meeting-button:hover { border-color: var(--accent); background: var(--accent-soft); }
+html[data-theme] .footer-links a,
+html[data-theme] .footer-name { color: var(--foreground); }
+html[data-theme] .footer-bottom,
+html[data-theme] .footer-copyright,
+html[data-theme] .footer-copyright a { color: var(--muted); }
+html[data-theme] .footer-links a:hover,
+html[data-theme] .footer-copyright a:hover { color: var(--accent); }
+html[data-theme] .not-found { color: var(--foreground); }
+
+@media (max-width: 1100px) {
+  .theme-toggle { padding: 9px; }
+}
+@media (min-width: 761px) and (max-width: 1050px) {
+  html[data-theme] .header { height: 88px; gap: 20px; }
+  html[data-theme] .header .desktop-nav,
+  html[data-theme] .header .header-contact { display: none; }
+  html[data-theme] .header .theme-toggle { margin-left: auto; }
+  html[data-theme] .header .mobile-nav { display: block; }
+  html[data-theme] .mobile-nav summary {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    width: 44px;
+    min-height: 44px;
+    list-style: none;
+    cursor: pointer;
+  }
+  html[data-theme] .mobile-nav summary::-webkit-details-marker { display: none; }
+  html[data-theme] .mobile-nav summary span { width: 24px; height: 1px; }
+  html[data-theme] .mobile-nav nav {
+    position: absolute;
+    right: 0;
+    top: 54px;
+    width: min(300px, calc(100vw - 40px));
+    display: flex;
+    flex-direction: column;
+    padding: 15px 20px;
+    border: 1px solid var(--border-strong);
+  }
+  html[data-theme] .mobile-nav nav a { padding: 12px 0; font-size: 16px; border-bottom: 1px solid var(--border); }
+  html[data-theme] .mobile-nav nav a:last-child { border: 0; }
+}
+@media (min-width: 761px) and (max-width: 1100px) {
+  html[data-theme] .workflow-ring { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+  html[data-theme] .workflow-stage { grid-column: span 2; min-height: 145px; }
+  html[data-theme] .workflow-stage:nth-of-type(1) { grid-column: 2 / 4; }
+  html[data-theme] .workflow-stage:nth-of-type(2) { grid-column: 4 / 6; }
+}
+@media (max-width: 760px) {
+  html[data-theme] .header { gap: 12px; }
+  html[data-theme] .header .wordmark { flex: 1 1 auto; }
+  html[data-theme] .header .theme-toggle { margin-left: auto; }
+  html[data-theme] .tech-stack-group-icon { width: 48px; height: 48px; }
+  html[data-theme] .workflow-enhanced { gap: 22px; }
+  html[data-theme] .workflow-ring { grid-template-columns: minmax(0, 1fr); gap: 0; border-top: 1px solid var(--border); }
+  html[data-theme] .workflow-stage {
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 89px;
+    padding: 12px 12px 12px 8px;
+    gap: 17px;
+    border: 0;
+    border-bottom: 1px solid var(--border);
+    border-left: 2px solid transparent;
+    border-radius: 0;
+    background: transparent;
+  }
+  html[data-theme] .workflow-stage[aria-pressed='true'] { border-left-color: var(--workflow-accent); background: var(--accent-soft); }
+  html[data-theme] .workflow-stage-art { width: 64px; height: 64px; margin: 0; }
+  html[data-theme] .workflow-stage-title { font-size: 14px; text-align: left; }
+  html[data-theme] .workflow-diagram .system-flow li { padding: 20px 17px; gap: 12px; }
+  html[data-theme] .workflow-diagram .system-index { width: 28px; height: 28px; font-size: 10px; }
+  html[data-theme] .workflow-diagram .system-flow h3 { font-size: 23px; }
+  html[data-theme] .hero-orbit { width: 104vw; height: 104vw; top: 57%; }
+  html[data-theme] .hero-orbit-two { width: 141vw; height: 141vw; }
+  html[data-theme] .hero-glow { width: 82vw; height: 29vh; top: 74%; filter: blur(48px); }
+  html[data-theme] .hero-atmosphere::after { width: 72vw; height: 45px; bottom: 10%; }
+  html[data-theme] .role-outline { -webkit-text-stroke-width: 1px; }
+  html[data-theme] .project-tags span { font-size: 10px; padding: 4px 10px; }
+  .theme-toggle { width: 44px; padding: 9px; }
+  .theme-toggle-label { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .theme-toggle { transition: none; }
+}

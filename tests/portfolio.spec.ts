@@ -11,7 +11,7 @@ test('homepage is complete and starts its 3D character automatically', async ({ 
   await page.goto('/');
   await page.evaluate(() => document.fonts.ready);
   await expect(page.getByRole('heading', { level: 1 })).toContainText('Atta-ul-');
-  await expect(page.locator('.hero-positioning')).toContainText('Intelligent systems');
+  await expect(page.locator('.hero-positioning')).toContainText('intelligent products');
   await expect(page.locator('.project-card')).toHaveCount(4);
   await expect(page.locator('.hero-art')).toHaveAttribute('data-scene-state', 'ready', { timeout: 25000 });
   await expect(page.locator('canvas')).toHaveCount(1);
@@ -104,7 +104,7 @@ test('all essential content works without JavaScript', async ({ browser, isMobil
   const page = await context.newPage();
   await page.goto('http://127.0.0.1:4322/');
   await expect(page.locator('h1')).toContainText('Atta-ul-');
-  await expect(page.locator('.hero-positioning')).toContainText('Intelligent systems');
+  await expect(page.locator('.hero-positioning')).toContainText('intelligent products');
   await expect(page.locator('[data-scene-toggle]')).toHaveCount(0);
   await expect(page.locator('.hero-poster')).toHaveCSS('opacity', '1');
   await expect(page.locator('canvas')).toHaveCount(0);

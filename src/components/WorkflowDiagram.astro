@@ -2,16 +2,12 @@
 import type { Project } from '../data/projects';
 interface Props { project: Project }
 const { project } = Astro.props;
-const points = [{ x: 50, y: 15 }, { x: 84, y: 42 }, { x: 71, y: 80 }, { x: 29, y: 80 }, { x: 16, y: 42 }];
 const stageArt = ['context', 'decision', 'build', 'review', 'outcome'];
 ---
 
 <div class:list={['workflow-diagram', `workflow-${project.theme}`]} data-workflow>
   <div class="workflow-ring" data-workflow-ring hidden aria-label={`${project.name} workflow stages`}>
-    <div class="workflow-orbit" aria-hidden="true"></div>
-    <div class="workflow-center"><strong>{project.name}</strong><span>5-stage overview</span></div>
-    {project.system.map((step, index) => <button type="button" class="workflow-stage" data-workflow-stage={index} aria-pressed={index === 0 ? 'true' : 'false'} aria-controls={`system-stage-${index + 1}`} style={`--stage-x:${points[index].x}%;--stage-y:${points[index].y}%;`}><span class="workflow-stage-art"><img src={`/images/workflow/${stageArt[index]}.webp`} alt="" width="400" height="400" loading="lazy" decoding="async" /><span class="workflow-stage-number" aria-hidden="true">0{index + 1}</span></span><span class="workflow-stage-title">{step.title}</span></button>)}
-    <p class="workflow-ring-instruction">Select a stage to explore.</p>
+    {project.system.map((step, index) => <button type="button" class="workflow-stage" data-workflow-stage={index} aria-pressed={index === 0 ? 'true' : 'false'} aria-controls={`system-stage-${index + 1}`}><span class="workflow-stage-art"><img src={`/images/workflow/${stageArt[index]}-transparent.webp`} alt="" width="400" height="400" loading="lazy" decoding="async" /><span class="workflow-stage-number" aria-hidden="true">0{index + 1}</span></span><span class="workflow-stage-title">{step.title}</span></button>)}
   </div>
   <ol class="system-flow workflow-details" aria-live="polite" aria-atomic="true">
     {project.system.map((step, index) => <li id={`system-stage-${index + 1}`} data-workflow-detail><span class="system-index">0{index + 1}</span><div><span class="workflow-detail-eyebrow">STAGE {index + 1} OF {project.system.length}</span><h3>{step.title}</h3><p>{step.body}</p></div></li>)}

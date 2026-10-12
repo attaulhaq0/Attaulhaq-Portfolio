@@ -4,6 +4,14 @@
 
 Astro builds seven HTML pages: the homepage, five project routes and a custom 404. Text, navigation, contact and illustrations work without client-side JavaScript. Case studies come from one typed project array rather than a database. React is reserved for the owner-approved 3D hero character, not used to hydrate the whole page.
 
+## Current theme and workflow
+
+The owner selected Velvet Violet on October 12, 2026, then requested a lavender light mode for the entire site. `BaseLayout.astro` reads only the local `portfolio-theme` preference before paint. `ThemeToggle.astro` changes semantic CSS colors, announces the next mode through its accessible name and synchronizes page restoration and other tabs. Storage failure does not prevent switching. The native toggle is hidden without JavaScript; all content remains readable in the default dark palette.
+
+`theme.css` is the owning palette layer, loaded after retained component styles. Concept illustrations use genuine alpha derivatives on both backgrounds; documentary images and gameplay are never inverted. `SystemScene.tsx` changes lights in response to the theme event while retaining demand rendering and existing teardown. The original avatar remains active while the owner's untextured, unrigged personal mesh is inspected.
+
+The earlier circular workflow is replaced by five sequential tiles on desktop and readable rows on mobile. Direct stage hashes, keyboard arrows/Home/End and the HTML explanation are retained. Historical descriptions below document the previous designs and are superseded by this current contract.
+
 ```
 src/data/                 typed owner/project content
 src/layouts/              shared document, metadata, fonts and chrome

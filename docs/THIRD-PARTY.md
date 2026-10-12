@@ -28,7 +28,7 @@ The active hero uses the original avatar by [Moncy Yohannan](https://www.moncy.d
 
 `public/images/source-character-poster.webp` is rendered directly from that model by `scripts/render-source-character.mjs`, using the same authored standing rig pose, camera and lighting as the automatic runtime scene. The foreground monitor is hidden for the portfolio portrait composition. The avatar has no owner photograph texture and is a decorative character rather than a claim of the owner's likeness. The earlier original studio/personal models remain separate retained assets. The inspiration's HDR environment, trial plugins, page design and animation orchestration are not included. The new scene integration is authored for this static-first portfolio.
 
-The shared footer links to Moncy Yohannan with the compact text “Avatar by Moncy Yohannan,” covering the decorative model and its rendered poster within the owner-confirmed permission scope. The owner requested removal of the standalone credits page; attribution remains inline in the footer. Exact bundled Manrope and Source Sans 3 SIL Open Font License notices are preserved under `public/licenses/`.
+The owner subsequently requested removal of the visible “Avatar by Moncy Yohannan” footer link on October 12, 2026. The visible link is removed; this maintenance record preserves the original creator and source-specific permission history. The active model remains that previously permitted asset while the owner-supplied personal mesh is being inspected. No new model license or claim of personal likeness is implied. Exact bundled Manrope and Source Sans 3 SIL Open Font License notices remain under `public/licenses/`.
 
 ## October 2026 Sora work concepts
 

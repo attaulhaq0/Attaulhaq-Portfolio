@@ -179,7 +179,7 @@ test('a native case navigation link reveals its destination immediately', async 
   await page.emulateMedia({ reducedMotion: 'no-preference' });
   await page.goto('/work/aegisops/');
   await expect(page.locator('#system')).toHaveAttribute('data-motion-state', 'pending');
-  await page.getByRole('navigation', { name: 'Case study sections' }).getByRole('link', { name: 'Under the hood' }).click();
+  await page.getByRole('navigation', { name: 'Case study sections' }).getByRole('link', { name: 'Workflow' }).click();
   await expect(page).toHaveURL(/#system$/);
   await expect(page.locator('#system')).toHaveAttribute('data-motion-immediate', '');
   await expect(page.locator('#system')).toHaveCSS('opacity', '1');
