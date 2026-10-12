@@ -10,7 +10,7 @@ See [the documentation index](INDEX.md) and [codebase map](CODEBASE-MAP.md) for 
 | Experience timeline / approach cards | `src/data/site.ts` |
 | Project titles, text, tags, external links and media | `src/data/projects.ts` |
 | Tool names and project contexts | `src/data/tech-stack.ts`, `src/components/TechStack.astro` |
-| Historical Fiverr metrics / Subrickzz certificate | `src/data/achievements.ts`, `src/components/CareerHighlights.astro` |
+| Historical Fiverr metrics / Subrickzz certificate | `src/data/achievements.ts`, `CareerHighlights.astro` for Fiverr, `ExperienceCertificate.astro` in the Subrickzz timeline entry |
 | Color palette and fonts | `src/styles/tokens.css` |
 | Layout, responsive spacing and component styling | `src/styles/global.css` (section headings identify each area) |
 | Homepage section order and narrative | `src/pages/index.astro` |

@@ -1,0 +1,13 @@
+{
+  "date": "2026-10-12",
+  "request": "Warmer plum illumination with less blue and lower brightness",
+  "source": "public/images/theme/velvet-ambient.webp",
+  "output": "public/images/theme/velvet-ambient-refined.webp",
+  "processing": {
+    "brightness": 0.68,
+    "saturation": 0.72,
+    "hue": 16
+  },
+  "sourceSha256": "0b9f39d27a73671d173d00095bdee844acc43d82754d42b5f128ba1cfc190c43",
+  "outputSha256": "4a1d0c29be895f42b70ec0a701b3d9b515e2697d7546f4b45e067959e7eeeff5"
+}

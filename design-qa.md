@@ -17,7 +17,9 @@ The owner subsequently requested whole-site dark/light mode, transparent artwork
 
 ## Verification
 
-`npm run check`: 53 files, zero errors/warnings/hints. `npm run build`: seven static pages, successful; the existing lazy 3D chunk warning remains. `npm test`: 140 passed, six existing viewport-specific skips. Tests cover theme switching and persistence, blocked storage, keyboard, 320px navigation, routes, automated accessibility, original media, galleries, lifecycle cleanup, no-JS and reduced-motion behavior. Latest captures at all six theme/width combinations show no horizontal overflow or console errors. Independent visual review found no remaining P0/P1/P2 issues in the inspected states.
+`npm run check`: 54 files, zero errors/warnings/hints. `npm run build`: seven static pages, successful; the existing lazy 3D chunk warning remains. `npm test`: 140 passed, six existing viewport-specific skips. Tests cover theme switching and persistence, blocked storage, keyboard, 320px navigation, routes, automated accessibility, original media, galleries, lifecycle cleanup, no-JS and reduced-motion behavior. Latest captures at all six theme/width combinations show no horizontal overflow or console errors. Independent visual review found no remaining P0/P1/P2 issues in the inspected states.
+
+The owner's subsequent cleanup removes the MCIT workshop story (11 stories/25 photos remain), toolkit animation and its player, and duplicate hero meeting link and role preface. The Subrickzz certificate is now within the employment timeline, with no repeated employment block below Fiverr. Updated captures under `G:/Portfolio Website/.review/editorial-cleanup/` show the warmer/dimmer hero, certificate placement and the full opened certificate. Independent source/render review found no blocking issue; the unchanged suite passed again after updating expectations for these deliberate changes.
 
 ## Limits
 

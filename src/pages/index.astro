@@ -6,6 +6,7 @@ import ProjectCard from '../components/ProjectCard.astro';
 import Arrow from '../components/Arrow.astro';
 import TechStack from '../components/TechStack.astro';
 import CareerHighlights from '../components/CareerHighlights.astro';
+import ExperienceCertificate from '../components/ExperienceCertificate.astro';
 import HomeGameplay from '../components/HomeGameplay.astro';
 import { projects } from '../data/projects';
 import { capabilities, experience, site } from '../data/site';
@@ -21,7 +22,7 @@ import { capabilities, experience, site } from '../data/site';
   </div></section>
   <section class="approach-section shell" id="approach" aria-labelledby="approach-title"><div class="capabilities-heading"><span class="eyebrow">02 / WHAT I BRING</span><h2 id="approach-title">Engineering for<br /><em>intelligent products.</em></h2></div><div class="capability-list">{capabilities.map(item => <article class="capability-row"><span class="capability-number">{item.number}</span><h3>{item.title}</h3><div><p>{item.body}</p><ul>{item.tags.map(tag => <li>{tag}</li>)}</ul></div></article>)}</div></section>
   <TechStack />
-  <section class="about-section" id="about" aria-labelledby="about-title"><div class="shell about-grid"><div class="about-intro"><span class="eyebrow">03 / A LITTLE CONTEXT</span><h2 id="about-title">I started by<br /><em>building worlds.</em></h2>{site.about.paragraphs.map(paragraph => <p>{paragraph}</p>)}<p class="about-invitation">{site.about.invitation}</p></div><div class="experience-list">{experience.map(item => <article class="experience-item"><div class="experience-dates">{item.dates}<span>{item.location}</span></div><h3>{item.role}</h3><h4>{item.company}</h4><p>{item.description}</p></article>)}</div></div></section>
+  <section class="about-section" id="about" aria-labelledby="about-title"><div class="shell about-grid"><div class="about-intro"><span class="eyebrow">03 / A LITTLE CONTEXT</span><h2 id="about-title">I started by<br /><em>building worlds.</em></h2>{site.about.paragraphs.map(paragraph => <p>{paragraph}</p>)}<p class="about-invitation">{site.about.invitation}</p></div><div class="experience-list">{experience.map(item => <article class="experience-item"><div class="experience-dates">{item.dates}<span>{item.location}</span></div><h3>{item.role}</h3><h4>{item.company}</h4><p>{item.description}</p>{item.company === 'Subrickzz' && <ExperienceCertificate />}</article>)}</div></div></section>
   <CareerHighlights />
   <FieldNotes />
 </BaseLayout>

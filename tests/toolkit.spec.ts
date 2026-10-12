@@ -19,51 +19,29 @@ test('the illustrated toolkit keeps real tools and compact artwork at narrow wid
   }
 });
 
-test('toolkit motion plays on request and pauses on close, offscreen and page lifecycle changes', async ({ page }) => {
+test('the static toolkit retains readable tool context and original sculpture symbols', async ({ page }) => {
+  await page.emulateMedia({ reducedMotion: 'reduce' });
   await page.goto('/#stack');
-  const disclosure = page.locator('.tech-stack-motion');
-  const summary = disclosure.locator('summary');
-  const video = disclosure.locator('video');
-  await summary.scrollIntoViewIfNeeded();
-  await summary.focus();
-  await summary.press('Enter');
-  await expect(disclosure).toHaveAttribute('open', '');
-  await expect(video).toHaveAttribute('controls', '');
-  await expect(video).toHaveAttribute('preload', 'none');
-  await expect(video).not.toHaveAttribute('autoplay');
-  await expect.poll(() => video.evaluate(element => (element as HTMLVideoElement).paused)).toBe(true);
-  const play = async () => {
-    await video.scrollIntoViewIfNeeded();
-    await video.evaluate(element => (element as HTMLVideoElement).play());
-    await expect.poll(() => video.evaluate(element => (element as HTMLVideoElement).paused)).toBe(false);
-  };
-  await play();
-  expect(await video.evaluate(element => (element as HTMLVideoElement).duration)).toBeCloseTo(4, 1);
-  await summary.click();
-  await expect.poll(() => video.evaluate(element => (element as HTMLVideoElement).paused)).toBe(true);
-  await summary.click();
-  await play();
-  await page.evaluate(() => window.scrollTo(0, 0));
-  await expect.poll(() => video.evaluate(element => (element as HTMLVideoElement).paused)).toBe(true);
-  await play();
-  await page.evaluate(() => window.dispatchEvent(new PageTransitionEvent('pagehide')));
-  await expect.poll(() => video.evaluate(element => (element as HTMLVideoElement).paused)).toBe(true);
-  await page.evaluate(() => window.dispatchEvent(new PageTransitionEvent('pageshow', { persisted: true })));
-  await play();
-  await summary.click();
-  await expect.poll(() => video.evaluate(element => (element as HTMLVideoElement).paused)).toBe(true);
+  await expect(page.locator('#stack video, #stack details')).toHaveCount(0);
+  await expect(page.locator('.tech-stack-group h3')).toHaveText(['AI & agentic systems', 'Software & delivery', 'Game development foundation']);
+  await expect(page.locator('#stack')).toContainText('Retrieval in the AegisOps design');
+  await expect(page.locator('#stack')).toContainText('Event orchestration in the Family OS design');
+  const icons = page.locator('.tech-stack-group-icon');
+  await expect(icons).toHaveCount(3);
+  for (const icon of await icons.all()) {
+    await icon.scrollIntoViewIfNeeded();
+    await expect.poll(() => icon.evaluate(image => (image as HTMLImageElement).complete && (image as HTMLImageElement).naturalWidth === 192)).toBe(true);
+  }
 });
 
-test('toolkit text, artwork and native disclosure remain usable without site JavaScript', async ({ browser }) => {
+test('toolkit text and artwork remain readable without site JavaScript', async ({ browser }) => {
   const context = await browser.newContext({ javaScriptEnabled: false, viewport: { width: 320, height: 900 } });
   const page = await context.newPage();
   await page.goto('http://127.0.0.1:4322/#stack');
   await expect(page.locator('.tech-stack-tools li')).toHaveCount(14);
   await expect(page.locator('.tech-stack-art > img')).toBeVisible();
-  const summary = page.locator('.tech-stack-motion summary');
-  await summary.focus();
-  await summary.press('Enter');
-  await expect(page.getByLabel('Illustrated toolkit animation')).toBeVisible();
+  await expect(page.locator('.tech-stack-group h3')).toHaveCount(3);
+  await expect(page.locator('#stack video, #stack details')).toHaveCount(0);
   expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(320);
   await context.close();
 });

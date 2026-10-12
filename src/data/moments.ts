@@ -207,22 +207,6 @@ export const moments: Moment[] = [
     ],
   },
   {
-    number: '11',
-    title: 'Practical questions about AI.',
-    context: 'MCIT · AI workshop',
-    description: 'I attended an MCIT workshop exploring AI for content creation, research and internal business improvements.',
-    image: '/images/moments/mcit-ai-workshop.webp',
-    alt: 'A workshop presenter beside a screen discussing AI for internal business improvements at an MCIT event.',
-    width: 1400, height: 788, position: '50% 48%',
-    date: 'September 2026',
-    location: 'Doha, Qatar',
-    role: 'Workshop attendee',
-    details: [
-      'The photographed session explored AI for internal business improvements, including content creation, research and information analysis.',
-      'This workshop was separate from Google Cloud Summit and the later Scale Now government-opportunities panel.',
-    ],
-  },
-  {
     number: '12',
     title: 'Understanding the route to market.',
     context: 'MCIT Scale Now · Government Opportunities',

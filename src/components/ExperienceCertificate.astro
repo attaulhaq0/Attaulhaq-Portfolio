@@ -1,0 +1,12 @@
+---
+import { employmentMilestone } from '../data/achievements';
+import '../styles/career-highlights.css';
+const { certificate } = employmentMilestone;
+---
+<details class="career-certificate" id="career-certificate">
+  <summary><span>View experience certificate</span><span class="career-certificate-toggle" aria-hidden="true">+</span></summary>
+  <figure>
+    <a href={certificate.src} target="_blank" rel="noopener noreferrer" aria-label="Open full-size certificate"><img src={certificate.src} alt={certificate.alt} width={certificate.width} height={certificate.height} loading="lazy" decoding="async" /></a>
+    <figcaption>{certificate.caption}</figcaption>
+  </figure>
+</details>

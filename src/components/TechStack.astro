@@ -16,10 +16,6 @@ const symbols: Record<string, string> = { '01': 'intelligence', '02': 'software'
     <div class="tech-stack-intro"><h2 id="stack-title">Tools &<br /><em>technology.</em></h2><p>Languages, data tools and frameworks I use in current product work, alongside the Unreal tools behind my earlier projects.</p></div>
     <div class="tech-stack-art">
       <img src="/images/toolkit-ecosystem-transparent.webp" alt="" width="1000" height="667" loading="lazy" decoding="async" />
-      <details class="tech-stack-motion">
-        <summary>See the toolkit in motion <span aria-hidden="true">▷</span></summary>
-        <figure><video controls playsinline muted preload="none" width="1280" height="720" poster="/images/toolkit-motion-poster.webp" aria-label="Illustrated toolkit animation" aria-describedby="toolkit-motion-caption"><source src="/media/toolkit-ecosystem-motion.mp4" type="video/mp4" />Your browser does not support video. <a href="/media/toolkit-ecosystem-motion.mp4">Download the animation</a>.</video><figcaption id="toolkit-motion-caption">A four-second illustration of connected development tools.</figcaption></figure>
-      </details>
     </div>
   </div>
   <div class="tech-stack-groups">{techStack.map(group => <article class:list={['tech-stack-group', `stack-accent-${group.accent}`]}>
@@ -28,16 +24,3 @@ const symbols: Record<string, string> = { '01': 'intelligence', '02': 'software'
     <ul class="tech-stack-tools">{group.tools.map(tool => <li><span class="tech-stack-tool-mark" aria-hidden="true">+</span><div><strong>{tool.name}</strong><span>{tool.context}</span></div></li>)}</ul>
   </article>)}</div>
 </section>}
-<script>
- document.querySelectorAll<HTMLDetailsElement>('.tech-stack-motion').forEach(details => {
-  const video = details.querySelector('video');
-  if (!video) return;
-  const pause = () => video.pause();
-  const toggle = () => { if (!details.open) pause(); };
-  const visibility = () => { if (document.hidden) pause(); };
-  const observer = new IntersectionObserver(entries => { if (!entries[0]?.isIntersecting) pause(); });
-  const attach = () => { details.addEventListener('toggle', toggle); document.addEventListener('visibilitychange', visibility); observer.observe(video); };
-  const detach = () => { pause(); details.removeEventListener('toggle', toggle); document.removeEventListener('visibilitychange', visibility); observer.disconnect(); };
-  attach(); window.addEventListener('pagehide', detach); window.addEventListener('pageshow', attach);
- });
-</script>

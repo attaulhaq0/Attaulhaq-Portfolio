@@ -24,6 +24,11 @@ test('current positioning covers intelligent systems and preserves the game deve
   await expect(page.locator('#about')).toContainText('I started in game development');
   await expect(page.locator('#contact')).toContainText('growing an engineering team');
   await expect(page.locator('.hero-role')).not.toContainText('Unreal');
+  await expect(page.locator('.role-display')).toHaveText('Software & Product Engineer.');
+  await expect(page.locator('.hero-role > p')).toHaveCount(1);
+  await expect(page.locator('.hero-role a')).toHaveCount(0);
+  await expect(page.locator('.header-contact')).toHaveAttribute('href', /connect-with-sheikh-atta-ul-haq$/);
+  await expect(page.locator('#contact .meeting-button')).toHaveAttribute('href', /connect-with-sheikh-atta-ul-haq$/);
 });
 
 test('illustrated homepage covers lead to actual recordings and real case evidence', async ({ page }) => {
@@ -87,16 +92,16 @@ test('employers can download the supplied CV from navigation and see current too
   const milestoneLayout = await page.locator('.career-freelance').evaluate(card => {
     const copy = card.querySelector('.career-freelance-copy')!.getBoundingClientRect();
     const art = card.querySelector('.fiverr-evidence')!.getBoundingClientRect();
-    const cardBounds = card.getBoundingClientRect();
-    const employment = document.querySelector('.career-employment')!.getBoundingClientRect();
-    return { copyRight: copy.right, copyBottom: copy.bottom, artLeft: art.left, artTop: art.top, cardBottom: cardBounds.bottom, employmentTop: employment.top };
+    return { copyRight: copy.right, copyBottom: copy.bottom, artLeft: art.left, artTop: art.top };
   });
   if (isMobile) expect(milestoneLayout.artTop).toBeGreaterThan(milestoneLayout.copyBottom);
   else expect(milestoneLayout.artLeft).toBeGreaterThan(milestoneLayout.copyRight);
-  expect(milestoneLayout.employmentTop).toBeGreaterThan(milestoneLayout.cardBottom);
-  await expect(page.locator('.career-employment .fiverr-evidence')).toHaveCount(0);
+  await expect(page.locator('.career-employment')).toHaveCount(0);
   await expect(page.locator('.career-freelance .career-certificate')).toHaveCount(0);
-  await expect(page.locator('.career-employment > .career-certificate')).toHaveCount(1);
+  const subrickzz = page.locator('#about .experience-item').filter({ has: page.getByRole('heading', { name: 'Subrickzz', exact: true }) });
+  await expect(subrickzz.locator('.career-certificate')).toHaveCount(1);
+  await expect(page.locator('.career-certificate')).toHaveCount(1);
+  await expect(subrickzz).toContainText('Jan 2024 — Jan 2025');
   await expect(page.locator('#about')).toContainText('I started by');
   const certificate = page.locator('#career-certificate');
   await certificate.locator('summary').click();
@@ -115,7 +120,14 @@ test('Qatar talk is second and branded LinkedIn pages stay intact', async ({ pag
   const branded = summit.locator('img').first();
   expect(await branded.evaluate(img => getComputedStyle(img).objectFit)).toBe('contain');
   await expect(summit.locator('figure.moment-photo')).toHaveCount(4);
-  await expect(stories).toHaveCount(12);
+  await expect(stories).toHaveCount(11);
+  await expect(page.locator('[data-moment="11"]')).toHaveCount(0);
+  await expect(page.getByRole('heading', { name: 'Practical questions about AI.', exact: true })).toHaveCount(0);
+  await expect(page.locator('img[src="/images/moments/mcit-ai-workshop.webp"]')).toHaveCount(0);
+  await expect(stories.locator('figure.moment-photo img')).toHaveCount(25);
+  await expect(stories.last()).toContainText('Understanding the route to market.');
+  await expect(stories.last()).toHaveAttribute('data-moment', '12');
+  await expect(page.locator('[data-moments-page]')).toHaveCount(11);
   await expect(page.getByRole('heading', { name: 'Education, in conversation.' })).toHaveCount(0);
   await expect(page.locator('img[src="/images/moments/bahria-group.webp"], img[src="/images/moments/ai-future-fireside-panel-branded.webp"]')).toHaveCount(0);
   await expect(summit.locator('a[href*="7409170356218863616"]')).toHaveCount(1);

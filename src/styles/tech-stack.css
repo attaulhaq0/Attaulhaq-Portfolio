@@ -4,15 +4,6 @@
 .tech-stack-intro > p { max-width: 470px; margin-top: 22px; color: var(--muted); font-size: 15px; line-height: 1.8; }
 .tech-stack-art { width: min(100%, 420px); justify-self: end; min-width: 0; }
 .tech-stack-art > img { display: block; width: 100%; height: auto; max-height: 230px; object-fit: contain; mix-blend-mode: screen; mask-image: linear-gradient(to right, transparent, #000 7%, #000 93%, transparent), linear-gradient(to bottom, transparent, #000 7%, #000 93%, transparent); mask-composite: intersect; }
-.tech-stack-motion { border-top: 1px solid var(--line); }
-.tech-stack-motion summary { display: flex; align-items: center; justify-content: space-between; gap: 15px; min-height: 44px; color: #c2a4ff; font-size: 11px; line-height: 1.6; cursor: pointer; list-style: none; }
-.tech-stack-motion summary::-webkit-details-marker { display: none; }
-.tech-stack-motion summary > span { font-size: 18px; flex: 0 0 auto; }
-.tech-stack-motion summary:focus-visible { outline: 2px solid var(--mint); outline-offset: 4px; }
-.tech-stack-motion figure { margin: 3px 0 0; }
-.tech-stack-motion video { display: block; width: 100%; height: auto; background: var(--ink); border-radius: 4px; }
-.tech-stack-motion figcaption { color: var(--muted); font-size: 11px; line-height: 1.7; margin-top: 10px; }
-.tech-stack-art:has(.tech-stack-motion[open]) > img { display: none; }
 .tech-stack-groups { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 48px; }
 .tech-stack-group { --stack-accent: #c2a4ff; min-width: 0; border-top: 1px solid color-mix(in srgb, var(--stack-accent) 48%, #29242f); padding-top: 25px; }
 .stack-accent-cyan { --stack-accent: #9bdedc; }
