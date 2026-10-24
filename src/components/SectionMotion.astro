@@ -11,7 +11,7 @@ import '../styles/section-motion.css';
     '.career-certificate', '.moments-gallery', '.immersive-note', '.case-showcase-heading',
     '.case-content > section', '.next-project', '.contact-section > .shell', '.contact-cv', '.footer',
   ].join(','))).filter(block => !block.closest('.spatial-hero, .hero-art, #hero-canvas'));
-  const regions = Array.from(document.querySelectorAll<HTMLElement>('main > section:not(.spatial-hero):not(.case-hero), .case-content > section, .contact-section'));
+  const regions = Array.from(document.querySelectorAll<HTMLElement>('main > section:not(.spatial-hero):not(.case-hero):not(.client-work-section), .case-content > section, .contact-section'));
   const accents = ['violet', 'cyan', 'magenta'];
   regions.forEach((region, index) => { region.dataset.motionAccent = accents[index % accents.length]; });
   let observer: IntersectionObserver | undefined;

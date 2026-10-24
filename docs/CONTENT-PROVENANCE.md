@@ -207,3 +207,22 @@ The owner removed the entire MCIT AI workshop story, its text and photograph. Th
 The owner removed the toolkit animation and its disclosure. The static transparent artwork and all 14 evidenced tools remain. The former MP4 and poster are preserved privately, excluded from public deployment, and their historical output/toolkit/ records remain intact.
 
 The duplicate meeting link and repeated role label were removed from the hero. Its large display now reads Software & Product Engineer with explicit spaces and supporting applied-AI/product scope. The header and contact retain the personal meeting event. The Subrickzz experience certificate moved into the single employment timeline entry through ExperienceCertificate.astro; the duplicate employment block was removed from the Fiverr section. A warmer, dimmer ambient derivative replaces the broad cooler glow, with processing and hashes in output/toolkit-mini/ambient-refinement.json. Original artwork, portrait/model, documentary photos and source media remain unchanged.
+
+## October 24, 2026 — freelance web development
+
+The owner supplied four websites as client work he built and requested a separate side-work section, later choosing the public heading **Freelance web development**. The addition preserves the existing five main projects, hero and event content. First-person contribution statements cover responsive website design and front-end development; source-backed page flows describe scope without asserting sole authorship of all client branding/media or live backend operations. No traffic, conversion, search ranking, performance, adoption or security-certification outcome is claimed.
+
+| Website | Owner-supplied live URL | Public source | Bounded source evidence |
+| --- | --- | --- | --- |
+| Artechs USA | https://artechsusa.com/ | https://github.com/attaulhaq0/artechsusa-website | Service/industry, staffing, careers/contact/application interfaces; canonical URLs, sitemap and JSON-LD; backend setup in README |
+| Arissoft | https://arissoft.tech/ | https://github.com/attaulhaq0/arissoft-website | Home/services/about/contact; homepage Open Graph/Twitter metadata; database setup documentation |
+| Sira Studios | https://sirastudios.com/ | https://github.com/attaulhaq0/sira-studios-website | Company/services/brand/investor/careers/contact interfaces; homepage Open Graph/Twitter metadata; database setup documentation |
+| The EB1 | https://theeb1.com/ | https://github.com/attaulhaq0/theeb1-website | Visa service/company/FAQ/contact pages; homepage Open Graph/Twitter metadata; database setup documentation |
+
+The source index is https://github.com/attaulhaq0/website-work. Current source was reviewed in the publication task before this addition; the portfolio does not embed client bundles, call client APIs or provide client forms. Links to backend setup describe repository evidence, not proof of live operation. The supplied URLs are external references and are not guarantees of future availability or independently monitored deployments.
+
+`public/images/client-work/{artechsusa,arissoft,sira-studios,theeb1}-devices.webp` are real desktop/mobile UI compositions supplied by the coordinating publication task, not AI-generated redesigns. Only the approved screenshot exports belong in public assets; raw captures, image-processing/review artifacts and security reports stay outside public deployment. Their capture and export provenance is maintained by that task. The owner-confirmed contribution is distinct from ownership/licensing of the underlying client logos, photography and other branding.
+
+The Arissoft composition pairs the desktop homepage with the mobile About page; its alternative text identifies both pages rather than implying a same-page comparison.
+
+The owner requested complete landing-page evidence for Arissoft and The EB1. Their native expanded details include actual full desktop homepage exports at "public/images/client-work/arissoft-homepage-full.webp" and "public/images/client-work/theeb1-homepage-full.webp", each linked to its original resolution. The tall capture preserves the full page from opening section to footer; the card's device composition remains a readable preview rather than a compressed full-page thumbnail.

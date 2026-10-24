@@ -1,0 +1,53 @@
+---
+import { clientWebsites } from '../data/client-work';
+import Arrow from './Arrow.astro';
+import '../styles/client-work.css';
+---
+
+<section class="client-work-section" id="freelance-web-development" aria-labelledby="freelance-title">
+  <div class="shell">
+    <div class="client-work-heading">
+      <div>
+        <p class="eyebrow">WEBSITE DESIGN & DEVELOPMENT</p>
+        <h2 id="freelance-title">Freelance<br /><em>web development.</em></h2>
+      </div>
+      <p>I also design and build responsive websites for clients, connecting their services, company information and contact journeys.</p>
+    </div>
+    <div class="client-work-grid">
+      {clientWebsites.map(website => <article class="client-website" aria-labelledby={`client-${website.id}-title`}>
+        <figure class="client-website-preview">
+          <a href={website.image} target="_blank" rel="noopener noreferrer" aria-label={`Open full-size ${website.name} desktop and mobile preview`}>
+            <img src={website.image} alt={website.imageAlt} width="1600" height="1120" loading="lazy" decoding="async" />
+          </a>
+          <figcaption><span>Desktop & mobile</span><span>{website.domain}</span></figcaption>
+        </figure>
+        <div class="client-website-copy">
+          <p class="client-website-role">Design & front-end development</p>
+          <h3 id={`client-${website.id}-title`}>{website.name}</h3>
+          <p class="client-website-contribution">{website.contribution}</p>
+          <div class="client-website-actions">
+            <a href={website.liveUrl} target="_blank" rel="noopener noreferrer" aria-label={`View ${website.name} website`}>View website <Arrow /></a>
+            <a href={website.sourceUrl} target="_blank" rel="noopener noreferrer" aria-label={`View ${website.name} code`}>View code <Arrow /></a>
+          </div>
+          <details class="client-website-details">
+            <summary>Scope & source evidence <span aria-hidden="true">+</span></summary>
+            <div class="client-website-evidence">
+              <ul>{website.evidence.map(item => <li>{item}</li>)}</ul>
+              <a href={website.setupUrl} target="_blank" rel="noopener noreferrer">Backend setup in source <Arrow /></a>
+              {website.fullHomepage && <figure class="client-homepage-preview">
+                <figcaption>Actual desktop homepage — opening section to footer</figcaption>
+                <a class="client-homepage-link" href={website.fullHomepage.image} target="_blank" rel="noopener noreferrer" aria-label={`View full ${website.name} homepage`}>
+                  View full homepage <Arrow />
+                </a>
+                <a class="client-homepage-image" href={website.fullHomepage.image} target="_blank" rel="noopener noreferrer" aria-label={`Open full-size ${website.name} homepage capture`}>
+                  <img src={website.fullHomepage.image} alt={website.fullHomepage.imageAlt} width={website.fullHomepage.width} height={website.fullHomepage.height} loading="lazy" decoding="async" />
+                </a>
+              </figure>}
+            </div>
+          </details>
+        </div>
+      </article>)}
+    </div>
+    <a class="client-work-source-index" href="https://github.com/attaulhaq0/website-work" target="_blank" rel="noopener noreferrer">Browse freelance website sources <Arrow /></a>
+  </div>
+</section>
