@@ -9,6 +9,7 @@ See [the documentation index](INDEX.md) and [codebase map](CODEBASE-MAP.md) for 
 | Name, email, GitHub and general metadata | `src/data/site.ts` |
 | Experience timeline / approach cards | `src/data/site.ts` |
 | Project titles, text, tags, external links and media | `src/data/projects.ts` |
+| Freelance website cards, contribution/evidence and live/source URLs | `src/data/client-work.ts`, `ClientWork.astro`, `src/styles/client-work.css` |
 | Tool names and project contexts | `src/data/tech-stack.ts`, `src/components/TechStack.astro` |
 | Historical Fiverr metrics / Subrickzz certificate | `src/data/achievements.ts`, `CareerHighlights.astro` for Fiverr, `ExperienceCertificate.astro` in the Subrickzz timeline entry |
 | Color palette and fonts | `src/styles/tokens.css` |
@@ -119,3 +120,11 @@ The hero uses native scroll progress to scrub the source model’s actual intro 
 The latest hero starts in an authored standing rig pose with the desk/chair hidden, then blends into the supplied seated animation and reveals the desk through the desktop introduction. The source contains no standing clip; this pose is authored for the portfolio. `render-source-character.mjs` rebuilds the matching standing fallback. Reduced motion holds standing; mobile keeps the canvas inline. Current owner instructions supersede historical opt-in/seated descriptions.
 
 Keep raw recordings, private review sources and previous media edits in ignored runtime storage. The previous 72-second Cosmo reel is preserved under `.runtime/media-originals/`; `assemble-cosmo-showcase.mjs` applies the approved 20-second trim and records the retained 52-second edit. Update duration labels and descriptions together with a media edit. Public `output/` manifests should describe sanitized provenance and processing, not contain credentials or private contact/account data.
+
+## Freelance website work
+
+The homepage's **Freelance web development** section follows selected work and precedes the approach. Maintain its four entries in `src/data/client-work.ts`, layout in `ClientWork.astro`, and owning styles in `client-work.css`. Keep these separate from `projects.ts` and the five `/work/` case routes. Its public anchor is `#freelance-web-development`.
+
+The 1600x1120 WebP compositions in `public/images/client-work/` show real website desktop/mobile UI. Preserve their ratio, useful alt text and original UI colors. Keep source captures and review artifacts outside `public/`. Do not substitute generated concepts or imply measured traffic, performance, release outcomes or independent verification of authorship. Artechs USA has source-backed canonical/sitemap/JSON-LD evidence; the other three entries claim homepage Open Graph/Twitter metadata only. Backend links describe setup in source, not a live portfolio backend. Preserve native View website/View code links, keyboard details, both themes, no-JS access and the 320px layout. Run the focused `client-work.spec.ts` alongside the required complete checks.
+
+Arissoft and The EB1 also have full desktop homepage captures in native evidence details, with a View full homepage link to the original image. Maintain these through the optional fullHomepage field, preserve intrinsic image dimensions and keep the entire page visible without cropping. The other cards remain unchanged.

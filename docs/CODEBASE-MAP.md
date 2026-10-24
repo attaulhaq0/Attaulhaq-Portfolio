@@ -9,6 +9,7 @@ The active site is an Astro portfolio with static HTML and focused JavaScript en
 | Name, metadata, email, LinkedIn, GitHub, personal Calendly and CV | `src/data/site.ts` | `BaseLayout.astro`, `Header.astro`, `Footer.astro`, `Hero.astro` |
 | About narrative, timeline and capabilities | `src/data/site.ts` | `src/pages/index.astro` |
 | Project text, homepage art/order, case covers, clips, diagrams and stage descriptions | `src/data/projects.ts` | `ProjectCard.astro`, `HomeGameplay.astro`, `src/pages/work/[slug].astro` |
+| Freelance website contribution, live/source links and evidence | `src/data/client-work.ts` | `ClientWork.astro` after selected work; separate from the five cases |
 | Tool names and project-specific contexts | `src/data/tech-stack.ts` | `TechStack.astro` on the homepage and cases |
 | Event stories, photographs, sources and immersive education | `src/data/moments.ts` | `FieldNotes.astro` |
 | Historical Fiverr metrics and Subrickzz certificate | `src/data/achievements.ts` | `CareerHighlights.astro` for Fiverr; `ExperienceCertificate.astro` within the About experience timeline |
@@ -39,6 +40,7 @@ Component names in this document are under `src/components/` unless a different 
 | `case-study.css`, `project-media.css` | Case openings, content and native media |
 | `workflow-diagram.css` | Illustrated stage ring and selected explanation |
 | `field-notes.css` | Stories, nested photo tracks and immersive section |
+| `client-work.css` | Freelance website cards, responsive previews and native source evidence |
 | `tech-stack.css`, `career-highlights.css` | Toolkit and career records |
 | `editorial-additions.css`, `section-motion.css` | Current editorial refinements and motion |
 
@@ -49,6 +51,7 @@ Check import order in `BaseLayout.astro` before changing a shared rule. Prefer a
 | Location | Purpose |
 |---|---|
 | `public/images/home/` | Five blended homepage illustrations: E Deviser, AegisOps, Family OS, Cosmo and Digital Dynasty |
+| `public/images/client-work/` | Real desktop/mobile compositions for four freelance sites; full desktop homepage evidence for Arissoft and The EB1 |
 | `public/images/workflow/` | Shared context, decision, build, review and outcome stage sculptures |
 | `public/images/development/` | Cosmo and Digital Dynasty explanatory maps; not native screenshots or exact project graphs |
 | `public/images/cosmo/`, `public/images/digital-dynasty/` | Actual development/gameplay frame exports |
@@ -87,3 +90,5 @@ npm test
 ```
 
 `playwright.config.ts` uses the built preview on 4322. `portfolio.spec.ts` covers broad routes/accessibility; `portfolio-additions.spec.ts` covers content/media additions; `gallery.spec.ts`, `workflow.spec.ts`, `cosmo.spec.ts` and `digital-dynasty.spec.ts` cover their focused interactions; `source-character.spec.ts`, `lifecycle.spec.ts` and `section-motion.spec.ts` cover startup, teardown and motion. Preserve meaningful tests when changing deliberate counts or behavior. For visual work, capture stable desktop, 390px and 320px states and open the saved images. Test no-JS, reduced motion, keyboard and actual native media behavior as relevant.
+
+The freelance section uses `#freelance-web-development`. Its four cards are static HTML with native details and external live/source links; they do not create case routes or change main project counts. `tests/client-work.spec.ts` covers scope separation, images, links, both palettes, narrow layouts and no-JS keyboard disclosure. SectionMotion excludes this section from indexed accent assignment to preserve the existing sections' accents.
