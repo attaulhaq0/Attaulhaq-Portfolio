@@ -42,5 +42,3 @@
   .tech-stack-group h3 { font-size: 25px; }
   .project-tech-stack ul { grid-template-columns: 1fr; gap: 16px; }
 }
-
-.tech-stack-cloud-icon { flex: 0 0 64px; color: var(--stack-accent); }

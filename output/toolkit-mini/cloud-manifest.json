@@ -1,0 +1,70 @@
+{
+  "date": "2026-11-10",
+  "provider": "Microsoft Foundry",
+  "deployment": "gpt-image-2.5-sunburst",
+  "tool": "Unmodified bundled image_gen.py CLI",
+  "quality": "high",
+  "icon": {
+    "slug": "cloud",
+    "prompt": "output/toolkit-mini/cloud-prompt.txt",
+    "original": {
+      "path": "G:/Portfolio Website/.review/theme-implementation/cloud-original.png",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "bytes": 579326,
+      "sha256": "290c2e0e9ef81bef15cacfab7c2dcd1c0a2c324b430fd98cd41194afe3cf5c79",
+      "mode": "RGB",
+      "alphaExtrema": null,
+      "transparentPixelFraction": 0
+    },
+    "cutout": {
+      "path": "G:/Portfolio Website/.review/theme-implementation/cloud-cutout.png",
+      "dimensions": [
+        689,
+        769
+      ],
+      "bytes": 484662,
+      "sha256": "1c1cc2b17526417d6db600c09058ceef9679768ff2a772c675759ab3365fdb2f",
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "transparentPixelFraction": 0.36484
+    },
+    "exports": [
+      {
+        "path": "G:/Portfolio Website/Attaulhaq-Portfolio/public/images/toolkit/cloud.webp",
+        "dimensions": [
+          192,
+          192
+        ],
+        "bytes": 10678,
+        "sha256": "d910b92f8c8e54098b768e3b3b12b28cb5ccaf509bac8ebc60c3539de54b8fc4",
+        "mode": "RGBA",
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "transparentPixelFraction": 0.54159
+      },
+      {
+        "path": "G:/Portfolio Website/Attaulhaq-Portfolio/public/images/toolkit/cloud-128.webp",
+        "dimensions": [
+          128,
+          128
+        ],
+        "bytes": 6270,
+        "sha256": "25643ce969090030d0bab7745a81ff25d384d55a52c3cfc4e43a2afd9a30981c",
+        "mode": "RGBA",
+        "alphaExtrema": [
+          0,
+          255
+        ],
+        "transparentPixelFraction": 0.53467
+      }
+    ]
+  }
+}
