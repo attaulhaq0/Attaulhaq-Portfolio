@@ -6,6 +6,7 @@ export interface ClientWebsite {
   evidence: string[]; stack: string[]; runtime: string;
   motion: { src: string; poster: string; width: number; height: number; duration: number; caption: string };
   detail: { image: string; alt: string; width: number; height: number; title: string; caption: string };
+  interactionMotion?: ClientWebsite['motion'];
   fullHomepage?: { image: string; imageAlt: string; width: number; height: number };
 }
 
@@ -188,6 +189,15 @@ export const clientWebsites: ClientWebsite[] = [
       "caption": "The services view groups the studio's offering into categories, giving visitors a route beyond the visual introduction."
     },
     "motion": {
+      "src": "/media/sira-studios-homepage-motion.mp4",
+      "poster": "/images/client-work/sira-studios-homepage-poster.webp",
+      "width": 1200,
+      "height": 750,
+      "duration": 35,
+      "caption": "Homepage walkthrough: a studio-led opening moves into creative work and services, then ends with a project enquiry and contact details."
+    },
+    "runtime": "Vite builds the React frontend. PHP/PDO endpoints and MySQL provide the separately configured server integration.",
+    "interactionMotion": {
       "src": "/media/sira-studios-motion.mp4",
       "poster": "/images/client-work/sira-studios-poster.webp",
       "width": 1200,
@@ -195,7 +205,12 @@ export const clientWebsites: ClientWebsite[] = [
       "duration": 13,
       "caption": "Creative-work carousel: previous and next controls move between visual content without leaving the page."
     },
-    "runtime": "Vite builds the React frontend. PHP/PDO endpoints and MySQL provide the separately configured server integration."
+    "fullHomepage": {
+      "image": "/images/client-work/sira-studios-homepage-full.webp",
+      "imageAlt": "Sira Studios complete desktop homepage, from the studio hero through creative work, services and contact details.",
+      "width": 1200,
+      "height": 3644
+    }
   },
   {
     "id": "theeb1",
