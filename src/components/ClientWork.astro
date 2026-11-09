@@ -25,6 +25,7 @@ import '../styles/client-work.css';
           <div class="client-website-copy">
             <h3>My contribution</h3><p>{website.contribution}</p>
             <h3>Design decision</h3><p>{website.decision}</p>
+            <h3>Implementation</h3><p class="client-website-runtime">{website.runtime}</p>
             <ul class="client-website-stack" aria-label={`${website.name} technologies`}>{website.stack.map(tool => <li>{tool}</li>)}</ul>
             <div class="client-website-actions">
               <a href={website.liveUrl} target="_blank" rel="noopener noreferrer" aria-label={`View ${website.name} website`}>View website <Arrow /></a>
