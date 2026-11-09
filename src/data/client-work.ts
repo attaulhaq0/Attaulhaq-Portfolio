@@ -7,7 +7,7 @@ export interface ClientWebsite {
   motion: { src: string; poster: string; width: number; height: number; duration: number; caption: string };
   detail: { image: string; alt: string; width: number; height: number; title: string; caption: string };
   interactionMotion?: ClientWebsite['motion'];
-  fullHomepage?: { image: string; imageAlt: string; width: number; height: number };
+  fullHomepage?: { image: string; imageAlt: string; width: number; height: number; previewCaption?: string };
 }
 
 export const clientWebsites: ClientWebsite[] = [
@@ -242,11 +242,11 @@ export const clientWebsites: ClientWebsite[] = [
     "imageAlt": "theEb1 desktop homepage and mobile opening view in a responsive composition.",
     "detail": {
       "image": "/images/client-work/theeb1-detail.webp",
-      "alt": "theEb1 EB-1A page showing the visa definition, USCIS criteria and consultation navigation.",
+      "alt": "theEb1 homepage section with a teal world map, coral location markers and a Start Now action.",
       "width": 1425,
-      "height": 990,
-      "title": "EB-1A, explained",
-      "caption": "The EB-1A view separates the visa definition from a scannable criteria list, with consultation access in the shared navigation."
+      "height": 752,
+      "title": "A global audience, in view",
+      "caption": "The homepage pairs a branded world map with a concise introduction and a direct path to the contact page."
     },
     "motion": {
       "src": "/media/theeb1-motion.mp4",
@@ -258,6 +258,7 @@ export const clientWebsites: ClientWebsite[] = [
     },
     "fullHomepage": {
       "image": "/images/client-work/theeb1-homepage-full.webp",
+      "previewCaption": "From the opening service message through company information, social proof, pricing and contact: the complete homepage shows the page hierarchy and consistent teal identity.",
       "imageAlt": "Complete theEb1 desktop homepage.",
       "width": 1440,
       "height": 5473
