@@ -30,7 +30,8 @@ test('collection links, selected views and real previews are complete', async ({
   page.on('request', request => { if (request.url().endsWith('.mp4')) requestedVideos.push(request.url()); });
   await page.goto('/freelance-work/');
   await expect(page.getByRole('heading', { level: 1 })).toHaveAccessibleName('Freelance website work.');
-  await expect(page.locator('.client-website-motion')).toHaveCount(5);
+  await expect(page.locator('.client-website-body .client-website-motion')).toHaveCount(5);
+  await expect(page.locator('.client-website-motion')).toHaveCount(6);
   expect(requestedVideos).toEqual([]);
   for (const [name, domain, repo] of websites) {
     const card = page.getByRole('article', { name, exact: true });
@@ -82,7 +83,7 @@ test('selected views, source links and complete captures work without JavaScript
   await expect(details).toHaveAttribute('open', '');
   await page.keyboard.press('Tab');
   await expect(details.locator('.client-selected-views a').first()).toBeFocused();
-  for (const [name, file] of [['Arissoft', 'arissoft-homepage-full.webp'], ['theEb1', 'theeb1-homepage-full.webp']]) {
+  for (const [name, file] of [['Arissoft', 'arissoft-homepage-full.webp'], ['Sira Studios', 'sira-studios-homepage-full.webp'], ['theEb1', 'theeb1-homepage-full.webp']]) {
     const card = page.getByRole('article', { name, exact: true });
     await card.locator('summary').focus();
     await page.keyboard.press('Enter');
@@ -97,7 +98,7 @@ test('selected views, source links and complete captures work without JavaScript
 test('all website previews play on request and pause offscreen', async ({ page }) => {
   await page.emulateMedia({ reducedMotion: 'reduce' });
   await page.goto('/freelance-work/');
-  for (const video of await page.locator('.client-website-motion').all()) {
+  for (const video of await page.locator('.client-website-body .client-website-motion').all()) {
     await video.scrollIntoViewIfNeeded();
     await expect(video).toHaveAttribute('preload', 'none');
     await expect(video).toHaveAttribute('controls', '');
@@ -193,4 +194,28 @@ test('technology labels distinguish static pages, frontend builds and PHP backen
     await expect(page.locator(`#${id} .client-website-stack`)).toContainText('MySQL');
     await expect(page.locator(`#${id} .client-website-runtime`)).toContainText('Vite builds the React frontend');
   }
+});
+
+test('Sira homepage walkthrough retains a separate carousel clip with native playback', async ({ page }) => {
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+  await page.goto('/freelance-work/');
+  const card = page.getByRole('article', { name: 'Sira Studios', exact: true });
+  const walkthrough = card.locator('.client-website-body video');
+  await expect(walkthrough).toHaveAttribute('poster', '/images/client-work/sira-studios-homepage-poster.webp');
+  await expect(walkthrough.locator('source')).toHaveAttribute('src', '/media/sira-studios-homepage-motion.mp4');
+  await walkthrough.scrollIntoViewIfNeeded();
+  await walkthrough.evaluate((video: HTMLVideoElement) => video.play());
+  await expect.poll(() => walkthrough.evaluate((video: HTMLVideoElement) => video.currentTime)).toBeGreaterThan(0.1);
+  expect(await walkthrough.evaluate((video: HTMLVideoElement) => video.duration)).toBeGreaterThan(30);
+  await card.locator('summary').click();
+  const carousel = card.getByLabel('Sira Studios creative-work carousel preview', { exact: true });
+  await expect(carousel).toHaveAttribute('controls', '');
+  await expect(carousel).toHaveAttribute('preload', 'none');
+  await carousel.scrollIntoViewIfNeeded();
+  await carousel.evaluate((video: HTMLVideoElement) => video.play());
+  await expect.poll(() => carousel.evaluate((video: HTMLVideoElement) => video.currentTime)).toBeGreaterThan(0.1);
+  await expect.poll(() => walkthrough.evaluate((video: HTMLVideoElement) => video.paused)).toBe(true);
+  await card.locator('summary').click();
+  await expect.poll(() => carousel.evaluate((video: HTMLVideoElement) => video.paused)).toBe(true);
+  expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(page.viewportSize()!.width);
 });

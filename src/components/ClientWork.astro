@@ -39,6 +39,13 @@ import '../styles/client-work.css';
             <figure><a href={website.image} target="_blank" rel="noopener noreferrer" aria-label={`Open full-size ${website.name} desktop and mobile preview`}><img src={website.image} alt={website.imageAlt} width="1600" height="1120" loading="lazy" decoding="async" /></a><figcaption><strong>Across screen sizes</strong>{website.responsiveCaption}</figcaption></figure>
             <figure><a href={website.detail.image} target="_blank" rel="noopener noreferrer" aria-label={`Open full-size ${website.name} supporting page view`}><img src={website.detail.image} alt={website.detail.alt} width={website.detail.width} height={website.detail.height} loading="lazy" decoding="async" /></a><figcaption><strong>{website.detail.title}</strong>{website.detail.caption}</figcaption></figure>
           </div>
+          {website.interactionMotion && <figure class="client-website-preview client-website-interaction">
+            <video class="client-website-motion" style={`aspect-ratio: ${website.interactionMotion.width} / ${website.interactionMotion.height}`} controls muted loop playsinline preload="none" poster={website.interactionMotion.poster} width={website.interactionMotion.width} height={website.interactionMotion.height} aria-label={`${website.name} creative-work carousel preview`}>
+              <source src={website.interactionMotion.src} type="video/mp4" />
+              Your browser does not support video. <a href={website.interactionMotion.src}>Watch the carousel preview</a>.
+            </video>
+            <figcaption><span>Creative-work interaction · {website.interactionMotion.duration}s · silent</span><p>{website.interactionMotion.caption}</p></figcaption>
+          </figure>}
           <div class="client-website-evidence">
             <div><h3>Build scope</h3><ul>{website.evidence.map(item => <li>{item}</li>)}</ul></div>
             <div><h3>Source & setup</h3><p>{website.boundary}</p><a href={website.setupUrl} target="_blank" rel="noopener noreferrer">{website.setupLabel ?? 'Server setup guide'} <Arrow /></a>{website.fullHomepage && <a href={website.fullHomepage.image} target="_blank" rel="noopener noreferrer" aria-label={`View full ${website.name} homepage`}>View complete homepage capture <Arrow /></a>}</div>

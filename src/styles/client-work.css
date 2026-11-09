@@ -50,6 +50,7 @@ body:has(.client-work-intro) .header { position:relative;inset:auto; }
 .client-selected-views img { display:block;width:100%;height:100%;object-fit:contain; }
 .client-selected-views figcaption { color:var(--muted);font-size:14px;line-height:1.6;margin-top:15px; }
 .client-selected-views strong { display:block;color:var(--foreground);font-size:15px;font-weight:600;margin-bottom:6px; }
+.client-website-interaction { max-width:880px;margin:0 auto 28px;border:1px solid var(--border);border-radius:6px;overflow:hidden; }
 .client-website-evidence { display:grid;grid-template-columns:1fr 1fr;gap:30px;border-top:1px solid var(--border);padding-block:24px; }
 .client-website-evidence ul { padding-left:18px;color:var(--muted);font-size:14px;line-height:1.65; }
 .client-website-evidence li+li { margin-top:9px; }
