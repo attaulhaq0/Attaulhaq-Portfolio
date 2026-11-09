@@ -34,5 +34,5 @@ export const experience = [
 export const capabilities = [
   { number: '01', title: 'Intelligent systems', body: 'I design and implement retrieval and agentic workflows, with scoped context and human approval for sensitive actions.', tags: ['Agentic intelligence', 'RAG & retrieval', 'Workflow engineering'] },
   { number: '02', title: 'Product & system design', body: 'I shape requirements, data models and workflows for education, voice-first operations and household coordination, connecting product direction with architecture and prototypes.', tags: ['Product strategy', 'System design', 'Data modeling'] },
-  { number: '03', title: 'Implementation & validation', body: 'I develop prototypes and test how their logic behaves, including permissions, failure cases and state changes. Earlier Unreal Engine work taught me to build reusable logic and debug interactions.', tags: ['Python & JavaScript', 'Prototyping & testing', 'Workflow validation'] },
+  { number: '03', title: 'Implementation & validation', body: 'I build typed web interfaces and APIs, then test permissions, failure states and responsive behavior. My delivery work includes container workflows and technical SEO for client websites.', tags: ['TypeScript & React', 'APIs & delivery', 'Testing & technical SEO'] },
 ];

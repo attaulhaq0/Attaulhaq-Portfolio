@@ -3,7 +3,7 @@ import { test, expect } from '@playwright/test';
 test('the illustrated toolkit keeps real tools and compact artwork at narrow widths', async ({ page }) => {
   await page.emulateMedia({ reducedMotion: 'reduce' });
   await page.goto('/#stack');
-  await expect(page.locator('.tech-stack-tools li')).toHaveCount(14);
+  await expect(page.locator('.tech-stack-tools li')).toHaveCount(23);
   const artwork = page.locator('.tech-stack-art > img');
   await artwork.scrollIntoViewIfNeeded();
   await expect(artwork).toHaveAttribute('alt', '');
@@ -23,9 +23,12 @@ test('the static toolkit retains readable tool context and original sculpture sy
   await page.emulateMedia({ reducedMotion: 'reduce' });
   await page.goto('/#stack');
   await expect(page.locator('#stack video, #stack details')).toHaveCount(0);
-  await expect(page.locator('.tech-stack-group h3')).toHaveText(['AI & agentic systems', 'Software & delivery', 'Game development foundation']);
+  await expect(page.locator('.tech-stack-group h3')).toHaveText(['AI & agentic systems', 'Software & delivery', 'Cloud & operations', 'Game development foundation']);
   await expect(page.locator('#stack')).toContainText('Retrieval in the AegisOps design');
   await expect(page.locator('#stack')).toContainText('Event orchestration in the Family OS design');
+  await expect(page.locator('#stack')).toContainText('Azure AI Foundry');
+  await expect(page.locator('#stack')).toContainText('Read-only usage, cost and diagnostic investigation');
+  await expect(page.locator('.tech-stack-cloud-icon')).toHaveAttribute('aria-hidden', 'true');
   const icons = page.locator('.tech-stack-group-icon');
   await expect(icons).toHaveCount(3);
   for (const icon of await icons.all()) {
@@ -38,9 +41,9 @@ test('toolkit text and artwork remain readable without site JavaScript', async (
   const context = await browser.newContext({ javaScriptEnabled: false, viewport: { width: 320, height: 900 } });
   const page = await context.newPage();
   await page.goto('http://127.0.0.1:4322/#stack');
-  await expect(page.locator('.tech-stack-tools li')).toHaveCount(14);
+  await expect(page.locator('.tech-stack-tools li')).toHaveCount(23);
   await expect(page.locator('.tech-stack-art > img')).toBeVisible();
-  await expect(page.locator('.tech-stack-group h3')).toHaveCount(3);
+  await expect(page.locator('.tech-stack-group h3')).toHaveCount(4);
   await expect(page.locator('#stack video, #stack details')).toHaveCount(0);
   expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(320);
   await context.close();

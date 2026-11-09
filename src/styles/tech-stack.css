@@ -4,7 +4,7 @@
 .tech-stack-intro > p { max-width: 470px; margin-top: 22px; color: var(--muted); font-size: 15px; line-height: 1.8; }
 .tech-stack-art { width: min(100%, 420px); justify-self: end; min-width: 0; }
 .tech-stack-art > img { display: block; width: 100%; height: auto; max-height: 230px; object-fit: contain; mix-blend-mode: screen; mask-image: linear-gradient(to right, transparent, #000 7%, #000 93%, transparent), linear-gradient(to bottom, transparent, #000 7%, #000 93%, transparent); mask-composite: intersect; }
-.tech-stack-groups { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 48px; }
+.tech-stack-groups { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 48px; }
 .tech-stack-group { --stack-accent: #c2a4ff; min-width: 0; border-top: 1px solid color-mix(in srgb, var(--stack-accent) 48%, #29242f); padding-top: 25px; }
 .stack-accent-cyan { --stack-accent: #9bdedc; }
 .stack-accent-magenta { --stack-accent: #dea7d5; }
@@ -42,3 +42,5 @@
   .tech-stack-group h3 { font-size: 25px; }
   .project-tech-stack ul { grid-template-columns: 1fr; gap: 16px; }
 }
+
+.tech-stack-cloud-icon { flex: 0 0 64px; color: var(--stack-accent); }

@@ -5,7 +5,7 @@ import Arrow from '../../components/Arrow.astro';
 import { site } from '../../data/site';
 import { clientWebsites } from '../../data/client-work';
 const title = `Freelance Website Work — ${site.name}`;
-const description = 'Five client websites for technology services, creative production and immigration guidance, with real interaction previews and specific design and development contributions.';
+const description = 'Five client websites for technology services, creative production and immigration guidance, with recorded motion and interface previews, design decisions and end-to-end delivery contributions.';
 const schema = Astro.site ? {
   '@context': 'https://schema.org', '@type': 'CollectionPage', name: title, description,
   url: new URL('/freelance-work/', Astro.site).href,
@@ -18,7 +18,7 @@ const schema = Astro.site ? {
     <a class="client-work-back" href="/#freelance-web-development"><Arrow /> Back to portfolio</a>
     <p class="eyebrow">DESIGN & WEB DEVELOPMENT</p>
     <h1>Freelance<br /><em>website work.</em></h1>
-    <p class="client-work-lead">Five client websites for technology services, creative production and immigration guidance. Explore the finished interfaces, their interactions and the decisions behind the builds.</p>
+    <p class="client-work-lead">Five client websites for technology services, creative production and immigration guidance. I refine client content, create and prepare visuals, design and build the interfaces, and handle motion, QA, technical SEO and deployment. Explore the interfaces and the decisions behind each build.</p>
   </div>
   <ClientWork />
 </BaseLayout>

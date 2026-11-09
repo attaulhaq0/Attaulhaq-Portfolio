@@ -161,3 +161,36 @@ test('native preview loops and only one visible player runs at a time', async ({
   await expect.poll(() => second.evaluate((video: HTMLVideoElement) => video.currentTime)).toBeGreaterThan(0.1);
   await expect.poll(() => first.evaluate((video: HTMLVideoElement) => video.paused)).toBe(true);
 });
+
+// Clients should reach the collection from the header, including tablet menus.
+test('website work is reachable from every header layout', async ({ page }) => {
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+  for (const width of [320, 390, 768, 1024, 1101, 1440]) {
+    await page.setViewportSize({ width, height: 900 });
+    await page.goto('/');
+    const navigation = width <= 1100 ? page.getByRole('navigation', { name: 'Mobile navigation' }) : page.getByRole('navigation', { name: 'Main navigation' });
+    if (width <= 1100) await page.locator('.mobile-nav summary').click();
+    const link = navigation.getByRole('link', { name: 'Website work', exact: true });
+    await expect(link).toBeVisible();
+    await link.click();
+    await expect(page).toHaveURL(/\/freelance-work\/$/);
+    expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(width);
+    if (width <= 1100) {
+      await expect(page.locator('.mobile-nav')).not.toHaveAttribute('open', '');
+      await page.locator('.mobile-nav summary').click();
+    }
+    await expect(navigation.getByRole('link', { name: 'Website work', exact: true })).toHaveAttribute('aria-current', 'page');
+  }
+});
+
+test('technology labels distinguish static pages, frontend builds and PHP backends', async ({ page }) => {
+  await page.goto('/freelance-work/');
+  const artech = page.getByRole('article', { name: 'AR TECH INC', exact: true });
+  await expect(artech.locator('.client-website-stack')).toHaveText(['HTMLCSSJavaScriptPHPPHPMailer']);
+  await expect(artech.locator('.client-website-runtime')).toContainText('no build step');
+  await expect(page.locator('#narrcorp .client-website-stack')).toContainText('GSAP');
+  for (const id of ['arissoft', 'sira-studios', 'theeb1']) {
+    await expect(page.locator(`#${id} .client-website-stack`)).toContainText('MySQL');
+    await expect(page.locator(`#${id} .client-website-runtime`)).toContainText('Vite builds the React frontend');
+  }
+});

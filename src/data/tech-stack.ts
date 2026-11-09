@@ -14,7 +14,7 @@ export interface StackGroup {
 
 export const techStack: StackGroup[] = [
   {
-    index: '03',
+    index: '04',
     title: 'Game development foundation',
     description: 'Tools from my earlier Unreal Engine work on interactive systems and game AI.',
     accent: 'cyan',
@@ -33,9 +33,8 @@ export const techStack: StackGroup[] = [
     accent: 'lavender',
     tools: [
       { name: 'RAG workflows', context: 'Scoped retrieval and relevant context', projects: ['edeviser', 'aegisops'] },
-      { name: 'AI agents & orchestration', context: 'Structured assistance and coordinated AI workflows', projects: [] },
-      { name: 'Vector search & embeddings', context: 'Retrieval and vector-database workflows', projects: [] },
-      { name: 'PostgreSQL', context: 'Data models in AegisOps and Family OS', projects: ['aegisops', 'family-os'] },
+      { name: 'AI agents & orchestration', context: 'Scoped assistance in Cuevo workflows', projects: ['edeviser'] },
+      { name: 'Vector search & embeddings', context: 'Vector retrieval in the AegisOps design', projects: ['aegisops'] },
       { name: 'pgvector', context: 'Retrieval in the AegisOps design', projects: ['aegisops'] },
       { name: 'Deno Edge Functions', context: 'Event orchestration in the Family OS design', projects: ['family-os'] },
     ],
@@ -43,19 +42,34 @@ export const techStack: StackGroup[] = [
   {
     index: '02',
     title: 'Software & delivery',
-    description: 'Languages and tools I use to prototype, implement, version and validate software.',
-    accent: 'magenta',
+    description: 'Interfaces, APIs and tests across product development and client websites.', accent: 'magenta',
     tools: [
-      { name: 'Python & JavaScript', context: 'General development and implementation', projects: [] },
-      { name: 'Git & GitHub', context: 'Version control and project source', projects: ['survival-game'] },
-      { name: 'Docker & CI/CD', context: 'Development environments and delivery workflows', projects: [] },
+      { name: 'TypeScript & JavaScript', context: 'Typed interfaces and browser behavior', projects: ['edeviser'] },
+      { name: 'React & Next.js', context: 'Product interfaces and connected page flows', projects: ['edeviser'] },
+      { name: 'Astro & Vite', context: 'Static websites and frontend builds', projects: [] },
+      { name: 'Node.js & NestJS', context: 'APIs and background processing in Cuevo', projects: ['edeviser'] },
+      { name: 'Python', context: 'Automation, asset processing and verification scripts', projects: [] },
+      { name: 'Playwright & Vitest', context: 'Responsive, interaction and failure-state testing', projects: ['edeviser'] },
+      { name: 'Git & GitHub', context: 'Versioned changes, pull requests and review', projects: ['survival-game', 'edeviser'] },
+    ],
+  },
+  {
+    index: '03', title: 'Cloud & operations',
+    description: 'Hands-on runtime, model integration and operational checks in current engineering work.', accent: 'cyan',
+    tools: [
+      { name: 'Azure Container Apps', context: 'API and private worker runtime configuration', projects: ['edeviser'] },
+      { name: 'Azure AI Foundry', context: 'Model integration and visual-asset generation', projects: ['edeviser'] },
+      { name: 'Azure CLI, Cost Management & Monitor', context: 'Read-only usage, cost and diagnostic investigation', projects: [] },
+      { name: 'Supabase & PostgreSQL', context: 'Authentication, data access and private storage', projects: ['edeviser'] },
+      { name: 'Docker', context: 'Container environments and release artifacts', projects: ['edeviser'] },
+      { name: 'GitHub Actions', context: 'Automated build and validation workflows', projects: ['edeviser'] },
     ],
   },
 ];
 techStack.sort((a, b) => Number(a.index) - Number(b.index));
 
 export const projectStackNotes: Record<string, string> = {
-  'edeviser': 'Retrieval and agentic intelligence form part of my product and engineering work on Cuevo at E Deviser.',
+  'edeviser': 'These tools support my product and engineering contributions to Cuevo at E Deviser, which remains in development.',
   'aegisops': 'These technologies describe the reporting and retrieval design; they do not imply a verified production deployment.',
   'family-os': 'These tools and model references belong to the current project design.',
   'cosmo-conqueror': 'Tools used across my gameplay development and integration work at Subrickzz.',

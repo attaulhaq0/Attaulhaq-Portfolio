@@ -20,7 +20,7 @@ test('current positioning covers intelligent systems and preserves the game deve
   await expect(page.locator('#intro-title')).toContainText('working software');
   await expect(page.locator('.hero-role-note')).toContainText('Applied AI, retrieval & automation');
   await expect(page.locator('.capability-row h3')).toHaveText(['Intelligent systems', 'Product & system design', 'Implementation & validation']);
-  await expect(page.locator('.tech-stack-group h3')).toHaveText(['AI & agentic systems', 'Software & delivery', 'Game development foundation']);
+  await expect(page.locator('.tech-stack-group h3')).toHaveText(['AI & agentic systems', 'Software & delivery', 'Cloud & operations', 'Game development foundation']);
   await expect(page.locator('#about')).toContainText('I started in game development');
   await expect(page.locator('#contact')).toContainText('growing an engineering team');
   await expect(page.locator('.hero-role')).not.toContainText('Unreal');
