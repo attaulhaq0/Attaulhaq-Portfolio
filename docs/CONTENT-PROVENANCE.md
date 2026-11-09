@@ -264,3 +264,8 @@ The complete 1200×3644 homepage still uses a continuous browser capture, with t
 The owner requested a stronger existing website visual in place of the text-heavy EB-1A criteria capture. The replacement is a settled browser capture of the public homepage’s “Global Recognition Starts Here” section, including its teal map, coral location markers and Start Now action. The 1425×752 WebP retains the original interface colors and complete section bounds. Its caption describes the layout and contact route; figures visible in the client website are not measured outcomes of the portfolio author’s work. Raw captures and processing remain private.
 
 The owner also selected the existing complete homepage capture for inline display inside the expanded theEb1 showcase. The supplied 1440×5473 WebP matches the existing approved asset byte for byte. It retains natural proportions, loads lazily and links to its full resolution; the caption describes the page sequence rather than endorsing public client claims.
+
+
+## November 9, 2026 — portfolio footer links
+
+The owner requested removal of the personal portfolio repository link labeled “This site’s source”. The shared footer now contains LinkedIn, the owner’s GitHub profile and Back to top. The change applies to the homepage, freelance collection, case pages and 404.
