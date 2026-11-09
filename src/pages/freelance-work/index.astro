@@ -1,0 +1,24 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ClientWork from '../../components/ClientWork.astro';
+import Arrow from '../../components/Arrow.astro';
+import { site } from '../../data/site';
+import { clientWebsites } from '../../data/client-work';
+const title = `Freelance Website Work — ${site.name}`;
+const description = 'Five client websites for technology services, creative production and immigration guidance, with real interaction previews and specific design and development contributions.';
+const schema = Astro.site ? {
+  '@context': 'https://schema.org', '@type': 'CollectionPage', name: title, description,
+  url: new URL('/freelance-work/', Astro.site).href,
+  hasPart: clientWebsites.map(website => ({ '@type': 'CreativeWork', name: `${website.name} website`, url: website.liveUrl, image: new URL(website.motion.poster, Astro.site).href })),
+} : undefined;
+---
+<BaseLayout title={title} description={description} image="/images/client-work/narrcorp-devices.webp">
+  {schema && <script type="application/ld+json" set:html={JSON.stringify(schema)} />}
+  <div class="shell client-work-intro">
+    <a class="client-work-back" href="/#freelance-web-development"><Arrow /> Back to portfolio</a>
+    <p class="eyebrow">DESIGN & WEB DEVELOPMENT</p>
+    <h1>Freelance<br /><em>website work.</em></h1>
+    <p class="client-work-lead">Five client websites for technology services, creative production and immigration guidance. Explore the finished interfaces, their interactions and the decisions behind the builds.</p>
+  </div>
+  <ClientWork />
+</BaseLayout>

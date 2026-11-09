@@ -3,70 +3,58 @@ import { clientWebsites } from '../data/client-work';
 import Arrow from './Arrow.astro';
 import '../styles/client-work.css';
 ---
-
-<section class="client-work-section" id="freelance-web-development" aria-labelledby="freelance-title">
+<section class="client-work-section" id="freelance-web-development" aria-label="Freelance website projects">
   <div class="shell">
-    <div class="client-work-heading">
-      <div>
-        <p class="eyebrow">WEBSITE DESIGN & DEVELOPMENT</p>
-        <h2 id="freelance-title">Freelance<br /><em>web development.</em></h2>
-      </div>
-      <p>I also design and build responsive websites for clients, connecting their services, company information and contact journeys.</p>
-    </div>
+    <nav class="client-project-index" aria-label="Jump to a client website">
+      <ol>{clientWebsites.map((website, index) => <li><a href={`#${website.id}`}><span>{String(index + 1).padStart(2, '0')}</span>{website.name}</a></li>)}</ol>
+    </nav>
     <div class="client-work-grid">
-      {clientWebsites.map(website => <article class:list={["client-website", {"client-website-featured": !!website.motion}]} aria-labelledby={`client-${website.id}-title`}>
-        <figure class="client-website-preview">
-          {website.motion ? <video class="client-website-motion" controls muted loop playsinline preload="none" poster={website.motion.poster} width={website.motion.width} height={website.motion.height} aria-label={`${website.name} hero animation showcase`}>
-            <source src={website.motion.src} type="video/mp4" />
-            Your browser does not support video. <a href={website.motion.src}>Watch the hero animation</a>.
-          </video> : <a href={website.image} target="_blank" rel="noopener noreferrer" aria-label={`Open full-size ${website.name} desktop and mobile preview`}>
-            <img src={website.image} alt={website.imageAlt} width="1600" height="1120" loading="lazy" decoding="async" />
-          </a>}
-          <figcaption><span>{website.motion?.caption ?? 'Desktop & mobile'}</span><span>{website.domain}</span></figcaption>
-        </figure>
-        <div class="client-website-copy">
-          <p class="client-website-role">Design & front-end development</p>
-          <h3 id={`client-${website.id}-title`}>{website.name}</h3>
-          <p class="client-website-contribution">{website.contribution}</p>
-          {website.stack && <ul class="client-website-stack" aria-label={`${website.name} technologies`}>{website.stack.map(tool => <li>{tool}</li>)}</ul>}
-          <div class="client-website-actions">
-            <a href={website.liveUrl} target="_blank" rel="noopener noreferrer" aria-label={`View ${website.name} website`}>View website <Arrow /></a>
-            <a href={website.sourceUrl} target="_blank" rel="noopener noreferrer" aria-label={`View ${website.name} code`}>View code <Arrow /></a>
-          </div>
-          <details class="client-website-details">
-            <summary>Scope & source evidence <span aria-hidden="true">+</span></summary>
-            <div class="client-website-evidence">
-              <ul>{website.evidence.map(item => <li>{item}</li>)}</ul>
-              <a href={website.setupUrl} target="_blank" rel="noopener noreferrer">{website.setupLabel ?? 'Backend setup in source'} <Arrow /></a>
-              {website.motion && <figure class="client-homepage-preview">
-                <figcaption>Desktop & mobile opening views</figcaption>
-                <a class="client-homepage-link" href={website.image} target="_blank" rel="noopener noreferrer">View responsive screenshots <Arrow /></a>
-                <a class="client-homepage-image" href={website.image} target="_blank" rel="noopener noreferrer" aria-label={`Open full-size ${website.name} desktop and mobile preview`}>
-                  <img src={website.image} alt={website.imageAlt} width="1600" height="1120" loading="lazy" decoding="async" />
-                </a>
-              </figure>}
-              {website.fullHomepage && <figure class="client-homepage-preview">
-                <figcaption>Actual desktop homepage — opening section to footer</figcaption>
-                <a class="client-homepage-link" href={website.fullHomepage.image} target="_blank" rel="noopener noreferrer" aria-label={`View full ${website.name} homepage`}>
-                  View full homepage <Arrow />
-                </a>
-                <a class="client-homepage-image" href={website.fullHomepage.image} target="_blank" rel="noopener noreferrer" aria-label={`Open full-size ${website.name} homepage capture`}>
-                  <img src={website.fullHomepage.image} alt={website.fullHomepage.imageAlt} width={website.fullHomepage.width} height={website.fullHomepage.height} loading="lazy" decoding="async" />
-                </a>
-              </figure>}
+      {clientWebsites.map((website, index) => <article id={website.id} class="client-website" aria-labelledby={`client-${website.id}-title`}>
+        <header class="client-website-heading">
+          <div><p class="client-website-role">{String(index + 1).padStart(2, '0')} / {website.category}</p><h2 id={`client-${website.id}-title`}>{website.name}</h2></div>
+          <p class="client-website-need">{website.need}</p>
+        </header>
+        <div class="client-website-body">
+          <figure class="client-website-preview">
+            <video class="client-website-motion" style={`aspect-ratio: ${website.motion.width} / ${website.motion.height}`} controls muted loop playsinline preload="none" poster={website.motion.poster} width={website.motion.width} height={website.motion.height} aria-label={`${website.name} website motion and interaction preview`}>
+              <source src={website.motion.src} type="video/mp4" />
+              Your browser does not support video. <a href={website.motion.src}>Watch the website preview</a>.
+            </video>
+            <figcaption><span>Play preview · {website.motion.duration}s · silent</span><p>{website.motion.caption}</p></figcaption>
+          </figure>
+          <div class="client-website-copy">
+            <h3>My contribution</h3><p>{website.contribution}</p>
+            <h3>Design decision</h3><p>{website.decision}</p>
+            <ul class="client-website-stack" aria-label={`${website.name} technologies`}>{website.stack.map(tool => <li>{tool}</li>)}</ul>
+            <div class="client-website-actions">
+              <a href={website.liveUrl} target="_blank" rel="noopener noreferrer" aria-label={`View ${website.name} website`}>View website <Arrow /></a>
+              <a href={website.sourceUrl} target="_blank" rel="noopener noreferrer" aria-label={`View ${website.name} code`}>View code <Arrow /></a>
             </div>
-          </details>
+          </div>
         </div>
+        <details class="client-website-details">
+          <summary>Selected views & build details <span aria-hidden="true">+</span></summary>
+          <div class="client-selected-views">
+            <figure><a href={website.image} target="_blank" rel="noopener noreferrer" aria-label={`Open full-size ${website.name} desktop and mobile preview`}><img src={website.image} alt={website.imageAlt} width="1600" height="1120" loading="lazy" decoding="async" /></a><figcaption><strong>Across screen sizes</strong>{website.responsiveCaption}</figcaption></figure>
+            <figure><a href={website.detail.image} target="_blank" rel="noopener noreferrer" aria-label={`Open full-size ${website.name} supporting page view`}><img src={website.detail.image} alt={website.detail.alt} width={website.detail.width} height={website.detail.height} loading="lazy" decoding="async" /></a><figcaption><strong>{website.detail.title}</strong>{website.detail.caption}</figcaption></figure>
+          </div>
+          <div class="client-website-evidence">
+            <div><h3>Build scope</h3><ul>{website.evidence.map(item => <li>{item}</li>)}</ul></div>
+            <div><h3>Source & setup</h3><p>{website.boundary}</p><a href={website.setupUrl} target="_blank" rel="noopener noreferrer">{website.setupLabel ?? 'Server setup guide'} <Arrow /></a>{website.fullHomepage && <a href={website.fullHomepage.image} target="_blank" rel="noopener noreferrer" aria-label={`View full ${website.name} homepage`}>View complete homepage capture <Arrow /></a>}</div>
+          </div>
+        </details>
       </article>)}
     </div>
-    <a class="client-work-source-index" href="https://github.com/attaulhaq0/website-work" target="_blank" rel="noopener noreferrer">Browse freelance website sources <Arrow /></a>
+    <div class="client-work-next"><a href="/#work">Explore my engineering projects <Arrow /></a><a href="/#contact">Discuss a website <Arrow /></a></div>
+    <a class="client-work-source-index" href="https://github.com/attaulhaq0/website-work" target="_blank" rel="noopener noreferrer">Website source collection on GitHub <Arrow /></a>
   </div>
 </section>
-
 <script>
-  document.querySelectorAll<HTMLVideoElement>('.client-website-motion').forEach(video => {
+  const videos = [...document.querySelectorAll<HTMLVideoElement>('.client-website-motion')];
+  videos.forEach(video => {
     const pause = () => video.pause();
     const visibility = () => { if (document.hidden) pause(); };
+    video.addEventListener('play', () => videos.forEach(other => { if (other !== video) other.pause(); }));
     const observer = new IntersectionObserver(entries => { if (!entries[0]?.isIntersecting) pause(); });
     const attach = () => { document.addEventListener('visibilitychange', visibility); observer.observe(video); };
     const detach = () => { pause(); document.removeEventListener('visibilitychange', visibility); observer.disconnect(); };
