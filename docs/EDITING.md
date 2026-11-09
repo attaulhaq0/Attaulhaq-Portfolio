@@ -9,7 +9,7 @@ See [the documentation index](INDEX.md) and [codebase map](CODEBASE-MAP.md) for 
 | Name, email, GitHub and general metadata | `src/data/site.ts` |
 | Experience timeline / approach cards | `src/data/site.ts` |
 | Project titles, text, tags, external links and media | `src/data/projects.ts` |
-| Freelance website cards, contribution/evidence and live/source URLs | `src/data/client-work.ts`, `ClientWork.astro`, `src/styles/client-work.css` |
+| Freelance gallery copy, preview media and live/source URLs | `src/data/client-work.ts`, `ClientWork.astro`, `ClientWorkTeaser.astro`, `src/styles/client-work.css` |
 | Tool names and project contexts | `src/data/tech-stack.ts`, `src/components/TechStack.astro` |
 | Historical Fiverr metrics / Subrickzz certificate | `src/data/achievements.ts`, `CareerHighlights.astro` for Fiverr, `ExperienceCertificate.astro` in the Subrickzz timeline entry |
 | Color palette and fonts | `src/styles/tokens.css` |
@@ -123,8 +123,8 @@ Keep raw recordings, private review sources and previous media edits in ignored 
 
 ## Freelance website work
 
-The homepage's **Freelance web development** section follows selected work and precedes the approach. Maintain its four entries in `src/data/client-work.ts`, layout in `ClientWork.astro`, and owning styles in `client-work.css`. Keep these separate from `projects.ts` and the five `/work/` case routes. Its public anchor is `#freelance-web-development`.
+The homepage introduction retains `#freelance-web-development` and links to `/freelance-work/`. Keep the five client entries separate from the five engineering cases in `projects.ts`. `ClientWorkTeaser.astro` owns the homepage introduction; `ClientWork.astro` renders the dedicated collection from `src/data/client-work.ts`; `client-work.css` owns their layouts.
 
-The 1600x1120 WebP compositions in `public/images/client-work/` show real website desktop/mobile UI. Preserve their ratio, useful alt text and original UI colors. Keep source captures and review artifacts outside `public/`. Do not substitute generated concepts or imply measured traffic, performance, release outcomes or independent verification of authorship. Artechs USA has source-backed canonical/sitemap/JSON-LD evidence; the other three entries claim homepage Open Graph/Twitter metadata only. Backend links describe setup in source, not a live portfolio backend. Preserve native View website/View code links, keyboard details, both themes, no-JS access and the 320px layout. Run the focused `client-work.spec.ts` alongside the required complete checks.
+Each entry includes a business need, personal contribution, design decision, motion preview, responsive composition and supporting content view. Captions must describe the displayed asset. Keep source/setup boundaries in native details and preserve complete homepage capture links for Arissoft and theEb1.
 
-Arissoft and The EB1 also have full desktop homepage captures in native evidence details, with a View full homepage link to the original image. Maintain these through the optional fullHomepage field, preserve intrinsic image dimensions and keep the entire page visible without cropping. The other cards remain unchanged.
+MP4 previews are silent and play on request with native controls, no autoplay and preload none. Only one collection video plays at a time; videos pause offscreen, when the document is hidden and on pagehide. Preserve readable posters, intrinsic aspect ratios, both themes, 320px layouts, keyboard details and no-JS reading. Raw capture frames and private research remain outside public source. Run `client-work.spec.ts` and the required full checks after edits.

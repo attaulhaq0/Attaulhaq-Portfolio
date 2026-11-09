@@ -9,7 +9,7 @@ The active site is an Astro portfolio with static HTML and focused JavaScript en
 | Name, metadata, email, LinkedIn, GitHub, personal Calendly and CV | `src/data/site.ts` | `BaseLayout.astro`, `Header.astro`, `Footer.astro`, `Hero.astro` |
 | About narrative, timeline and capabilities | `src/data/site.ts` | `src/pages/index.astro` |
 | Project text, homepage art/order, case covers, clips, diagrams and stage descriptions | `src/data/projects.ts` | `ProjectCard.astro`, `HomeGameplay.astro`, `src/pages/work/[slug].astro` |
-| Freelance website contribution, live/source links and evidence | `src/data/client-work.ts` | `ClientWork.astro` after selected work; separate from the five cases |
+| Freelance website contribution, live/source links and evidence | `src/data/client-work.ts` | `ClientWorkTeaser.astro` on home, `ClientWork.astro` on `/freelance-work/`; separate from the five cases |
 | Tool names and project-specific contexts | `src/data/tech-stack.ts` | `TechStack.astro` on the homepage and cases |
 | Event stories, photographs, sources and immersive education | `src/data/moments.ts` | `FieldNotes.astro` |
 | Historical Fiverr metrics and Subrickzz certificate | `src/data/achievements.ts` | `CareerHighlights.astro` for Fiverr; `ExperienceCertificate.astro` within the About experience timeline |
@@ -91,6 +91,6 @@ npm test
 
 `playwright.config.ts` uses the built preview on 4322. `portfolio.spec.ts` covers broad routes/accessibility; `portfolio-additions.spec.ts` covers content/media additions; `gallery.spec.ts`, `workflow.spec.ts`, `cosmo.spec.ts` and `digital-dynasty.spec.ts` cover their focused interactions; `source-character.spec.ts`, `lifecycle.spec.ts` and `section-motion.spec.ts` cover startup, teardown and motion. Preserve meaningful tests when changing deliberate counts or behavior. For visual work, capture stable desktop, 390px and 320px states and open the saved images. Test no-JS, reduced motion, keyboard and actual native media behavior as relevant.
 
-The freelance section uses `#freelance-web-development`. Its five cards are static HTML with native details and external live/source links; they do not create case routes or change main project counts. `tests/client-work.spec.ts` covers scope separation, images, links, both palettes, narrow layouts and no-JS keyboard disclosure. SectionMotion excludes this section from indexed accent assignment to preserve the existing sections' accents.
+The homepage freelance introduction retains `#freelance-web-development`. Its detailed five-project collection lives at `/freelance-work/`, with direct project anchors, native media controls and selected-view disclosures. `tests/client-work.spec.ts` covers route discovery, source links, media, both palettes, narrow layouts, no-JS disclosure and technical metadata. SectionMotion excludes the legacy section hash from indexed accent assignment to preserve the existing sections' accents.
 
-Narrcorp is the featured freelance card. Its local, silent hero excerpt plays on request with native controls and loops; playback pauses offscreen, on page hiding and pagehide. A poster remains visible before playback. Responsive screenshots sit in the native evidence disclosure. The main five case studies remain unchanged.
+All five recordings demonstrate implemented website interactions. Videos play on request, loop, and pause offscreen, on document hiding and pagehide. Starting one pauses the others. Each selected image has a descriptive caption and a full-size link; complete homepage captures remain links rather than long inline images.
