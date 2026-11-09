@@ -51,7 +51,7 @@ Check import order in `BaseLayout.astro` before changing a shared rule. Prefer a
 | Location | Purpose |
 |---|---|
 | `public/images/home/` | Five blended homepage illustrations: E Deviser, AegisOps, Family OS, Cosmo and Digital Dynasty |
-| `public/images/client-work/` | Real desktop/mobile compositions for four freelance sites; full desktop homepage evidence for Arissoft and The EB1 |
+| `public/images/client-work/` | Real desktop/mobile compositions for five freelance sites; full desktop homepage evidence for Arissoft and The EB1 |
 | `public/images/workflow/` | Shared context, decision, build, review and outcome stage sculptures |
 | `public/images/development/` | Cosmo and Digital Dynasty explanatory maps; not native screenshots or exact project graphs |
 | `public/images/cosmo/`, `public/images/digital-dynasty/` | Actual development/gameplay frame exports |
@@ -91,4 +91,6 @@ npm test
 
 `playwright.config.ts` uses the built preview on 4322. `portfolio.spec.ts` covers broad routes/accessibility; `portfolio-additions.spec.ts` covers content/media additions; `gallery.spec.ts`, `workflow.spec.ts`, `cosmo.spec.ts` and `digital-dynasty.spec.ts` cover their focused interactions; `source-character.spec.ts`, `lifecycle.spec.ts` and `section-motion.spec.ts` cover startup, teardown and motion. Preserve meaningful tests when changing deliberate counts or behavior. For visual work, capture stable desktop, 390px and 320px states and open the saved images. Test no-JS, reduced motion, keyboard and actual native media behavior as relevant.
 
-The freelance section uses `#freelance-web-development`. Its four cards are static HTML with native details and external live/source links; they do not create case routes or change main project counts. `tests/client-work.spec.ts` covers scope separation, images, links, both palettes, narrow layouts and no-JS keyboard disclosure. SectionMotion excludes this section from indexed accent assignment to preserve the existing sections' accents.
+The freelance section uses `#freelance-web-development`. Its five cards are static HTML with native details and external live/source links; they do not create case routes or change main project counts. `tests/client-work.spec.ts` covers scope separation, images, links, both palettes, narrow layouts and no-JS keyboard disclosure. SectionMotion excludes this section from indexed accent assignment to preserve the existing sections' accents.
+
+Narrcorp is the featured freelance card. Its local, silent hero excerpt plays on request with native controls and loops; playback pauses offscreen, on page hiding and pagehide. A poster remains visible before playback. Responsive screenshots sit in the native evidence disclosure. The main five case studies remain unchanged.
