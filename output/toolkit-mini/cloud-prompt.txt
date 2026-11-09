@@ -1,0 +1,7 @@
+Use case: stylized-concept
+Asset type: one original decorative sculptural icon for the Cloud & operations toolkit group of a personal portfolio, displayed at 64 pixels.
+Input image is a STYLE REFERENCE ONLY: our original violet and cyan isometric toolkit illustration. Create a new single compact sculpture, not the whole ecosystem and not a crop.
+Subject: one thick rounded lavender-violet cloud floating just above two low stacked violet server slabs on a small solid violet isometric pedestal. Three tiny icy cyan indicator lights on the front of each server slab. The cloud and server form one cohesive simple silhouette. No check mark, letters, logos or scattered objects.
+Style: polished soft 3D editorial isometric render; rich velvet violet and lavender satin surfaces, restrained icy cyan edge accents. Upper-left studio light and soft purple highlights. Appealing rounded volume and bold crisp silhouette that reads clearly at 64px. Front three-quarter view looking gently down. Complete sculpture centered, approximately 75 percent of frame width with generous even margins.
+Backdrop: perfectly uniform pure black #000000 for later alpha extraction. No gradient, floor plane, extending cast shadow, black parts inside the sculpture, background glow, orbit rings or scattered cubes. The base itself is violet.
+Constraints: original cloud infrastructure sculpture only. No words, labels, watermark, vendor marks, UI, humans, gamepad, brain, code brackets or gear. Clean separated black background is essential.

@@ -269,3 +269,8 @@ The owner also selected the existing complete homepage capture for inline displa
 ## November 9, 2026 — portfolio footer links
 
 The owner requested removal of the personal portfolio repository link labeled “This site’s source”. The shared footer now contains LinkedIn, the owner’s GitHub profile and Back to top. The change applies to the homepage, freelance collection, case pages and 404.
+
+
+## November 10, 2026 — cloud toolkit sculpture
+
+The Cloud & operations group uses an original violet cloud and server sculpture, generated through the owner-authorized Microsoft Foundry image workflow with the portfolio’s original ecosystem artwork as a style reference. The decorative image replaces the outline symbol and shares the existing icons’ transparent background, 192px and 128px exports, 88 percent maximum silhouette extent and responsive display sizes. The heading and tools remain native HTML. No vendor logo or new expertise claim is introduced. The prompt and sanitized asset manifest are in `output/toolkit-mini/cloud-prompt.txt` and `cloud-manifest.json`; private originals remain outside the public repository.

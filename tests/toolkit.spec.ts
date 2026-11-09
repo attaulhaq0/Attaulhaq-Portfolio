@@ -28,9 +28,9 @@ test('the static toolkit retains readable tool context and original sculpture sy
   await expect(page.locator('#stack')).toContainText('Event orchestration in the Family OS design');
   await expect(page.locator('#stack')).toContainText('Azure AI Foundry');
   await expect(page.locator('#stack')).toContainText('Read-only usage, cost and diagnostic investigation');
-  await expect(page.locator('.tech-stack-cloud-icon')).toHaveAttribute('aria-hidden', 'true');
+  await expect(page.locator('.tech-stack-group-icon[src="/images/toolkit/cloud.webp"]')).toHaveAttribute('alt', '');
   const icons = page.locator('.tech-stack-group-icon');
-  await expect(icons).toHaveCount(3);
+  await expect(icons).toHaveCount(4);
   for (const icon of await icons.all()) {
     await icon.scrollIntoViewIfNeeded();
     await expect.poll(() => icon.evaluate(image => (image as HTMLImageElement).complete && (image as HTMLImageElement).naturalWidth === 192)).toBe(true);
