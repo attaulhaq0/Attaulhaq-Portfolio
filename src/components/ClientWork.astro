@@ -14,17 +14,21 @@ import '../styles/client-work.css';
       <p>I also design and build responsive websites for clients, connecting their services, company information and contact journeys.</p>
     </div>
     <div class="client-work-grid">
-      {clientWebsites.map(website => <article class="client-website" aria-labelledby={`client-${website.id}-title`}>
+      {clientWebsites.map(website => <article class:list={["client-website", {"client-website-featured": !!website.motion}]} aria-labelledby={`client-${website.id}-title`}>
         <figure class="client-website-preview">
-          <a href={website.image} target="_blank" rel="noopener noreferrer" aria-label={`Open full-size ${website.name} desktop and mobile preview`}>
+          {website.motion ? <video class="client-website-motion" controls muted loop playsinline preload="none" poster={website.motion.poster} width={website.motion.width} height={website.motion.height} aria-label={`${website.name} hero animation showcase`}>
+            <source src={website.motion.src} type="video/mp4" />
+            Your browser does not support video. <a href={website.motion.src}>Watch the hero animation</a>.
+          </video> : <a href={website.image} target="_blank" rel="noopener noreferrer" aria-label={`Open full-size ${website.name} desktop and mobile preview`}>
             <img src={website.image} alt={website.imageAlt} width="1600" height="1120" loading="lazy" decoding="async" />
-          </a>
-          <figcaption><span>Desktop & mobile</span><span>{website.domain}</span></figcaption>
+          </a>}
+          <figcaption><span>{website.motion?.caption ?? 'Desktop & mobile'}</span><span>{website.domain}</span></figcaption>
         </figure>
         <div class="client-website-copy">
           <p class="client-website-role">Design & front-end development</p>
           <h3 id={`client-${website.id}-title`}>{website.name}</h3>
           <p class="client-website-contribution">{website.contribution}</p>
+          {website.stack && <ul class="client-website-stack" aria-label={`${website.name} technologies`}>{website.stack.map(tool => <li>{tool}</li>)}</ul>}
           <div class="client-website-actions">
             <a href={website.liveUrl} target="_blank" rel="noopener noreferrer" aria-label={`View ${website.name} website`}>View website <Arrow /></a>
             <a href={website.sourceUrl} target="_blank" rel="noopener noreferrer" aria-label={`View ${website.name} code`}>View code <Arrow /></a>
@@ -33,7 +37,14 @@ import '../styles/client-work.css';
             <summary>Scope & source evidence <span aria-hidden="true">+</span></summary>
             <div class="client-website-evidence">
               <ul>{website.evidence.map(item => <li>{item}</li>)}</ul>
-              <a href={website.setupUrl} target="_blank" rel="noopener noreferrer">Backend setup in source <Arrow /></a>
+              <a href={website.setupUrl} target="_blank" rel="noopener noreferrer">{website.setupLabel ?? 'Backend setup in source'} <Arrow /></a>
+              {website.motion && <figure class="client-homepage-preview">
+                <figcaption>Desktop & mobile opening views</figcaption>
+                <a class="client-homepage-link" href={website.image} target="_blank" rel="noopener noreferrer">View responsive screenshots <Arrow /></a>
+                <a class="client-homepage-image" href={website.image} target="_blank" rel="noopener noreferrer" aria-label={`Open full-size ${website.name} desktop and mobile preview`}>
+                  <img src={website.image} alt={website.imageAlt} width="1600" height="1120" loading="lazy" decoding="async" />
+                </a>
+              </figure>}
               {website.fullHomepage && <figure class="client-homepage-preview">
                 <figcaption>Actual desktop homepage — opening section to footer</figcaption>
                 <a class="client-homepage-link" href={website.fullHomepage.image} target="_blank" rel="noopener noreferrer" aria-label={`View full ${website.name} homepage`}>
@@ -51,3 +62,16 @@ import '../styles/client-work.css';
     <a class="client-work-source-index" href="https://github.com/attaulhaq0/website-work" target="_blank" rel="noopener noreferrer">Browse freelance website sources <Arrow /></a>
   </div>
 </section>
+
+<script>
+  document.querySelectorAll<HTMLVideoElement>('.client-website-motion').forEach(video => {
+    const pause = () => video.pause();
+    const visibility = () => { if (document.hidden) pause(); };
+    const observer = new IntersectionObserver(entries => { if (!entries[0]?.isIntersecting) pause(); });
+    const attach = () => { document.addEventListener('visibilitychange', visibility); observer.observe(video); };
+    const detach = () => { pause(); document.removeEventListener('visibilitychange', visibility); observer.disconnect(); };
+    attach();
+    window.addEventListener('pagehide', detach);
+    window.addEventListener('pageshow', attach);
+  });
+</script>

@@ -226,3 +226,11 @@ The source index is https://github.com/attaulhaq0/website-work. Current source w
 The Arissoft composition pairs the desktop homepage with the mobile About page; its alternative text identifies both pages rather than implying a same-page comparison.
 
 The owner requested complete landing-page evidence for Arissoft and The EB1. Their native expanded details include actual full desktop homepage exports at "public/images/client-work/arissoft-homepage-full.webp" and "public/images/client-work/theeb1-homepage-full.webp", each linked to its original resolution. The tall capture preserves the full page from opening section to footer; the card's device composition remains a readable preview rather than a compressed full-page thumbnail.
+
+## November 9, 2026 — Narrcorp client website
+
+The owner requested that his completed Narrcorp work be featured with visuals and its hero motion. https://narrcorp.com/ was verified live on Hostinger; its independent source is https://github.com/attaulhaq0/narrcorp-website. Contribution copy covers the website's design, implementation, service writing, responsive QA, technical SEO and deployment. These are delivery activities, not claims of traffic, conversion, ranking or business outcomes.
+
+The local 1200×944, 16-second silent H.264 preview combines the published homepage heading capture with the complete desktop hero animation exported from that website's media. It is an animation showcase export, not a recording of browser interactions. The 1600×1120 composition pairs its desktop opening with an actual 390×844 mobile first fold. These approved client visuals contain no private submissions or named-person biographies. Sources, processing and file hashes remain in the private delivery workspace; no generation credentials or private research are published.
+
+Native video controls provide explicit playback, looping and fullscreen inspection. There is no autoplay or initial video download; a static WebP poster remains readable with JavaScript disabled. Playback pauses when the preview leaves view, the document hides or the page is exited. The expanded evidence uses native details and retains the desktop/mobile image and external build guide without JavaScript.

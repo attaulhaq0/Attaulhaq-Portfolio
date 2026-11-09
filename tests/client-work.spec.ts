@@ -2,6 +2,7 @@ import { test, expect } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
 
 const websites = [
+  ['Narrcorp', 'https://narrcorp.com/', 'narrcorp-website'],
   ['Artechs USA', 'https://artechsusa.com/', 'artechsusa-website'],
   ['Arissoft', 'https://arissoft.tech/', 'arissoft-website'],
   ['Sira Studios', 'https://sirastudios.com/', 'sira-studios-website'],
@@ -13,15 +14,23 @@ test('freelance websites stay separate from the five main projects with real loc
   await page.goto('/');
   const section = page.locator('#freelance-web-development');
   await expect(section.getByRole('heading', { level: 2 })).toHaveAccessibleName('Freelance web development.');
-  await expect(section.locator('.client-website')).toHaveCount(4);
+  await expect(section.locator('.client-website')).toHaveCount(5);
   await expect(page.locator('#work .project-card')).toHaveCount(4);
   await expect(page.locator('#work .fyp-feature')).toHaveCount(1);
-  expect(await section.evaluate(element => [element.previousElementSibling?.id, element.nextElementSibling?.id])).toEqual(['work', 'approach']);
+  // Astro's inert script bundles do not change the visible section order.
+  expect(await section.evaluate(element => {
+    let previous = element.previousElementSibling;
+    let next = element.nextElementSibling;
+    while (previous?.tagName === 'SCRIPT') previous = previous.previousElementSibling;
+    while (next?.tagName === 'SCRIPT') next = next.nextElementSibling;
+    return [previous?.id, next?.id];
+  })).toEqual(['work', 'approach']);
   for (const [name, liveUrl, repo] of websites) {
     const card = section.getByRole('article', { name });
     await expect(card.getByRole('link', { name: `View ${name} website`, exact: true })).toHaveAttribute('href', liveUrl);
     await expect(card.getByRole('link', { name: `View ${name} code`, exact: true })).toHaveAttribute('href', `https://github.com/attaulhaq0/${repo}`);
-    const image = card.locator('.client-website-preview img');
+    if (name === 'Narrcorp') await card.locator('summary').click();
+    const image = card.locator(name === 'Narrcorp' ? '.client-homepage-preview img' : '.client-website-preview img');
     await image.scrollIntoViewIfNeeded();
     await expect.poll(() => image.evaluate((element: HTMLImageElement) => element.complete && element.naturalWidth === 1600 && element.naturalHeight === 1120)).toBe(true);
   }
@@ -53,13 +62,13 @@ test('freelance source evidence opens by keyboard without JavaScript', async ({ 
   const page = await context.newPage();
   await page.goto('http://127.0.0.1:4322/');
   const section = page.locator('#freelance-web-development');
-  await expect(section.locator('.client-website')).toHaveCount(4);
+  await expect(section.locator('.client-website')).toHaveCount(5);
   const details = section.locator('details').first();
   await details.locator('summary').focus();
   await page.keyboard.press('Enter');
   await expect(details).toHaveAttribute('open', '');
   await page.keyboard.press('Tab');
-  await expect(details.getByRole('link', { name: 'Backend setup in source' })).toBeFocused();
+  await expect(details.getByRole('link', { name: 'Build & deployment guide' })).toBeFocused();
   expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(320);
   await context.close();
 });
@@ -87,4 +96,23 @@ test('full Arissoft and EB1 homepages are inspectable through native evidence', 
     await expect(details).not.toHaveAttribute('open', '');
   }
   await context.close();
+});
+test('Narrcorp hero plays on request, loops and pauses offscreen', async ({ page }) => {
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+  await page.goto('/#freelance-web-development');
+  const video = page.locator('.client-website-motion');
+  await video.scrollIntoViewIfNeeded();
+  await expect(video).toHaveAttribute('preload', 'none');
+  await expect(video).toHaveAttribute('controls', '');
+  expect(await video.evaluate((v: HTMLVideoElement) => ({ paused: v.paused, autoplay: v.autoplay, loop: v.loop, muted: v.muted }))).toEqual({ paused: true, autoplay: false, loop: true, muted: true });
+  await video.evaluate((v: HTMLVideoElement) => v.play());
+  await expect.poll(() => video.evaluate((v: HTMLVideoElement) => v.currentTime)).toBeGreaterThan(0.1);
+  await expect.poll(() => video.evaluate((v: HTMLVideoElement) => v.videoWidth)).toBe(1200);
+  const duration = await video.evaluate((v: HTMLVideoElement) => v.duration);
+  expect(duration).toBeGreaterThan(16);
+  expect(duration).toBeLessThan(17);
+  await video.evaluate((v: HTMLVideoElement) => { v.currentTime = v.duration - 0.2; });
+  await expect.poll(() => video.evaluate((v: HTMLVideoElement) => v.currentTime)).toBeLessThan(2);
+  await page.locator('#contact').scrollIntoViewIfNeeded();
+  await expect.poll(() => video.evaluate((v: HTMLVideoElement) => v.paused)).toBe(true);
 });

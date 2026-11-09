@@ -9,10 +9,39 @@ export interface ClientWebsite {
   image: string;
   imageAlt: string;
   evidence: string[];
+  setupLabel?: string;
+  stack?: string[];
+  motion?: { src: string; poster: string; width: number; height: number; caption: string };
   fullHomepage?: { image: string; imageAlt: string; width: number; height: number };
 }
 
 export const clientWebsites: ClientWebsite[] = [
+  {
+    id: 'narrcorp',
+    name: 'Narrcorp',
+    domain: 'narrcorp.com',
+    contribution: 'I designed and built a technology-services website with a layered animated hero, original service copy and a clear email contact journey. I carried the work through responsive QA, technical SEO and the Hostinger launch.',
+    liveUrl: 'https://narrcorp.com/',
+    sourceUrl: 'https://github.com/attaulhaq0/narrcorp-website',
+    setupUrl: 'https://github.com/attaulhaq0/narrcorp-website/blob/main/docs/development-guide.md',
+    setupLabel: 'Build & deployment guide',
+    image: '/images/client-work/narrcorp-devices.webp',
+    imageAlt: 'Narrcorp desktop hero and mobile opening section in a responsive website composition.',
+    stack: ['Astro', 'TypeScript', 'CSS'],
+    motion: {
+      src: '/media/narrcorp-hero-motion.mp4',
+      poster: '/images/client-work/narrcorp-hero-poster.webp',
+      width: 1200,
+      height: 944,
+      caption: 'Play the hero animation · 16 seconds · silent',
+    },
+    evidence: [
+      'Art direction: serif headlines, green accents and layered interface motion, with separate desktop, tablet and mobile hero assets.',
+      'Content and interactions: eight service areas, industry tabs, an expertise carousel and native guidance disclosures.',
+      'Delivery: static Astro output, canonical URLs, sitemap, structured service data and Hostinger configuration.',
+      'QA: responsive layout, keyboard navigation, reduced-motion behavior, production links and release-file verification.',
+    ],
+  },
   {
     id: 'artechsusa',
     name: 'Artechs USA',
