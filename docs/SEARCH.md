@@ -13,10 +13,14 @@ Bing account credential or private URL Submission API key is required.
 
 First-time setup on the release workstation:
 
-Set `PUBLIC_SITE_URL=https://atta.edeviser.com` in the build environment or the
-ignored `.env` file before building. A build without this existing setting omits
+Set `PUBLIC_SITE_URL=https://atta.edeviser.com` in the process/build environment
+before building. The Astro configuration reads `process.env`; an `.env` file
+alone does not set this configuration value. A build without this setting omits
 canonical links and sitemap entries. CI uses the confirmed domain; artifact-based
 publication must use it too.
+
+In PowerShell, set `$env:PUBLIC_SITE_URL = 'https://atta.edeviser.com'` in the same
+terminal before running the build commands below.
 
 ```sh
 npm run indexnow -- prepare
