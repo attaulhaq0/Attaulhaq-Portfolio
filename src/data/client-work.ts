@@ -2,6 +2,7 @@ export interface ClientWebsite {
   id: string; name: string; category: string; domain: string;
   need: string; contribution: string; decision: string; boundary: string;
   liveUrl: string; sourceUrl: string; setupUrl: string; setupLabel?: string;
+  caseStudyUrl?: string;
   image: string; imageAlt: string; responsiveCaption: string;
   evidence: string[]; stack: string[]; runtime: string;
   motion: { src: string; poster: string; width: number; height: number; duration: number; caption: string };
@@ -13,6 +14,7 @@ export interface ClientWebsite {
 export const clientWebsites: ClientWebsite[] = [
   {
     "id": "narrcorp",
+    "caseStudyUrl": "/freelance-work/narrcorp/",
     "name": "Narrcorp",
     "category": "Technology services & specialist talent",
     "need": "Bring consulting, engineering and staffing into one service narrative, with a direct way to start an enquiry.",
@@ -58,6 +60,7 @@ export const clientWebsites: ClientWebsite[] = [
   },
   {
     "id": "artechsusa",
+    "caseStudyUrl": "/freelance-work/ar-tech-inc/",
     "name": "AR TECH INC",
     "category": "Technology consulting & staffing",
     "need": "Give technology buyers and job seekers clear routes through services, industry information, staffing and careers.",

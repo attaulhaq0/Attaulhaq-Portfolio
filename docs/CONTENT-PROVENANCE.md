@@ -271,6 +271,27 @@ The owner also selected the existing complete homepage capture for inline displa
 The owner requested removal of the personal portfolio repository link labeled “This site’s source”. The shared footer now contains LinkedIn, the owner’s GitHub profile and Back to top. The change applies to the homepage, freelance collection, case pages and 404.
 
 
+## November 10, 2026 — client website case studies
+
+The owner requested dedicated professional case studies for AR TECH INC and
+Narrcorp in Freelance Work. The two delivery stories use the owner-confirmed
+end-to-end contribution and the existing approved responsive captures, detail
+views and motion previews. Client URLs and technology stacks remain centralized
+in `src/data/client-work.ts`; story content is in `client-case-studies.ts`.
+
+AR TECH INC's HTML/CSS/JavaScript frontend, PHP/PHPMailer forms, route structure
+and local integration checks were checked against its public source and delivery
+records. Narrcorp's Astro/TypeScript/CSS, GSAP/SplitType motion, static Hostinger
+release, consent-based analytics and Search Console verification were checked
+against source and the November 10 handover. The stories distinguish local form
+testing from inbox delivery and contact clicks from completed enquiries. They
+claim no measured traffic, conversion, placement or ranking gains.
+
+The Narrcorp preview is a composed hero animation export. The AR TECH INC preview
+is an actual browser recording of its service explorer. Both remain native,
+request-to-play media with readable HTML content. Private working materials and
+generation credentials are excluded from publication.
+
 ## November 10, 2026 — cloud toolkit sculpture
 
 The Cloud & operations group uses an original violet cloud and server sculpture, generated through the owner-authorized Microsoft Foundry image workflow with the portfolio’s original ecosystem artwork as a style reference. The decorative image replaces the outline symbol and shares the existing icons’ transparent background, 192px and 128px exports, 88 percent maximum silhouette extent and responsive display sizes. The heading and tools remain native HTML. No vendor logo or new expertise claim is introduced. The prompt and sanitized asset manifest are in `output/toolkit-mini/cloud-prompt.txt` and `cloud-manifest.json`; private originals remain outside the public repository.
