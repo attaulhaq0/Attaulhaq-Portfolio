@@ -28,7 +28,7 @@ test('the theme control is keyboard accessible and narrow layouts retain navigat
   for (const width of [390, 320]) {
     await page.setViewportSize({ width, height: 844 });
     await expect(page.getByRole('button', { name: 'Switch to dark mode', exact: true })).toBeVisible();
-    await expect(page.locator('.mobile-nav summary')).toBeVisible();
+    await expect(page.locator('.mobile-nav > summary')).toBeVisible();
     expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(width);
   }
 });

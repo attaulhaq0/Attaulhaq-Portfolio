@@ -2,18 +2,36 @@
 import { site } from '../data/site';
 import Arrow from './Arrow.astro';
 import ThemeToggle from './ThemeToggle.astro';
-const onWebsiteWork = Astro.url.pathname.startsWith('/freelance-work/');
+import WorkNavigation from './WorkNavigation.astro';
 ---
 <header class="header shell">
   <a class="wordmark" href="/" aria-label={`${site.name} — home`}><span>{site.name}</span></a>
-  <nav aria-label="Main navigation" class="desktop-nav"><a href="/#about">About</a><a href="/#work">Work</a><a href="/freelance-work/" aria-current={onWebsiteWork ? 'page' : undefined}>Website work</a><a href="/#stack">Tech stack</a><a href="/#moments">Beyond the screen</a><a class="nav-cv" href={site.cv.url} download={site.cv.filename}>CV <span aria-hidden="true">↓</span></a></nav>
+  <nav aria-label="Main navigation" class="desktop-nav"><a href="/#about">About</a><WorkNavigation /><a href="/#stack">Tech stack</a><a href="/#moments">Beyond the screen</a><a class="nav-cv" href={site.cv.url} download={site.cv.filename}>CV <span aria-hidden="true">↓</span></a></nav>
   <a class="header-contact" href={site.calendly} target="_blank" rel="noopener noreferrer">Book a meeting <Arrow /></a>
   <ThemeToggle />
-  <details class="mobile-nav"><summary aria-label="Toggle navigation"><span></span><span></span></summary><nav aria-label="Mobile navigation"><a href="/#work">Selected work</a><a href="/freelance-work/" aria-current={onWebsiteWork ? 'page' : undefined}>Website work</a><a href="/#approach">My approach</a><a href="/#stack">Tech stack</a><a href="/#about">About me</a><a href="/#moments">Beyond the screen</a><a href={site.cv.url} download={site.cv.filename}>Download CV ↓</a><a href="/#contact">Get in touch</a></nav></details>
+  <details class="mobile-nav"><summary aria-label="Toggle navigation"><span></span><span></span></summary><nav aria-label="Mobile navigation"><WorkNavigation mobile /><a href="/#approach">My approach</a><a href="/#stack">Tech stack</a><a href="/#about">About me</a><a href="/#moments">Beyond the screen</a><a href={site.cv.url} download={site.cv.filename}>Download CV ↓</a><a href="/#contact">Get in touch</a></nav></details>
 </header>
 <script>
   const menu = document.querySelector<HTMLDetailsElement>('.mobile-nav');
-  menu?.querySelectorAll('a').forEach(link => link.addEventListener('click', () => { menu.open = false; }));
-  document.addEventListener('keydown', event => { if (event.key === 'Escape' && menu?.open) { menu.open = false; menu.querySelector('summary')?.focus(); } });
-  document.addEventListener('click', event => { if (menu?.open && event.target instanceof Node && !menu.contains(event.target)) menu.open = false; });
+  const workMenus = [...document.querySelectorAll<HTMLDetailsElement>('[data-work-navigation]')];
+  const closeWork = () => workMenus.forEach(work => { work.open = false; });
+  document.querySelectorAll('.header nav a').forEach(link => link.addEventListener('click', () => { closeWork(); if (menu) menu.open = false; }));
+  menu?.addEventListener('toggle', () => { if (!menu.open) menu.querySelectorAll<HTMLDetailsElement>('[data-work-navigation]').forEach(work => { work.open = false; }); });
+  document.addEventListener('keydown', event => {
+    if (event.key !== 'Escape') return;
+    const work = workMenus.find(item => item.open);
+    if (work) { work.open = false; work.querySelector('summary')?.focus(); }
+    else if (menu?.open) { menu.open = false; menu.querySelector<HTMLElement>(':scope > summary')?.focus(); }
+  });
+  document.addEventListener('click', event => {
+    if (!(event.target instanceof Node)) return;
+    const target = event.target;
+    workMenus.forEach(work => { if (!work.contains(target)) work.open = false; });
+    if (menu?.open && !menu.contains(target)) menu.open = false;
+  });
 </script>
+<style>
+  @media (max-width: 1100px) {
+    :global(html[data-theme] .mobile-nav > nav) { max-height: calc(100dvh - 110px); overflow-y: auto; overscroll-behavior: contain; }
+  }
+</style>

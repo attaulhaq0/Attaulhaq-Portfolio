@@ -11,7 +11,7 @@ export const site = {
   cv: { url: '/documents/sheikh-atta-ul-haq-cv.pdf', filename: 'Sheikh-Atta-ul-Haq-CV.pdf', label: 'Download CV', format: 'PDF · 2 pages · 306 KB' },
   repository: 'https://github.com/attaulhaq0/Attaulhaq-Portfolio',
   description: 'Sheikh Atta-ul-Haq — software and product engineer in Doha. Applied AI, retrieval workflows, automation and product development, with a foundation in game engineering.',
-  introduction: 'I connect product requirements, data and software to build practical workflows—from retrieval and automation to interactive experiences.',
+  introduction: 'I turn requirements into software, from AI and automation workflows to client websites and interactive experiences. Product thinking guides the design; implementation and testing make it work.',
   contactMessage: 'Building a product, growing an engineering team or exploring an investment? I’d be glad to discuss the problem, the technology and where I can contribute.',
   about: {
     title: 'I started by building worlds.',
@@ -19,6 +19,7 @@ export const site = {
       'I started in game development with Unreal Engine 5, turning ideas into interactive worlds through gameplay systems, mechanics and VR experiences. That work taught me to think about state, behavior and how technology responds to people.',
       'Today, I work across software engineering, applied AI and product development. As CPO and AI Product Engineer at E Deviser, I lead product direction and contribute to the architecture and engineering of Cuevo, our learning-intelligence product in development.',
       'My work includes scoped retrieval, agent workflows and automation with explicit access rules and human approval for sensitive actions. I enjoy taking a problem through requirements, data models, prototypes and testing, then refining the result around the people using it.',
+      'Alongside product engineering, I deliver freelance websites: shaping client content, designing interfaces, creating visual assets and motion, and preparing the finished site for launch. My case studies explain the design decisions, implementation and validation behind that work.',
       'Outside work, I’m usually playing a AAA game, tinkering with cars or experimenting with something new.',
     ],
     invitation: 'Building software, exploring applied AI or developing a new product? I’m always interested in a good conversation.',

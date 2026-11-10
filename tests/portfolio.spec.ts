@@ -72,13 +72,14 @@ for (const slug of routes) {
 test('navigation supports mobile disclosure and keyboard dismissal', async ({ page, isMobile }) => {
   await page.goto('/');
   if (isMobile) {
-    const toggle = page.locator('.mobile-nav summary');
+    const toggle = page.locator('.mobile-nav > summary');
     await toggle.click();
     await expect(page.getByRole('navigation', { name: 'Mobile navigation' })).toBeVisible();
     await page.keyboard.press('Escape');
     await expect(page.locator('.mobile-nav')).not.toHaveAttribute('open', '');
     await toggle.click();
-    await page.getByRole('navigation', { name: 'Mobile navigation' }).getByRole('link', { name: 'Selected work' }).click();
+    await page.getByRole('navigation', { name: 'Mobile navigation' }).locator('[data-work-navigation] > summary').click();
+    await page.getByRole('navigation', { name: 'Mobile navigation' }).getByRole('link', { name: 'Engineering projects', exact: true }).click();
     await expect(page).toHaveURL(/#work$/);
     await expect(page.locator('.mobile-nav')).not.toHaveAttribute('open', '');
   } else {

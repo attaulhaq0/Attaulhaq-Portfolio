@@ -3,7 +3,7 @@ import { test, expect } from '@playwright/test';
 test('the illustrated toolkit keeps real tools and compact artwork at narrow widths', async ({ page }) => {
   await page.emulateMedia({ reducedMotion: 'reduce' });
   await page.goto('/#stack');
-  await expect(page.locator('.tech-stack-tools li')).toHaveCount(23);
+  await expect(page.locator('.tech-stack-tools li')).toHaveCount(24);
   const artwork = page.locator('.tech-stack-art > img');
   await artwork.scrollIntoViewIfNeeded();
   await expect(artwork).toHaveAttribute('alt', '');
@@ -41,7 +41,7 @@ test('toolkit text and artwork remain readable without site JavaScript', async (
   const context = await browser.newContext({ javaScriptEnabled: false, viewport: { width: 320, height: 900 } });
   const page = await context.newPage();
   await page.goto('http://127.0.0.1:4322/#stack');
-  await expect(page.locator('.tech-stack-tools li')).toHaveCount(23);
+  await expect(page.locator('.tech-stack-tools li')).toHaveCount(24);
   await expect(page.locator('.tech-stack-art > img')).toBeVisible();
   await expect(page.locator('.tech-stack-group h3')).toHaveCount(4);
   await expect(page.locator('#stack video, #stack details')).toHaveCount(0);

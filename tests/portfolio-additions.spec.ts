@@ -54,7 +54,7 @@ test('illustrated homepage covers lead to actual recordings and real case eviden
 test('employers can download the supplied CV from navigation and see current tools and milestones', async ({ page, isMobile }) => {
   await page.emulateMedia({ reducedMotion: 'reduce' });
   await page.goto('/');
-  if (isMobile) await page.locator('.mobile-nav summary').click();
+  if (isMobile) await page.locator('.mobile-nav > summary').click();
   const cv = isMobile ? page.locator('.mobile-nav a[download]') : page.locator('.desktop-nav a[download]');
   await expect(cv).toHaveAttribute('href', '/documents/sheikh-atta-ul-haq-cv.pdf');
   await expect(cv).toHaveAttribute('download', 'Sheikh-Atta-ul-Haq-CV.pdf');

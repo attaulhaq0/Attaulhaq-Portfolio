@@ -50,6 +50,7 @@ export const techStack: StackGroup[] = [
       { name: 'Node.js & NestJS', context: 'APIs and background processing in Cuevo', projects: ['edeviser'] },
       { name: 'Python', context: 'Automation, asset processing and verification scripts', projects: [] },
       { name: 'Playwright & Vitest', context: 'Responsive, interaction and failure-state testing', projects: ['edeviser'] },
+      { name: 'Technical SEO', context: 'Crawlability, metadata and sitemap checks for client websites', projects: [] },
       { name: 'Git & GitHub', context: 'Versioned changes, pull requests and review', projects: ['survival-game', 'edeviser'] },
     ],
   },
