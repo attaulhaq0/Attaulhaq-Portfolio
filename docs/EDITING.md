@@ -16,7 +16,7 @@ See [the documentation index](INDEX.md) and [codebase map](CODEBASE-MAP.md) for 
 | Layout, responsive spacing and component styling | `src/styles/global.css` (section headings identify each area) |
 | Homepage section order and narrative | `src/pages/index.astro` |
 | Hero wording, fallback image and automatic 3D startup | `src/components/Hero.astro` |
-| Header / footer | `src/components/Header.astro`, `Footer.astro` |
+| Header / footer | `src/components/Header.astro`, `WorkNavigation.astro`, `Footer.astro` |
 | Shared case-study layout | `src/pages/work/[slug].astro` |
 | Active permitted avatar loader / pose | `src/islands/SourceCharacter.tsx` |
 | Retained original studio character geometry | `src/islands/StudioCharacter.tsx` |

@@ -39,7 +39,7 @@ test('the first pointer click opens pending certificate content after navigation
   });
   await page.emulateMedia({ reducedMotion: 'no-preference' });
   await page.goto('/');
-  if (isMobile) await page.locator('.mobile-nav summary').click();
+  if (isMobile) await page.locator('.mobile-nav > summary').click();
   const cv = isMobile ? page.locator('.mobile-nav a[download]') : page.locator('.desktop-nav a[download]');
   const download = page.waitForEvent('download');
   await cv.click();

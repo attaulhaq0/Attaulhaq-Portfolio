@@ -17,7 +17,7 @@ test('homepage introduces freelance work without loading its gallery', async ({ 
   await expect(teaser.locator('article, video, img')).toHaveCount(0);
   await expect(page.locator('#work .project-card')).toHaveCount(4);
   await expect(page.locator('#work .fyp-feature')).toHaveCount(1);
-  await teaser.getByRole('link', { name: 'Explore the five projects' }).click();
+  await teaser.getByRole('link', { name: 'Explore projects' }).click();
   await expect(page).toHaveURL(/\/freelance-work\/$/);
   await expect(page.locator('.client-website')).toHaveCount(5);
 });
@@ -170,17 +170,19 @@ test('website work is reachable from every header layout', async ({ page }) => {
     await page.setViewportSize({ width, height: 900 });
     await page.goto('/');
     const navigation = width <= 1100 ? page.getByRole('navigation', { name: 'Mobile navigation' }) : page.getByRole('navigation', { name: 'Main navigation' });
-    if (width <= 1100) await page.locator('.mobile-nav summary').click();
-    const link = navigation.getByRole('link', { name: 'Website work', exact: true });
+    if (width <= 1100) await page.locator('.mobile-nav > summary').click();
+    await navigation.locator('[data-work-navigation] > summary').click();
+    const link = navigation.getByRole('link', { name: 'Freelance websites', exact: true });
     await expect(link).toBeVisible();
     await link.click();
     await expect(page).toHaveURL(/\/freelance-work\/$/);
     expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(width);
     if (width <= 1100) {
       await expect(page.locator('.mobile-nav')).not.toHaveAttribute('open', '');
-      await page.locator('.mobile-nav summary').click();
+      await page.locator('.mobile-nav > summary').click();
     }
-    await expect(navigation.getByRole('link', { name: 'Website work', exact: true })).toHaveAttribute('aria-current', 'page');
+    await navigation.locator('[data-work-navigation] > summary').click();
+    await expect(navigation.getByRole('link', { name: 'Freelance websites', exact: true })).toHaveAttribute('aria-current', 'page');
   }
 });
 
