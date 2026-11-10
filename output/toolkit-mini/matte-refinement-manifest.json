@@ -1,0 +1,395 @@
+{
+  "date": "2026-11-10",
+  "apiCalls": 0,
+  "method": "Source-corner black matte, soft interior coverage cap and straight cyan edge color; lossless RGBA WebP",
+  "originalsChanged": false,
+  "documentaryMediaChanged": false,
+  "scope": "Eleven existing generated black-studio illustration cutouts",
+  "items": [
+    {
+      "source": "public/images/home/aegisops-illustration.webp",
+      "previousCutout": {
+        "path": "public/images/home/aegisops-illustration-transparent.webp",
+        "sha256": "f9141bdea82246ec48f001d1e0066b47e89895de8c893649c7b5cb6b92c113ae",
+        "dimensions": [
+          1200,
+          800
+        ],
+        "bytes": 70842,
+        "alphaExtrema": [
+          0,
+          255
+        ]
+      },
+      "output": {
+        "path": "public/images/home/aegisops-illustration-transparent.webp",
+        "sha256": "59c07b8fd5bfa30c9895bc474a35370a84017d25e0d01933bba4b1308ba74320",
+        "dimensions": [
+          1200,
+          800
+        ],
+        "bytes": 256044,
+        "alphaExtrema": [
+          0,
+          255
+        ]
+      },
+      "verification": {
+        "opaqueStudioPixelsBefore": 1737,
+        "opaqueStudioPixelsAfter": 0,
+        "cyanEdgePixelsRefined": 7660,
+        "fullyTransparentPixelFraction": 0.819682
+      }
+    },
+    {
+      "source": "public/images/home/edeviser-illustration.webp",
+      "previousCutout": {
+        "path": "public/images/home/edeviser-illustration-transparent.webp",
+        "sha256": "72b20affb1b55d22251c652d00fcd1c2007284dd10e4cad6b6f2b351ea91a16e",
+        "dimensions": [
+          1200,
+          800
+        ],
+        "bytes": 62170,
+        "alphaExtrema": [
+          0,
+          255
+        ]
+      },
+      "output": {
+        "path": "public/images/home/edeviser-illustration-transparent.webp",
+        "sha256": "e49ddaa126cf49f3c44e7ea23a742028feac585d226c14c92c8b3a9e8872231a",
+        "dimensions": [
+          1200,
+          800
+        ],
+        "bytes": 241002,
+        "alphaExtrema": [
+          0,
+          255
+        ]
+      },
+      "verification": {
+        "opaqueStudioPixelsBefore": 3413,
+        "opaqueStudioPixelsAfter": 0,
+        "cyanEdgePixelsRefined": 2990,
+        "fullyTransparentPixelFraction": 0.79169
+      }
+    },
+    {
+      "source": "public/images/home/family-os-illustration.webp",
+      "previousCutout": {
+        "path": "public/images/home/family-os-illustration-transparent.webp",
+        "sha256": "c5dd57cc914509aeaef1764b7177086b05f2b3118925bc76f09f1ec1e066cb9a",
+        "dimensions": [
+          1200,
+          800
+        ],
+        "bytes": 89306,
+        "alphaExtrema": [
+          0,
+          255
+        ]
+      },
+      "output": {
+        "path": "public/images/home/family-os-illustration-transparent.webp",
+        "sha256": "71214efd53cdad9867fccdb3ab611cb98ca38a653e1c8193f21dd5061d56c702",
+        "dimensions": [
+          1200,
+          800
+        ],
+        "bytes": 318770,
+        "alphaExtrema": [
+          0,
+          255
+        ]
+      },
+      "verification": {
+        "opaqueStudioPixelsBefore": 46,
+        "opaqueStudioPixelsAfter": 0,
+        "cyanEdgePixelsRefined": 7273,
+        "fullyTransparentPixelFraction": 0.779917
+      }
+    },
+    {
+      "source": "public/images/home/cosmo-conqueror-illustration.webp",
+      "previousCutout": {
+        "path": "public/images/home/cosmo-conqueror-illustration-transparent.webp",
+        "sha256": "22fca6fde6e6a673941312ab83a610a2c28e6fa117c1648cc7d626bef68e2d14",
+        "dimensions": [
+          1200,
+          800
+        ],
+        "bytes": 84824,
+        "alphaExtrema": [
+          0,
+          255
+        ]
+      },
+      "output": {
+        "path": "public/images/home/cosmo-conqueror-illustration-transparent.webp",
+        "sha256": "ce0ef6afa2d0d5e4c78c135119dad30075be421fec916453b3f21c3bb2394591",
+        "dimensions": [
+          1200,
+          800
+        ],
+        "bytes": 344282,
+        "alphaExtrema": [
+          0,
+          255
+        ]
+      },
+      "verification": {
+        "opaqueStudioPixelsBefore": 2536,
+        "opaqueStudioPixelsAfter": 0,
+        "cyanEdgePixelsRefined": 4008,
+        "fullyTransparentPixelFraction": 0.726279
+      }
+    },
+    {
+      "source": "public/images/home/digital-dynasty-illustration.webp",
+      "previousCutout": {
+        "path": "public/images/home/digital-dynasty-illustration-transparent.webp",
+        "sha256": "528f0e65a04ff501adb3f6a215af9a62ea2cd4558117eca3db47fb2f463cbfd2",
+        "dimensions": [
+          1200,
+          800
+        ],
+        "bytes": 107568,
+        "alphaExtrema": [
+          0,
+          255
+        ]
+      },
+      "output": {
+        "path": "public/images/home/digital-dynasty-illustration-transparent.webp",
+        "sha256": "c2ff6af674b2419e49bce2203fd137ab24fc8fb3aef4f8fa81a1fb883e831144",
+        "dimensions": [
+          1200,
+          800
+        ],
+        "bytes": 400800,
+        "alphaExtrema": [
+          0,
+          255
+        ]
+      },
+      "verification": {
+        "opaqueStudioPixelsBefore": 6173,
+        "opaqueStudioPixelsAfter": 0,
+        "cyanEdgePixelsRefined": 3713,
+        "fullyTransparentPixelFraction": 0.747583
+      }
+    },
+    {
+      "source": "public/images/workflow/context.webp",
+      "previousCutout": {
+        "path": "public/images/workflow/context-transparent.webp",
+        "sha256": "8e63e0753b09d0e2347b2d2846698381c2591fadae539dd47d4133711b559e9e",
+        "dimensions": [
+          512,
+          512
+        ],
+        "bytes": 28558,
+        "alphaExtrema": [
+          0,
+          255
+        ]
+      },
+      "output": {
+        "path": "public/images/workflow/context-transparent.webp",
+        "sha256": "5e5810257a691b3e3e0c0a4d53aab74ed53a63af7049fd3c4cce581706d85d28",
+        "dimensions": [
+          512,
+          512
+        ],
+        "bytes": 104946,
+        "alphaExtrema": [
+          0,
+          255
+        ]
+      },
+      "verification": {
+        "opaqueStudioPixelsBefore": 3,
+        "opaqueStudioPixelsAfter": 0,
+        "cyanEdgePixelsRefined": 1153,
+        "fullyTransparentPixelFraction": 0.714699
+      }
+    },
+    {
+      "source": "public/images/workflow/decision.webp",
+      "previousCutout": {
+        "path": "public/images/workflow/decision-transparent.webp",
+        "sha256": "d2d35917b1946d73709d576230b4f7e1f022534da0c69bd6f514d85606a056a5",
+        "dimensions": [
+          512,
+          512
+        ],
+        "bytes": 26884,
+        "alphaExtrema": [
+          0,
+          255
+        ]
+      },
+      "output": {
+        "path": "public/images/workflow/decision-transparent.webp",
+        "sha256": "1351ba40c2e81a8f4d12fddab43130f2572225ee24fa90cf20a75d5c29237b13",
+        "dimensions": [
+          512,
+          512
+        ],
+        "bytes": 96764,
+        "alphaExtrema": [
+          0,
+          255
+        ]
+      },
+      "verification": {
+        "opaqueStudioPixelsBefore": 95,
+        "opaqueStudioPixelsAfter": 0,
+        "cyanEdgePixelsRefined": 1489,
+        "fullyTransparentPixelFraction": 0.726086
+      }
+    },
+    {
+      "source": "public/images/workflow/build.webp",
+      "previousCutout": {
+        "path": "public/images/workflow/build-transparent.webp",
+        "sha256": "66e808610122a64400584cf6db14668b133ca871f182a58ae310081ceb1e211c",
+        "dimensions": [
+          512,
+          512
+        ],
+        "bytes": 26900,
+        "alphaExtrema": [
+          0,
+          255
+        ]
+      },
+      "output": {
+        "path": "public/images/workflow/build-transparent.webp",
+        "sha256": "0b3ca54c2fc70e71c418ddba19e4067bd09c1439e30a5e75fac35c96062360dc",
+        "dimensions": [
+          512,
+          512
+        ],
+        "bytes": 90604,
+        "alphaExtrema": [
+          0,
+          255
+        ]
+      },
+      "verification": {
+        "opaqueStudioPixelsBefore": 0,
+        "opaqueStudioPixelsAfter": 0,
+        "cyanEdgePixelsRefined": 1692,
+        "fullyTransparentPixelFraction": 0.751755
+      }
+    },
+    {
+      "source": "public/images/workflow/review.webp",
+      "previousCutout": {
+        "path": "public/images/workflow/review-transparent.webp",
+        "sha256": "657a24da75dff8e148aee6a8ff9979feb4b205c643c9cdba7bbc055531d675bb",
+        "dimensions": [
+          512,
+          512
+        ],
+        "bytes": 24792,
+        "alphaExtrema": [
+          0,
+          255
+        ]
+      },
+      "output": {
+        "path": "public/images/workflow/review-transparent.webp",
+        "sha256": "c6a54a364963cf0d4d98dca70fdd9704673ecc9f0af73266633f8ab8e43b8c71",
+        "dimensions": [
+          512,
+          512
+        ],
+        "bytes": 90766,
+        "alphaExtrema": [
+          0,
+          255
+        ]
+      },
+      "verification": {
+        "opaqueStudioPixelsBefore": 0,
+        "opaqueStudioPixelsAfter": 0,
+        "cyanEdgePixelsRefined": 1450,
+        "fullyTransparentPixelFraction": 0.734222
+      }
+    },
+    {
+      "source": "public/images/workflow/outcome.webp",
+      "previousCutout": {
+        "path": "public/images/workflow/outcome-transparent.webp",
+        "sha256": "f78fd54122b7404a7f5d5d4045a3501fb0af80359a23b7b1411a6d62d6b19a38",
+        "dimensions": [
+          512,
+          512
+        ],
+        "bytes": 23950,
+        "alphaExtrema": [
+          0,
+          255
+        ]
+      },
+      "output": {
+        "path": "public/images/workflow/outcome-transparent.webp",
+        "sha256": "2d4ee44164d741c04b6e0a3aebeb8edbcb61e42c7c868ae028fd23258f00121f",
+        "dimensions": [
+          512,
+          512
+        ],
+        "bytes": 91550,
+        "alphaExtrema": [
+          0,
+          255
+        ]
+      },
+      "verification": {
+        "opaqueStudioPixelsBefore": 4,
+        "opaqueStudioPixelsAfter": 0,
+        "cyanEdgePixelsRefined": 1168,
+        "fullyTransparentPixelFraction": 0.702572
+      }
+    },
+    {
+      "source": "public/images/toolkit-ecosystem.webp",
+      "previousCutout": {
+        "path": "public/images/toolkit-ecosystem-transparent.webp",
+        "sha256": "9a086623261ee302db8191ebc698c7332af2bc3aab617e1e9d9fff1b744c46ff",
+        "dimensions": [
+          1000,
+          667
+        ],
+        "bytes": 79096,
+        "alphaExtrema": [
+          0,
+          255
+        ]
+      },
+      "output": {
+        "path": "public/images/toolkit-ecosystem-transparent.webp",
+        "sha256": "f830f3c90ce146faf6ea7b1775e8e689ae2c11ee02dec40fc610eac2c9865501",
+        "dimensions": [
+          1000,
+          667
+        ],
+        "bytes": 283960,
+        "alphaExtrema": [
+          0,
+          255
+        ]
+      },
+      "verification": {
+        "opaqueStudioPixelsBefore": 1,
+        "opaqueStudioPixelsAfter": 0,
+        "cyanEdgePixelsRefined": 8151,
+        "fullyTransparentPixelFraction": 0.747673
+      }
+    }
+  ]
+}
