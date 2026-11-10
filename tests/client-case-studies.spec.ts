@@ -16,7 +16,7 @@ for (const study of cases) {
     await expect(page).toHaveURL(`/freelance-work/${study.slug}/`);
     await expect(page).toHaveTitle(`${study.name} Website Case Study — Sheikh Atta-ul-Haq`);
     await expect(page.getByRole('heading', { level: 1 })).toHaveText(`${study.name}.`);
-    await expect(page.locator('#brief')).toContainText('end-to-end contribution');
+    await expect(page.locator('#brief').getByRole('heading', { name: 'My contribution', exact: true })).toBeVisible();
     await expect(page.locator('.client-case-stack')).toContainText(study.stack);
     await expect(page.getByRole('link', { name: 'Visit website', exact: true })).toHaveAttribute('href', `https://${study.domain}/`);
     await expect(page.getByRole('link', { name: 'View source', exact: true })).toHaveAttribute('href', `https://github.com/attaulhaq0/${study.repo}`);

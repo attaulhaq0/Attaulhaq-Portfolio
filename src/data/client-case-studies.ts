@@ -22,7 +22,7 @@ export const clientCaseStudies: ClientCaseStudy[] = [
     slug: 'narrcorp',
     websiteId: 'narrcorp',
     headline: 'Connecting the work with the people to deliver it.',
-    summary: 'An end-to-end landing page for technology services and specialist talent: clear service content, a layered motion identity and a static Hostinger launch.',
+    summary: 'A technology services and talent landing page with refined client content, a layered motion identity, responsive Astro development and a Hostinger launch.',
     scope: 'Single landing page · Technology services & talent',
     brief: [
       'Narrcorp needed to explain a broad offer without making visitors navigate a large corporate website. A business team might need a defined software project, help connecting existing systems or additional specialist capacity. The page had to make those engagement options understandable together.',
