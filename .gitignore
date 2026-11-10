@@ -25,3 +25,4 @@ output/imagegen/avatar-*
 output/imagegen/avatar-studio.png
 output/sora/avatar-*
 output/**/qa/
+public/indexnow-key.txt
