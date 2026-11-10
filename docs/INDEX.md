@@ -11,6 +11,7 @@ Start with the [codebase map](CODEBASE-MAP.md) to find the component or data fil
 | [Third-party notices](THIRD-PARTY.md) | Dependencies, source-specific model permission, compact footer attribution and visual rights |
 | [Hostinger deployment](HOSTINGER.md) | Building and publishing the static `dist/` output |
 | [Vercel review hosting](VERCEL.md) | Independent public review link and verified artifact updates |
+| [Search publication](SEARCH.md) | Sitemap ownership records and post-publication IndexNow notifications |
 | [Spatial design record](design/2026-10-11-spatial-portfolio.md) | Historical design decisions; current code and owner instructions take precedence |
 
 The parent workspace holds private reviews in `G:/Portfolio Website/.review/`. Concept and media processing manifests under `output/` record reproducible sources and exports; those directories are not deployed by Astro. Raw sources remain at their supplied locations or in ignored runtime storage.
