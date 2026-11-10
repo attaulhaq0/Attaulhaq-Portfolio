@@ -1,5 +1,11 @@
 # Codebase map
 
+Client website delivery stories live in `src/data/client-case-studies.ts` and render at
+`src/pages/freelance-work/[slug].astro`. The client collection owns their shared
+media, source URLs and live URLs in `src/data/client-work.ts`. AR TECH INC and
+Narrcorp link to their case pages from the Freelance Work collection; the five
+engineering projects keep their existing `/work/` routes.
+
 The active site is an Astro portfolio with static HTML and focused JavaScript enhancements. Keep the current logical folders; this map makes ownership discoverable without moving working files.
 
 ## Content to rendering

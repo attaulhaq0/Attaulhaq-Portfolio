@@ -1,0 +1,135 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Arrow from '../../components/Arrow.astro';
+import { clientWebsites } from '../../data/client-work';
+import { clientCaseStudies } from '../../data/client-case-studies';
+import '../../styles/client-case-study.css';
+
+export function getStaticPaths() {
+  return clientCaseStudies.map((study, index) => ({
+    params: { slug: study.slug },
+    props: {
+      study,
+      website: clientWebsites.find(item => item.id === study.websiteId)!,
+      next: clientWebsites.find(item => item.id === clientCaseStudies[(index + 1) % clientCaseStudies.length].websiteId)!,
+    },
+  }));
+}
+const { study, website, next } = Astro.props;
+const sections = [['brief', 'The brief'], ['decisions', 'Design decisions'], ['visuals', 'Visuals & motion'], ['engineering', 'Development'], ['validation', 'QA & launch'], ['delivery', 'Delivery']];
+---
+<BaseLayout title={`${website.name} Website Case Study — Sheikh Atta-ul-Haq`} description={study.summary} image={website.motion.poster}>
+  <section class="client-case-intro" aria-labelledby="client-case-title">
+    <div class="shell">
+      <a class="client-case-back" href={`/freelance-work/#${website.id}`}><span aria-hidden="true">←</span> Back to freelance work</a>
+      <div class="client-case-hero-grid">
+        <div>
+          <p class="eyebrow">CLIENT WEBSITE / CASE STUDY</p>
+          <h1 id="client-case-title">{website.name}<span>.</span></h1>
+          <p class="client-case-headline">{study.headline}</p>
+          <p class="client-case-summary">{study.summary}</p>
+          <dl class="client-case-facts">
+            <div><dt>MY ROLE</dt><dd>Design, development & launch</dd></div>
+            <div><dt>SCOPE</dt><dd>{study.scope}</dd></div>
+          </dl>
+          <div class="client-case-actions">
+            <a class="client-case-primary" href="#decisions">Explore the case <Arrow /></a>
+            <a href={website.liveUrl} target="_blank" rel="noopener noreferrer">Visit website <Arrow /></a>
+          </div>
+        </div>
+        <figure class="client-case-cover">
+          <img src={website.image} alt={website.imageAlt} width="1600" height="1120" fetchpriority="high" decoding="async" />
+          <figcaption>{website.responsiveCaption}</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+  <div class="shell client-case-layout">
+    <aside class="client-case-aside">
+      <p class="eyebrow">INSIDE THE DELIVERY</p>
+      <nav aria-label="Case study sections">
+        {sections.map(([id, label], index) => <a href={`#${id}`}><span aria-hidden="true">0{index + 1}</span>{label}</a>)}
+      </nav>
+    </aside>
+    <div class="client-case-content">
+      <section id="brief" aria-labelledby="brief-title">
+        <p class="eyebrow">01 / THE BRIEF</p>
+        <h2 id="brief-title">A website shaped around the visitor’s task.</h2>
+        {study.brief.map(paragraph => <p>{paragraph}</p>)}
+        <div class="client-case-ownership"><h3>My contribution</h3><p>{study.ownership}</p></div>
+      </section>
+      <section id="decisions" aria-labelledby="decisions-title">
+        <p class="eyebrow">02 / DESIGN DECISIONS</p>
+        <h2 id="decisions-title">What I changed, and why.</h2>
+        <div class="client-case-decisions">
+          {study.decisions.map((decision, index) => <article><span class="client-case-number" aria-hidden="true">0{index + 1}</span><div><h3>{decision.title}</h3><p>{decision.body}</p></div></article>)}
+        </div>
+        <figure class="client-case-detail">
+          <a href={website.detail.image} target="_blank" rel="noopener noreferrer" aria-label={`View full ${website.name} service detail`}>
+            <img src={website.detail.image} alt={website.detail.alt} width={website.detail.width} height={website.detail.height} loading="lazy" decoding="async" />
+          </a>
+          <figcaption><strong>{website.detail.title}.</strong> {website.detail.caption}</figcaption>
+        </figure>
+      </section>
+      <section id="visuals" aria-labelledby="visuals-title">
+        <p class="eyebrow">03 / VISUALS & MOTION</p>
+        <h2 id="visuals-title">{study.visualTitle}</h2>
+        <p>{study.visualBody}</p>
+        <figure class="client-case-motion">
+          <video controls muted loop playsinline preload="none" poster={website.motion.poster} width={website.motion.width} height={website.motion.height} aria-label={`${website.name} motion preview`}>
+            <source src={website.motion.src} type="video/mp4" />
+            <p><a href={website.motion.src}>Open the {website.name} motion preview</a></p>
+          </video>
+          <figcaption>{study.motionCaption}</figcaption>
+        </figure>
+      </section>
+      <section id="engineering" aria-labelledby="engineering-title">
+        <p class="eyebrow">04 / DEVELOPMENT</p>
+        <h2 id="engineering-title">The implementation behind the interface.</h2>
+        <ul class="client-case-stack" aria-label={`${website.name} technology stack`}>{website.stack.map(item => <li>{item}</li>)}</ul>
+        {study.engineering.map(item => <article class="client-case-text-block"><h3>{item.title}</h3><p>{item.body}</p></article>)}
+      </section>
+      <section id="validation" aria-labelledby="validation-title">
+        <p class="eyebrow">05 / QA & LAUNCH</p>
+        <h2 id="validation-title">Delivery includes the checks.</h2>
+        <div class="client-case-checks">{study.validation.map(item => <article><h3>{item.title}</h3><p>{item.body}</p></article>)}</div>
+      </section>
+      <section id="delivery" aria-labelledby="delivery-title">
+        <p class="eyebrow">06 / DELIVERY</p>
+        <h2 id="delivery-title">What the client can use and maintain.</h2>
+        <p>{study.outcome}</p>
+        <p class="client-case-next-step">{study.nextStep}</p>
+        <div class="client-case-actions">
+          <a class="client-case-primary" href={website.liveUrl} target="_blank" rel="noopener noreferrer">Visit {website.name} <Arrow /></a>
+          <a href={website.sourceUrl} target="_blank" rel="noopener noreferrer">View source <Arrow /></a>
+          <a href={website.setupUrl} target="_blank" rel="noopener noreferrer">Build & deployment guide <Arrow /></a>
+        </div>
+      </section>
+    </div>
+  </div>
+  <div class="shell client-case-next">
+    <a href={next.caseStudyUrl}><div><span class="eyebrow">ANOTHER CLIENT DELIVERY</span><span class="client-case-next-name">{next.name}</span></div><Arrow /></a>
+    <a class="client-case-all" href="/freelance-work/">Explore all freelance websites <Arrow /></a>
+  </div>
+</BaseLayout>
+
+<script>
+  const preview = document.querySelector<HTMLVideoElement>('.client-case-motion video');
+  if (preview) {
+    let observer: IntersectionObserver | undefined;
+    const pause = () => preview.pause();
+    const hidden = () => { if (document.hidden) pause(); };
+    const detach = () => { pause(); observer?.disconnect(); observer = undefined; document.removeEventListener('visibilitychange', hidden); };
+    const attach = () => {
+      if (observer) return;
+      if ('IntersectionObserver' in window) {
+        observer = new IntersectionObserver(entries => { if (!entries[0].isIntersecting) pause(); });
+        observer.observe(preview);
+      }
+      document.addEventListener('visibilitychange', hidden);
+    };
+    window.addEventListener('pagehide', detach);
+    window.addEventListener('pageshow', attach);
+    attach();
+  }
+</script>

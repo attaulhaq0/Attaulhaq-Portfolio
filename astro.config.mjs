@@ -10,6 +10,7 @@ export default defineConfig({
   integrations: [react()],
   devToolbar: { enabled: false },
   vite: {
+    cacheDir: '.runtime/vite-cache',
     optimizeDeps: { exclude: ['@vitejs/plugin-react/preamble', 'three/addons/utils/BufferGeometryUtils.js'] },
     build: { chunkSizeWarningLimit: 650 },
   },

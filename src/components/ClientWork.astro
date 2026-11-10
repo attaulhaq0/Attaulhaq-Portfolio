@@ -28,6 +28,7 @@ import '../styles/client-work.css';
             <h3>Implementation</h3><p class="client-website-runtime">{website.runtime}</p>
             <ul class="client-website-stack" aria-label={`${website.name} technologies`}>{website.stack.map(tool => <li>{tool}</li>)}</ul>
             <div class="client-website-actions">
+            {website.caseStudyUrl && <a href={website.caseStudyUrl} aria-label={`Read ${website.name} case study`}>Read case study <Arrow /></a>}
               <a href={website.liveUrl} target="_blank" rel="noopener noreferrer" aria-label={`View ${website.name} website`}>View website <Arrow /></a>
               <a href={website.sourceUrl} target="_blank" rel="noopener noreferrer" aria-label={`View ${website.name} code`}>View code <Arrow /></a>
             </div>
