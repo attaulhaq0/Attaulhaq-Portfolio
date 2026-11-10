@@ -13,6 +13,11 @@ Bing account credential or private URL Submission API key is required.
 
 First-time setup on the release workstation:
 
+Set `PUBLIC_SITE_URL=https://atta.edeviser.com` in the build environment or the
+ignored `.env` file before building. A build without this existing setting omits
+canonical links and sitemap entries. CI uses the confirmed domain; artifact-based
+publication must use it too.
+
 ```sh
 npm run indexnow -- prepare
 npm run check

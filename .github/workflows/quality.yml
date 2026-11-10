@@ -19,7 +19,7 @@ jobs:
     timeout-minutes: 15
     env:
       ASTRO_TELEMETRY_DISABLED: '1'
-      PUBLIC_SITE_URL: 'https://attaulhaq-spatial-portfolio.vercel.app'
+      PUBLIC_SITE_URL: 'https://atta.edeviser.com'
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
